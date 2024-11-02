@@ -2,83 +2,420 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Cesta Enterprise</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home One || Mediox || Medical & Healthcare HTML Template</title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/favicons/apple-touch-icon.png')}}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicons/favicon-32x32.png')}}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicons/favicon-16x16.png')}}" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
+    <meta name="description" content="Mediox is a versatile medical and healthcare HTML Template. You can make a good professional looking websites with our attractive design which is best for medical clinic, healthcare, hospital, dermatology clinic, cosmetology company, skin care, plastic surgery, beauty clinic, cosmetic clinic, laser surgery, spa, wellness hospital and all other medical and health care related websites and businesses." />
 
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{asset('plugins/bootstrap/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/bootstrap-select/bootstrap-select.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/animate/animate.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/fontawesome/css/all.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/jquery-ui/jquery-ui.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/jarallax/jarallax.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/jquery-magnific-popup/jquery.magnific-popup.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/nouislider/nouislider.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/nouislider/nouislider.pips.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/tiny-slider/tiny-slider.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/mediox-icons/style.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/owl-carousel/css/owl.carousel.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/owl-carousel/css/owl.theme.default.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('plugins/slick/css/slick.css')}}" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="{{asset('css/mediox.css')}}" />
 </head>
 
-<body>
-    <header>
-        <!-- Header Start -->
-        <div class="header-area header-transparent">
-            <div class="main-header ">
-                <div class="header-bottom  header-sticky">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <!-- Logo -->
-                            <div class="col-xl-2 col-lg-2">
-                                <div class="logo">
-                                    <a href="{{url('/')}}">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-xl-10 col-lg-10">
-                                <div class="menu-wrapper  d-flex align-items-center justify-content-end">
-                                    <!-- Main-menu -->
-                                    <div class="main-menu d-none d-lg-block">
-                                        <nav>
-                                            <ul id="navigation">
-                                                @foreach($menuItems as $menuItem)
-                                                @if(!$menuItem->parent_id)
-                                                <li>
-                                                    <a href="{{url($menuItem->url)}}" class="{{ Request::is($menuItem->url) ? 'active' : '' }}">{{$menuItem->title}}</a>
-                                                    @if($menuItem->children->isNotEmpty())
-                                                    <ul class="submenu">
-                                                        @foreach($menuItem->children as $child)
-                                                        @if($menuItem->title=="Services")
-                                                        <li><a href="{{url('service/'.$child->url)}}">{{$child->title}}</a></li>
-                                                        @elseif($menuItem->title=="Solutions")
-                                                        <li><a href="{{url('solution/'.$child->url)}}">{{$child->title}}</a></li>
-                                                        @elseif($menuItem->title=="Gallery")
-                                                        <li><a href="{{url('gallery/'.$child->url)}}">{{$child->title}}</a></li>
-                                                        @endif
-                                                        @endforeach
-                                                    </ul>
-                                                    @endif
-                                                </li>
-                                                @endif
-                                                @endforeach
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Mobile Menu -->
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header End -->
-    </header>
+<body class="custom-cursor">
 
-    <main>
-        {{ $slot }}
-    </main>
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
 
-  
-    </footer>
-    <!-- Scroll Up -->
-    <div id="back-top">
-        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    <div class="preloader">
+        <div class="preloader__image" style="background-image: url('images/loader.png');"></div>
     </div>
+    <!-- /.preloader -->
+
+    <div class="page-wrapper">
+        <header class="main-header main-header--two sticky-header sticky-header--normal">
+            <div class="container-fluid">
+                <div class="main-header__inner">
+                    <div class="main-header__logo logo-retina">
+                        <a href="index.html">
+                            <img src="{{asset('images/logo-dark.png')}}" alt="Mediox HTML" width="164">
+                        </a>
+                    </div><!-- /.main-header__logo -->
+                    <div class="main-header__right">
+                        <div class="main-header__sidebar-btn sidebar-btn__toggler">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div><!-- /.sidebar-btn__toggler -->
+                        <nav class="main-header__nav main-menu">
+                            <ul class="main-menu__list">
+
+                                <li class="dropdown megamenu">
+                                    <a href="/">Home</a>
+                                </li>
+
+                                <li>
+                                    <a href="about.html">About</a>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="#">Services</a>
+                                    <ul>
+                                        <li><a href="">Services 01</a></li>
+                                        <li><a href="">Services 02</a></li>
+                                        <li><a href="">Services 03</a></li>
+                                        <li><a href="">Services Carousel 01</a></li>
+                                        <li><a href="">Services Carousel 02</a></li>
+                                        <li><a href="">Services Carousel 03</a></li>
+                                        <li><a href="">Immediate Care</a></li>
+                                        <li><a href="">Dental Care</a></li>
+                                        <li><a href="">Neurology Care</a></li>
+                                        <li><a href="">Gynaecologists</a></li>
+                                        <li><a href="">Orthopaedics</a></li>
+                                        <li><a href="">Cardiology</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="#">Pages</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Our Team</a>
+                                            <ul>
+                                                <li><a href="team.html">Our Team 01</a></li>
+                                                <li><a href="team-2.html">Our Team 02</a></li>
+                                                <li><a href="team-3.html">Our Team 03</a></li>
+                                                <li><a href="team-carousel.html">Team Carousel 01</a></li>
+                                                <li><a href="team-carousel-2.html">Team Carousel 02</a></li>
+                                                <li><a href="team-carousel-3.html">Team Carousel 03</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="team-details.html">Team Details</a></li>
+                                        <li><a href="history.html">Our History</a></li>
+                                        <li>
+                                            <a href="#">Our Testimonials</a>
+                                            <ul>
+                                                <li><a href="testimonials.html">Our Testimonials 01</a></li>
+                                                <li><a href="testimonials-2.html">Our Testimonials 02</a></li>
+                                                <li><a href="testimonials-3.html">Our Testimonials 03</a></li>
+                                                <li><a href="testimonials-carousel.html">Testimonials Carousel 01</a></li>
+                                                <li><a href="testimonials-carousel-2.html">Testimonials Carousel 02</a></li>
+                                                <li><a href="testimonials-carousel-3.html">Testimonials Carousel 03</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Our Portfolio</a>
+                                            <ul>
+                                                <li><a href="portfolio.html">Our Portfolio 01</a></li>
+                                                <li><a href="portfolio-2.html">Our Portfolio 02</a></li>
+                                                <li><a href="portfolio-3.html">Our Portfolio 03</a></li>
+                                                <li><a href="portfolio-carousel.html">Portfolio carousel 01</a></li>
+                                                <li><a href="portfolio-carousel-2.html">Portfolio carousel 02</a></li>
+                                                <li><a href="portfolio-carousel-3.html">Portfolio carousel 03</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                        <li>
+                                            <a href="gallery.html">Gallery</a>
+                                            <ul>
+                                                <li><a href="gallery.html">Gallery masonry</a></li>
+                                                <li><a href="gallery-filter.html">Gallery filter</a></li>
+                                                <li><a href="gallery-grid.html">Gallery Grid</a></li>
+                                                <li><a href="gallery-carousel.html">Gallery Carousel</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="pricing.html">Pricing Plan</a></li>
+                                        <li><a href="faq.html">Our FAQ</a></li>
+                                        <li><a href="appointment.html">Make Appointment</a></li>
+                                        <li><a href="login.html">Login</a></li>
+                                        <li><a href="404.html">404 Error</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="#">Shop</a>
+                                    <ul>
+                                        <li class="dropdown">
+                                            <a href="#">Products</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="products.html">No sidebar</a></li>
+                                                <li><a href="products-left.html">Left sidebar</a></li>
+                                                <li><a href="products-right.html">Right sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="products-carousel.html">Products carousel</a></li>
+                                        <li><a href="product-details.html">Product details</a></li>
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="checkout.html">Checkout</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#">Blog</a>
+                                    <ul>
+                                        <li class="dropdown">
+                                            <a href="#">Blog grid 01</a>
+                                            <ul>
+                                                <li><a href="blog-grid.html">No sidebar</a></li>
+                                                <li><a href="blog-grid-left.html">Left sidebar</a></li>
+                                                <li><a href="blog-grid-right.html">Right sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Blog grid 02</a>
+                                            <ul>
+                                                <li><a href="blog-grid-2.html">No sidebar</a></li>
+                                                <li><a href="blog-grid-2-left.html">Left sidebar</a></li>
+                                                <li><a href="blog-grid-2-right.html">Right sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Blog grid 03</a>
+                                            <ul>
+                                                <li><a href="blog-grid-3.html">No sidebar</a></li>
+                                                <li><a href="blog-grid-3-left.html">Left sidebar</a></li>
+                                                <li><a href="blog-grid-3-right.html">Right sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Blog list</a>
+                                            <ul>
+                                                <li><a href="blog-list.html">No sidebar</a></li>
+                                                <li><a href="blog-list-left.html">Left sidebar</a></li>
+                                                <li><a href="blog-list-right.html">Right sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Blog carousel</a>
+                                            <ul>
+                                                <li><a href="blog-carousel.html">Blog carousel 01</a></li>
+                                                <li><a href="blog-carousel-2.html">Blog carousel 02</a></li>
+                                                <li><a href="blog-carousel-3.html">Blog carousel 03</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#">Blog details</a>
+                                            <ul>
+                                                <li><a href="blog-details.html">No sidebar</a></li>
+                                                <li><a href="blog-details-left.html">Left sidebar</a></li>
+                                                <li><a href="blog-details-right.html">Right sidebar</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </nav><!-- /.main-header__nav -->
+                        <div class="mobile-nav__btn mobile-nav__toggler">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div><!-- /.mobile-nav__toggler -->
+                        <a href="#" class="search-toggler main-header__search">
+                            <i class="icon-search" aria-hidden="true"></i>
+                            <span class="sr-only">Search</span>
+                        </a><!-- /.search-toggler -->
+                        <a href="cart.html" class="main-header__cart">
+                            <i class="icon-cart" aria-hidden="true"></i>
+                            <span class="sr-only">Shopping Cart</span>
+                        </a><!-- /.search-toggler -->
+                        <div class="main-header__call">
+                            <span class="main-header__call__icon">
+                                <i class="icon-telephone"></i>
+                            </span><!-- /.main-header__call__icon -->
+                            <div class="main-header__call__content">
+                                <p class="main-header__call__title">call emergency</p><!-- /.call__title -->
+                                <h4 class="main-header__call__number">
+                                    <a href="tel:+208-555-0112">+208-555-0112</a>
+                                </h4><!-- /.main-header__call__number -->
+                            </div><!-- /.main-header__call__content -->
+                        </div><!-- /.main-header__call -->
+                        <a href="appointment.html" class="mediox-btn main-header__btn">
+                            <span>make an appointment</span>
+                            <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
+                        </a><!-- /.mediox-btn -->
+                    </div><!-- /.main-header__right -->
+                </div><!-- /.main-header__inner -->
+            </div><!-- /.container-fluid -->
+        </header>
+
+        <main>
+            {{ $slot }}
+        </main>
+    </div>
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
+
+            <div class="logo-box logo-retina">
+                <a href="index.html" aria-label="logo image"><img src="{{asset('images/logo-light.png')}}" width="164" alt="" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <span class="mobile-nav__contact__icon">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                    <a href="mailto:needhelp@mediox.com">needhelp@mediox.com</a>
+                </li>
+                <li>
+                    <span class="mobile-nav__contact__icon">
+                        <i class="fa fa-phone-alt"></i>
+                    </span>
+                    <a href="tel:+9156980036420">+91 5698 0036 420</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            <div class="mobile-nav__social social-links">
+                <a href="https://facebook.com">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    <span class="sr-only">Facebook</span>
+                </a>
+                <a href="https://twitter.com">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <span class="sr-only">Twitter</span>
+                </a>
+                <a href="https://instagram.com">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span class="sr-only">Instagram</span>
+                </a>
+                <a href="https://youtube.com">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <span class="sr-only">Youtube</span>
+                </a>
+            </div><!-- /.mobile-nav__social -->
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+
+    <!-- /.mobile-nav__wrapper -->
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form role="search" method="get" class="search-popup__form" action="#">
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="mediox-btn">
+                    <i class="icon-search"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+
+    <!-- /.search-popup -->
+    <aside class="sidebar-one">
+        <div class="sidebar-one__overlay sidebar-btn__toggler"></div><!-- /.siderbar-ovarlay -->
+        <div class="sidebar-one__content">
+            <span class="sidebar-one__close sidebar-btn__toggler"><i class="icon-close"></i></span>
+            <div class="sidebar-one__logo sidebar-one__item logo-retina">
+                <a href="index.html" aria-label="logo image"><img src="{{asset('images/logo-light.png')}}" width="164" alt="logo" />
+                </a>
+            </div><!-- /.sidebar-one__logo -->
+            <div class="sidebar-one__about sidebar-one__item">
+                <p class="sidebar-one__about__text">Here is main text quis nostrud exercitation ullamco laboris nisi here is itealic aliquip ex ea com</p>
+            </div><!-- /.sidebar-one__about -->
+            <div class="sidebar-one__info sidebar-one__item">
+                <h4 class="sidebar-one__title">Contact</h4>
+                <ul class="sidebar-one__info__list">
+                    <li>
+                        <span class="sidebar-one__info__icon sidebar-one__info__icon--location">
+                            <i class="icon-location"></i>
+                        </span>
+                        <address>85 Ketch Harbour Road Bensal
+                            PA 19020</address>
+                    </li>
+                    <li>
+                        <span class="sidebar-one__info__icon">
+                            <i class="icon-paper-plane"></i>
+                        </span>
+                        <a href="mailto:needhelp@company.com">needhelp@company.com</a>
+                    </li>
+                    <li>
+                        <span class="sidebar-one__info__icon">
+                            <i class="icon-telephone"></i>
+                        </span>
+                        <a href="tel:+9156980036420">+9156980036420</a>
+                    </li>
+                </ul><!-- /.sidebar-one__info__list -->
+            </div><!-- /.sidebar-one__info -->
+            <div class="social-links sidebar-one__item">
+                <a href="https://facebook.com">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    <span class="sr-only">Facebook</span>
+                </a>
+                <a href="https://twitter.com">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <span class="sr-only">Twitter</span>
+                </a>
+                <a href="https://instagram.com">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span class="sr-only">Instagram</span>
+                </a>
+                <a href="https://youtube.com">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <span class="sr-only">Youtube</span>
+                </a>
+            </div><!-- /sidebar-one__social -->
+            <div class="sidebar-one__newsletter sidebar-one__item">
+                <label class="sidebar-one__title" for="sidebar-email">Newsletter</label>
+                <form action="#" class="sidebar-one__newsletter__inner mc-form" data-url="MAILCHIMP_FORM_URL">
+                    <input type="email" name="EMAIL" id="sidebar-email" class="sidebar-one__newsletter__input" placeholder="Email Address">
+                    <button type="submit" class="sidebar-one__newsletter__btn"><span class="icon-email" aria-hidden="true"></span></button>
+                </form>
+                <div class="mc-form__response"></div><!-- /.mc-form__response -->
+            </div><!-- /.sidebar-one__form -->
+        </div><!-- /.sidebar__content -->
+    </aside><!-- /.sidebar-one -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+        <span class="scroll-to-top__text">back top</span>
+        <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
+    </a>
+
+    <script src="{{asset('plugins/jquery/jquery-3.7.0.min.js')}}"></script>
+    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('plugins/bootstrap-select/bootstrap-select.min.js')}}"></script>
+    <script src="{{asset('plugins/jarallax/jarallax.min.js')}}"></script>
+    <script src="{{asset('plugins/jquery-ui/jquery-ui.js')}}"></script>
+    <script src="{{asset('plugins/jquery-ajaxchimp/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{asset('plugins/jquery-appear/jquery.appear.min.js')}}"></script>
+    <script src="{{asset('plugins/jquery-circle-progress/jquery.circle-progress.min.js')}}"></script>
+    <script src="{{asset('plugins/jquery-magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('plugins/jquery-validate/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('plugins/nouislider/nouislider.min.js')}}"></script>
+    <script src="{{asset('plugins/tiny-slider/tiny-slider.js')}}"></script>
+    <script src="{{asset('plugins/wnumb/wNumb.min.js')}}"></script>
+    <script src="{{asset('plugins/owl-carousel/js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('plugins/slick/js/slick.min.js')}}"></script>
+    <script src="{{asset('plugins/wow/wow.js')}}"></script>
+    <script src="{{asset('plugins/imagesloaded/imagesloaded.min.js')}}"></script>
+    <script src="{{asset('plugins/isotope/isotope.js')}}"></script>
+    <script src="{{asset('plugins/countdown/countdown.min.js')}}"></script>
+    <script src="{{asset('plugins/jquery-circleType/jquery.circleType.js')}}"></script>
+    <script src="{{asset('plugins/jquery-lettering/jquery.lettering.min.js')}}"></script>
+    <!-- template js -->
+    <script src="{{asset('js/mediox.js')}}"></script>
 </body>
 
 </html>
