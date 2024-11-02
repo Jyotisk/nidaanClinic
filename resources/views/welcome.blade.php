@@ -1,17 +1,6 @@
 <x-guest-layout>
       <section class="main-slider-one">
-            <div class="main-slider-one__carousel mediox-owl__carousel mediox-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
-        "items": 1,
-        "margin": 0,
-        "animateIn": "fadeIn",
-        "animateOut": "fadeOut",
-        "loop": true,
-        "smartSpeed": 700,
-        "nav": false,
-        "dots": false,
-        "autoplay": true,
-        "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"]
-    }'>
+            <div class="main-slider-one__carousel mediox-owl__carousel mediox-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{ "items": 1, "margin": 0, "animateIn": "fadeIn", "animateOut": "fadeOut", "loop": true,  "smartSpeed": 700,  "nav": false,  "dots": false,  "autoplay": true,  "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"] }'>
                 <div class="main-slider-one__item">
                     <div class="main-slider-one__bg" style="background-image: url('images/shapes/main-slider-bg-1-1.png');"></div><!-- /.main-slider-one__bg -->
                     <div class="container">
@@ -29,7 +18,7 @@
                                                     <i class="icon-play"></i>
                                                     <i class="video-btn__ripple"></i>
                                                 </a><!-- /.video-btn -->
-                                                <img src="{{asset('images/main-slider/main-slider-video-1-1.jpg')}}" alt="video">
+                                                {{-- <img src="{{asset('images/main-slider/main-slider-video-1-1.jpg')}}" alt="video"> --}}
                                             </span>
                                             Health <br> Caring for You
                                             <span class="main-slider-one__title__hover">
