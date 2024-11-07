@@ -646,7 +646,8 @@
                     <div class="col-xl-12">
                         <div class="appointment-one__content">
                             <h3 class="appointment-one__title">Book An Appointment</h3><!-- /.appointment-one__title -->
-                            <form action="" class="appointment-one__form contact-form-validated form-one wow fadeInUp" data-wow-duration="1500ms">
+                            <form action="" class="appointment-one__form contact-form-validated form-one wow fadeInUp" data-wow-duration="1500ms" id="appointmentForm">
+                                @csrf
                                 <div class="form-one__group">
                                     <div class="form-one__control">
                                         <input type="text" name="name" placeholder="Full Name*">
@@ -999,3 +1000,38 @@
         </section><!-- /.team-one -->
         {{-- End of Team Section --}}
 </x-guest-layout>
+<script>
+     $(document).ready(function() {
+        $('#appointmentForm').submit(function(e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Serialize form data
+            var formData = $(this).serialize();
+
+            // Send AJAX request
+            $.ajax({
+                url: "{{ route('BookAppointment') }}", // Replace with your route
+                method: 'POST',
+                data: formData,
+                success: function(response) {
+                    if (response.status == 'success') {
+                        $('#appointmentForm :input').attr('disabled', 'disabled');
+                        Swal.fire({
+                            title: "Thank You!",
+                            text: "Message Sent Successfully",
+                            icon: "success"
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // console.error(xhr.responseText);
+                    Swal.fire({
+                        title: "Validation Fail!",
+                        text: "Please Enter Correct Data",
+                        icon: "error"
+                    });
+                }
+            });
+        });
+    });
+</script>

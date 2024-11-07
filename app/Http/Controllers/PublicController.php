@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\MenuItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,7 +21,7 @@ class PublicController extends Controller
             $Visitor->date = date('Y-m-d');
             $Visitor->save();
             DB::commit();
-         
+
             return view('welcome');
         } catch (Exception $e) {
             return $e;
@@ -28,5 +29,12 @@ class PublicController extends Controller
             return "Something Went Wrong";
         }
     }
-    
+    public function BookAppointment()
+    {
+        try {
+            //code...
+        } catch (\Exception $e) {
+            //throw $th;
+        }
+    }
 }
