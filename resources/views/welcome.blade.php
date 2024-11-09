@@ -646,20 +646,23 @@
                     <div class="col-xl-12">
                         <div class="appointment-one__content">
                             <h3 class="appointment-one__title">Book An Appointment</h3><!-- /.appointment-one__title -->
-                            <form action="" class="appointment-one__form contact-form-validated form-one wow fadeInUp" data-wow-duration="1500ms" id="appointmentForm">
+                            <form class="appointment-one__form contact-form-validated form-one wow fadeInUp" data-wow-duration="1500ms" id="appointmentForm" method="post">
                                 @csrf
                                 <div class="form-one__group">
                                     <div class="form-one__control">
-                                        <input type="text" name="name" placeholder="Full Name*">
+                                        <input type="text" name="patient_name" placeholder="Full Name*">
                                     </div><!-- /.form-one__control -->
                                     <div class="form-one__control">
-                                        <input type="email" name="email" placeholder="Email Address*">
+                                        <input type="text" name="age" placeholder="Age*">
                                     </div><!-- /.form-one__control -->
                                     <div class="form-one__control">
-                                        <input type="tel" name="number" placeholder="Phone Number">
+                                        <input type="tel" name="phone_no" placeholder="Phone Number" Maxlength="10">
+                                    </div><!-- /.form-one__control -->
+                                    <div class="form-one__control form-one__control--full">
+                                        <textarea name="address" placeholder="Address..."></textarea>
                                     </div><!-- /.form-one__control -->
                                     <div class="form-one__control appointment-one__form__date">
-                                        <input type="text" name="date" placeholder="Select Date*" id="datepicker" class="mediox-datepicker">
+                                        <input type="text" name="appointment_date" placeholder="Appointment Date*" id="datepicker" class="mediox-datepicker">
                                         <span class="appointment-one__form__date__arrow">
                                             <i class="icon-caret-down"></i>
                                         </span><!-- /.appointment-one__form__date__arrow -->
@@ -676,7 +679,7 @@
                                         </select>
                                     </div><!-- /.form-one__control -->
                                     <div class="form-one__control">
-                                        <select class="selectpicker" aria-label="Name a Doctor">
+                                        <select class="selectpicker" aria-label="Name a Doctor" name="specialist_id">
                                             <option selected>Name a Doctor</option>
                                             <option value="1">Leslie Alexander</option>
                                             <option value="2">Mike Hardson</option>
@@ -687,7 +690,7 @@
                                         </select>
                                     </div><!-- /.form-one__control -->
                                     <div class="form-one__control form-one__control--full">
-                                        <textarea name="message" placeholder="Type Here..."></textarea>
+                                        <textarea name="message" placeholder="Message (If Any)"></textarea>
                                     </div><!-- /.form-one__control -->
                                     <div class="form-one__control form-one__control--full">
                                         <button type="submit" class="mediox-btn">
