@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('doctor_name');
             $table->string('doctor_image');
             $table->text('descriptions')->nullable();
+            $table->string('facebook_link',1000)->nullable();
+            $table->string('instagram_link',1000)->nullable();
+            $table->string('twitter_link',1000)->nullable();
+            $table->string('linked_in_link',1000)->nullable();
             $table->unsignedBigInteger('entry_by');
             $table->boolean('status');
             $table->timestamps();

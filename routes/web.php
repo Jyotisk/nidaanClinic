@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\SpecilistController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MenuItemController;
 use App\Http\Controllers\PublicController;
@@ -16,7 +17,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     //role & permission
     Route::group(['middleware' => ['role:Super Admin']], function () {
 
-        Route::get('create-role', [RolePermissionController::class, 'getRole'])->name('getRole');;
+        Route::get('create-role', [RolePermissionController::class, 'getRole'])->name('getRole');
         Route::post('role', [RolePermissionController::class, 'addRole'])->name('addRole');
         Route::post('permission', [RolePermissionController::class, 'addPermission'])->name('addPermission');
         Route::get('assign-role', [RolePermissionController::class, 'getAssignRole'])->name('getAssignRole');
@@ -40,11 +41,10 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
         Route::post('EditMenuItem', [MenuItemController::class, 'EditMenuItem'])->name('EditMenuItem');
         Route::get('mentu-list', [MenuItemController::class, 'getDropdownData'])->name('getDropdownData');
 
-
-
-
     });
 
+    Route::get('specialist-lists', [SpecilistController::class, 'index'])->name('SpecialistLists');
+    Route::post('specialist-lists', [SpecilistController::class, 'store'])->name('SubmitSpecialist');
 
     Route::get('reset-password', [ResetPasswordController::class, 'create'])
         ->name('passwordReset');
