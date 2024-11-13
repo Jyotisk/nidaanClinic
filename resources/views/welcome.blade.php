@@ -632,7 +632,7 @@
         {{-- End of Funfact Section --}}
 
         {{-- Appointment Section --}}
-        <section class="appointment-one section-space-bottom">
+        <section class="appointment-one section-space-bottom" id="appointmentSection">
             <div class="appointment-one__bg mediox-jarallax" data-jarallax data-speed="0.3s" style="background-image: url('images/backgrounds/appointment-bg.jpg');">
                 <div class="appointment-one__bg__inner" style="background-image: url('images/shapes/appointment-shape-bg.png');"></div>
                 <div class="appointment-one__bg__shape">

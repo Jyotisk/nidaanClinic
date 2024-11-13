@@ -56,11 +56,11 @@
                         </a>
                     </div><!-- /.main-header__logo -->
                     <div class="main-header__right">
-                        <div class="main-header__sidebar-btn sidebar-btn__toggler">
+                        {{-- <div class="main-header__sidebar-btn sidebar-btn__toggler d-none">
                             <span></span>
                             <span></span>
                             <span></span>
-                        </div><!-- /.sidebar-btn__toggler -->
+                        </div><!-- /.sidebar-btn__toggler --> --}}
                         <nav class="main-header__nav main-menu">
                             <ul class="main-menu__list">
 
@@ -75,18 +75,7 @@
                                 <li class="dropdown">
                                     <a href="#">Services</a>
                                     <ul>
-                                        <li><a href="">Services 01</a></li>
-                                        <li><a href="">Services 02</a></li>
-                                        <li><a href="">Services 03</a></li>
-                                        <li><a href="">Services Carousel 01</a></li>
-                                        <li><a href="">Services Carousel 02</a></li>
-                                        <li><a href="">Services Carousel 03</a></li>
-                                        <li><a href="">Immediate Care</a></li>
-                                        <li><a href="">Dental Care</a></li>
-                                        <li><a href="">Neurology Care</a></li>
-                                        <li><a href="">Gynaecologists</a></li>
-                                        <li><a href="">Orthopaedics</a></li>
-                                        <li><a href="">Cardiology</a></li>
+                                        <li><a href="services.html">Services 01</a></li>
                                     </ul>
                                 </li>
 
@@ -146,7 +135,7 @@
                                     </ul>
                                 </li>
 
-                                <li class="dropdown">
+                                {{-- <li class="dropdown">
                                     <a href="#">Shop</a>
                                     <ul>
                                         <li class="dropdown">
@@ -162,8 +151,9 @@
                                         <li><a href="cart.html">Cart</a></li>
                                         <li><a href="checkout.html">Checkout</a></li>
                                     </ul>
-                                </li>
-                                <li class="dropdown">
+                                </li> --}}
+
+                                {{-- <li class="dropdown">
                                     <a href="#">Blog</a>
                                     <ul>
                                         <li class="dropdown">
@@ -215,25 +205,31 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
+
                                 <li>
                                     <a href="contact.html">Contact</a>
                                 </li>
                             </ul>
-                        </nav><!-- /.main-header__nav -->
+                        </nav>
+
+                        <!-- /.main-header__nav -->
                         <div class="mobile-nav__btn mobile-nav__toggler">
                             <span></span>
                             <span></span>
                             <span></span>
                         </div><!-- /.mobile-nav__toggler -->
-                        <a href="#" class="search-toggler main-header__search">
+
+                        {{-- <a href="#" class="search-toggler main-header__search">
                             <i class="icon-search" aria-hidden="true"></i>
                             <span class="sr-only">Search</span>
-                        </a><!-- /.search-toggler -->
-                        <a href="cart.html" class="main-header__cart">
+                        </a><!-- /.search-toggler --> --}}
+
+                        {{-- <a href="cart.html" class="main-header__cart">
                             <i class="icon-cart" aria-hidden="true"></i>
                             <span class="sr-only">Shopping Cart</span>
-                        </a><!-- /.search-toggler -->
+                        </a><!-- /.search-toggler --> --}}
+
                         <div class="main-header__call">
                             <span class="main-header__call__icon">
                                 <i class="icon-telephone"></i>
@@ -241,11 +237,11 @@
                             <div class="main-header__call__content">
                                 <p class="main-header__call__title">call emergency</p><!-- /.call__title -->
                                 <h4 class="main-header__call__number">
-                                    <a href="tel:+208-555-0112">+208-555-0112</a>
+                                    <a href="tel:+208-555-0112">+91-8876696750</a>
                                 </h4><!-- /.main-header__call__number -->
                             </div><!-- /.main-header__call__content -->
                         </div><!-- /.main-header__call -->
-                        <a href="appointment.html" class="mediox-btn main-header__btn">
+                        <a href="#appointmentSection" class="mediox-btn main-header__btn">
                             <span>make an appointment</span>
                             <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                         </a><!-- /.mediox-btn -->
