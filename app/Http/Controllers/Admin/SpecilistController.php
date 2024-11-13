@@ -23,9 +23,8 @@ class SpecilistController extends Controller
             $request->all(),
             [
                 'department_name' => 'required',
-                'doctor_image' => 'required',
                 'descriptions' => 'required',
-                'doctor_image' => 'doctor_image|image|mimes:jpeg,png,jpg,gif,webp|max:5500', // Adjust the validation rules as needed
+                'doctor_image' => 'image|mimes:jpeg,png,jpg,gif,webp|max:5500', // Adjust the validation rules as needed
             ],
         );
         if ($validator->fails()) {
