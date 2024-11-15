@@ -53,7 +53,7 @@ class SpecilistController extends Controller
         try {
             $specialists = new Specialist();
             $specialists->department_name = $request->department_name;
-            $specialists->doctor_image = $request->doctor_image;
+            $specialists->doctor_name = $request->doctor_name;
             $specialists->descriptions = $request->descriptions;
             $specialists->facebook_link = $request->facebook_link;
             $specialists->instagram_link = $request->instagram_link;
@@ -63,7 +63,7 @@ class SpecilistController extends Controller
             $specialists->entry_by = Auth::user()->id;
             if ($request->file('doctor_image')) {
                 $path = $request->doctor_image->store('public/gallary');
-                $specialists->doctor_name = $path;
+                $specialists->doctor_image = $path;
             }
             $specialists->save();
 

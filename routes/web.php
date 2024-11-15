@@ -45,6 +45,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
 
     Route::get('specialist-lists', [SpecilistController::class, 'index'])->name('SpecialistLists');
     Route::post('specialist-lists', [SpecilistController::class, 'store'])->name('SubmitSpecialist');
+    Route::post('edit-specialist-lists', [SpecilistController::class, 'edit'])->name('EditSpecialist');
 
     Route::get('reset-password', [ResetPasswordController::class, 'create'])
         ->name('passwordReset');

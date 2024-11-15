@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home One || Mediox || Medical & Healthcare HTML Template</title>
+    <title>Home One || Nidaan || Medical & Healthcare HTML Template</title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/favicons/apple-touch-icon.png')}}" />
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicons/favicon-32x32.png')}}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicons/favicon-16x16.png')}}" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="Mediox is a versatile medical and healthcare HTML Template. You can make a good professional looking websites with our attractive design which is best for medical clinic, healthcare, hospital, dermatology clinic, cosmetology company, skin care, plastic surgery, beauty clinic, cosmetic clinic, laser surgery, spa, wellness hospital and all other medical and health care related websites and businesses." />
+    <meta name="description" content="Nidaan is a versatile medical and healthcare HTML Template. You can make a good professional looking websites with our attractive design which is best for medical clinic, healthcare, hospital, dermatology clinic, cosmetology company, skin care, plastic surgery, beauty clinic, cosmetic clinic, laser surgery, spa, wellness hospital and all other medical and health care related websites and businesses." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +52,7 @@
                 <div class="main-header__inner">
                     <div class="main-header__logo logo-retina">
                         <a href="index.html">
-                            <img src="{{asset('images/logo-dark.png')}}" alt="Mediox HTML" width="164">
+                            <img src="{{asset('images/logo-dark.png')}}" alt="Nidaan HTML" width="164">
                         </a>
                     </div><!-- /.main-header__logo -->
                     <div class="main-header__right">
@@ -129,7 +129,7 @@
                                         </li>
                                         <li><a href="pricing.html">Pricing Plan</a></li>
                                         <li><a href="faq.html">Our FAQ</a></li>
-                                        <li><a href="appointment.html">Make Appointment</a></li>
+                                        <li><a href="#appointmentForm">Make Appointment</a></li>
                                         <li><a href="login.html">Login</a></li>
                                         <li><a href="404.html">404 Error</a></li>
                                     </ul>
@@ -263,11 +263,11 @@
                         <div class="footer-widget footer-widget--about">
                             <div class="footer-widget__logo logo-retina">
                                 <a href="index.html">
-                                    <img src="{{asset('images/logo-light.png')}}" alt="Mediox HTML" width="164">
+                                    <img src="{{asset('images/logo-light.png')}}" alt="Nidaan HTML" width="164">
                                 </a>
                             </div><!-- /.footer-widget__logo -->
                             <p class="footer-widget__about-text">Morem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elita Florai Psum Dolor Sit Amet, Consecteture.Borem Ipsum Dolor</p><!-- /.footer-widget__about-text -->
-                            <a href="appointment.html" class="footer-widget__btn">
+                            <a href="#appointmentForm" class="footer-widget__btn">
                                 <span>get consultant</span>
                                 <span class="footer-widget__btn__icon"><i class="icon-up-right-arrow"></i></span>
                             </a><!-- /.footer-widget__btn -->
@@ -313,7 +313,7 @@
                                 <li><a href="services.html">Our Services</a></li>
                                 <li><a href="team.html">Our Team</a></li>
                                 <li><a href="blog-grid-right.html">Latest Blog</a></li>
-                                <li><a href="appointment.html">Appointments</a></li>
+                                <li><a href="#appointmentForm">Appointments</a></li>
                                 <li><a href="faq.html">Help & FAQS</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                             </ul><!-- /.list-unstyled footer-widget__links -->
@@ -421,7 +421,7 @@
                         </div><!-- /.row main-footer__info__row -->
                     </div><!-- /.main-footer__info -->
                     <p class="main-footer__copyright">
-                        &copy; Copyright <span class="dynamic-year"></span> by Mediox HTML Template.
+                        &copy; Copyright <span class="dynamic-year"></span> by Nidaan HTML Template.
                     </p>
                 </div><!-- /.main-footer__bottom -->
             </div><!-- /.container -->
