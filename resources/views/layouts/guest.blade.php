@@ -324,9 +324,9 @@
                             <h2 class="footer-widget__title">recent <span>news</span></h2><!-- /.footer-widget__title -->
                             <ul class="footer-widget__posts list-unstyled">
                                 <li class="footer-widget__posts__item">
-                                    <div class="footer-widget__posts__image">
+                                    {{-- <div class="footer-widget__posts__image">
                                         <img src="{{asset('images/blog/footer-rp-1-1.jpg')}}" alt="Recent posts">
-                                    </div><!-- /.footer-widget__posts__image -->
+                                    </div><!-- /.footer-widget__posts__image --> --}}
                                     <div class="footer-widget__posts__content">
                                         <div class="footer-widget__posts__meta">
                                             <a href="#">
@@ -348,9 +348,9 @@
                                     </div><!-- /.footer-widget__posts__content -->
                                 </li>
                                 <li class="footer-widget__posts__item">
-                                    <div class="footer-widget__posts__image">
+                                    {{-- <div class="footer-widget__posts__image">
                                         <img src="{{asset('images/blog/footer-rp-1-2.jpg')}}" alt="Recent posts">
-                                    </div><!-- /.footer-widget__posts__image -->
+                                    </div><!-- /.footer-widget__posts__image --> --}}
                                     <div class="footer-widget__posts__content">
                                         <div class="footer-widget__posts__meta">
                                             <a href="#">

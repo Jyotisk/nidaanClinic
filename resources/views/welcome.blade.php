@@ -233,63 +233,57 @@
 
                                 <h6 class="sec-title__tagline">about us</h6><!-- /.sec-title__tagline -->
 
-                            </div><!-- /.sec-title__top -->
-                            <h3 class="sec-title__title">Best Healthcare for you <br> Since 2002.</h3>
-                            <!-- /.sec-title__title -->
-                        </div><!-- /.sec-title -->
-                        <div class="about-one__text-box wow fadeInUp" data-wow-duration="1500ms">
-                            <p class="about-one__text">Lorem ipsum dolor sit amet consecteitur adipiscing elit Ut et
-                                massa mi. Aliquam in hendrerit urna. Pellentesque sit a sapien fringilla, mattis ligula
-                                consectietur, ultrices mauris. Maecenas vitae mattis tellus.</p>
-                        </div><!-- /.about-one__text-box -->
-                        <div class="about-one__inner wow fadeInUp" data-wow-duration="1500ms">
-                            <div class="about-one__inner__row row gutter-y-30">
-                                <div class="col-6">
-                                    <div class="about-one__funfact">
-                                        <h3 class="about-one__funfact__number count-box">
-                                            <span class="count-text" data-stop="89" data-speed="1500"></span>
-                                            <span>%</span>
-                                        </h3>
-                                        <h4 class="about-one__funfact__title">Top Medical <br> Project</h4>
-                                    </div><!-- /.about-one__funfact -->
-                                </div><!-- /.col-6 -->
-                                <div class="col-6">
-                                    <div class="about-one__funfact">
-                                        <h3 class="about-one__funfact__number count-box">
-                                            <span class="count-text" data-stop="100" data-speed="1500"></span>
-                                            <span>%</span>
-                                        </h3>
-                                        <h4 class="about-one__funfact__title">Satisficed <br> Patient</h4>
-                                    </div><!-- /.about-one__funfact -->
-                                </div><!-- /.col-6 -->
-                            </div><!-- /.about-one__inner__row row gutter-y-30 -->
-                        </div><!-- /.about-one__inner -->
-                        <div class="about-one__bottom">
-                            <div class="about-one__button wow fadeInUp" data-wow-duration="1500ms"
-                                data-wow-delay="00ms">
-                                <a href="history.html" class="mediox-btn">
-                                    <span>know more</span>
-                                    <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
-                                </a><!-- /.mediox-btn -->
-                            </div><!-- /.about-one__button -->
-                            <div class="about-profile wow fadeInUp" data-wow-duration="1500ms"
-                                data-wow-delay="100ms">
-                                <img src="{{ asset('images/about/about-profile-1-1.jpg') }}" alt="profile"
-                                    class="about-profile__image">
-                                <div class="about-profile__info">
-                                    <h4 class="about-profile__name">Alexsia Jorgina</h4>
-                                    <p class="about-profile__designation">Co. Founder</p>
-                                </div><!-- /.about-profile__info -->
-                            </div><!-- /.about-profile -->
-                        </div><!-- /.about-one__bottom -->
-                    </div><!-- /.about-one__content -->
-                </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-        <img src="{{ asset('images/about/about-1-3.png') }}" alt="about" class="about-one__shape-1">
-        <img src="{{ asset('images/shapes/about-shape-1-1.png') }}" alt="shape" class="about-one__shape-2">
-    </section><!-- /.about-one section-space -->
-    {{-- End of About Us Page --}}
+                                </div><!-- /.sec-title__top -->
+                                <h3 class="sec-title__title">Best Healthcare for you <br> Since 2002.</h3><!-- /.sec-title__title -->
+                            </div><!-- /.sec-title -->
+                            <div class="about-one__text-box wow fadeInUp" data-wow-duration="1500ms">
+                                <p class="about-one__text">Lorem ipsum dolor sit amet consecteitur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit a sapien fringilla, mattis ligula consectietur, ultrices mauris. Maecenas vitae mattis tellus.</p>
+                            </div><!-- /.about-one__text-box -->
+                            <div class="about-one__inner wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="about-one__inner__row row gutter-y-30">
+                                    <div class="col-6">
+                                        <div class="about-one__funfact">
+                                            <h3 class="about-one__funfact__number count-box">
+                                                <span class="count-text" data-stop="89" data-speed="1500"></span>
+                                                <span>%</span>
+                                            </h3>
+                                            <h4 class="about-one__funfact__title">Top Medical <br> Project</h4>
+                                        </div><!-- /.about-one__funfact -->
+                                    </div><!-- /.col-6 -->
+                                    <div class="col-6">
+                                        <div class="about-one__funfact">
+                                            <h3 class="about-one__funfact__number count-box">
+                                                <span class="count-text" data-stop="100" data-speed="1500"></span>
+                                                <span>%</span>
+                                            </h3>
+                                            <h4 class="about-one__funfact__title">Satisficed <br> Patient</h4>
+                                        </div><!-- /.about-one__funfact -->
+                                    </div><!-- /.col-6 -->
+                                </div><!-- /.about-one__inner__row row gutter-y-30 -->
+                            </div><!-- /.about-one__inner -->
+                            <div class="about-one__bottom">
+                                <div class="about-one__button wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                                    <a href="history.html" class="mediox-btn">
+                                        <span>know more</span>
+                                        <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
+                                    </a><!-- /.mediox-btn -->
+                                </div><!-- /.about-one__button -->
+                                <div class="about-profile wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                                    <img src="{{asset('images/about/about-profile-1-1.jpg')}}" alt="profile" class="about-profile__image">
+                                    <div class="about-profile__info">
+                                        <h4 class="about-profile__name">Alexsia Jorgina</h4>
+                                        <p class="about-profile__designation">Co. Founder</p>
+                                    </div><!-- /.about-profile__info -->
+                                </div><!-- /.about-profile -->
+                            </div><!-- /.about-one__bottom -->
+                        </div><!-- /.about-one__content -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+            {{-- <img src="{{asset('images/about/about-1-3.png')}}" alt="about" class="about-one__shape-1"> --}}
+            <img src="{{asset('images/shapes/about-shape-1-1.png')}}" alt="shape" class="about-one__shape-2">
+        </section><!-- /.about-one section-space -->
+        {{-- End of About Us Page --}}
 
     {{-- Services Section --}}
     <section class="services-one section-space-two">
@@ -1398,298 +1392,330 @@
                 }
             }
         }'>
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                        <div class="blog-card__image">
-                            <img src="{{ asset('images/blog/blog-1-2.jpg') }}"
-                                alt="Experimental cancer vaccine both treats and pre Aphex">
-                            <a href="blog-details-right.html" class="blog-card__hover">
-                                <span class="sr-only">Experimental cancer vaccine both treats and pre
-                                    Aphex</span><!-- /.sr-only -->
-                                <span class="blog-card__hover__icon"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                            </a><!-- /.blog-card__hover -->
-                            <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__content">
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#">By Alex Manie</a></li>
-                                <li>07 jan, 2024</li>
-                            </ul><!-- /.list-unstyled blog-card__meta -->
-                            <h3 class="blog-card__title"><a href="blog-details-right.html">Experimental cancer vaccine
-                                    both treats and pre Aphex</a></h3><!-- /.blog-card__title -->
-                            <a href="blog-details-right.html" class="blog-card__btn">
-                                <span class="blog-card__btn__icon">
-                                    <i class="icon-arrow-right-2"></i>
-                                </span>
-                            </a><!-- /.blog-card__btn -->
-                        </div><!-- /.blog-card__content -->
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                        <div class="blog-card__image">
-                            <img src="{{ asset('images/blog/blog-1-2.jpg') }}"
-                                alt="How We Can Cover Injury Pain By Exer cise Duis aute">
-                            <a href="blog-details-right.html" class="blog-card__hover">
-                                <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis
-                                    aute</span><!-- /.sr-only -->
-                                <span class="blog-card__hover__icon"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                            </a><!-- /.blog-card__hover -->
-                            <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__content">
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#">By Alex Manie</a></li>
-                                <li>07 jan, 2024</li>
-                            </ul><!-- /.list-unstyled blog-card__meta -->
-                            <h3 class="blog-card__title"><a href="blog-details-right.html">How We Can Cover Injury
-                                    Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
-                            <a href="blog-details-right.html" class="blog-card__btn">
-                                <span class="blog-card__btn__icon">
-                                    <i class="icon-arrow-right-2"></i>
-                                </span>
-                            </a><!-- /.blog-card__btn -->
-                        </div><!-- /.blog-card__content -->
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                        <div class="blog-card__image">
-                            <img src="{{ asset('images/blog/blog-1-2.jpg') }}"
-                                alt="Experimental cancer vaccine both treats and pre Aphex">
-                            <a href="blog-details-right.html" class="blog-card__hover">
-                                <span class="sr-only">Experimental cancer vaccine both treats and pre
-                                    Aphex</span><!-- /.sr-only -->
-                                <span class="blog-card__hover__icon"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                            </a><!-- /.blog-card__hover -->
-                            <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__content">
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#">By Alex Manie</a></li>
-                                <li>07 jan, 2024</li>
-                            </ul><!-- /.list-unstyled blog-card__meta -->
-                            <h3 class="blog-card__title"><a href="blog-details-right.html">Experimental cancer
-                                    vaccine both treats and pre Aphex</a></h3><!-- /.blog-card__title -->
-                            <a href="blog-details-right.html" class="blog-card__btn">
-                                <span class="blog-card__btn__icon">
-                                    <i class="icon-arrow-right-2"></i>
-                                </span>
-                            </a><!-- /.blog-card__btn -->
-                        </div><!-- /.blog-card__content -->
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                        <div class="blog-card__image">
-                            <img src="{{ asset('images/blog/blog-1-2.jpg') }}"
-                                alt="How We Can Cover Injury Pain By Exer cise Duis aute">
-                            <a href="blog-details-right.html" class="blog-card__hover">
-                                <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis
-                                    aute</span><!-- /.sr-only -->
-                                <span class="blog-card__hover__icon"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                            </a><!-- /.blog-card__hover -->
-                            <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__content">
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#">By Alex Manie</a></li>
-                                <li>07 jan, 2024</li>
-                            </ul><!-- /.list-unstyled blog-card__meta -->
-                            <h3 class="blog-card__title"><a href="blog-details-right.html">How We Can Cover Injury
-                                    Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
-                            <a href="blog-details-right.html" class="blog-card__btn">
-                                <span class="blog-card__btn__icon">
-                                    <i class="icon-arrow-right-2"></i>
-                                </span>
-                            </a><!-- /.blog-card__btn -->
-                        </div><!-- /.blog-card__content -->
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                        <div class="blog-card__image">
-                            <img src="{{ asset('images/blog/blog-1-2.jpg') }}"
-                                alt="Experimental cancer vaccine both treats and pre Aphex">
-                            <a href="blog-details-right.html" class="blog-card__hover">
-                                <span class="sr-only">Experimental cancer vaccine both treats and pre
-                                    Aphex</span><!-- /.sr-only -->
-                                <span class="blog-card__hover__icon"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                            </a><!-- /.blog-card__hover -->
-                            <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__content">
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#">By Alex Manie</a></li>
-                                <li>07 jan, 2024</li>
-                            </ul><!-- /.list-unstyled blog-card__meta -->
-                            <h3 class="blog-card__title"><a href="blog-details-right.html">Experimental cancer
-                                    vaccine both treats and pre Aphex</a></h3><!-- /.blog-card__title -->
-                            <a href="blog-details-right.html" class="blog-card__btn">
-                                <span class="blog-card__btn__icon">
-                                    <i class="icon-arrow-right-2"></i>
-                                </span>
-                            </a><!-- /.blog-card__btn -->
-                        </div><!-- /.blog-card__content -->
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                        <div class="blog-card__image">
-                            <img src="{{ asset('images/blog/blog-1-2.jpg') }}"
-                                alt="How We Can Cover Injury Pain By Exer cise Duis aute">
-                            <a href="blog-details-right.html" class="blog-card__hover">
-                                <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis
-                                    aute</span><!-- /.sr-only -->
-                                <span class="blog-card__hover__icon"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                            </a><!-- /.blog-card__hover -->
-                            <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__content">
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#">By Alex Manie</a></li>
-                                <li>07 jan, 2024</li>
-                            </ul><!-- /.list-unstyled blog-card__meta -->
-                            <h3 class="blog-card__title"><a href="blog-details-right.html">How We Can Cover Injury
-                                    Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
-                            <a href="blog-details-right.html" class="blog-card__btn">
-                                <span class="blog-card__btn__icon">
-                                    <i class="icon-arrow-right-2"></i>
-                                </span>
-                            </a><!-- /.blog-card__btn -->
-                        </div><!-- /.blog-card__content -->
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                        <div class="blog-card__image">
-                            <img src="{{ asset('images/blog/blog-1-7.jpg') }}"
-                                alt="Experimental cancer vaccine both treats and pre Aphex">
-                            <a href="blog-details-right.html" class="blog-card__hover">
-                                <span class="sr-only">Experimental cancer vaccine both treats and pre
-                                    Aphex</span><!-- /.sr-only -->
-                                <span class="blog-card__hover__icon"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                            </a><!-- /.blog-card__hover -->
-                            <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__content">
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#">By Alex Manie</a></li>
-                                <li>07 jan, 2024</li>
-                            </ul><!-- /.list-unstyled blog-card__meta -->
-                            <h3 class="blog-card__title"><a href="blog-details-right.html">Experimental cancer
-                                    vaccine both treats and pre Aphex</a></h3><!-- /.blog-card__title -->
-                            <a href="blog-details-right.html" class="blog-card__btn">
-                                <span class="blog-card__btn__icon">
-                                    <i class="icon-arrow-right-2"></i>
-                                </span>
-                            </a><!-- /.blog-card__btn -->
-                        </div><!-- /.blog-card__content -->
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                        <div class="blog-card__image">
-                            <img src="{{ asset('images/blog/blog-1-8.jpg') }}"
-                                alt="How We Can Cover Injury Pain By Exer cise Duis aute">
-                            <a href="blog-details-right.html" class="blog-card__hover">
-                                <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis
-                                    aute</span><!-- /.sr-only -->
-                                <span class="blog-card__hover__icon"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                            </a><!-- /.blog-card__hover -->
-                            <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__content">
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#">By Alex Manie</a></li>
-                                <li>07 jan, 2024</li>
-                            </ul><!-- /.list-unstyled blog-card__meta -->
-                            <h3 class="blog-card__title"><a href="blog-details-right.html">How We Can Cover Injury
-                                    Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
-                            <a href="blog-details-right.html" class="blog-card__btn">
-                                <span class="blog-card__btn__icon">
-                                    <i class="icon-arrow-right-2"></i>
-                                </span>
-                            </a><!-- /.blog-card__btn -->
-                        </div><!-- /.blog-card__content -->
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                        <div class="blog-card__image">
-                            <img src="{{ asset('images/blog/blog-1-9.jpg') }}"
-                                alt="How We Can Cover Injury Pain By Exer cise Duis aute">
-                            <a href="#" class="blog-card__hover">
-                                <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis
-                                    aute</span><!-- /.sr-only -->
-                                <span class="blog-card__hover__icon"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                            </a><!-- /.blog-card__hover -->
-                            <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__content">
-                            <ul class="list-unstyled blog-card__meta">
-                                <li><a href="#">By Alex Manie</a></li>
-                                <li>07 jan, 2024</li>
-                            </ul><!-- /.list-unstyled blog-card__meta -->
-                            <h3 class="blog-card__title"><a href="#">How We Can Cover Injury Pain By Exer cise
-                                    Duis aute</a></h3><!-- /.blog-card__title -->
-                            <a href="#" class="blog-card__btn">
-                                <span class="blog-card__btn__icon">
-                                    <i class="icon-arrow-right-2"></i>
-                                </span>
-                            </a><!-- /.blog-card__btn -->
-                        </div><!-- /.blog-card__content -->
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-            </div><!-- /.blog-one__carousel -->
-        </div><!-- /.container -->
-    </section><!-- /.blog-one section-space -->
-    {{-- End of Blog Section --}}
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
+                            <div class="blog-card__image">
+                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
+                                <a href="blog-details-right.html" class="blog-card__hover">
+                                    <span class="sr-only">Experimental cancer vaccine both treats and pre Aphex</span><!-- /.sr-only -->
+                                    <span class="blog-card__hover__icon"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
+                                </a><!-- /.blog-card__hover -->
+                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
+                            </div><!-- /.blog-card__image -->
+                            <div class="blog-card__content">
+                                <ul class="list-unstyled blog-card__meta">
+                                    <li><a href="#">By Alex Manie</a></li>
+                                    <li>07 jan, 2024</li>
+                                </ul><!-- /.list-unstyled blog-card__meta -->
+                                <h3 class="blog-card__title"><a href="blog-details-right.html">Experimental cancer vaccine both treats and pre Aphex</a></h3><!-- /.blog-card__title -->
+                                <a href="blog-details-right.html" class="blog-card__btn">
+                                    <span class="blog-card__btn__icon">
+                                        <i class="icon-arrow-right-2"></i>
+                                    </span>
+                                </a><!-- /.blog-card__btn -->
+                            </div><!-- /.blog-card__content -->
+                        </div><!-- /.blog-card -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
+                            <div class="blog-card__image">
+                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
+                                <a href="blog-details-right.html" class="blog-card__hover">
+                                    <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis aute</span><!-- /.sr-only -->
+                                    <span class="blog-card__hover__icon"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
+                                </a><!-- /.blog-card__hover -->
+                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
+                            </div><!-- /.blog-card__image -->
+                            <div class="blog-card__content">
+                                <ul class="list-unstyled blog-card__meta">
+                                    <li><a href="#">By Alex Manie</a></li>
+                                    <li>07 jan, 2024</li>
+                                </ul><!-- /.list-unstyled blog-card__meta -->
+                                <h3 class="blog-card__title"><a href="blog-details-right.html">How We Can Cover Injury Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
+                                <a href="blog-details-right.html" class="blog-card__btn">
+                                    <span class="blog-card__btn__icon">
+                                        <i class="icon-arrow-right-2"></i>
+                                    </span>
+                                </a><!-- /.blog-card__btn -->
+                            </div><!-- /.blog-card__content -->
+                        </div><!-- /.blog-card -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
+                            <div class="blog-card__image">
+                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
+                                <a href="blog-details-right.html" class="blog-card__hover">
+                                    <span class="sr-only">Experimental cancer vaccine both treats and pre Aphex</span><!-- /.sr-only -->
+                                    <span class="blog-card__hover__icon"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
+                                </a><!-- /.blog-card__hover -->
+                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
+                            </div><!-- /.blog-card__image -->
+                            <div class="blog-card__content">
+                                <ul class="list-unstyled blog-card__meta">
+                                    <li><a href="#">By Alex Manie</a></li>
+                                    <li>07 jan, 2024</li>
+                                </ul><!-- /.list-unstyled blog-card__meta -->
+                                <h3 class="blog-card__title"><a href="blog-details-right.html">Experimental cancer vaccine both treats and pre Aphex</a></h3><!-- /.blog-card__title -->
+                                <a href="blog-details-right.html" class="blog-card__btn">
+                                    <span class="blog-card__btn__icon">
+                                        <i class="icon-arrow-right-2"></i>
+                                    </span>
+                                </a><!-- /.blog-card__btn -->
+                            </div><!-- /.blog-card__content -->
+                        </div><!-- /.blog-card -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
+                            <div class="blog-card__image">
+                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
+                                <a href="blog-details-right.html" class="blog-card__hover">
+                                    <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis aute</span><!-- /.sr-only -->
+                                    <span class="blog-card__hover__icon"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
+                                </a><!-- /.blog-card__hover -->
+                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
+                            </div><!-- /.blog-card__image -->
+                            <div class="blog-card__content">
+                                <ul class="list-unstyled blog-card__meta">
+                                    <li><a href="#">By Alex Manie</a></li>
+                                    <li>07 jan, 2024</li>
+                                </ul><!-- /.list-unstyled blog-card__meta -->
+                                <h3 class="blog-card__title"><a href="blog-details-right.html">How We Can Cover Injury Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
+                                <a href="blog-details-right.html" class="blog-card__btn">
+                                    <span class="blog-card__btn__icon">
+                                        <i class="icon-arrow-right-2"></i>
+                                    </span>
+                                </a><!-- /.blog-card__btn -->
+                            </div><!-- /.blog-card__content -->
+                        </div><!-- /.blog-card -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
+                            <div class="blog-card__image">
+                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
+                                <a href="blog-details-right.html" class="blog-card__hover">
+                                    <span class="sr-only">Experimental cancer vaccine both treats and pre Aphex</span><!-- /.sr-only -->
+                                    <span class="blog-card__hover__icon"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
+                                </a><!-- /.blog-card__hover -->
+                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
+                            </div><!-- /.blog-card__image -->
+                            <div class="blog-card__content">
+                                <ul class="list-unstyled blog-card__meta">
+                                    <li><a href="#">By Alex Manie</a></li>
+                                    <li>07 jan, 2024</li>
+                                </ul><!-- /.list-unstyled blog-card__meta -->
+                                <h3 class="blog-card__title"><a href="blog-details-right.html">Experimental cancer vaccine both treats and pre Aphex</a></h3><!-- /.blog-card__title -->
+                                <a href="blog-details-right.html" class="blog-card__btn">
+                                    <span class="blog-card__btn__icon">
+                                        <i class="icon-arrow-right-2"></i>
+                                    </span>
+                                </a><!-- /.blog-card__btn -->
+                            </div><!-- /.blog-card__content -->
+                        </div><!-- /.blog-card -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
+                            <div class="blog-card__image">
+                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
+                                <a href="blog-details-right.html" class="blog-card__hover">
+                                    <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis aute</span><!-- /.sr-only -->
+                                    <span class="blog-card__hover__icon"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
+                                </a><!-- /.blog-card__hover -->
+                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
+                            </div><!-- /.blog-card__image -->
+                            <div class="blog-card__content">
+                                <ul class="list-unstyled blog-card__meta">
+                                    <li><a href="#">By Alex Manie</a></li>
+                                    <li>07 jan, 2024</li>
+                                </ul><!-- /.list-unstyled blog-card__meta -->
+                                <h3 class="blog-card__title"><a href="blog-details-right.html">How We Can Cover Injury Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
+                                <a href="blog-details-right.html" class="blog-card__btn">
+                                    <span class="blog-card__btn__icon">
+                                        <i class="icon-arrow-right-2"></i>
+                                    </span>
+                                </a><!-- /.blog-card__btn -->
+                            </div><!-- /.blog-card__content -->
+                        </div><!-- /.blog-card -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
+                            <div class="blog-card__image">
+                                <img src="{{asset('images/blog/blog-1-7.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
+                                <a href="blog-details-right.html" class="blog-card__hover">
+                                    <span class="sr-only">Experimental cancer vaccine both treats and pre Aphex</span><!-- /.sr-only -->
+                                    <span class="blog-card__hover__icon"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
+                                </a><!-- /.blog-card__hover -->
+                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
+                            </div><!-- /.blog-card__image -->
+                            <div class="blog-card__content">
+                                <ul class="list-unstyled blog-card__meta">
+                                    <li><a href="#">By Alex Manie</a></li>
+                                    <li>07 jan, 2024</li>
+                                </ul><!-- /.list-unstyled blog-card__meta -->
+                                <h3 class="blog-card__title"><a href="blog-details-right.html">Experimental cancer vaccine both treats and pre Aphex</a></h3><!-- /.blog-card__title -->
+                                <a href="blog-details-right.html" class="blog-card__btn">
+                                    <span class="blog-card__btn__icon">
+                                        <i class="icon-arrow-right-2"></i>
+                                    </span>
+                                </a><!-- /.blog-card__btn -->
+                            </div><!-- /.blog-card__content -->
+                        </div><!-- /.blog-card -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
+                            <div class="blog-card__image">
+                                <img src="{{asset('images/blog/blog-1-8.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
+                                <a href="blog-details-right.html" class="blog-card__hover">
+                                    <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis aute</span><!-- /.sr-only -->
+                                    <span class="blog-card__hover__icon"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
+                                </a><!-- /.blog-card__hover -->
+                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
+                            </div><!-- /.blog-card__image -->
+                            <div class="blog-card__content">
+                                <ul class="list-unstyled blog-card__meta">
+                                    <li><a href="#">By Alex Manie</a></li>
+                                    <li>07 jan, 2024</li>
+                                </ul><!-- /.list-unstyled blog-card__meta -->
+                                <h3 class="blog-card__title"><a href="blog-details-right.html">How We Can Cover Injury Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
+                                <a href="blog-details-right.html" class="blog-card__btn">
+                                    <span class="blog-card__btn__icon">
+                                        <i class="icon-arrow-right-2"></i>
+                                    </span>
+                                </a><!-- /.blog-card__btn -->
+                            </div><!-- /.blog-card__content -->
+                        </div><!-- /.blog-card -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
+                            <div class="blog-card__image">
+                                <img src="{{asset('images/blog/blog-1-9.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
+                                <a href="#" class="blog-card__hover">
+                                    <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis aute</span><!-- /.sr-only -->
+                                    <span class="blog-card__hover__icon"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
+                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
+                                </a><!-- /.blog-card__hover -->
+                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
+                            </div><!-- /.blog-card__image -->
+                            <div class="blog-card__content">
+                                <ul class="list-unstyled blog-card__meta">
+                                    <li><a href="#">By Alex Manie</a></li>
+                                    <li>07 jan, 2024</li>
+                                </ul><!-- /.list-unstyled blog-card__meta -->
+                                <h3 class="blog-card__title"><a href="#">How We Can Cover Injury Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
+                                <a href="#" class="blog-card__btn">
+                                    <span class="blog-card__btn__icon">
+                                        <i class="icon-arrow-right-2"></i>
+                                    </span>
+                                </a><!-- /.blog-card__btn -->
+                            </div><!-- /.blog-card__content -->
+                        </div><!-- /.blog-card -->
+                    </div><!-- /.item -->
+                </div><!-- /.blog-one__carousel -->
+            </div><!-- /.container -->
+        </section><!-- /.blog-one section-space -->
+        {{-- End of Blog Section --}}
+
+        {{-- Client Section --}}
+         {{-- <div class="client-carousel @@extraClassName">
+            <div class="container">
+                <div class="client-carousel__one mediox-owl__carousel owl-theme owl-carousel" data-owl-options='{
+            "items": 5,
+            "margin": 65,
+            "smartSpeed": 700,
+            "loop":true,
+            "autoplay": 6000,
+            "nav":false,
+            "dots":false,
+            "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"],
+            "responsive":{
+                "0":{
+                    "items": 1,
+                    "margin": 30
+                },
+                "361":{
+                    "items": 2,
+                    "margin": 40
+                },
+                "576":{
+                    "items": 3,
+                    "margin": 60
+                },
+                "768":{
+                    "items": 4,
+                    "margin": 60
+                },
+                "992":{
+                    "items": 5,
+                    "margin": 60
+                },
+                "1200":{
+                    "items": 5,
+                    "margin": 80
+                }
+            }
+            }'>
+                    <div class="client-carousel__one__item">
+                        <img src="{{asset('images/brand/brand-1-1.png')}}" alt="mediox" class="client-carousel__one__image">
+                    </div><!-- /.owl-slide-item-->
+                    <div class="client-carousel__one__item">
+                        <img src="{{asset('images/brand/brand-1-2.png')}}" alt="mediox" class="client-carousel__one__image">
+                    </div><!-- /.owl-slide-item-->
+                    <div class="client-carousel__one__item">
+                        <img src="{{asset('images/brand/brand-1-3.png')}}" alt="mediox" class="client-carousel__one__image">
+                    </div><!-- /.owl-slide-item-->
+                    <div class="client-carousel__one__item">
+                        <img src="{{asset('images/brand/brand-1-4.png')}}" alt="mediox" class="client-carousel__one__image">
+                    </div><!-- /.owl-slide-item-->
+                    <div class="client-carousel__one__item">
+                        <img src="{{asset('images/brand/brand-1-5.png')}}" alt="mediox" class="client-carousel__one__image">
+                    </div><!-- /.owl-slide-item-->
+                </div><!-- /.thm-owl__slider -->
+            </div><!-- /.container -->
+        </div><!-- /.client-carousel --> --}}
+        {{-- End of Client Section --}}
 </x-guest-layout>
 <script>
     $(document).ready(function() {
