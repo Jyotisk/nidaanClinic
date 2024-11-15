@@ -240,7 +240,7 @@
                     </div><!-- /.col-lg-6 -->
                 </div><!-- /.row -->
             </div><!-- /.container -->
-            <img src="{{asset('images/about/about-1-3.png')}}" alt="about" class="about-one__shape-1">
+            {{-- <img src="{{asset('images/about/about-1-3.png')}}" alt="about" class="about-one__shape-1"> --}}
             <img src="{{asset('images/shapes/about-shape-1-1.png')}}" alt="shape" class="about-one__shape-2">
         </section><!-- /.about-one section-space -->
         {{-- End of About Us Page --}}
@@ -1615,7 +1615,7 @@
         {{-- End of Blog Section --}}
 
         {{-- Client Section --}}
-         <div class="client-carousel @@extraClassName">
+         {{-- <div class="client-carousel @@extraClassName">
             <div class="container">
                 <div class="client-carousel__one mediox-owl__carousel owl-theme owl-carousel" data-owl-options='{
             "items": 5,
@@ -1670,7 +1670,7 @@
                     </div><!-- /.owl-slide-item-->
                 </div><!-- /.thm-owl__slider -->
             </div><!-- /.container -->
-        </div><!-- /.client-carousel -->
+        </div><!-- /.client-carousel --> --}}
         {{-- End of Client Section --}}
 </x-guest-layout>
 <script>
