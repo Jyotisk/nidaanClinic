@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\ExceptionHandler;
 use App\Models\User\Specialist;
+use App\Models\User\SpecialistDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class SpecilistController extends Controller
@@ -23,9 +27,8 @@ class SpecilistController extends Controller
             $request->all(),
             [
                 'department_name' => 'required',
-                'doctor_image' => 'required',
                 'descriptions' => 'required',
-                'doctor_image' => 'doctor_image|image|mimes:jpeg,png,jpg,gif,webp|max:5500', // Adjust the validation rules as needed
+                'doctor_image' => 'image|mimes:jpeg,png,jpg,gif,webp|max:5500', // Adjust the validation rules as needed
             ],
         );
         if ($validator->fails()) {
@@ -62,7 +65,38 @@ class SpecilistController extends Controller
                 $specialists->doctor_name = $path;
             }
             $specialists->save();
-        } catch (\Throwable $th) {
+
+            $specialistDetail = [];
+            foreach ($request->header as $row) {
+                
+                Log::info($row);
+                $specialistDetail[] = [
+                    'specialist_id' => $specialists->id,
+                    'header' => $row->header,
+                    'specialist_detail' => $row->specialist_detail,
+                ];
+            }
+            $specialistDetail = collect($specialistDetail);
+            $chunks = $specialistDetail->chunk(500);
+
+            foreach ($chunks as $chunk) {
+                SpecialistDetail::insert($chunk->toArray());
+            }
+            DB::commit();
+        } catch (\Throwable $e) {
+            DB::rollBack();
+            Storage::delete($path);
+            return $e;
+            $exception = new ExceptionHandler();
+            $exception->controller_function = "SpecilistController.store";
+            $exception->error = $e;
+            $exception->date = date('Y-m-d');
+            $exception->user_id = Auth::user()->id;
+            $exception->save();
+            return response()->json([
+                'response' => 'error',
+                'message' => 'Something went wrong',
+            ]);
             //throw $th;
         }
     }

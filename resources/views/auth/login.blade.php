@@ -21,7 +21,7 @@
                 <div class="col-xl-12">
                     <div class="appointment-one__content">
                         <h3 class="appointment-one__title">Book An Appointment</h3><!-- /.appointment-one__title -->
-                        <form class="appointment-one__form contact-form-validated form-one wow fadeInUp" data-wow-duration="1500ms" id="appointmentForm" method="post" action="{{ route('login') }}">
+                        <form  method="post" action="{{ route('login') }}">
                             @csrf
                             <!-- Email Address -->
                                 <div class="form-one__control">
