@@ -66,7 +66,7 @@
                                     <p class="main-slider-one__patients__text">Loved & Satisficed Patients</p>
                                 </div><!-- /.main-slider-one__patients__content -->
                             </div><!-- /.main-slider-one__patients -->
-                            <img src="{{asset('images/main-slider/main-slider-1-1.png')}}" alt="doctor">
+                            <img src="{{asset('images/main-slider/main-slider-1-1.jpg')}}" alt="doctor">
                         </div><!-- /.main-slider-one__image -->
                     </div><!-- /.container -->
                     <img src="{{asset('images/shapes/main-slider-shape-1-1.png')}}" alt="shape" class="main-slider-one__shape-1">
@@ -843,7 +843,7 @@
                             </div><!-- /.item -->
                             <div class="item">
                                 <div class="team-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                                    <img src="{{asset('images/team/team-1-2.jpg')}}" alt="Mike Hardson" class="team-card__image">
+                                    <img src="{{asset('images/team/team-1-1.jpg')}}" alt="Mike Hardson" class="team-card__image">
                                     <div class="team-card__identity">
                                         <h3 class="team-card__name"><a href="team-details.html">Mike Hardson</a></h3>
                                         <p class="team-card__designation">Cross-pollination overcome key issues to meet key</p>
@@ -870,7 +870,7 @@
                             </div><!-- /.item -->
                             <div class="item">
                                 <div class="team-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='200ms'>
-                                    <img src="{{asset('images/team/team-1-3.jpg')}}" alt="Keith Griffin" class="team-card__image">
+                                    <img src="{{asset('images/team/team-1-1.jpg')}}" alt="Keith Griffin" class="team-card__image">
                                     <div class="team-card__identity">
                                         <h3 class="team-card__name"><a href="team-details.html">Keith Griffin</a></h3>
                                         <p class="team-card__designation">Increase the resolution, scale it up we need a larger print</p>
@@ -897,7 +897,7 @@
                             </div><!-- /.item -->
                             <div class="item">
                                 <div class="team-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                                    <img src="{{asset('images/team/team-1-4.jpg')}}" alt="Adolfo Carr" class="team-card__image">
+                                    <img src="{{asset('images/team/team-1-1.jpg')}}" alt="Adolfo Carr" class="team-card__image">
                                     <div class="team-card__identity">
                                         <h3 class="team-card__name"><a href="team-details.html">Adolfo Carr</a></h3>
                                         <p class="team-card__designation">Target rich environment form without content style</p>
@@ -924,7 +924,7 @@
                             </div><!-- /.item -->
                             <div class="item">
                                 <div class="team-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                                    <img src="{{asset('images/team/team-1-5.jpg')}}" alt="kevin martin" class="team-card__image">
+                                    <img src="{{asset('images/team/team-1-1.jpg')}}" alt="kevin martin" class="team-card__image">
                                     <div class="team-card__identity">
                                         <h3 class="team-card__name"><a href="team-details.html">kevin martin</a></h3>
                                         <p class="team-card__designation">Strategic staircase donuts in the break room 4-blocker</p>
@@ -951,7 +951,7 @@
                             </div><!-- /.item -->
                             <div class="item">
                                 <div class="team-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='200ms'>
-                                    <img src="{{asset('images/team/team-1-6.jpg')}}" alt="Jhon Doe" class="team-card__image">
+                                    <img src="{{asset('images/team/team-1-1.jpg')}}" alt="Jhon Doe" class="team-card__image">
                                     <div class="team-card__identity">
                                         <h3 class="team-card__name"><a href="team-details.html">Jhon Doe</a></h3>
                                         <p class="team-card__designation">Draft policy ppml proposal pipeline, for pass the mayo</p>
@@ -1143,8 +1143,8 @@
                     </div><!-- /.col-xl-6 col-lg-9 -->
                     <div class="col-xl-6 wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="00ms">
                         <div class="faq-one__image">
-                            <img src="{{asset('images/resources/faq-1-1.png')}}" alt="faq" class="faq-one__image__one">
-                            <img src="{{asset('images/resources/faq-1-2.png')}}" alt="faq" class="faq-one__image__two">
+                            <img src="{{asset('images/resources/faq-1-1.jpg')}}" alt="faq" class="faq-one__image__one">
+                            {{-- <img src="{{asset('images/resources/faq-1-2.png')}}" alt="faq" class="faq-one__image__two"> --}}
                             <img src="{{asset('images/shapes/faq-shape-1-1.png')}}" alt="shape" class="faq-one__image__shape-1">
                         </div><!-- /.faq-one__image -->
                     </div><!-- /.col-xl-6 -->
@@ -1228,7 +1228,7 @@
                     <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
                         <div class="testimonial-card">
                             <div class="testimonial-card__image">
-                                <img src="{{asset('images/testimonials/testimonial-1-2.jpg')}}" alt="Sarah Albert">
+                                <img src="{{asset('images/testimonials/testimonial-1-1.jpg')}}" alt="Sarah Albert">
                             </div>
                             <div class="testimonial-card__content">
                                 <div class="testimonial-card__quote-icon">
@@ -1262,7 +1262,7 @@
                     <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
                         <div class="testimonial-card">
                             <div class="testimonial-card__image">
-                                <img src="{{asset('images/testimonials/testimonial-1-3.jpg')}}" alt="Kevin Martin">
+                                <img src="{{asset('images/testimonials/testimonial-1-1.jpg')}}" alt="Kevin Martin">
                             </div>
                             <div class="testimonial-card__content">
                                 <div class="testimonial-card__quote-icon">
@@ -1351,7 +1351,7 @@
                     <div class="item">
                         <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
                             <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-1.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
+                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
                                 <a href="blog-details-right.html" class="blog-card__hover">
                                     <span class="sr-only">Experimental cancer vaccine both treats and pre Aphex</span><!-- /.sr-only -->
                                     <span class="blog-card__hover__icon"></span>
@@ -1409,7 +1409,7 @@
                     <div class="item">
                         <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
                             <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-3.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
+                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
                                 <a href="blog-details-right.html" class="blog-card__hover">
                                     <span class="sr-only">Experimental cancer vaccine both treats and pre Aphex</span><!-- /.sr-only -->
                                     <span class="blog-card__hover__icon"></span>
@@ -1438,7 +1438,7 @@
                     <div class="item">
                         <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
                             <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-4.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
+                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
                                 <a href="blog-details-right.html" class="blog-card__hover">
                                     <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis aute</span><!-- /.sr-only -->
                                     <span class="blog-card__hover__icon"></span>
@@ -1467,7 +1467,7 @@
                     <div class="item">
                         <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
                             <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-5.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
+                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
                                 <a href="blog-details-right.html" class="blog-card__hover">
                                     <span class="sr-only">Experimental cancer vaccine both treats and pre Aphex</span><!-- /.sr-only -->
                                     <span class="blog-card__hover__icon"></span>
@@ -1496,7 +1496,7 @@
                     <div class="item">
                         <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
                             <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-6.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
+                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
                                 <a href="blog-details-right.html" class="blog-card__hover">
                                     <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis aute</span><!-- /.sr-only -->
                                     <span class="blog-card__hover__icon"></span>
