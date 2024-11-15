@@ -377,7 +377,7 @@
                 </div><!-- /.row -->
                 <div class="main-footer__bottom">
                     <div class="main-footer__info">
-                        <div class="main-footer__info__bg" style="background-image: url('images/backgrounds/footer-contact-bg.jpg');"></div><!-- /.main-footer__info__bg -->
+                        <div class="main-footer__info__bg" style=""></div><!-- /.main-footer__info__bg -->
                         <div class="row main-footer__info__row gutter-y-40">
                             <div class="main-footer__info__col-1 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
                                 <div class="main-footer__contact">
