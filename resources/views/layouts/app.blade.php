@@ -11,6 +11,7 @@
       rel="icon"
       href="{{asset('logo.svg')}}"
       type="image/x-icon"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Fonts and icons -->
     <script src="{{asset('admin_assets/js/plugin/webfont/webfont.min.js')}}"></script>
