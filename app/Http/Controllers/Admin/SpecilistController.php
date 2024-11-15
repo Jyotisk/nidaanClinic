@@ -52,13 +52,14 @@ class SpecilistController extends Controller
         DB::beginTransaction();
         try {
             $specialists = new Specialist();
-            $specialists->department_name = $request->departmet_name;
+            $specialists->department_name = $request->department_name;
             $specialists->doctor_image = $request->doctor_image;
             $specialists->descriptions = $request->descriptions;
             $specialists->facebook_link = $request->facebook_link;
             $specialists->instagram_link = $request->instagram_link;
             $specialists->twitter_link = $request->twitter_link;
             $specialists->linked_in_link = $request->linked_in_link;
+            $specialists->status = true;
             $specialists->entry_by = Auth::user()->id;
             if ($request->file('doctor_image')) {
                 $path = $request->doctor_image->store('public/gallary');
@@ -67,13 +68,13 @@ class SpecilistController extends Controller
             $specialists->save();
 
             $specialistDetail = [];
-            foreach ($request->header as $row) {
-                
+            foreach ($request->header as $key => $row) {
+
                 Log::info($row);
                 $specialistDetail[] = [
                     'specialist_id' => $specialists->id,
-                    'header' => $row->header,
-                    'specialist_detail' => $row->specialist_detail,
+                    'header' => $row,
+                    'specialist_detail' => $request->specialist_detail[$key],
                 ];
             }
             $specialistDetail = collect($specialistDetail);
@@ -83,10 +84,13 @@ class SpecilistController extends Controller
                 SpecialistDetail::insert($chunk->toArray());
             }
             DB::commit();
+            return response()->json([
+                'response' => 'success',
+                'message' => 'Doctor Details Inserted Successfully',
+            ]);
         } catch (\Throwable $e) {
             DB::rollBack();
             Storage::delete($path);
-            return $e;
             $exception = new ExceptionHandler();
             $exception->controller_function = "SpecilistController.store";
             $exception->error = $e;
@@ -97,7 +101,6 @@ class SpecilistController extends Controller
                 'response' => 'error',
                 'message' => 'Something went wrong',
             ]);
-            //throw $th;
         }
     }
 }
