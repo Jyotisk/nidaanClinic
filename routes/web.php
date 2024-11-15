@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\FacilityController;
 use App\Http\Controllers\Admin\SpecilistController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MenuItemController;
@@ -40,12 +41,17 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
         Route::get('getMeuSubItmDetail', [MenuItemController::class, 'getMeuSubItmDetail'])->name('getMeuSubItmDetail');
         Route::post('EditMenuItem', [MenuItemController::class, 'EditMenuItem'])->name('EditMenuItem');
         Route::get('mentu-list', [MenuItemController::class, 'getDropdownData'])->name('getDropdownData');
-
     });
-
+    //specialists
     Route::get('specialist-lists', [SpecilistController::class, 'index'])->name('SpecialistLists');
     Route::post('specialist-lists', [SpecilistController::class, 'store'])->name('SubmitSpecialist');
     Route::post('edit-specialist-lists', [SpecilistController::class, 'edit'])->name('EditSpecialist');
+
+
+      //Facilities
+      Route::get('facility-lists', [FacilityController::class, 'index'])->name('FacilityLists');
+      Route::post('facility-lists', [FacilityController::class, 'store'])->name('SubmitFacility');
+      Route::post('edit-facility-lists', [FacilityController::class, 'edit'])->name('EditFacility');
 
     Route::get('reset-password', [ResetPasswordController::class, 'create'])
         ->name('passwordReset');
