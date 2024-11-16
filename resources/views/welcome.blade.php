@@ -155,7 +155,7 @@
                                 </div><!-- /.description -->
                                 <div class="main-slider-one__button">
                                     <div class="main-slider-one__button__inner">
-                                        <a href="services.html" class="main-slider-one__btn mediox-btn">
+                                        <a href="#" class="main-slider-one__btn mediox-btn">
                                             <span>view all service</span>
                                             <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                                         </a><!-- /.mediox-btn -->
@@ -175,13 +175,13 @@
                             </span><!-- /.main-slider-one__patients__icon -->
                             <div class="main-slider-one__patients__content">
                                 <h3 class="main-slider-one__patients__number count-box">
-                                    <span class="count-text" data-stop="100" data-speed="1500"></span>
+                                    <span class="count-text" data-stop="100" data-speed="1500">100</span>
                                     <span>%</span>
                                 </h3>
                                 <p class="main-slider-one__patients__text">Loved & Satisficed Patients</p>
                             </div><!-- /.main-slider-one__patients__content -->
                         </div><!-- /.main-slider-one__patients -->
-                        <img src="{{ asset('images/main-slider/main-slider-1-1.png') }}" alt="doctor">
+                        <img src="{{ asset('images/main-slider/main-slider-1-1.jpg') }}" alt="doctor">
                     </div><!-- /.main-slider-one__image -->
                 </div><!-- /.container -->
                 <img src="{{ asset('images/shapes/main-slider-shape-1-1.png') }}" alt="shape"
