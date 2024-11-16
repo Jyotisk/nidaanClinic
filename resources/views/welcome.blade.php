@@ -1177,7 +1177,7 @@
                 </div><!-- /.col-xl-6 col-lg-9 -->
                 <div class="col-xl-6 wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="00ms">
                     <div class="faq-one__image">
-                        <img src="{{ asset('images/resources/faq-1-1.jpg') }}" alt="faq"
+                        <img src="{{ asset('images/resources/faq-1-1.png') }}" alt="faq"
                             class="faq-one__image__one">
                         {{-- <img src="{{asset('images/resources/faq-1-2.png')}}" alt="faq" class="faq-one__image__two"> --}}
                         <img src="{{ asset('images/shapes/faq-shape-1-1.png') }}" alt="shape"
