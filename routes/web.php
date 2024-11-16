@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [PublicController::class, 'index'])->name('index');
+Route::get('/about', [PublicController::class, 'aboutUs'])->name('about');
+
 Route::post('book-appointment', [PublicController::class, 'BookAppointment'])->name('BookAppointment');
 
 Route::get('dashboard', [DashboardController::class, 'Index'])->name('dashboard');

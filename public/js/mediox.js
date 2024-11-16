@@ -246,6 +246,7 @@
 
   function dynamicCurrentMenuClass(selector) {
     let FileName = window.location.href.split("/").reverse()[0];
+    FileName = "/" + FileName;
 
     selector.find("li").each(function () {
       let anchor = $(this).find("a");

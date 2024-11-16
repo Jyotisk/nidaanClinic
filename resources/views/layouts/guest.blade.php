@@ -64,18 +64,18 @@
                         <nav class="main-header__nav main-menu">
                             <ul class="main-menu__list">
 
-                                <li class="dropdown megamenu">
+                                <li>
                                     <a href="/">Home</a>
                                 </li>
 
                                 <li>
-                                    <a href="about.html">About</a>
+                                    <a href="/about">About</a>
                                 </li>
 
                                 <li class="dropdown">
                                     <a href="#">Services</a>
                                     <ul>
-                                        <li><a href="services.html">Services 01</a></li>
+                                        <li><a href="">Services 01</a></li>
                                     </ul>
                                 </li>
 
@@ -85,9 +85,9 @@
                                         <li>
                                             <a href="#">Our Team</a>
                                             <ul>
-                                                <li><a href="team.html">Our Team 01</a></li>
-                                                <li><a href="team-2.html">Our Team 02</a></li>
-                                                <li><a href="team-3.html">Our Team 03</a></li>
+                                                <li><a href="">Our Team 01</a></li>
+                                                <li><a href="">Our Team 02</a></li>
+                                                <li><a href="">Our Team 03</a></li>
                                                 <li><a href="team-carousel.html">Team Carousel 01</a></li>
                                                 <li><a href="team-carousel-2.html">Team Carousel 02</a></li>
                                                 <li><a href="team-carousel-3.html">Team Carousel 03</a></li>
