@@ -18,7 +18,8 @@ class SpecilistController extends Controller
     public function index()
     {
         // $speciaLists = Specialist::all();
-        $allSpecilists = Specialist::with('GetSpecialistLists')->get();
+        // $allSpecilists = Specialist::with('GetSpecialistLists')->get();
+        $allSpecilists = Specialist::get();
         return view('specialists.AddSpecialist', compact('allSpecilists'));
     }
     public function store(Request $request)
@@ -102,5 +103,12 @@ class SpecilistController extends Controller
                 'message' => 'Something went wrong',
             ]);
         }
+    }
+    public function SpecialistDetails(Request $request){
+        $specialistDetails=SpecialistDetail::where('specialist_id',$request->specialist_id)->get();
+        return response()->json([
+            'status'=>'success',
+            'specialistDetails'=>$specialistDetails,
+        ]);
     }
 }

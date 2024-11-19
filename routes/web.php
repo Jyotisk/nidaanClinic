@@ -46,6 +46,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     });
     //specialists
     Route::get('specialist-lists', [SpecilistController::class, 'index'])->name('SpecialistLists');
+    Route::get('specialist-details', [SpecilistController::class, 'SpecialistDetails'])->name('SpecialistDetails');
     Route::post('specialist-lists', [SpecilistController::class, 'store'])->name('SubmitSpecialist');
     Route::post('edit-specialist-lists', [SpecilistController::class, 'edit'])->name('EditSpecialist');
 

@@ -67,6 +67,7 @@
                                                         <td>{{ \Illuminate\Support\Str::limit($query->descriptions, $limit = 20, $end = '...') }}
                                                         </td>
                                                         <td><button class="btn btn-info btn-sm rounded-0 view"
+                                                                data-specialist_id="{{ $query->id }}"
                                                                 data-department_name="{{ $query->department_name }}"
                                                                 data-doctor_name="{{ $query->doctor_name }}"
                                                                 data-facebook_link="{{ $query->facebook_link }}"
@@ -210,6 +211,7 @@
                                     <p id="modal_get_specialist_lists"></p>
                                 </div>
                             </div>
+                            <div class="row" id="editDetails"></div>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -302,7 +304,7 @@
             var twitter_link = $(this).data('twitter_link');
             var linked_in_link = $(this).data('linked_in_link');
             var get_specialist_lists = $(this).data('get_specialist_lists');
-            console.log(get_specialist_lists);
+            var specialist_id = $(this).data('specialist_id');
 
             $('#modal_doctor_name').val(doctor_name);
             $('#modal_department_name').val(department_name);
@@ -311,10 +313,67 @@
             $('#modal_twitter_link').val(twitter_link);
             $('#modal_linked_in_link').val(linked_in_link);
             $('#modal_get_specialist_lists').text(get_specialist_lists);
+
+            $.ajax({
+                url: "{{ route('SpecialistDetails') }}", // Replace with your route
+                method: 'GET',
+                data: {
+                    'specialist_id': specialist_id
+                },
+                success: function(response) {
+                    if (response.status == 'success') {
+                        var div = document.getElementById('editDetails');
+
+                        // Assuming response.specialistDetails is an array of items
+                        response.specialistDetails.forEach(item => {
+                            // Create a container div with the col-md-12 class
+                            let colDiv = document.createElement('div');
+                            colDiv.className = 'col-md-12';
+
+                            // Create a label element
+                            let label = document.createElement('label');
+                            label.setAttribute('for', 'modal_linked_in_link');
+                            label.className = 'form-label';
+                            label.textContent = 'linked_in_link';
+
+                            // Create an input field
+                            let input = document.createElement('input');
+                            input.type = 'text';
+                            input.className = 'form-control';
+                            input.id = 'modal_linked_in_link';
+                            input.value = item.header;
+
+                            // Append label and input to the colDiv
+                            colDiv.appendChild(label);
+                            colDiv.appendChild(input);
+
+                            // Append the colDiv to the main div
+                            div.appendChild(colDiv);
+                        });
+                      
+                        // $('#appointmentForm :input').attr('disabled', 'disabled');
+                        // Swal.fire({
+                        //     title: "Thank You!",
+                        //     text: "Message Sent Successfully",
+                        //     icon: "success"
+                        // });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // console.error(xhr.responseText);
+                    Swal.fire({
+                        title: "Validation Fail!",
+                        text: "Please Enter Correct Data",
+                        icon: "error"
+                    });
+                }
+            });
+
+
             $('#detailModal').modal('show')
             $('#detailForm :input').attr('disabled', 'disabled');
         });
-        $(document).on("click", "#ediBtn",function(e){
+        $(document).on("click", "#ediBtn", function(e) {
             $('#detailForm :input').attr('disabled', false);
         });
         $('#appointmentForm').submit(function(e) {
