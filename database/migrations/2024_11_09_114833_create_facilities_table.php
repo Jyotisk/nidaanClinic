@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('facility_name');
             $table->text('descriptions')->nullable();
+            $table->string('image')->nullable();
             $table->unsignedBigInteger('entry_by');
             $table->boolean('status');
             $table->timestamps();

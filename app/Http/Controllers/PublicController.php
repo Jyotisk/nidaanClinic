@@ -50,4 +50,8 @@ class PublicController extends Controller
             //throw $th;
         }
     }
+
+    public function aboutUs() {
+        return view('public.about');
+    }
 }

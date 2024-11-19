@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home One || Mediox || Medical & Healthcare HTML Template</title>
+    <title>Home One || Nidaan || Medical & Healthcare HTML Template</title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('images/favicons/apple-touch-icon.png')}}" />
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicons/favicon-32x32.png')}}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicons/favicon-16x16.png')}}" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="Mediox is a versatile medical and healthcare HTML Template. You can make a good professional looking websites with our attractive design which is best for medical clinic, healthcare, hospital, dermatology clinic, cosmetology company, skin care, plastic surgery, beauty clinic, cosmetic clinic, laser surgery, spa, wellness hospital and all other medical and health care related websites and businesses." />
+    <meta name="description" content="Nidaan is a versatile medical and healthcare HTML Template. You can make a good professional looking websites with our attractive design which is best for medical clinic, healthcare, hospital, dermatology clinic, cosmetology company, skin care, plastic surgery, beauty clinic, cosmetic clinic, laser surgery, spa, wellness hospital and all other medical and health care related websites and businesses." />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +52,7 @@
                 <div class="main-header__inner">
                     <div class="main-header__logo logo-retina">
                         <a href="index.html">
-                            <img src="{{asset('images/logo-dark.png')}}" alt="Mediox HTML" width="164">
+                            <img src="{{asset('images/logo-dark.png')}}" alt="Nidaan HTML" width="164">
                         </a>
                     </div><!-- /.main-header__logo -->
                     <div class="main-header__right">
@@ -64,18 +64,18 @@
                         <nav class="main-header__nav main-menu">
                             <ul class="main-menu__list">
 
-                                <li class="dropdown megamenu">
+                                <li>
                                     <a href="/">Home</a>
                                 </li>
 
                                 <li>
-                                    <a href="about.html">About</a>
+                                    <a href="/about">About</a>
                                 </li>
 
                                 <li class="dropdown">
                                     <a href="#">Services</a>
                                     <ul>
-                                        <li><a href="services.html">Services 01</a></li>
+                                        <li><a href="">Services 01</a></li>
                                     </ul>
                                 </li>
 
@@ -85,9 +85,9 @@
                                         <li>
                                             <a href="#">Our Team</a>
                                             <ul>
-                                                <li><a href="team.html">Our Team 01</a></li>
-                                                <li><a href="team-2.html">Our Team 02</a></li>
-                                                <li><a href="team-3.html">Our Team 03</a></li>
+                                                <li><a href="">Our Team 01</a></li>
+                                                <li><a href="">Our Team 02</a></li>
+                                                <li><a href="">Our Team 03</a></li>
                                                 <li><a href="team-carousel.html">Team Carousel 01</a></li>
                                                 <li><a href="team-carousel-2.html">Team Carousel 02</a></li>
                                                 <li><a href="team-carousel-3.html">Team Carousel 03</a></li>
@@ -129,7 +129,7 @@
                                         </li>
                                         <li><a href="pricing.html">Pricing Plan</a></li>
                                         <li><a href="faq.html">Our FAQ</a></li>
-                                        <li><a href="appointment.html">Make Appointment</a></li>
+                                        <li><a href="#appointmentForm">Make Appointment</a></li>
                                         <li><a href="login.html">Login</a></li>
                                         <li><a href="404.html">404 Error</a></li>
                                     </ul>
@@ -263,11 +263,11 @@
                         <div class="footer-widget footer-widget--about">
                             <div class="footer-widget__logo logo-retina">
                                 <a href="index.html">
-                                    <img src="{{asset('images/logo-light.png')}}" alt="Mediox HTML" width="164">
+                                    <img src="{{asset('images/logo-light.png')}}" alt="Nidaan HTML" width="164">
                                 </a>
                             </div><!-- /.footer-widget__logo -->
                             <p class="footer-widget__about-text">Morem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elita Florai Psum Dolor Sit Amet, Consecteture.Borem Ipsum Dolor</p><!-- /.footer-widget__about-text -->
-                            <a href="appointment.html" class="footer-widget__btn">
+                            <a href="#appointmentForm" class="footer-widget__btn">
                                 <span>get consultant</span>
                                 <span class="footer-widget__btn__icon"><i class="icon-up-right-arrow"></i></span>
                             </a><!-- /.footer-widget__btn -->
@@ -313,7 +313,7 @@
                                 <li><a href="services.html">Our Services</a></li>
                                 <li><a href="team.html">Our Team</a></li>
                                 <li><a href="blog-grid-right.html">Latest Blog</a></li>
-                                <li><a href="appointment.html">Appointments</a></li>
+                                <li><a href="#appointmentForm">Appointments</a></li>
                                 <li><a href="faq.html">Help & FAQS</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                             </ul><!-- /.list-unstyled footer-widget__links -->
@@ -324,9 +324,9 @@
                             <h2 class="footer-widget__title">recent <span>news</span></h2><!-- /.footer-widget__title -->
                             <ul class="footer-widget__posts list-unstyled">
                                 <li class="footer-widget__posts__item">
-                                    <div class="footer-widget__posts__image">
+                                    {{-- <div class="footer-widget__posts__image">
                                         <img src="{{asset('images/blog/footer-rp-1-1.jpg')}}" alt="Recent posts">
-                                    </div><!-- /.footer-widget__posts__image -->
+                                    </div><!-- /.footer-widget__posts__image --> --}}
                                     <div class="footer-widget__posts__content">
                                         <div class="footer-widget__posts__meta">
                                             <a href="#">
@@ -348,9 +348,9 @@
                                     </div><!-- /.footer-widget__posts__content -->
                                 </li>
                                 <li class="footer-widget__posts__item">
-                                    <div class="footer-widget__posts__image">
+                                    {{-- <div class="footer-widget__posts__image">
                                         <img src="{{asset('images/blog/footer-rp-1-2.jpg')}}" alt="Recent posts">
-                                    </div><!-- /.footer-widget__posts__image -->
+                                    </div><!-- /.footer-widget__posts__image --> --}}
                                     <div class="footer-widget__posts__content">
                                         <div class="footer-widget__posts__meta">
                                             <a href="#">
@@ -421,7 +421,7 @@
                         </div><!-- /.row main-footer__info__row -->
                     </div><!-- /.main-footer__info -->
                     <p class="main-footer__copyright">
-                        &copy; Copyright <span class="dynamic-year"></span> by Mediox HTML Template.
+                        &copy; Copyright <span class="dynamic-year"></span> by Nidaan HTML Template.
                     </p>
                 </div><!-- /.main-footer__bottom -->
             </div><!-- /.container -->

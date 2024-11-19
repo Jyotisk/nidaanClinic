@@ -12,7 +12,7 @@
                         <i class="icon-arrow-right"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Doctor Lists</a>
+                        <a href="#">Facility Lists</a>
                     </li>
                 </ul>
             </div>
@@ -21,7 +21,7 @@
                     <div class="card-title">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#addSpecialist">
-                            Add Doctor
+                            Add Facility
                         </button>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Doctor Lists</h4>
+                                    <h4 class="card-title">Facility Lists</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -38,41 +38,27 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col" class="text-center">#</th>
-                                                    <th scope="col" class="text-center">department_name</th>
-                                                    <th scope="col" class="text-center">doctor_name</th>
-                                                    <th scope="col" class="text-center">doctor_image</th>
+                                                    <th scope="col" class="text-center">facility_name</th>
+                                                    <th scope="col" class="text-center">image</th>
                                                     <th scope="col" class="text-center">descriptions</th>
                                                     <th scope="col" class="text-center">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($allSpecilists as $index => $query)
+                                                @foreach ($facilityLists as $index => $query)
                                                     <tr>
                                                         <th>{{ $index + 1 }}</th>
-                                                        <td>{{ $query->department_name }}</td>
+                                                        <td>{{ $query->facility_name }}</td>
                                                         <td>
-                                                            {{ $query->doctor_name }}
-
-                                                            {{-- {{$query->get_specialist_lists}}
-                                                            @foreach ($query['get_specialist_lists'] as $specialist)
-                                                            <li>
-                                                                <strong>{{ $specialist['header'] }}</strong>: {{ $specialist['specialist_detail'] }}
-                                                            </li>
-                                                        @endforeach --}}
-                                                        </td>
-                                                        <td>
-                                                            <img src="{{ Storage::url($query->doctor_image) }}"
+                                                            <img src="{{ Storage::url($query->image) }}"
                                                                 alt="Service Images" style="width: 10%" />
                                                         </td>
                                                         <td>{{ \Illuminate\Support\Str::limit($query->descriptions, $limit = 20, $end = '...') }}
                                                         </td>
                                                         <td><button class="btn btn-info btn-sm rounded-0 view"
-                                                                data-department_name="{{ $query->department_name }}"
-                                                                data-doctor_name="{{ $query->doctor_name }}"
-                                                                data-facebook_link="{{ $query->facebook_link }}"
-                                                                data-instagram_link="{{ $query->instagram_link }}"
-                                                                data-twitter_link="{{ $query->twitter_link }}"
-                                                                data-linked_in_link="{{ $query->linked_in_link }}"
+                                                                data-facility_name="{{ $query->facility_name }}"
+                                                                data-image="{{ $query->image }}"
+                                                                data-descriptions="{{ $query->descriptions }}"
                                                                 data-get_specialist_lists="{{ $query->get_specialist_lists }}">view</button>
                                                         </td>
                                                     </tr>
@@ -96,7 +82,7 @@
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="serviceName">Add Doctor Details</h5>
+                        <h5 class="modal-title" id="serviceName">Add Facility Details</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -104,45 +90,20 @@
                             @csrf
                             <div class="row g-2">
                                 <div class="col-md-12">
-                                    <label for="department name" class="form-label">Department Name <span
+                                    <label for="facility name" class="form-label">Facility Name <span
                                             class="text-danger">*</span></label>
-                                    <input type="text" id="department_name" name="department_name"
-                                        class="form-control">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="department name" class="form-label">Doctor Name<span
-                                            class="text-danger">*</span></label>
-                                    <input type="text" id="doctor_name" name="doctor_name" class="form-control">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="department name" class="form-label">Facebook Link</label>
-                                    <input type="text" id="facebook_link" name="facebook_link" class="form-control">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="department name" class="form-label">Instagram Link</label>
-                                    <input type="text" id="instagram_link" name="instagram_link"
-                                        class="form-control">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="department name" class="form-label">Twitter Link</label>
-                                    <input type="text" id="twitter_link" name="twitter_link"
-                                        class="form-control">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="department name" class="form-label">LinkedIn Link</label>
-                                    <input type="text" id="linked_in_link" name="linked_in_link"
-                                        class="form-control">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="department name" class="form-label">Doctor Image<span
-                                            class="text-danger">*</span></label>
-                                    <input type="file" id="doctor_image" name="doctor_image" class="form-control"
-                                        accept="image/*">
+                                    <input type="text" id="facility_name" name="facility_name" class="form-control">
                                 </div>
                                 <div class="col-md-12">
                                     <label for="department name" class="form-label">Description<span
                                             class="text-danger">*</span></label>
                                     <textarea name="descriptions" id="" class="form-control"></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="department name" class="form-label">Image<span
+                                            class="text-danger">*</span></label>
+                                    <input type="file" id="image" name="image" class="form-control"
+                                        accept="image/*">
                                 </div>
                                 <div id="newinput">
                                 </div>
@@ -189,22 +150,7 @@
                                     <label for="Registration No" class="form-label">department</label>
                                     <input type="text" class="form-control" id="modal_department_name">
                                 </div>
-                                <div class="col-md-4">
-                                    <label for="Registration No" class="form-label">facebook_link</label>
-                                    <input type="text" class="form-control" id="modal_facebook_link">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="Registration No" class="form-label">modal_instagram_link</label>
-                                    <input type="text" class="form-control" id="modal_instagram_link">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="Registration No" class="form-label">twitter_link</label>
-                                    <input type="text" class="form-control" id="modal_twitter_link">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="Registration No" class="form-label">linked_in_link</label>
-                                    <input type="text" class="form-control" id="modal_linked_in_link">
-                                </div>
+
                                 <div class="col-md-12">
                                     <label for="Registration No" class="form-label">get_specialist_lists</label>
                                     <p id="modal_get_specialist_lists"></p>
@@ -228,10 +174,8 @@
         $("#rowRoleAdder").click(function() {
             newRowAdd =
                 '<div class="row mt-2" id="roleRow">' +
-                '<label for="department name" class="form-label">Header<span class="text-danger">*</span></label>' +
-                '<div class="col-md-12"><input type="text" id="inputPassword5" name="header[]" class="form-control">' +
-                '<label for="department name" class="form-label">Details<span class="text-danger">*</span></label>' +
-                '<div class="col-md-12"><input type="text" id="inputPassword5" name="specialist_detail[]" class="form-control">' +
+                '<label for="department name" class="form-label">facility_detail<span class="text-danger">*</span></label>' +
+                '<div class="col-md-12"><input type="text" id="inputPassword5" name="facility_detail[]" class="form-control">' +
                 '<div class="col-md-4"><button class="btn btn-danger mt-4 btn-sm rounded-0" id="DeleteRoleRow" type="button"><i class="bi bi-trash"></i> Delete</button>' +
                 '</div></div></div>';
             $('#newinput').append(newRowAdd);
@@ -246,7 +190,7 @@
             var formData = new FormData($(this)[0]);
             $.ajax({
                 type: "POST",
-                url: "{{ route('SubmitSpecialist') }}",
+                url: "{{ route('SubmitFacility') }}",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
@@ -314,7 +258,7 @@
             $('#detailModal').modal('show')
             $('#detailForm :input').attr('disabled', 'disabled');
         });
-        $(document).on("click", "#ediBtn",function(e){
+        $(document).on("click", "#ediBtn", function(e) {
             $('#detailForm :input').attr('disabled', false);
         });
         $('#appointmentForm').submit(function(e) {
