@@ -54,4 +54,8 @@ class PublicController extends Controller
     public function aboutUs() {
         return view('public.about');
     }
+
+    public function services() {
+        return view('public.services');
+    }
 }
