@@ -73,9 +73,12 @@
                                 </li>
 
                                 <li class="dropdown">
-                                    <a href="#">Services</a>
+
+                                    <a href="/services">Services</a>
                                     <ul>
-                                        <li><a href="">Services 01</a></li>
+                                        <li>
+                                            <a href="#">Immediate Care</a>
+                                        </li>
                                     </ul>
                                 </li>
 
@@ -135,77 +138,9 @@
                                     </ul>
                                 </li>
 
-                                {{-- <li class="dropdown">
-                                    <a href="#">Shop</a>
-                                    <ul>
-                                        <li class="dropdown">
-                                            <a href="#">Products</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="products.html">No sidebar</a></li>
-                                                <li><a href="products-left.html">Left sidebar</a></li>
-                                                <li><a href="products-right.html">Right sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="products-carousel.html">Products carousel</a></li>
-                                        <li><a href="product-details.html">Product details</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                    </ul>
-                                </li> --}}
-
-                                {{-- <li class="dropdown">
-                                    <a href="#">Blog</a>
-                                    <ul>
-                                        <li class="dropdown">
-                                            <a href="#">Blog grid 01</a>
-                                            <ul>
-                                                <li><a href="blog-grid.html">No sidebar</a></li>
-                                                <li><a href="blog-grid-left.html">Left sidebar</a></li>
-                                                <li><a href="blog-grid-right.html">Right sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Blog grid 02</a>
-                                            <ul>
-                                                <li><a href="blog-grid-2.html">No sidebar</a></li>
-                                                <li><a href="blog-grid-2-left.html">Left sidebar</a></li>
-                                                <li><a href="blog-grid-2-right.html">Right sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Blog grid 03</a>
-                                            <ul>
-                                                <li><a href="blog-grid-3.html">No sidebar</a></li>
-                                                <li><a href="blog-grid-3-left.html">Left sidebar</a></li>
-                                                <li><a href="blog-grid-3-right.html">Right sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Blog list</a>
-                                            <ul>
-                                                <li><a href="blog-list.html">No sidebar</a></li>
-                                                <li><a href="blog-list-left.html">Left sidebar</a></li>
-                                                <li><a href="blog-list-right.html">Right sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Blog carousel</a>
-                                            <ul>
-                                                <li><a href="blog-carousel.html">Blog carousel 01</a></li>
-                                                <li><a href="blog-carousel-2.html">Blog carousel 02</a></li>
-                                                <li><a href="blog-carousel-3.html">Blog carousel 03</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Blog details</a>
-                                            <ul>
-                                                <li><a href="blog-details.html">No sidebar</a></li>
-                                                <li><a href="blog-details-left.html">Left sidebar</a></li>
-                                                <li><a href="blog-details-right.html">Right sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li> --}}
+                                <li>
+                                    <a href="/about">Specialities</a>
+                                </li>
 
                                 <li>
                                     <a href="contact.html">Contact</a>
@@ -421,7 +356,7 @@
                         </div><!-- /.row main-footer__info__row -->
                     </div><!-- /.main-footer__info -->
                     <p class="main-footer__copyright">
-                        &copy; Copyright <span class="dynamic-year"></span> by Nidaan HTML Template.
+                        &copy; Copyright <span class="dynamic-year"></span> by Nidaan | Developed by <a href="#">Cybernet Solutions</a>.
                     </p>
                 </div><!-- /.main-footer__bottom -->
             </div><!-- /.container -->

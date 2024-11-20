@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicController::class, 'index'])->name('index');
 Route::get('/about', [PublicController::class, 'aboutUs'])->name('about');
+Route::get('/services', [PublicController::class, 'services'])->name('services');
 
 Route::post('book-appointment', [PublicController::class, 'BookAppointment'])->name('BookAppointment');
 
