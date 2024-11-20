@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'index'])->name('index');
 Route::get('/about', [PublicController::class, 'aboutUs'])->name('about');
 Route::get('/services', [PublicController::class, 'services'])->name('services');
+Route::get('/service-details', [PublicController::class, 'servicesDetails'])->name('service-details');
+Route::get('/speciality', [PublicController::class, 'speciality'])->name('speciality');
+Route::get('/contact', [PublicController::class, 'contact'])->name('contact');
 
 Route::post('book-appointment', [PublicController::class, 'BookAppointment'])->name('BookAppointment');
 

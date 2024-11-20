@@ -73,11 +73,31 @@
                                 </li>
 
                                 <li class="dropdown">
-
                                     <a href="/services">Services</a>
                                     <ul>
                                         <li>
-                                            <a href="#">Immediate Care</a>
+                                            <a href="#">Medicines</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Superspecialist and Specialist Doctors</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Laboratory Tests</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">ECG</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Holter</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Ecocardiography</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Free Medicial Camps</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Orthopedic Rehab. Aids</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -139,11 +159,11 @@
                                 </li>
 
                                 <li>
-                                    <a href="/about">Specialities</a>
+                                    <a href="/speciality">Specialities</a>
                                 </li>
 
                                 <li>
-                                    <a href="contact.html">Contact</a>
+                                    <a href="/contact">Contact</a>
                                 </li>
                             </ul>
                         </nav>
