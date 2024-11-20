@@ -98,4 +98,71 @@ class FacilityController extends Controller
             ]);
         }
     }
+    public function FacilityDetails(Request $request)
+    {
+        $facilityDetails = FacilityDetail::where('facility_id', $request->facility_id)->get();
+        return response()->json([
+            'status' => 'success',
+            'facilityDetails' => $facilityDetails,
+        ]);
+    }
+    public function edit(Request $request)
+    {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'facility_name' => 'required',
+                'descriptions' => 'required',
+            ],
+        );
+        if ($validator->fails()) {
+
+            return response()->json([
+                'response' => 'validationFails',
+                'error' => $validator->errors()
+            ]);
+        }
+        DB::beginTransaction();
+        try {
+            $facility = Facility::findOrFail($request->facility_id);;
+            $facility->facility_name = $request->facility_name;
+            $facility->descriptions = $request->descriptions;
+            $facility->entry_by = Auth::user()->id;
+            $facility->save();
+
+            FacilityDetail::where('facility_id', $request->facility_id)->delete();
+            $facilityDetail = [];
+            foreach ($request->facility_detail as $row) {
+
+                $facilityDetail[] = [
+                    'facility_id' => $facility->id,
+                    'facility_detail' => $row,
+                ];
+            }
+            $specialistDetail = collect($facilityDetail);
+            $chunks = $specialistDetail->chunk(500);
+
+            foreach ($chunks as $chunk) {
+                FacilityDetail::insert($chunk->toArray());
+            }
+            DB::commit();
+            return response()->json([
+                'response' => 'success',
+                'message' => 'Facility Details Inserted Successfully',
+            ]);
+        } catch (\Throwable $e) {
+            DB::rollBack();
+            return $e;
+            $exception = new ExceptionHandler();
+            $exception->controller_function = "FacilityController.edit";
+            $exception->error = $e;
+            $exception->date = date('Y-m-d');
+            $exception->user_id = Auth::user()->id;
+            $exception->save();
+            return response()->json([
+                'response' => 'error',
+                'message' => 'Something went wrong',
+            ]);
+        }
+    }
 }

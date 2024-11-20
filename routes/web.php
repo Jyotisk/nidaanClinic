@@ -59,6 +59,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     //Facilities
     Route::get('facility-lists', [FacilityController::class, 'index'])->name('FacilityLists');
     Route::post('facility-lists', [FacilityController::class, 'store'])->name('SubmitFacility');
+    Route::get('facility-details', [FacilityController::class, 'FacilityDetails'])->name('FacilityDetails');
     Route::post('edit-facility-lists', [FacilityController::class, 'edit'])->name('EditFacility');
 
     Route::get('reset-password', [ResetPasswordController::class, 'create'])
