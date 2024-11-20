@@ -34,7 +34,7 @@
                             <div class="service-card__content">
                                 <p class="service-card__total-doctors">30+ doctors</p><!-- /.service-card__total-doctors -->
                                 <div class="service-card__content__inner">
-                                    <h3 class="service-card__title"><a href="#">Neuro-Surgery</a></h3><!-- /.service-card__title -->
+                                    <h3 class="service-card__title"><a href="#">Psychiatrics</a></h3><!-- /.service-card__title -->
                                     <a href="#" class="service-card__link">
                                         <i class="icon-up-right-arrow"></i>
                                     </a><!-- /.service-card__link -->
@@ -53,8 +53,8 @@
                             <div class="service-card__content">
                                 <p class="service-card__total-doctors">10+ doctors</p><!-- /.service-card__total-doctors -->
                                 <div class="service-card__content__inner">
-                                    <h3 class="service-card__title"><a href="service-d-dental-care.html">Dental Care</a></h3><!-- /.service-card__title -->
-                                    <a href="service-d-dental-care.html" class="service-card__link">
+                                    <h3 class="service-card__title"><a href="#">Nephrology</a></h3><!-- /.service-card__title -->
+                                    <a href="#" class="service-card__link">
                                         <i class="icon-up-right-arrow"></i>
                                     </a><!-- /.service-card__link -->
                                 </div><!-- /.service-card__content__inner -->
@@ -72,8 +72,8 @@
                             <div class="service-card__content">
                                 <p class="service-card__total-doctors">25+ doctors</p><!-- /.service-card__total-doctors -->
                                 <div class="service-card__content__inner">
-                                    <h3 class="service-card__title"><a href="service-d-neurology-care.html">Neurology Care</a></h3><!-- /.service-card__title -->
-                                    <a href="service-d-neurology-care.html" class="service-card__link">
+                                    <h3 class="service-card__title"><a href="#">Neuro-Surgery</a></h3><!-- /.service-card__title -->
+                                    <a href="#" class="service-card__link">
                                         <i class="icon-up-right-arrow"></i>
                                     </a><!-- /.service-card__link -->
                                 </div><!-- /.service-card__content__inner -->
@@ -91,7 +91,7 @@
                             <div class="service-card__content">
                                 <p class="service-card__total-doctors">05+ doctors</p><!-- /.service-card__total-doctors -->
                                 <div class="service-card__content__inner">
-                                    <h3 class="service-card__title"><a href="service-d-gynaecologists.html">gynaecologists</a></h3><!-- /.service-card__title -->
+                                    <h3 class="service-card__title"><a href="service-d-gynaecologists.html">Obstetrician and gynaecologists</a></h3><!-- /.service-card__title -->
                                     <a href="service-d-gynaecologists.html" class="service-card__link">
                                         <i class="icon-up-right-arrow"></i>
                                     </a><!-- /.service-card__link -->
@@ -110,7 +110,7 @@
                             <div class="service-card__content">
                                 <p class="service-card__total-doctors">15+ doctors</p><!-- /.service-card__total-doctors -->
                                 <div class="service-card__content__inner">
-                                    <h3 class="service-card__title"><a href="service-d-orthopaedics.html">orthopaedics</a></h3><!-- /.service-card__title -->
+                                    <h3 class="service-card__title"><a href="service-d-orthopaedics.html">Gaestroenterology</a></h3><!-- /.service-card__title -->
                                     <a href="service-d-orthopaedics.html" class="service-card__link">
                                         <i class="icon-up-right-arrow"></i>
                                     </a><!-- /.service-card__link -->
@@ -129,8 +129,65 @@
                             <div class="service-card__content">
                                 <p class="service-card__total-doctors">20+ doctors</p><!-- /.service-card__total-doctors -->
                                 <div class="service-card__content__inner">
-                                    <h3 class="service-card__title"><a href="service-d-cardiology.html">cardiology</a></h3><!-- /.service-card__title -->
-                                    <a href="service-d-cardiology.html" class="service-card__link">
+                                    <h3 class="service-card__title"><a href="#">cardiology</a></h3><!-- /.service-card__title -->
+                                    <a href="#" class="service-card__link">
+                                        <i class="icon-up-right-arrow"></i>
+                                    </a><!-- /.service-card__link -->
+                                </div><!-- /.service-card__content__inner -->
+                            </div><!-- /.service-card__content -->
+                        </div><!-- /.service-card -->
+                    </div><!-- /.col-lg-4 col-md-6 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
+                        <div class="service-card">
+                            <div class="service-card__image">
+                                <img src="{{asset('images/services/service-1-6.jpg')}}" alt="cardiology">
+                            </div><!-- /.service-card__image -->
+                            <span class="service-card__icon">
+                                <i class="icon-cardiology"></i>
+                            </span><!-- /.service-card__icon -->
+                            <div class="service-card__content">
+                                <p class="service-card__total-doctors">20+ doctors</p><!-- /.service-card__total-doctors -->
+                                <div class="service-card__content__inner">
+                                    <h3 class="service-card__title"><a href="#">Paediatrics</a></h3><!-- /.service-card__title -->
+                                    <a href="#" class="service-card__link">
+                                        <i class="icon-up-right-arrow"></i>
+                                    </a><!-- /.service-card__link -->
+                                </div><!-- /.service-card__content__inner -->
+                            </div><!-- /.service-card__content -->
+                        </div><!-- /.service-card -->
+                    </div><!-- /.col-lg-4 col-md-6 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
+                        <div class="service-card">
+                            <div class="service-card__image">
+                                <img src="{{asset('images/services/service-1-6.jpg')}}" alt="cardiology">
+                            </div><!-- /.service-card__image -->
+                            <span class="service-card__icon">
+                                <i class="icon-cardiology"></i>
+                            </span><!-- /.service-card__icon -->
+                            <div class="service-card__content">
+                                <p class="service-card__total-doctors">20+ doctors</p><!-- /.service-card__total-doctors -->
+                                <div class="service-card__content__inner">
+                                    <h3 class="service-card__title"><a href="#">Paediatrics</a></h3><!-- /.service-card__title -->
+                                    <a href="#" class="service-card__link">
+                                        <i class="icon-up-right-arrow"></i>
+                                    </a><!-- /.service-card__link -->
+                                </div><!-- /.service-card__content__inner -->
+                            </div><!-- /.service-card__content -->
+                        </div><!-- /.service-card -->
+                    </div><!-- /.col-lg-4 col-md-6 -->
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
+                        <div class="service-card">
+                            <div class="service-card__image">
+                                <img src="{{asset('images/services/service-1-6.jpg')}}" alt="cardiology">
+                            </div><!-- /.service-card__image -->
+                            <span class="service-card__icon">
+                                <i class="icon-cardiology"></i>
+                            </span><!-- /.service-card__icon -->
+                            <div class="service-card__content">
+                                <p class="service-card__total-doctors">20+ doctors</p><!-- /.service-card__total-doctors -->
+                                <div class="service-card__content__inner">
+                                    <h3 class="service-card__title"><a href="#">Urology</a></h3><!-- /.service-card__title -->
+                                    <a href="#" class="service-card__link">
                                         <i class="icon-up-right-arrow"></i>
                                     </a><!-- /.service-card__link -->
                                 </div><!-- /.service-card__content__inner -->

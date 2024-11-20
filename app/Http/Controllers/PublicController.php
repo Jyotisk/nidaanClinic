@@ -67,6 +67,10 @@ class PublicController extends Controller
         return view('public.speciality');
     }
 
+    public function specialityDetails() {
+        return view('public.speciality-details');
+    }
+
     public function contact() {
         return view('public.contact');
     }

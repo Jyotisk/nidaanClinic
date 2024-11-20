@@ -103,63 +103,37 @@
                                 </li>
 
                                 <li class="dropdown">
-                                    <a href="#">Pages</a>
+                                    <a href="/speciality">Specialities</a>
                                     <ul>
                                         <li>
-                                            <a href="#">Our Team</a>
-                                            <ul>
-                                                <li><a href="">Our Team 01</a></li>
-                                                <li><a href="">Our Team 02</a></li>
-                                                <li><a href="">Our Team 03</a></li>
-                                                <li><a href="team-carousel.html">Team Carousel 01</a></li>
-                                                <li><a href="team-carousel-2.html">Team Carousel 02</a></li>
-                                                <li><a href="team-carousel-3.html">Team Carousel 03</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="team-details.html">Team Details</a></li>
-                                        <li><a href="history.html">Our History</a></li>
-                                        <li>
-                                            <a href="#">Our Testimonials</a>
-                                            <ul>
-                                                <li><a href="testimonials.html">Our Testimonials 01</a></li>
-                                                <li><a href="testimonials-2.html">Our Testimonials 02</a></li>
-                                                <li><a href="testimonials-3.html">Our Testimonials 03</a></li>
-                                                <li><a href="testimonials-carousel.html">Testimonials Carousel 01</a></li>
-                                                <li><a href="testimonials-carousel-2.html">Testimonials Carousel 02</a></li>
-                                                <li><a href="testimonials-carousel-3.html">Testimonials Carousel 03</a></li>
-                                            </ul>
+                                            <a href="#">Cardiology</a>
                                         </li>
                                         <li>
-                                            <a href="#">Our Portfolio</a>
-                                            <ul>
-                                                <li><a href="portfolio.html">Our Portfolio 01</a></li>
-                                                <li><a href="portfolio-2.html">Our Portfolio 02</a></li>
-                                                <li><a href="portfolio-3.html">Our Portfolio 03</a></li>
-                                                <li><a href="portfolio-carousel.html">Portfolio carousel 01</a></li>
-                                                <li><a href="portfolio-carousel-2.html">Portfolio carousel 02</a></li>
-                                                <li><a href="portfolio-carousel-3.html">Portfolio carousel 03</a></li>
-                                            </ul>
+                                            <a href="#">Nephrology</a>
                                         </li>
-                                        <li><a href="portfolio-details.html">Portfolio Details</a></li>
                                         <li>
-                                            <a href="gallery.html">Gallery</a>
-                                            <ul>
-                                                <li><a href="gallery.html">Gallery masonry</a></li>
-                                                <li><a href="gallery-filter.html">Gallery filter</a></li>
-                                                <li><a href="gallery-grid.html">Gallery Grid</a></li>
-                                                <li><a href="gallery-carousel.html">Gallery Carousel</a></li>
-                                            </ul>
+                                            <a href="#">Gaestroenterology</a>
                                         </li>
-                                        <li><a href="pricing.html">Pricing Plan</a></li>
-                                        <li><a href="faq.html">Our FAQ</a></li>
-                                        <li><a href="#appointmentForm">Make Appointment</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="404.html">404 Error</a></li>
+                                        <li>
+                                            <a href="#">Paediatrics</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Psychiatrics</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Neuro-Surgery</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Urology</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Obstetrician and Gynaecology</a>
+                                        </li>
                                     </ul>
                                 </li>
 
                                 <li>
-                                    <a href="/speciality">Specialities</a>
+                                    <a href="#">Gallery</a>
                                 </li>
 
                                 <li>
