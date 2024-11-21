@@ -49,16 +49,22 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
         Route::post('EditMenuItem', [MenuItemController::class, 'EditMenuItem'])->name('EditMenuItem');
         Route::get('mentu-list', [MenuItemController::class, 'getDropdownData'])->name('getDropdownData');
     });
+
+    //specialists
+    Route::get('department-lists', [SpecilistController::class, 'indexDepartment'])->name('indexDepartment');
+    Route::post('department-lists', [SpecilistController::class, 'storeDepartment'])->name('storeDepartment');
     //specialists
     Route::get('specialist-lists', [SpecilistController::class, 'index'])->name('SpecialistLists');
+    Route::get('specialist-details', [SpecilistController::class, 'SpecialistDetails'])->name('SpecialistDetails');
     Route::post('specialist-lists', [SpecilistController::class, 'store'])->name('SubmitSpecialist');
     Route::post('edit-specialist-lists', [SpecilistController::class, 'edit'])->name('EditSpecialist');
 
 
-      //Facilities
-      Route::get('facility-lists', [FacilityController::class, 'index'])->name('FacilityLists');
-      Route::post('facility-lists', [FacilityController::class, 'store'])->name('SubmitFacility');
-      Route::post('edit-facility-lists', [FacilityController::class, 'edit'])->name('EditFacility');
+    //Facilities
+    Route::get('facility-lists', [FacilityController::class, 'index'])->name('FacilityLists');
+    Route::post('facility-lists', [FacilityController::class, 'store'])->name('SubmitFacility');
+    Route::get('facility-details', [FacilityController::class, 'FacilityDetails'])->name('FacilityDetails');
+    Route::post('edit-facility-lists', [FacilityController::class, 'edit'])->name('EditFacility');
 
     Route::get('reset-password', [ResetPasswordController::class, 'create'])
         ->name('passwordReset');

@@ -46,22 +46,21 @@
                                             </thead>
                                             <tbody>
                                                 @foreach ($facilityLists as $index => $query)
-                                                    <tr>
-                                                        <th>{{ $index + 1 }}</th>
-                                                        <td>{{ $query->facility_name }}</td>
-                                                        <td>
-                                                            <img src="{{ Storage::url($query->image) }}"
-                                                                alt="Service Images" style="width: 10%" />
-                                                        </td>
-                                                        <td>{{ \Illuminate\Support\Str::limit($query->descriptions, $limit = 20, $end = '...') }}
-                                                        </td>
-                                                        <td><button class="btn btn-info btn-sm rounded-0 view"
-                                                                data-facility_name="{{ $query->facility_name }}"
-                                                                data-image="{{ $query->image }}"
-                                                                data-descriptions="{{ $query->descriptions }}"
-                                                                data-get_specialist_lists="{{ $query->get_specialist_lists }}">view</button>
-                                                        </td>
-                                                    </tr>
+                                                <tr>
+                                                    <th>{{ $index + 1 }}</th>
+                                                    <td>{{ $query->facility_name }}</td>
+                                                    <td>
+                                                        <img src="{{ Storage::url($query->image) }}"
+                                                            alt="Service Images" style="width: 10%" />
+                                                    </td>
+                                                    <td>{{ \Illuminate\Support\Str::limit($query->descriptions, $limit = 20, $end = '...') }}
+                                                    </td>
+                                                    <td><button class="btn btn-info btn-sm rounded-0 view"
+                                                            data-facility_id="{{ $query->id }}"
+                                                            data-facility_name="{{ $query->facility_name }}"
+                                                            data-descriptions="{{ $query->descriptions }}">view</button>
+                                                    </td>
+                                                </tr>
                                                 @endforeach
                                             </tbody>
 
@@ -86,7 +85,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="SpecialistsForm" enctype="multipart/form-data">
+                        <form id="FacilityForm" enctype="multipart/form-data">
                             @csrf
                             <div class="row g-2">
                                 <div class="col-md-12">
@@ -140,22 +139,23 @@
                     </div>
                     <div class="modal-body">
                         <button type="button" class="btn btn-info btn-sm rounded-0" id="ediBtn">Edit</button>
-                        <form action="" id="detailForm">
+                        <form action="" id="editForm" method="post">
+                            @csrf
                             <div class="row text-center">
-                                <div class="col-md-4">
-                                    <label for="Registration No" class="form-label">Doctor Name</label>
-                                    <input type="text" class="form-control" id="modal_doctor_name">
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="Registration No" class="form-label">department</label>
-                                    <input type="text" class="form-control" id="modal_department_name">
-                                </div>
-
                                 <div class="col-md-12">
-                                    <label for="Registration No" class="form-label">get_specialist_lists</label>
-                                    <p id="modal_get_specialist_lists"></p>
+                                    <label for="facility name" class="form-label">Facility Name <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" id="modal_facility_name" name="facility_name" class="form-control" disabled>
+                                    <input type="text" id="facility_id" name="facility_id" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="department name" class="form-label">Description<span
+                                            class="text-danger">*</span></label>
+                                    <textarea name="descriptions" id="modal_descriptions" class="form-control" disabled></textarea>
                                 </div>
                             </div>
+                            <div class="row" id="editDetails"></div>
+                            <button type="submit" class="btn btn-success btn-sm rounded-0 mt-4" id="editSubmitBtn" style="display: none;">Submit</button>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -174,7 +174,7 @@
         $("#rowRoleAdder").click(function() {
             newRowAdd =
                 '<div class="row mt-2" id="roleRow">' +
-                '<label for="department name" class="form-label">facility_detail<span class="text-danger">*</span></label>' +
+                '<label for="department name" class="form-label">Facility Detail<span class="text-danger">*</span></label>' +
                 '<div class="col-md-12"><input type="text" id="inputPassword5" name="facility_detail[]" class="form-control">' +
                 '<div class="col-md-4"><button class="btn btn-danger mt-4 btn-sm rounded-0" id="DeleteRoleRow" type="button"><i class="bi bi-trash"></i> Delete</button>' +
                 '</div></div></div>';
@@ -185,7 +185,7 @@
             $(this).parents("#roleRow").remove();
         });
 
-        $(document).on("submit", "#SpecialistsForm", function(e) {
+        $(document).on("submit", "#FacilityForm", function(e) {
             e.preventDefault();
             var formData = new FormData($(this)[0]);
             $.ajax({
@@ -239,29 +239,54 @@
         $("#basic-datatables").DataTable({});
         $(document).on('click', '.view', function(e) {
             e.preventDefault();
-            var doctor_name = $(this).data('doctor_name');
-            var department_name = $(this).data('department_name');
-            var facebook_link = $(this).data('facebook_link');
-            var instagram_link = $(this).data('instagram_link');
-            var twitter_link = $(this).data('twitter_link');
-            var linked_in_link = $(this).data('linked_in_link');
-            var get_specialist_lists = $(this).data('get_specialist_lists');
-            console.log(get_specialist_lists);
+            var facility_id = $(this).data('facility_id');
+            var facility_name = $(this).data('facility_name');
+            var descriptions = $(this).data('descriptions');
 
-            $('#modal_doctor_name').val(doctor_name);
-            $('#modal_department_name').val(department_name);
-            $('#modal_facebook_link').val(facebook_link);
-            $('#modal_instagram_link').val(instagram_link);
-            $('#modal_twitter_link').val(twitter_link);
-            $('#modal_linked_in_link').val(linked_in_link);
-            $('#modal_get_specialist_lists').text(get_specialist_lists);
+            $('#facility_id').val(facility_id);
+            $('#modal_facility_name').val(facility_name);
+            $('#modal_descriptions').text(descriptions);
+
+            $.ajax({
+                url: "{{ route('FacilityDetails') }}", // Replace with your route
+                method: 'GET',
+                data: {
+                    'facility_id': facility_id
+                },
+                success: function(response) {
+                    if (response.status == 'success') {
+                        var div = document.getElementById('editDetails');
+
+                        response.facilityDetails.forEach(item => {
+
+                            var tempDiv = "<div class='col-md-12 mt-2'>" +
+                                "<label for='Registration No' class='form-label'>Details</label>" +
+                                "<input type='text' class='form-control' name='facility_detail[]' value='" + item.facility_detail + "' disabled>" +
+                                "  </div>"
+                            // div.append(tempDiv)
+                            $('#editDetails').append(tempDiv);
+                        })
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // console.error(xhr.responseText);
+                    Swal.fire({
+                        title: "Validation Fail!",
+                        text: "Please Enter Correct Data",
+                        icon: "error"
+                    });
+                }
+            });
+
+
             $('#detailModal').modal('show')
-            $('#detailForm :input').attr('disabled', 'disabled');
+            $('#editForm :input').attr('disabled', 'disabled');
         });
         $(document).on("click", "#ediBtn", function(e) {
-            $('#detailForm :input').attr('disabled', false);
+            $('#editForm :input').attr('disabled', false);
+            $("#editSubmitBtn").css("display", "block");
         });
-        $('#appointmentForm').submit(function(e) {
+        $('#editForm').submit(function(e) {
             e.preventDefault(); // Prevent form submission
 
             // Serialize form data
@@ -269,17 +294,32 @@
 
             // Send AJAX request
             $.ajax({
-                url: "{{ route('EditSpecialist') }}", // Replace with your route
+                url: "{{ route('EditFacility') }}", // Replace with your route
                 method: 'POST',
                 data: formData,
-                success: function(response) {
-                    if (response.status == 'success') {
-                        $('#appointmentForm :input').attr('disabled', 'disabled');
+                success: function(res) {
+                    if (res.response == 'success') {
                         Swal.fire({
-                            title: "Thank You!",
-                            text: "Message Sent Successfully",
-                            icon: "success"
-                        });
+                                title: "Success",
+                                text: res.message,
+                                icon: "success",
+                                buttons: true,
+                                dangerMode: true,
+                            })
+                            .then((willStore) => {
+                                if (willStore) {
+                                    location.reload();
+                                }
+                            });
+                    }
+                    if (res.response == 'error') {
+                        Swal.fire({
+                            title: "Failed",
+                            text: "Something Went Wrong",
+                            icon: "error",
+                            buttons: false,
+                            dangerMode: true,
+                        })
                     }
                 },
                 error: function(xhr, status, error) {

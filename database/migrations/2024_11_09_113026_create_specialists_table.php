@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('specialists', function (Blueprint $table) {
             $table->id();
-            $table->string('department_name');
+            $table->unsignedBigInteger('department_id');
             $table->string('doctor_name');
             $table->string('doctor_image');
             $table->text('descriptions')->nullable();
