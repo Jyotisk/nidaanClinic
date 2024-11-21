@@ -17,6 +17,9 @@ Route::get('/service-details', [PublicController::class, 'servicesDetails'])->na
 Route::get('/speciality', [PublicController::class, 'speciality'])->name('speciality');
 Route::get('/speciality-details', [PublicController::class, 'specialityDetails'])->name('speciality-details');
 Route::get('/contact', [PublicController::class, 'contact'])->name('contact');
+Route::get('/teams', [PublicController::class, 'teams'])->name('teams');
+Route::get('/team-details', [PublicController::class, 'teamDetails'])->name('team-details');
+Route::get('/gallery', [PublicController::class, 'gallery'])->name('gallery');
 
 Route::post('book-appointment', [PublicController::class, 'BookAppointment'])->name('BookAppointment');
 

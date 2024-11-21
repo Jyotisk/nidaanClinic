@@ -37,6 +37,23 @@
                                     <li><a href="#">Urology</a></li>
                                     <li><a href="#">Obstetrician and Gynaecology</a></li>
                                 </ul><!-- /.list-unstyled service-sidebar__nav -->
+                                <div class="service-sidebar__contact wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="100ms" style="background-image: url('images/team/team-1-1.jpg');">
+                                    <div class="service-sidebar__contact__bg">
+                                        <div class="service-sidebar__contact__bg__inner" style="background-image: url('images/shapes/service-sidebar-contact-bg-2.png');"></div><!-- /.service-sidebar__contact__bg__inner -->
+                                    </div><!-- /.service-sidebar__contact__bg -->
+                                    <div class="service-sidebar__contact__inner">
+                                        <div class="service-sidebar__contact__icon">
+                                            <i class="icon-telephone"></i>
+                                        </div><!-- /.service-sidebar__contact__icon -->
+                                        <div class="service-sidebar__contact__content">
+                                            <h4 class="service-sidebar__contact__time">Consultant Doctor: Jon Doe</h4>
+                                            <h4 class="service-sidebar__contact__time">MON-SAT 8:00-9:00</h4><!-- /.service-sidebar__contact__time -->
+                                            <h4 class="service-sidebar__contact__number">
+                                                <a href="tel:+915698036420">+91 569 803 6420</a>
+                                            </h4><!-- /.service-sidebar__contact__number -->
+                                        </div><!-- /.service-sidebar__contact__content -->
+                                    </div><!-- /.service-sidebar__contact__inner -->
+                                </div><!-- /.service-sidebar__contact -->
                             </div><!-- /.service-sidebar__info service-sidebar__single -->
                         </div><!-- /.sidebar -->
                     </div><!-- /.col-md-12 col-lg-4 -->

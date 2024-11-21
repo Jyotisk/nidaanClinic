@@ -133,7 +133,11 @@
                                 </li>
 
                                 <li>
-                                    <a href="#">Gallery</a>
+                                    <a href="/gallery">Gallery</a>
+                                </li>
+
+                                <li>
+                                    <a href="/teams">Teams</a>
                                 </li>
 
                                 <li>
