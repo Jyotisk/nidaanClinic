@@ -47,36 +47,36 @@
                                             </thead>
                                             <tbody>
                                                 @foreach ($allSpecilists as $index => $query)
-                                                <tr>
-                                                    <th>{{ $index + 1 }}</th>
-                                                    <td>{{ $query->department_name }}</td>
-                                                    <td>
-                                                        {{ $query->doctor_name }}
+                                                    <tr>
+                                                        <th>{{ $index + 1 }}</th>
+                                                        <td>{{ $query->department_name }}</td>
+                                                        <td>
+                                                            {{ $query->doctor_name }}
 
-                                                        {{-- {{$query->get_specialist_lists}}
+                                                            {{-- {{$query->get_specialist_lists}}
                                                         @foreach ($query['get_specialist_lists'] as $specialist)
                                                         <li>
                                                             <strong>{{ $specialist['header'] }}</strong>: {{ $specialist['specialist_detail'] }}
                                                         </li>
                                                         @endforeach --}}
-                                                    </td>
-                                                    <td>
-                                                        <img src="{{ Storage::url($query->doctor_image) }}"
-                                                            alt="Service Images" style="width: 10%" />
-                                                    </td>
-                                                    <td>{{ \Illuminate\Support\Str::limit($query->descriptions, $limit = 20, $end = '...') }}
-                                                    </td>
-                                                    <td><button class="btn btn-info btn-sm rounded-0 view"
-                                                            data-specialist_id="{{ $query->id }}"
-                                                            data-department_name="{{ $query->department_name }}"
-                                                            data-doctor_name="{{ $query->doctor_name }}"
-                                                            data-facebook_link="{{ $query->facebook_link }}"
-                                                            data-instagram_link="{{ $query->instagram_link }}"
-                                                            data-twitter_link="{{ $query->twitter_link }}"
-                                                            data-linked_in_link="{{ $query->linked_in_link }}"
-                                                            data-descriptions="{{ $query->descriptions }}">view</button>
-                                                    </td>
-                                                </tr>
+                                                        </td>
+                                                        <td>
+                                                            <img src="{{ Storage::url($query->doctor_image) }}"
+                                                                alt="Service Images" style="width: 10%" />
+                                                        </td>
+                                                        <td>{{ \Illuminate\Support\Str::limit($query->descriptions, $limit = 20, $end = '...') }}
+                                                        </td>
+                                                        <td><button class="btn btn-info btn-sm rounded-0 view"
+                                                                data-specialist_id="{{ $query->id }}"
+                                                                data-department_name="{{ $query->department_name }}"
+                                                                data-doctor_name="{{ $query->doctor_name }}"
+                                                                data-facebook_link="{{ $query->facebook_link }}"
+                                                                data-instagram_link="{{ $query->instagram_link }}"
+                                                                data-twitter_link="{{ $query->twitter_link }}"
+                                                                data-linked_in_link="{{ $query->linked_in_link }}"
+                                                                data-descriptions="{{ $query->descriptions }}">view</button>
+                                                        </td>
+                                                    </tr>
                                                 @endforeach
                                             </tbody>
 
@@ -109,8 +109,8 @@
                                             class="text-danger">*</span></label>
                                     <select name="department_name" id="" class="form-control" require>
                                         <option value="">Select Department</option>
-                                        @foreach($departments AS $dep)
-                                        <option value="{{$dep->id}}">{{$dep->department_name}}</option>
+                                        @foreach ($departments as $dep)
+                                            <option value="{{ $dep->id }}">{{ $dep->department_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -183,34 +183,41 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <button type="button" class="btn btn-info btn-sm rounded-0 text-end" id="ediBtn">Edit</button>
+                        <button type="button" class="btn btn-info btn-sm rounded-0 text-end"
+                            id="ediBtn">Edit</button>
                         <form action="" id="editForm">
                             @csrf
                             <div class="row text-center">
                                 <div class="col-md-4">
                                     <label for="Registration No" class="form-label">Doctor Name</label>
-                                    <input type="text" class="form-control" id="modal_doctor_name" name="doctor_name">
-                                    <input type="hidden" class="form-control" id="specialist_id" name="specialist_id">
+                                    <input type="text" class="form-control" id="modal_doctor_name"
+                                        name="doctor_name">
+                                    <input type="hidden" class="form-control" id="specialist_id"
+                                        name="specialist_id">
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="Registration No" class="form-label">department</label>
+                                    <label for="Registration No" class="form-label">Department Name</label>
                                     <p id="modal_department_name"></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="Registration No" class="form-label">facebook_link</label>
-                                    <input type="text" class="form-control" id="modal_facebook_link" name="facebook_link">
+                                    <label for="Registration No" class="form-label">Facebook Link</label>
+                                    <input type="text" class="form-control" id="modal_facebook_link"
+                                        name="facebook_link">
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="Registration No" class="form-label">modal_instagram_link</label>
-                                    <input type="text" class="form-control" id="modal_instagram_link" name="instagram_link">
+                                    <label for="Registration No" class="form-label">Instagram Link</label>
+                                    <input type="text" class="form-control" id="modal_instagram_link"
+                                        name="instagram_link">
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="Registration No" class="form-label">twitter_link</label>
-                                    <input type="text" class="form-control" id="modal_twitter_link" name="twitter_link">
+                                    <label for="Registration No" class="form-label">Twitter Link</label>
+                                    <input type="text" class="form-control" id="modal_twitter_link"
+                                        name="twitter_link">
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="Registration No" class="form-label">linked_in_link</label>
-                                    <input type="text" class="form-control" id="modal_linked_in_link" name="linked_in_link">
+                                    <label for="Registration No" class="form-label">LinkedIn Link</label>
+                                    <input type="text" class="form-control" id="modal_linked_in_link"
+                                        name="linked_in_link">
                                 </div>
                                 <div class="col-md-12">
                                     <label for="department name" class="form-label">Description<span
@@ -219,7 +226,8 @@
                                 </div>
                             </div>
                             <div class="row" id="editDetails"></div>
-                            <button type="submit" class="btn btn-success btn-sm rounded-0 mt-4" id="editSubmitBtn" style="display: none;">Submit</button>
+                            <button type="submit" class="btn btn-success btn-sm rounded-0 mt-4" id="editSubmitBtn"
+                                style="display: none;">Submit</button>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -331,58 +339,19 @@
                 },
                 success: function(response) {
                     if (response.status == 'success') {
+
                         var div = document.getElementById('editDetails');
 
-                        // Assuming response.specialistDetails is an array of items
-                        // response.specialistDetails.forEach(item => {
-                        //     // Create a container div with the col-md-12 class
-                        //     let colDiv = document.createElement('div');
-                        //     colDiv.className = 'col-md-12';
-
-                        //     // Create a label element
-                        //     let label = document.createElement('label');
-                        //     label.setAttribute('for', 'modal_linked_in_link');
-                        //     label.className = 'form-label';
-                        //     label.textContent = 'linked_in_link';
-
-                        //     // Create an input field
-                        //     let input = document.createElement('input');
-                        //     input.type = 'text';
-                        //     input.className = 'form-control';
-                        //     input.id = 'modal_linked_in_link';
-                        //     input.value = item.header;
-
-
-                        //     let inputTwo = document.createElement('input');
-                        //     inputTwo.type = 'text';
-                        //     inputTwo.className = 'form-control';
-                        //     inputTwo.id = 'modal_linked_in_link';
-                        //     inputTwo.value = item.specialist_detail	;
-
-                        //     // Append label and input to the colDiv
-                        //     colDiv.appendChild(label);
-                        //     colDiv.appendChild(input);
-                        //     colDiv.appendChild(input);
-
-                        //     // Append the colDiv to the main div
-                        //     div.appendChild(inputTwo);
-                        // });
-
-                        // $('#appointmentForm :input').attr('disabled', 'disabled');
-                        // Swal.fire({
-                        //     title: "Thank You!",
-                        //     text: "Message Sent Successfully",
-                        //     icon: "success"
-                        // });
                         response.specialistDetails.forEach(item => {
-
                             var tempDiv = "<div class='col-md-12 mt-2'>" +
                                 "<label for='Registration No' class='form-label'>Header</label>" +
-                                "<input type='text' class='form-control' name='header[]' value='" + item.header + "' disabled>" +
+                                "<input type='text' class='form-control' name='header[]' value='" +
+                                item.header + "' disabled>" +
                                 "  </div>" +
                                 " <div class='col-md-12'>" +
                                 " <label for='Registration No' class='form-label'>Details</label>" +
-                                "<input type='text' class='form-control' name='specialist_detail[]' value='" + item.specialist_detail + "' disabled>" +
+                                "<input type='text' class='form-control' name='specialist_detail[]' value='" +
+                                item.specialist_detail + "' disabled>" +
                                 "</div>"
                             // div.append(tempDiv)
                             $('#editDetails').append(tempDiv);

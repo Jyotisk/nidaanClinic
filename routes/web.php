@@ -1,12 +1,15 @@
 <?php
 
 use App\Http\Controllers\Admin\FacilityController;
+use App\Http\Controllers\Admin\GallaryController;
 use App\Http\Controllers\Admin\SpecilistController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\MenuItemController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\RolePermissionController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -68,6 +71,24 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
     Route::post('facility-lists', [FacilityController::class, 'store'])->name('SubmitFacility');
     Route::get('facility-details', [FacilityController::class, 'FacilityDetails'])->name('FacilityDetails');
     Route::post('edit-facility-lists', [FacilityController::class, 'edit'])->name('EditFacility');
+
+    //Gallary 
+    Route::get('add-gallary', [GallaryController::class, 'index'])->name('getGallary');
+    Route::post('add-gallary', [GallaryController::class, 'store'])->name('createGallary');
+    Route::get('gallary-lists', [GallaryController::class, 'show'])->name('galleryLists');
+    Route::post('delete-gallary', [GallaryController::class, 'destroy'])->name('destroyGallery');
+
+    //testimonial  
+    Route::get('add-testimonials', [TestimonialController::class, 'GetTestimonials'])->name('GetTestimonials');
+    Route::post('add-testimonials', [TestimonialController::class, 'AddTestimonials'])->name('AddTestimonials');
+    Route::get('testimonial-lists', [TestimonialController::class, 'TestimonialList'])->name('TestimonialList');
+    Route::post('close-testimonial-list', [TestimonialController::class, 'closeTestimonialList'])->name('closeTestimonialList');
+
+    //faq  
+    Route::get('add-faq', [FaqController::class, 'GetFaq'])->name('GetFaq');
+    Route::post('add-faq', [FaqController::class, 'AddFaq'])->name('AddFaq');
+    Route::get('faq-lists', [FaqController::class, 'FaqList'])->name('FaqList');
+    Route::post('close-faq-list', [FaqController::class, 'closeFaq'])->name('closeFaq');
 
     Route::get('reset-password', [ResetPasswordController::class, 'create'])
         ->name('passwordReset');
