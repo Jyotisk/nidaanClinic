@@ -66,7 +66,7 @@ class SpecilistController extends Controller
             $specialists->status = true;
             $specialists->entry_by = Auth::user()->id;
             if ($request->file('doctor_image')) {
-                $path = $request->doctor_image->store('public/gallary');
+                $path = $request->doctor_image->store('public/specialist');
                 $specialists->doctor_image = $path;
             }
             $specialists->save();
@@ -99,7 +99,6 @@ class SpecilistController extends Controller
             $exception->date = date('Y-m-d');
             $exception->user_id = Auth::user()->id;
             $exception->save();
-            return $e;
             return response()->json([
                 'response' => 'error',
                 'message' => 'Something went wrong',

@@ -144,19 +144,19 @@
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarLayouts">
                   <i class="fas fa-th-list"></i>
-                  <p>Sidebar Layouts</p>
+                  <p>Doctor</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="sidebarLayouts">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="sidebar-style-2.html">
-                        <span class="sub-item">Sidebar Style 2</span>
+                      <a href="{{route('indexDepartment')}}">
+                        <span class="sub-item">Department List</span>
                       </a>
                     </li>
                     <li>
-                      <a href="icon-menu.html">
-                        <span class="sub-item">Icon Menu</span>
+                      <a href="{{route('SpecialistLists')}}">
+                        <span class="sub-item">Specialist List</span>
                       </a>
                     </li>
                   </ul>
@@ -165,14 +165,14 @@
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#forms">
                   <i class="fas fa-pen-square"></i>
-                  <p>Forms</p>
+                  <p>Facility/Service</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="forms">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="forms/forms.html">
-                        <span class="sub-item">Basic Form</span>
+                      <a href="{{route('FacilityLists')}}">
+                        <span class="sub-item">Lists</span>
                       </a>
                     </li>
                   </ul>
@@ -181,19 +181,19 @@
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#tables">
                   <i class="fas fa-table"></i>
-                  <p>Tables</p>
+                  <p>Gallary</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="tables">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="tables/tables.html">
-                        <span class="sub-item">Basic Table</span>
+                      <a href="{{route('getGallary')}}">
+                        <span class="sub-item">Add Gallary</span>
                       </a>
                     </li>
                     <li>
-                      <a href="tables/datatables.html">
-                        <span class="sub-item">Datatables</span>
+                      <a href="{{route('galleryLists')}}">
+                        <span class="sub-item">Gallary Lists</span>
                       </a>
                     </li>
                   </ul>
@@ -202,19 +202,19 @@
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#maps">
                   <i class="fas fa-map-marker-alt"></i>
-                  <p>Maps</p>
+                  <p>Testimonial</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="maps">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="maps/googlemaps.html">
-                        <span class="sub-item">Google Maps</span>
+                      <a href="{{route('GetTestimonials')}}">
+                        <span class="sub-item">Add Testimonial</span>
                       </a>
                     </li>
                     <li>
-                      <a href="maps/jsvectormap.html">
-                        <span class="sub-item">Jsvectormap</span>
+                      <a href="{{route('TestimonialList')}}">
+                        <span class="sub-item">Testimonial Lists</span>
                       </a>
                     </li>
                   </ul>
@@ -223,19 +223,19 @@
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#charts">
                   <i class="far fa-chart-bar"></i>
-                  <p>Charts</p>
+                  <p>FAQ</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="charts">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="charts/charts.html">
-                        <span class="sub-item">Chart Js</span>
+                      <a href="{{route('GetFaq')}}">
+                        <span class="sub-item">Add Faq</span>
                       </a>
                     </li>
                     <li>
-                      <a href="charts/sparkline.html">
-                        <span class="sub-item">Sparkline</span>
+                      <a href="{{route('FaqList')}}">
+                        <span class="sub-item">Faq Lists</span>
                       </a>
                     </li>
                   </ul>

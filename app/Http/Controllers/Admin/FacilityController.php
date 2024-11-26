@@ -28,6 +28,7 @@ class FacilityController extends Controller
             $request->all(),
             [
                 'facility_name' => 'required',
+                'type' => 'required',
                 'descriptions' => 'required',
                 'image' => 'image|mimes:jpeg,png,jpg,gif,webp|max:5500', // Adjust the validation rules as needed
             ],
@@ -53,12 +54,13 @@ class FacilityController extends Controller
         DB::beginTransaction();
         try {
             $facility = new Facility();
+            $facility->type = $request->type;
             $facility->facility_name = $request->facility_name;
             $facility->descriptions = $request->descriptions;
             $facility->status = true;
             $facility->entry_by = Auth::user()->id;
             if ($request->file('image')) {
-                $path = $request->image->store('public/gallary');
+                $path = $request->image->store('public/facility');
                 $facility->image = $path;
             }
             $facility->save();

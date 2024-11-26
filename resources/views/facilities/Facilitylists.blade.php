@@ -21,7 +21,7 @@
                     <div class="card-title">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#addSpecialist">
-                            Add Facility
+                            Add Facility/Service
                         </button>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Facility Lists</h4>
+                                    <h4 class="card-title">Facility/Service Lists</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -38,9 +38,9 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col" class="text-center">#</th>
-                                                    <th scope="col" class="text-center">facility_name</th>
-                                                    <th scope="col" class="text-center">image</th>
-                                                    <th scope="col" class="text-center">descriptions</th>
+                                                    <th scope="col" class="text-center">Facility Name</th>
+                                                    <th scope="col" class="text-center">Image</th>
+                                                    <th scope="col" class="text-center">Descriptions</th>
                                                     <th scope="col" class="text-center">Action</th>
                                                 </tr>
                                             </thead>
@@ -58,7 +58,7 @@
                                                     <td><button class="btn btn-info btn-sm rounded-0 view"
                                                             data-facility_id="{{ $query->id }}"
                                                             data-facility_name="{{ $query->facility_name }}"
-                                                            data-descriptions="{{ $query->descriptions }}">view</button>
+                                                            data-descriptions="{{ $query->descriptions }}">View</button>
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -89,7 +89,15 @@
                             @csrf
                             <div class="row g-2">
                                 <div class="col-md-12">
-                                    <label for="facility name" class="form-label">Facility Name <span
+                                    <label for="Registration No" class="form-label">Category</label>
+                                    <select name="type" id="type" class="form-control" required>
+                                        <option value="">Select</option>
+                                        <option value="service">Service</option>
+                                        <option value="facility">Facility</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="facility name" class="form-label">Facility/Service Name <span
                                             class="text-danger">*</span></label>
                                     <input type="text" id="facility_name" name="facility_name" class="form-control">
                                 </div>
@@ -133,7 +141,7 @@
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="serviceName">Doctor Details</h5>
+                        <h5 class="modal-title" id="serviceName">Facility/Service Details</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                     </div>
@@ -143,10 +151,10 @@
                             @csrf
                             <div class="row text-center">
                                 <div class="col-md-12">
-                                    <label for="facility name" class="form-label">Facility Name <span
+                                    <label for="facility name" class="form-label">Facility/Service Name <span
                                             class="text-danger">*</span></label>
                                     <input type="text" id="modal_facility_name" name="facility_name" class="form-control" disabled>
-                                    <input type="text" id="facility_id" name="facility_id" class="form-control">
+                                    <input type="hidden" id="facility_id" name="facility_id" class="form-control">
                                 </div>
                                 <div class="col-md-12">
                                     <label for="department name" class="form-label">Description<span
