@@ -700,54 +700,40 @@
                             @csrf
                             <div class="form-one__group">
                                 <div class="form-one__control">
-                                    <input type="text" name="patient_name" placeholder="Full Name*">
+                                    <input type="text" name="patient_name" placeholder="Full Name*" required>
                                 </div><!-- /.form-one__control -->
                                 <div class="form-one__control">
-                                    <input type="text" name="age" placeholder="Age*">
+                                    <input type="text" name="age" placeholder="Age*" required>
                                 </div><!-- /.form-one__control -->
                                 <div class="form-one__control">
-                                    <input type="tel" name="phone_no" placeholder="Phone Number" Maxlength="10">
+                                    <input type="tel" name="phone_no" placeholder="Phone Number*" Maxlength="10" required>
                                 </div><!-- /.form-one__control -->
-                                <div class="form-one__control form-one__control--full">
-                                    <textarea name="address" placeholder="Address..."></textarea>
+                                <div class="form-one__control">
+                                    <select class="selectpicker" aria-label="Name a Doctor" name="specialist_id" required>
+                                        <option selected>Name a Doctor*</option>
+                                        @foreach($specialists AS $row)
+                                        <option value="{{$row->id}}">{{ $row->doctor_name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div><!-- /.form-one__control -->
-                                <div class="form-one__control appointment-one__form__date">
+                                <div class="form-one__control appointment-one__form__date" required>
                                     <input type="text" name="appointment_date" placeholder="Appointment Date*"
                                         id="datepicker" class="mediox-datepicker">
                                     <span class="appointment-one__form__date__arrow">
                                         <i class="icon-caret-down"></i>
                                     </span><!-- /.appointment-one__form__date__arrow -->
                                 </div><!-- /.form-one__control -->
-                                <div class="form-one__control">
-                                    <select class="selectpicker" aria-label="Type of Service">
-                                        <option selected>Type of Service</option>
-                                        <option value="1">immediate care</option>
-                                        <option value="2">dental care</option>
-                                        <option value="3">neurology care</option>
-                                        <option value="4">gynaecologists</option>
-                                        <option value="5">orthopaedics</option>
-                                        <option value="6">cardiology</option>
-                                    </select>
-                                </div><!-- /.form-one__control -->
-                                <div class="form-one__control">
-                                    <select class="selectpicker" aria-label="Name a Doctor" name="specialist_id">
-                                        <option selected>Name a Doctor</option>
-                                        <option value="1">Leslie Alexander</option>
-                                        <option value="2">Mike Hardson</option>
-                                        <option value="3">Anthony B. Castillo</option>
-                                        <option value="4">Adolfo Carr</option>
-                                        <option value="5">Sarah Albert</option>
-                                        <option value="6">kevin martin</option>
-                                    </select>
-                                </div><!-- /.form-one__control -->
+                                <div class="form-one__control form-one__control--full">
+                                    <textarea name="address" placeholder="Address*..." required></textarea>
+                                </div><!-- /.form-one__control -->                               
                                 <div class="form-one__control form-one__control--full">
                                     <textarea name="message" placeholder="Message (If Any)"></textarea>
                                 </div><!-- /.form-one__control -->
                                 <div class="form-one__control form-one__control--full">
-                                    <a type="button" class="mediox-btn" href="#appointmentForm">
-                                        <span>book appointment</span>
-                                        <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
-                                    </a><!-- /.mediox-btn -->
+                                    <button type="submit" class="mediox-btn">
+                                    <span>book appointment</span>
+                                    <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
+                                    </button>
                                 </div><!-- /.form-one__control -->
                             </div><!-- /.form-one__group -->
                         </form><!-- /.form-one -->
@@ -1717,17 +1703,16 @@
         </div><!-- /.client-carousel --> --}}
         {{-- End of Client Section --}}
 </x-guest-layout>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     $(document).ready(function() {
         $('#appointmentForm').submit(function(e) {
-            e.preventDefault(); // Prevent form submission
-
-            // Serialize form data
+            e.preventDefault(); 
+            
             var formData = $(this).serialize();
 
-            // Send AJAX request
             $.ajax({
-                url: "{{ route('BookAppointment') }}", // Replace with your route
+                url: "{{ route('BookAppointment') }}",
                 method: 'POST',
                 data: formData,
                 success: function(response) {
@@ -1735,13 +1720,12 @@
                         $('#appointmentForm :input').attr('disabled', 'disabled');
                         Swal.fire({
                             title: "Thank You!",
-                            text: "Message Sent Successfully",
+                            text: response.message,
                             icon: "success"
                         });
                     }
                 },
                 error: function(xhr, status, error) {
-                    // console.error(xhr.responseText);
                     Swal.fire({
                         title: "Validation Fail!",
                         text: "Please Enter Correct Data",
