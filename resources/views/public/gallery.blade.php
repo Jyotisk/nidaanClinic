@@ -23,39 +23,12 @@
         <section class="gallery-page section-space">
             <div class="container">
                 <div class="row gutter-y-30 fitRow-layout">
-                    <div class="col-md-6">
-                        <div class="gallery-page__card">
-                            <img src="{{asset('images/gallery/gallery-1-1.jpg')}}" alt="gallery">
-                            <div class="gallery-page__card__hover">
-                                <a href="{{asset('images/gallery/gallery-1-1.jpg')}}" class="img-popup">
-                                    <span class="gallery-page__card__icon"></span>
-                                </a>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
-                            </div><!-- /.gallery-page__card__hover -->
-                        </div><!-- /.gallery-page__card -->
-                    </div><!-- /.col-md-6 -->
-                    <div class="col-md-6">
-                        <div class="gallery-page__card">
-                            <img src="{{asset('images/gallery/gallery-1-2.jpg')}}" alt="gallery">
-                            <div class="gallery-page__card__hover">
-                                <a href="{{asset('images/gallery/gallery-1-2.jpg')}}" class="img-popup">
-                                    <span class="gallery-page__card__icon"></span>
-                                </a>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
-                            </div><!-- /.gallery-page__card__hover -->
-                        </div><!-- /.gallery-page__card -->
-                    </div><!-- /.col-md-6 -->
+                    @foreach($gallaryImage AS $image)
                     <div class="col-md-6 col-lg-4">
                         <div class="gallery-page__card">
-                            <img src="{{asset('images/gallery/gallery-1-3.jpg')}}" alt="gallery">
+                            <img src="{{ env('IMAGE_PATH').Storage::url($image->image)}}" alt="gallery">
                             <div class="gallery-page__card__hover">
-                                <a href="{{asset('images/gallery/gallery-1-3.jpg')}}" class="img-popup">
+                                <a href="{{ env('IMAGE_PATH').Storage::url($image->image)}}" class="img-popup">
                                     <span class="gallery-page__card__icon"></span>
                                 </a>
                                 <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
@@ -64,63 +37,8 @@
                                 <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
                             </div><!-- /.gallery-page__card__hover -->
                         </div><!-- /.gallery-page__card -->
-                    </div><!-- /.col-md-6 col-lg-4 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="gallery-page__card">
-                            <img src="{{asset('images/gallery/gallery-1-4.jpg')}}" alt="gallery">
-                            <div class="gallery-page__card__hover">
-                                <a href="{{asset('images/gallery/gallery-1-4.jpg')}}" class="img-popup">
-                                    <span class="gallery-page__card__icon"></span>
-                                </a>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
-                            </div><!-- /.gallery-page__card__hover -->
-                        </div><!-- /.gallery-page__card -->
-                    </div><!-- /.col-md-6 col-lg-4 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="gallery-page__card">
-                            <img src="{{asset('images/gallery/gallery-1-5.jpg')}}" alt="gallery">
-                            <div class="gallery-page__card__hover">
-                                <a href="{{asset('images/gallery/gallery-1-5.jpg')}}" class="img-popup">
-                                    <span class="gallery-page__card__icon"></span>
-                                </a>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
-                            </div><!-- /.gallery-page__card__hover -->
-                        </div><!-- /.gallery-page__card -->
-                    </div><!-- /.col-md-6 col-lg-4 -->
-                    <div class="col-md-6">
-                        <div class="gallery-page__card">
-                            <img src="{{asset('images/gallery/gallery-1-6.jpg')}}" alt="gallery">
-                            <div class="gallery-page__card__hover">
-                                <a href="{{asset('images/gallery/gallery-1-6.jpg')}}" class="img-popup">
-                                    <span class="gallery-page__card__icon"></span>
-                                </a>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
-                            </div><!-- /.gallery-page__card__hover -->
-                        </div><!-- /.gallery-page__card -->
-                    </div><!-- /.col-md-6 -->
-                    <div class="col-md-6">
-                        <div class="gallery-page__card">
-                            <img src="{{asset('images/gallery/gallery-1-7.jpg')}}" alt="gallery">
-                            <div class="gallery-page__card__hover">
-                                <a href="{{asset('images/gallery/gallery-1-7.jpg')}}" class="img-popup">
-                                    <span class="gallery-page__card__icon"></span>
-                                </a>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
-                            </div><!-- /.gallery-page__card__hover -->
-                        </div><!-- /.gallery-page__card -->
-                    </div><!-- /.col-md-6 -->
+                    </div>
+                    @endforeach
                 </div><!-- /.row -->
             </div><!-- /.container -->
         </section><!-- /.gallery-page section-space -->
