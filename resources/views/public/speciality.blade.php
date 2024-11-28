@@ -42,13 +42,14 @@
                             </div><!-- /.service-card__content -->
                         </div><!-- /.service-card -->
                     </div><!-- /.col-lg-4 col-md-6 -->
+
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
                         <div class="service-card">
                             <div class="service-card__image">
                                 <img src="{{asset('images/services/service-1-2.jpg')}}" alt="Dental Care">
                             </div><!-- /.service-card__image -->
                             <span class="service-card__icon">
-                                <i class="icon-tooth"></i>
+                                <i class="icon-medicine"></i>
                             </span><!-- /.service-card__icon -->
                             <div class="service-card__content">
                                 <p class="service-card__total-doctors">10+ doctors</p><!-- /.service-card__total-doctors -->
@@ -105,7 +106,7 @@
                                 <img src="{{asset('images/services/service-1-5.jpg')}}" alt="orthopaedics">
                             </div><!-- /.service-card__image -->
                             <span class="service-card__icon">
-                                <i class="icon-bone"></i>
+                                <i class="icon-medicine"></i>
                             </span><!-- /.service-card__icon -->
                             <div class="service-card__content">
                                 <p class="service-card__total-doctors">15+ doctors</p><!-- /.service-card__total-doctors -->
@@ -137,13 +138,14 @@
                             </div><!-- /.service-card__content -->
                         </div><!-- /.service-card -->
                     </div><!-- /.col-lg-4 col-md-6 -->
+
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
                         <div class="service-card">
                             <div class="service-card__image">
-                                <img src="{{asset('images/services/service-1-6.jpg')}}" alt="cardiology">
+                                <img src="{{asset('images/services/service-1-7.jpg')}}" alt="cardiology">
                             </div><!-- /.service-card__image -->
                             <span class="service-card__icon">
-                                <i class="icon-cardiology"></i>
+                                <i class="icon-medicine"></i>
                             </span><!-- /.service-card__icon -->
                             <div class="service-card__content">
                                 <p class="service-card__total-doctors">20+ doctors</p><!-- /.service-card__total-doctors -->
@@ -156,32 +158,14 @@
                             </div><!-- /.service-card__content -->
                         </div><!-- /.service-card -->
                     </div><!-- /.col-lg-4 col-md-6 -->
+                    
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
                         <div class="service-card">
                             <div class="service-card__image">
-                                <img src="{{asset('images/services/service-1-6.jpg')}}" alt="cardiology">
+                                <img src="{{asset('images/services/service-1-8.jpg')}}" alt="cardiology">
                             </div><!-- /.service-card__image -->
                             <span class="service-card__icon">
-                                <i class="icon-cardiology"></i>
-                            </span><!-- /.service-card__icon -->
-                            <div class="service-card__content">
-                                <p class="service-card__total-doctors">20+ doctors</p><!-- /.service-card__total-doctors -->
-                                <div class="service-card__content__inner">
-                                    <h3 class="service-card__title"><a href="#">Paediatrics</a></h3><!-- /.service-card__title -->
-                                    <a href="#" class="service-card__link">
-                                        <i class="icon-up-right-arrow"></i>
-                                    </a><!-- /.service-card__link -->
-                                </div><!-- /.service-card__content__inner -->
-                            </div><!-- /.service-card__content -->
-                        </div><!-- /.service-card -->
-                    </div><!-- /.col-lg-4 col-md-6 -->
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
-                        <div class="service-card">
-                            <div class="service-card__image">
-                                <img src="{{asset('images/services/service-1-6.jpg')}}" alt="cardiology">
-                            </div><!-- /.service-card__image -->
-                            <span class="service-card__icon">
-                                <i class="icon-cardiology"></i>
+                                <i class="icon-medicine"></i>
                             </span><!-- /.service-card__icon -->
                             <div class="service-card__content">
                                 <p class="service-card__total-doctors">20+ doctors</p><!-- /.service-card__total-doctors -->

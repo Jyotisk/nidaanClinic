@@ -139,7 +139,7 @@
                     <div class="col-lg-6 wow fadeInRight" data-wow-duration="1500ms">
                         <div class="skills-one__image">
                             <img src="{{asset('images/resources/skills-1-1.jpg')}}" alt="skills">
-                            <div class="skills-one__award">
+                            <div class="skills-one__award d-none">
                                 <span class="skills-one__award__text">2023 <br> Award <br> Winning</span><!-- /.skills-one__award__text -->
                             </div><!-- /.skills-one__award -->
                         </div><!-- /.skills-one__image -->
@@ -396,8 +396,10 @@
                     </div><!-- /.col-xl-6 col-lg-9 -->
                     <div class="col-xl-6 wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="00ms">
                         <div class="faq-one__image">
-                            <img src="{{asset('images/resources/faq-1-1.png')}}" alt="faq" class="faq-one__image__one">
-                            <img src="{{asset('images/resources/faq-1-2.png')}}" alt="faq" class="faq-one__image__two">
+                            {{-- <img src="{{asset('images/resources/faq-1-1.png')}}" alt="faq" class="faq-one__image__one"> --}}
+                            {{-- <img src="{{asset('images/resources/faq-1-2.png')}}" alt="faq" class="faq-one__image__two"> --}}
+                            <img src="{{asset('images/about/about-1-1.jpg')}}" alt="faq" class="faq-one__image__two">
+                            <img src="{{asset('images/main-slider/main-slider-1-1.jpg')}}" alt="faq" class="faq-one__image__two">
                             <img src="{{asset('images/shapes/faq-shape-1-1.png')}}" alt="shape" class="faq-one__image__shape-1">
                         </div><!-- /.faq-one__image -->
                     </div><!-- /.col-xl-6 -->
@@ -405,7 +407,7 @@
             </div><!-- /.container section-space-two -->
         </section><!-- /.faq-one -->
     
-        <section class="testimonials-two section-space-top">
+        <section class="testimonials-two section-space-top client-carousel">
             <div class="container">
                 <div class="sec-title sec-title--center wow fadeInUp" data-wow-duration="1500ms">
                     <div class="sec-title__top">
@@ -480,7 +482,7 @@
                                             <p class="testimonial-card-two__designation">managing director</p><!-- /.testimonial-card-two__designation -->
                                         </div><!-- /.testimonial-card-two__info -->
                                     </div><!-- /.testimonial-card-two__identity -->
-                                    <div class="testimonial-card-two__image">
+                                    <div class="testimonial-card-two__image d-none">
                                         <img src="{{asset('images/testimonials/testimonial-2-1.jpg')}}" alt="Michael G. Ware">
                                     </div><!-- /.testimonial-card-two__image -->
                                 </div><!-- /.testimonial-card-two__bottom -->
@@ -523,7 +525,7 @@
                                             <p class="testimonial-card-two__designation">managing director</p><!-- /.testimonial-card-two__designation -->
                                         </div><!-- /.testimonial-card-two__info -->
                                     </div><!-- /.testimonial-card-two__identity -->
-                                    <div class="testimonial-card-two__image">
+                                    <div class="testimonial-card-two__image d-none">
                                         <img src="{{asset('images/testimonials/testimonial-2-2.jpg')}}" alt="Mike Hardson">
                                     </div><!-- /.testimonial-card-two__image -->
                                 </div><!-- /.testimonial-card-two__bottom -->
@@ -566,7 +568,7 @@
                                             <p class="testimonial-card-two__designation">managing director</p><!-- /.testimonial-card-two__designation -->
                                         </div><!-- /.testimonial-card-two__info -->
                                     </div><!-- /.testimonial-card-two__identity -->
-                                    <div class="testimonial-card-two__image">
+                                    <div class="testimonial-card-two__image d-none">
                                         <img src="{{asset('images/testimonials/testimonial-2-1.jpg')}}" alt="Michael G. Ware">
                                     </div><!-- /.testimonial-card-two__image -->
                                 </div><!-- /.testimonial-card-two__bottom -->
@@ -609,7 +611,7 @@
                                             <p class="testimonial-card-two__designation">managing director</p><!-- /.testimonial-card-two__designation -->
                                         </div><!-- /.testimonial-card-two__info -->
                                     </div><!-- /.testimonial-card-two__identity -->
-                                    <div class="testimonial-card-two__image">
+                                    <div class="testimonial-card-two__image d-none">
                                         <img src="{{asset('images/testimonials/testimonial-2-2.jpg')}}" alt="Mike Hardson">
                                     </div><!-- /.testimonial-card-two__image -->
                                 </div><!-- /.testimonial-card-two__bottom -->
@@ -652,7 +654,7 @@
                                             <p class="testimonial-card-two__designation">managing director</p><!-- /.testimonial-card-two__designation -->
                                         </div><!-- /.testimonial-card-two__info -->
                                     </div><!-- /.testimonial-card-two__identity -->
-                                    <div class="testimonial-card-two__image">
+                                    <div class="testimonial-card-two__image d-none">
                                         <img src="{{asset('images/testimonials/testimonial-2-1.jpg')}}" alt="Michael G. Ware">
                                     </div><!-- /.testimonial-card-two__image -->
                                 </div><!-- /.testimonial-card-two__bottom -->
@@ -695,7 +697,7 @@
                                             <p class="testimonial-card-two__designation">managing director</p><!-- /.testimonial-card-two__designation -->
                                         </div><!-- /.testimonial-card-two__info -->
                                     </div><!-- /.testimonial-card-two__identity -->
-                                    <div class="testimonial-card-two__image">
+                                    <div class="testimonial-card-two__image d-none">
                                         <img src="{{asset('images/testimonials/testimonial-2-2.jpg')}}" alt="Mike Hardson">
                                     </div><!-- /.testimonial-card-two__image -->
                                 </div><!-- /.testimonial-card-two__bottom -->
@@ -706,7 +708,7 @@
             </div><!-- /.container -->
         </section><!-- /.testimonials-two section-space-top -->
     
-        <div class="client-carousel @@extraClassName">
+        <div class="client-carousel @@extraClassName d-none">
             <div class="container">
                 <div class="client-carousel__one mediox-owl__carousel owl-theme owl-carousel" data-owl-options='{
             "items": 5,
