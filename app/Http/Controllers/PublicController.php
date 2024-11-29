@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Department;
+use App\Models\Faq;
+use App\Models\Gallary;
 use App\Models\MenuItem;
+use App\Models\Testimonial;
 use App\Models\User\BookAppointment;
 use App\Models\User\Specialist;
 use Illuminate\Http\Request;
@@ -26,9 +29,13 @@ class PublicController extends Controller
             $Visitor->save();
             DB::commit();
 
-            $specialists = Specialist::join('departments', 'departments.id', 'specialists.department_id')
-                ->select('department_name', 'specialists.doctor_name', 'specialists.id')->get();
-            return view('welcome', compact('specialists'));
+            $speciaLists = Specialist::join('departments', 'departments.id', 'specialists.department_id')
+                ->select('department_name', 'specialists.doctor_name', 'specialists.id','descriptions')->get();
+            $faqList=Faq::select('id','question','answer')->where('status',true)->get();
+            $testimonials=Testimonial::select('name','profession','description')->where('status',true)->get();
+
+
+            return view('welcome', compact('speciaLists','faqList','testimonials'));
         } catch (Exception $e) {
             return $e;
             DB::rollBack();
@@ -74,7 +81,7 @@ class PublicController extends Controller
             return response()->json([
                 'status' => 'success',
                 'message' => "Appointment Booked Successfully"
-            ]);
+            ],201);
         } catch (\Exception $e) {
             DB::rollBack();
             return $e;
@@ -123,7 +130,8 @@ class PublicController extends Controller
     }
 
     public function gallery()
-    {
-        return view('public.gallery');
+    {   
+        $gallaryImage=Gallary::select('image')->where('status',true)->get();
+        return view('public.gallery',compact('gallaryImage'));
     }
 }

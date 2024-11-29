@@ -711,7 +711,7 @@
                                 <div class="form-one__control">
                                     <select class="selectpicker" aria-label="Name a Doctor" name="specialist_id" required>
                                         <option selected>Name a Doctor*</option>
-                                        @foreach($specialists AS $row)
+                                        @foreach($speciaLists AS $row)
                                         <option value="{{$row->id}}">{{ $row->doctor_name }}</option>
                                         @endforeach
                                     </select>
@@ -861,13 +861,14 @@
                         }
                     }
                 }'>
+                        @foreach ($speciaLists as $specialists)
                         <div class="item">
                             <div class="team-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
                                 <img src="{{ asset('images/team/team-1-1.jpg') }}" alt="Sarah Albert"
                                     class="team-card__image">
                                 <div class="team-card__identity">
-                                    <h3 class="team-card__name"><a href="#">Dr. Niraj Bharadwaj</a></h3>
-                                    <p class="team-card__designation">MBBS, DNB (Paediatrics)</p>
+                                    <h3 class="team-card__name"><a href="#">{{ $specialists->doctor_name }}</a></h3>
+                                    <p class="team-card__designation">{{ $specialists->department_name }}</p>
                                     <div class="social-links">
                                         <a href="https://facebook.com">
                                             <i class="fab fa-facebook-f" aria-hidden="true"></i>
@@ -889,90 +890,7 @@
                                 </div><!-- /.team-card__identity -->
                             </div><!-- /.team-card -->
                         </div><!-- /.item -->
-                        <div class="item">
-                            <div class="team-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                                <img src="{{ asset('images/team/team-1-1.jpg') }}" alt="Mike Hardson"
-                                    class="team-card__image">
-                                <div class="team-card__identity">
-                                    <h3 class="team-card__name"><a href="#">Dr. Rajib Panging</a></h3>
-                                    <p class="team-card__designation">MBBS, DPM (Psychiatry)</p>
-                                    <div class="social-links">
-                                        <a href="https://facebook.com">
-                                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                            <span class="sr-only">Facebook</span>
-                                        </a>
-                                        <a href="https://instagram.com">
-                                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                                            <span class="sr-only">Instagram</span>
-                                        </a>
-                                        <a href="https://twitter.com">
-                                            <i class="fab fa-twitter" aria-hidden="true"></i>
-                                            <span class="sr-only">Twitter</span>
-                                        </a>
-                                        <a href="https://linkedin.com">
-                                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                            <span class="sr-only">Linkedin</span>
-                                        </a>
-                                    </div><!-- /.social-links -->
-                                </div><!-- /.team-card__identity -->
-                            </div><!-- /.team-card -->
-                        </div><!-- /.item -->
-                        <div class="item">
-                            <div class="team-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='200ms'>
-                                <img src="{{ asset('images/team/team-1-1.jpg') }}" alt="Keith Griffin"
-                                    class="team-card__image">
-                                <div class="team-card__identity">
-                                    <h3 class="team-card__name"><a href="#">Dr. Ankur Bala</a></h3>
-                                    <p class="team-card__designation">MBBS, MS (Gen. Surgery), MCH (NeuroSurgery)</p>
-                                    <div class="social-links">
-                                        <a href="https://facebook.com">
-                                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                            <span class="sr-only">Facebook</span>
-                                        </a>
-                                        <a href="https://instagram.com">
-                                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                                            <span class="sr-only">Instagram</span>
-                                        </a>
-                                        <a href="https://twitter.com">
-                                            <i class="fab fa-twitter" aria-hidden="true"></i>
-                                            <span class="sr-only">Twitter</span>
-                                        </a>
-                                        <a href="https://linkedin.com">
-                                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                            <span class="sr-only">Linkedin</span>
-                                        </a>
-                                    </div><!-- /.social-links -->
-                                </div><!-- /.team-card__identity -->
-                            </div><!-- /.team-card -->
-                        </div><!-- /.item -->
-                        <div class="item">
-                            <div class="team-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                                <img src="{{ asset('images/team/team-1-1.jpg') }}" alt="Adolfo Carr"
-                                    class="team-card__image">
-                                <div class="team-card__identity">
-                                    <h3 class="team-card__name"><a href="#">Dr. Divakar Choubey</a></h3>
-                                    <p class="team-card__designation">MBBS, MS(Gen Surgery), MCH (Urology)</p>
-                                    <div class="social-links">
-                                        <a href="https://facebook.com">
-                                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                            <span class="sr-only">Facebook</span>
-                                        </a>
-                                        <a href="https://instagram.com">
-                                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                                            <span class="sr-only">Instagram</span>
-                                        </a>
-                                        <a href="https://twitter.com">
-                                            <i class="fab fa-twitter" aria-hidden="true"></i>
-                                            <span class="sr-only">Twitter</span>
-                                        </a>
-                                        <a href="https://linkedin.com">
-                                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                            <span class="sr-only">Linkedin</span>
-                                        </a>
-                                    </div><!-- /.social-links -->
-                                </div><!-- /.team-card__identity -->
-                            </div><!-- /.team-card -->
-                        </div><!-- /.item -->
+                        @endforeach
                     </div><!-- /.team-one__carousel -->
                 </div><!-- /.col-lg-6 -->
                 <div class="col-lg-6 order-0 order-lg-1">
@@ -1106,57 +1024,22 @@
                         </div><!-- /.sec-title -->
                         <div class="faq-one__accordion">
                             <div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
-                                <div class="accordion active wow fadeInUp" data-wow-duration="1500ms"
+                                @foreach($faqList AS $key=> $faq)
+                                <div class="accordion wow fadeInUp {{$key== 0 ?'active': "" }}" data-wow-duration="1500ms"
                                     data-wow-delay="00ms">
                                     <div class="accordion-title">
                                         <h4>
-                                            Wound healing genes
+                                            {{ $faq->question }}
                                             <span class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
                                         </h4>
                                     </div><!-- /.accordion-title -->
                                     <div class="accordion-content">
                                         <div class="inner">
-                                            <p>Lorem ipsum dolor sit amet consecteitur adipiscing elit Ut et massa mi.
-                                                Aliquam in hendrerit urna. Pellentesque sit a sapien fringilla, mattis
-                                                ligula consectietur, ultrices mauris. Maecenas vitae mattis tellus.</p>
+                                            <p>{{ $faq->answer }} </p>
                                         </div><!-- /.inner -->
                                     </div><!-- /.accordion-content -->
                                 </div><!-- /.accordion-item -->
-                                <div class="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="50ms">
-                                    <div class="accordion-title">
-                                        <h4>
-                                            Blood clotting disorder
-                                            <span class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
-                                        </h4>
-                                    </div><!-- /.accordion-title -->
-                                    <div class="accordion-content">
-                                        <div class="inner">
-                                            <p>If you are going to use a passage of Lorem Ipsum, you need to be sure
-                                                there isn't
-                                                anything embarrassing hidden in the middle of text. All the Lorem Ipsum
-                                                generators on the Internet tend to repeat predefined chunks as
-                                                necessary.</p>
-                                        </div><!-- /.inner -->
-                                    </div><!-- /.accordion-content -->
-                                </div><!-- /.accordion-item -->
-                                <div class="accordion wow fadeInUp" data-wow-duration="1500ms"
-                                    data-wow-delay="100ms">
-                                    <div class="accordion-title">
-                                        <h4>
-                                            Studies of genetic
-                                            <span class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
-                                        </h4>
-                                    </div><!-- /.accordion-title -->
-                                    <div class="accordion-content">
-                                        <div class="inner">
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the
-                                                majority
-                                                have suffered alteration in some form, by injected humour, or randomised
-                                                words
-                                                which don't look even slightly believable.</p>
-                                        </div><!-- /.inner -->
-                                    </div><!-- /.accordion-content -->
-                                </div><!-- /.accordion-item -->
+                                @endforeach
                             </div><!-- /.faq-accordion -->
                         </div><!-- /.faq-one__accordion -->
                     </div><!-- /.faq-one__content -->
@@ -1215,493 +1098,47 @@
                             }
                         }
                         }'>
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card__image">
-                            <img src="{{ asset('images/testimonials/testimonial-1-1.jpg') }}" alt="Michael G. Ware">
-                        </div>
-                        <div class="testimonial-card__content">
-                            <div class="testimonial-card__quote-icon">
-                                <span class="icon-quote"></span>
-                            </div><!-- /.testimonial-card__icon -->
-                            <div class="testimonial-card__identity">
-                                <h5 class="testimonial-card__name">Michael G. Ware</h5>
-                                <p class="testimonial-card__designation">managing director</p>
-                            </div><!-- /.testimonial-card__identity -->
-                            <p class="testimonial-card__quote"><span>Nidaan</span> healthcare Company also impressed us
-                                with their transpa regarding costs the initial quote was</p>
-                            <!-- /.testimonial-card__quote -->
-                            <div class="mediox-ratings">
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                            </div><!-- /.product-ratings -->
-                        </div><!-- /.testimonial-card__content -->
-                    </div><!-- /.testimonial-card -->
-                </div><!-- /.owl-slide-item-->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card__image">
-                            <img src="{{ asset('images/testimonials/testimonial-1-1.jpg') }}" alt="Sarah Albert">
-                        </div>
-                        <div class="testimonial-card__content">
-                            <div class="testimonial-card__quote-icon">
-                                <span class="icon-quote"></span>
-                            </div><!-- /.testimonial-card__icon -->
-                            <div class="testimonial-card__identity">
-                                <h5 class="testimonial-card__name">Sarah Albert</h5>
-                                <p class="testimonial-card__designation">managing director</p>
-                            </div><!-- /.testimonial-card__identity -->
-                            <p class="testimonial-card__quote">Flexible classes refers to the process of acquiring is
-                                knowledge free or skills through the use</p><!-- /.testimonial-card__quote -->
-                            <div class="mediox-ratings">
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                            </div><!-- /.product-ratings -->
-                        </div><!-- /.testimonial-card__content -->
-                    </div><!-- /.testimonial-card -->
-                </div><!-- /.owl-slide-item-->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card__image">
-                            <img src="{{ asset('images/testimonials/testimonial-1-1.jpg') }}" alt="Kevin Martin">
-                        </div>
-                        <div class="testimonial-card__content">
-                            <div class="testimonial-card__quote-icon">
-                                <span class="icon-quote"></span>
-                            </div><!-- /.testimonial-card__icon -->
-                            <div class="testimonial-card__identity">
-                                <h5 class="testimonial-card__name">Kevin Martin</h5>
-                                <p class="testimonial-card__designation">managing director</p>
-                            </div><!-- /.testimonial-card__identity -->
-                            <p class="testimonial-card__quote">Can we have another option I know somebody who can do
-                                this for a reasonable cost, for that's great</p><!-- /.testimonial-card__quote -->
-                            <div class="mediox-ratings">
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                            </div><!-- /.product-ratings -->
-                        </div><!-- /.testimonial-card__content -->
-                    </div><!-- /.testimonial-card -->
-                </div><!-- /.owl-slide-item-->
+                @foreach($testimonials AS $testimon)        
+                        <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                            <div class="testimonial-card">
+                                <div class="testimonial-card__image">
+                                    <img src="{{ asset('images/testimonials/testimonial-1-1.jpg') }}" alt="{{ $testimon->name }}">
+                                </div>
+                                <div class="testimonial-card__content">
+                                    <div class="testimonial-card__quote-icon">
+                                        <span class="icon-quote"></span>
+                                    </div><!-- /.testimonial-card__icon -->
+                                    <div class="testimonial-card__identity">
+                                        <h5 class="testimonial-card__name">{{ $testimon->name }}</h5>
+                                        <p class="testimonial-card__designation">{{ $testimon->profession }}</p>
+                                    </div><!-- /.testimonial-card__identity -->
+                                    <p class="testimonial-card__quote"><span>Nidaan</span> {{ $testimon->description }}</p>
+                                    <!-- /.testimonial-card__quote -->
+                                    <div class="mediox-ratings">
+                                        <span class="mediox-ratings__icon">
+                                            <i class="icon-star"></i>
+                                        </span><!-- /.mediox-ratings__icon -->
+                                        <span class="mediox-ratings__icon">
+                                            <i class="icon-star"></i>
+                                        </span><!-- /.mediox-ratings__icon -->
+                                        <span class="mediox-ratings__icon">
+                                            <i class="icon-star"></i>
+                                        </span><!-- /.mediox-ratings__icon -->
+                                        <span class="mediox-ratings__icon">
+                                            <i class="icon-star"></i>
+                                        </span><!-- /.mediox-ratings__icon -->
+                                        <span class="mediox-ratings__icon">
+                                            <i class="icon-star"></i>
+                                        </span><!-- /.mediox-ratings__icon -->
+                                    </div><!-- /.product-ratings -->
+                                </div><!-- /.testimonial-card__content -->
+                            </div><!-- /.testimonial-card -->
+                        </div><!-- /.owl-slide-item-->
+                    @endforeach
             </div><!-- /.thm-owl__slider -->
         </div><!-- /.container -->
     </section><!-- /.testimonials-one section-space-two -->
     {{-- End of Testimonial Section --}}
-
-    {{-- Blog Section --}}
-    <section class="blog-one section-space">
-        <div class="blog-one__bg" style="background-image: url('images/shapes/blog-bg-1-1.png');"></div>
-        <!-- /.blog-one__bg -->
-        <div class="container">
-            <div class="blog-one__top">
-                <div class="row gutter-y-40 align-items-end">
-                    <div class="col-xl-9 col-lg-8">
-                        <div class="sec-title @@extraClassName wow fadeInUp" data-wow-duration="1500ms">
-                            <div class="sec-title__top">
-
-                                <img src="{{ asset('images/shapes/sec-title-s-1-1.png') }}" alt="latest blog"
-                                    class="sec-title__img">
-
-
-                                <h6 class="sec-title__tagline">latest blog</h6><!-- /.sec-title__tagline -->
-
-                            </div><!-- /.sec-title__top -->
-                            <h3 class="sec-title__title">our latest blog & news</h3><!-- /.sec-title__title -->
-                        </div><!-- /.sec-title -->
-                    </div><!-- /.col-xl-9 col-lg-8 -->
-                    <div class="col-xl-3 col-lg-4">
-                        <div class="blog-one__custome-navs"></div><!-- /.blog-one__cutome-navs -->
-                    </div><!-- /.col-xl-3 col-lg-4 -->
-                </div><!-- /.row -->
-            </div><!-- /.blog-one__top -->
-            <div class="blog-one__carousel mediox-owl__carousel mediox-owl__carousel--basic-nav owl-carousel owl-theme"
-                data-owl-options='{
-            "items": 1,
-            "margin": 10,
-            "loop": true,
-            "smartSpeed": 700,
-            "navContainer": ".blog-one__custome-navs",
-            "nav": true,
-            "navText": ["<span class=\"icon-arrow-right\"></span>","<span class=\"icon-arrow-left\"></span>"],
-            "dots": false,
-            "autoplay": true,
-            "responsive": {
-                "0": {
-                    "items": 1,
-                    "margin": 10
-                },
-                "768": {
-                    "items": 2,
-                    "margin": 30
-                },
-                "992": {
-                    "items": 2,
-                    "margin": 30
-                }
-            }
-        }'>
-                    <div class="item">
-                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                            <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
-                                <a href="blog-details-right.html" class="blog-card__hover">
-                                    <span class="sr-only">Experimental cancer vaccine both treats and pre Aphex</span><!-- /.sr-only -->
-                                    <span class="blog-card__hover__icon"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                                </a><!-- /.blog-card__hover -->
-                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                            </div><!-- /.blog-card__image -->
-                            <div class="blog-card__content">
-                                <ul class="list-unstyled blog-card__meta">
-                                    <li><a href="#">By Alex Manie</a></li>
-                                    <li>07 jan, 2024</li>
-                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                <h3 class="blog-card__title"><a href="blog-details-right.html">Experimental cancer vaccine both treats and pre Aphex</a></h3><!-- /.blog-card__title -->
-                                <a href="blog-details-right.html" class="blog-card__btn">
-                                    <span class="blog-card__btn__icon">
-                                        <i class="icon-arrow-right-2"></i>
-                                    </span>
-                                </a><!-- /.blog-card__btn -->
-                            </div><!-- /.blog-card__content -->
-                        </div><!-- /.blog-card -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                            <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
-                                <a href="blog-details-right.html" class="blog-card__hover">
-                                    <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis aute</span><!-- /.sr-only -->
-                                    <span class="blog-card__hover__icon"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                                </a><!-- /.blog-card__hover -->
-                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                            </div><!-- /.blog-card__image -->
-                            <div class="blog-card__content">
-                                <ul class="list-unstyled blog-card__meta">
-                                    <li><a href="#">By Alex Manie</a></li>
-                                    <li>07 jan, 2024</li>
-                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                <h3 class="blog-card__title"><a href="blog-details-right.html">How We Can Cover Injury Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
-                                <a href="blog-details-right.html" class="blog-card__btn">
-                                    <span class="blog-card__btn__icon">
-                                        <i class="icon-arrow-right-2"></i>
-                                    </span>
-                                </a><!-- /.blog-card__btn -->
-                            </div><!-- /.blog-card__content -->
-                        </div><!-- /.blog-card -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                            <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
-                                <a href="blog-details-right.html" class="blog-card__hover">
-                                    <span class="sr-only">Experimental cancer vaccine both treats and pre Aphex</span><!-- /.sr-only -->
-                                    <span class="blog-card__hover__icon"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                                </a><!-- /.blog-card__hover -->
-                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                            </div><!-- /.blog-card__image -->
-                            <div class="blog-card__content">
-                                <ul class="list-unstyled blog-card__meta">
-                                    <li><a href="#">By Alex Manie</a></li>
-                                    <li>07 jan, 2024</li>
-                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                <h3 class="blog-card__title"><a href="blog-details-right.html">Experimental cancer vaccine both treats and pre Aphex</a></h3><!-- /.blog-card__title -->
-                                <a href="blog-details-right.html" class="blog-card__btn">
-                                    <span class="blog-card__btn__icon">
-                                        <i class="icon-arrow-right-2"></i>
-                                    </span>
-                                </a><!-- /.blog-card__btn -->
-                            </div><!-- /.blog-card__content -->
-                        </div><!-- /.blog-card -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                            <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
-                                <a href="blog-details-right.html" class="blog-card__hover">
-                                    <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis aute</span><!-- /.sr-only -->
-                                    <span class="blog-card__hover__icon"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                                </a><!-- /.blog-card__hover -->
-                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                            </div><!-- /.blog-card__image -->
-                            <div class="blog-card__content">
-                                <ul class="list-unstyled blog-card__meta">
-                                    <li><a href="#">By Alex Manie</a></li>
-                                    <li>07 jan, 2024</li>
-                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                <h3 class="blog-card__title"><a href="blog-details-right.html">How We Can Cover Injury Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
-                                <a href="blog-details-right.html" class="blog-card__btn">
-                                    <span class="blog-card__btn__icon">
-                                        <i class="icon-arrow-right-2"></i>
-                                    </span>
-                                </a><!-- /.blog-card__btn -->
-                            </div><!-- /.blog-card__content -->
-                        </div><!-- /.blog-card -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                            <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
-                                <a href="blog-details-right.html" class="blog-card__hover">
-                                    <span class="sr-only">Experimental cancer vaccine both treats and pre Aphex</span><!-- /.sr-only -->
-                                    <span class="blog-card__hover__icon"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                                </a><!-- /.blog-card__hover -->
-                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                            </div><!-- /.blog-card__image -->
-                            <div class="blog-card__content">
-                                <ul class="list-unstyled blog-card__meta">
-                                    <li><a href="#">By Alex Manie</a></li>
-                                    <li>07 jan, 2024</li>
-                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                <h3 class="blog-card__title"><a href="blog-details-right.html">Experimental cancer vaccine both treats and pre Aphex</a></h3><!-- /.blog-card__title -->
-                                <a href="blog-details-right.html" class="blog-card__btn">
-                                    <span class="blog-card__btn__icon">
-                                        <i class="icon-arrow-right-2"></i>
-                                    </span>
-                                </a><!-- /.blog-card__btn -->
-                            </div><!-- /.blog-card__content -->
-                        </div><!-- /.blog-card -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                            <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-2.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
-                                <a href="blog-details-right.html" class="blog-card__hover">
-                                    <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis aute</span><!-- /.sr-only -->
-                                    <span class="blog-card__hover__icon"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                                </a><!-- /.blog-card__hover -->
-                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                            </div><!-- /.blog-card__image -->
-                            <div class="blog-card__content">
-                                <ul class="list-unstyled blog-card__meta">
-                                    <li><a href="#">By Alex Manie</a></li>
-                                    <li>07 jan, 2024</li>
-                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                <h3 class="blog-card__title"><a href="blog-details-right.html">How We Can Cover Injury Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
-                                <a href="blog-details-right.html" class="blog-card__btn">
-                                    <span class="blog-card__btn__icon">
-                                        <i class="icon-arrow-right-2"></i>
-                                    </span>
-                                </a><!-- /.blog-card__btn -->
-                            </div><!-- /.blog-card__content -->
-                        </div><!-- /.blog-card -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                            <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-7.jpg')}}" alt="Experimental cancer vaccine both treats and pre Aphex">
-                                <a href="blog-details-right.html" class="blog-card__hover">
-                                    <span class="sr-only">Experimental cancer vaccine both treats and pre Aphex</span><!-- /.sr-only -->
-                                    <span class="blog-card__hover__icon"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                                </a><!-- /.blog-card__hover -->
-                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                            </div><!-- /.blog-card__image -->
-                            <div class="blog-card__content">
-                                <ul class="list-unstyled blog-card__meta">
-                                    <li><a href="#">By Alex Manie</a></li>
-                                    <li>07 jan, 2024</li>
-                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                <h3 class="blog-card__title"><a href="blog-details-right.html">Experimental cancer vaccine both treats and pre Aphex</a></h3><!-- /.blog-card__title -->
-                                <a href="blog-details-right.html" class="blog-card__btn">
-                                    <span class="blog-card__btn__icon">
-                                        <i class="icon-arrow-right-2"></i>
-                                    </span>
-                                </a><!-- /.blog-card__btn -->
-                            </div><!-- /.blog-card__content -->
-                        </div><!-- /.blog-card -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                            <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-8.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
-                                <a href="blog-details-right.html" class="blog-card__hover">
-                                    <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis aute</span><!-- /.sr-only -->
-                                    <span class="blog-card__hover__icon"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                                </a><!-- /.blog-card__hover -->
-                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                            </div><!-- /.blog-card__image -->
-                            <div class="blog-card__content">
-                                <ul class="list-unstyled blog-card__meta">
-                                    <li><a href="#">By Alex Manie</a></li>
-                                    <li>07 jan, 2024</li>
-                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                <h3 class="blog-card__title"><a href="blog-details-right.html">How We Can Cover Injury Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
-                                <a href="blog-details-right.html" class="blog-card__btn">
-                                    <span class="blog-card__btn__icon">
-                                        <i class="icon-arrow-right-2"></i>
-                                    </span>
-                                </a><!-- /.blog-card__btn -->
-                            </div><!-- /.blog-card__content -->
-                        </div><!-- /.blog-card -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                            <div class="blog-card__image">
-                                <img src="{{asset('images/blog/blog-1-9.jpg')}}" alt="How We Can Cover Injury Pain By Exer cise Duis aute">
-                                <a href="#" class="blog-card__hover">
-                                    <span class="sr-only">How We Can Cover Injury Pain By Exer cise Duis aute</span><!-- /.sr-only -->
-                                    <span class="blog-card__hover__icon"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--1"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--2"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--3"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--4"></span>
-                                    <span class="blog-card__hover__box blog-card__hover__box--5"></span>
-                                </a><!-- /.blog-card__hover -->
-                                <p class="blog-card__category">Health</p><!-- /.blog-card__category -->
-                            </div><!-- /.blog-card__image -->
-                            <div class="blog-card__content">
-                                <ul class="list-unstyled blog-card__meta">
-                                    <li><a href="#">By Alex Manie</a></li>
-                                    <li>07 jan, 2024</li>
-                                </ul><!-- /.list-unstyled blog-card__meta -->
-                                <h3 class="blog-card__title"><a href="#">How We Can Cover Injury Pain By Exer cise Duis aute</a></h3><!-- /.blog-card__title -->
-                                <a href="#" class="blog-card__btn">
-                                    <span class="blog-card__btn__icon">
-                                        <i class="icon-arrow-right-2"></i>
-                                    </span>
-                                </a><!-- /.blog-card__btn -->
-                            </div><!-- /.blog-card__content -->
-                        </div><!-- /.blog-card -->
-                    </div><!-- /.item -->
-                </div><!-- /.blog-one__carousel -->
-            </div><!-- /.container -->
-        </section><!-- /.blog-one section-space -->
-        {{-- End of Blog Section --}}
-
-        {{-- Client Section --}}
-         {{-- <div class="client-carousel @@extraClassName">
-            <div class="container">
-                <div class="client-carousel__one mediox-owl__carousel owl-theme owl-carousel" data-owl-options='{
-            "items": 5,
-            "margin": 65,
-            "smartSpeed": 700,
-            "loop":true,
-            "autoplay": 6000,
-            "nav":false,
-            "dots":false,
-            "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"],
-            "responsive":{
-                "0":{
-                    "items": 1,
-                    "margin": 30
-                },
-                "361":{
-                    "items": 2,
-                    "margin": 40
-                },
-                "576":{
-                    "items": 3,
-                    "margin": 60
-                },
-                "768":{
-                    "items": 4,
-                    "margin": 60
-                },
-                "992":{
-                    "items": 5,
-                    "margin": 60
-                },
-                "1200":{
-                    "items": 5,
-                    "margin": 80
-                }
-            }
-            }'>
-                    <div class="client-carousel__one__item">
-                        <img src="{{asset('images/brand/brand-1-1.png')}}" alt="mediox" class="client-carousel__one__image">
-                    </div><!-- /.owl-slide-item-->
-                    <div class="client-carousel__one__item">
-                        <img src="{{asset('images/brand/brand-1-2.png')}}" alt="mediox" class="client-carousel__one__image">
-                    </div><!-- /.owl-slide-item-->
-                    <div class="client-carousel__one__item">
-                        <img src="{{asset('images/brand/brand-1-3.png')}}" alt="mediox" class="client-carousel__one__image">
-                    </div><!-- /.owl-slide-item-->
-                    <div class="client-carousel__one__item">
-                        <img src="{{asset('images/brand/brand-1-4.png')}}" alt="mediox" class="client-carousel__one__image">
-                    </div><!-- /.owl-slide-item-->
-                    <div class="client-carousel__one__item">
-                        <img src="{{asset('images/brand/brand-1-5.png')}}" alt="mediox" class="client-carousel__one__image">
-                    </div><!-- /.owl-slide-item-->
-                </div><!-- /.thm-owl__slider -->
-            </div><!-- /.container -->
-        </div><!-- /.client-carousel --> --}}
-        {{-- End of Client Section --}}
 </x-guest-layout>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
