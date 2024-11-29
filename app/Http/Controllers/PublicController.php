@@ -129,9 +129,17 @@ class PublicController extends Controller
         return view('public.team-details');
     }
 
+    public function booking()
+    {
+        $speciaLists = Specialist::join('departments', 'departments.id', 'specialists.department_id')
+        ->select('department_name', 'specialists.doctor_name', 'specialists.id', 'descriptions')->get();
+        return view('public.booking', compact('speciaLists'));
+    }
+
     public function gallery()
     {   
         $gallaryImage=Gallary::select('image')->where('status',true)->get();
         return view('public.gallery',compact('gallaryImage'));
     }
+
 }

@@ -57,7 +57,7 @@
                                 </div><!-- /.description -->
                                 <div class="main-slider-one__button">
                                     <div class="main-slider-one__button__inner">
-                                        <a href="services.html" class="main-slider-one__btn mediox-btn">
+                                        <a href="/services" class="main-slider-one__btn mediox-btn">
                                             <span>view all service</span>
                                             <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                                         </a><!-- /.mediox-btn -->
@@ -114,7 +114,7 @@
                                 </div><!-- /.main-slider-one__top -->
                                 <h2 class="main-slider-one__title">
                                     <span class="main-slider-one__title__inner w-100">
-                                        best dental
+                                        best Cardiology
                                         <span class="main-slider-one__title__image">
                                             <a href="https://www.youtube.com/watch?v=h9MbznbxlLc"
                                                 class="main-slider-one__title__video video-btn video-popup">
@@ -155,7 +155,7 @@
                                 </div><!-- /.description -->
                                 <div class="main-slider-one__button">
                                     <div class="main-slider-one__button__inner">
-                                        <a href="#" class="main-slider-one__btn mediox-btn">
+                                        <a href="/services" class="main-slider-one__btn mediox-btn">
                                             <span>view all service</span>
                                             <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                                         </a><!-- /.mediox-btn -->
@@ -263,7 +263,7 @@
                             </div><!-- /.about-one__inner -->
                             <div class="about-one__bottom">
                                 <div class="about-one__button wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                                    <a href="history.html" class="mediox-btn">
+                                    <a href="/about" class="mediox-btn">
                                         <span>know more</span>
                                         <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                                     </a><!-- /.mediox-btn -->
@@ -586,7 +586,7 @@
                         the purpose and mission of the clinic. This can include the commitment to patient care,
                         community health.</p><!-- /.welcome-one__text -->
                     <div class="wow fadeInUp" data-wow-duration="1500ms">
-                        <a href="#appointmentForm" class="mediox-btn">
+                        <a href="#appointmentSection" class="mediox-btn">
                             <span>book appointment</span>
                             <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                         </a><!-- /.mediox-btn -->

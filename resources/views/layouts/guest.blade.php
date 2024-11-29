@@ -174,7 +174,7 @@
                                 </h4><!-- /.main-header__call__number -->
                             </div><!-- /.main-header__call__content -->
                         </div><!-- /.main-header__call -->
-                        <a href="#appointmentSection" class="mediox-btn main-header__btn">
+                        <a href="/booking" class="mediox-btn main-header__btn">
                             <span>make an appointment</span>
                             <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                         </a><!-- /.mediox-btn -->
@@ -200,7 +200,7 @@
                                 </a>
                             </div><!-- /.footer-widget__logo -->
                             <p class="footer-widget__about-text">Morem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elita Florai Psum Dolor Sit Amet, Consecteture.Borem Ipsum Dolor</p><!-- /.footer-widget__about-text -->
-                            <a href="#appointmentForm" class="footer-widget__btn">
+                            <a href="#appointmentSection" class="footer-widget__btn">
                                 <span>get consultant</span>
                                 <span class="footer-widget__btn__icon"><i class="icon-up-right-arrow"></i></span>
                             </a><!-- /.footer-widget__btn -->
@@ -228,13 +228,14 @@
                         <div class="footer-widget footer-widget--links">
                             <h2 class="footer-widget__title">our <span>Services</span></h2><!-- /.footer-widget__title -->
                             <ul class="list-unstyled footer-widget__links">
-                                <li><a href="service-d-cardiology.html">Cardiology Care</a></li>
-                                <li><a href="service-d-immediate-care.html">Urgent Care</a></li>
-                                <li><a href="service-d-orthopaedics.html">Orthopedic Care</a></li>
-                                <li><a href="service-d-neurology-care.html">neurology care</a></li>
-                                <li><a href="service-d-gynaecologists.html">gynaecologists</a></li>
-                                <li><a href="services.html">Therapy</a></li>
-                                <li><a href="service-d-dental-care.html">Dental service</a></li>
+                                <li><a href="#">Medicines</a></li>
+                                <li><a href="#">Superspecialist and Specialist Doctors</a></li>
+                                <li><a href="#">Labratory Test</a></li>
+                                <li><a href="#">ECG</a></li>
+                                <li><a href="#">Holter</a></li>
+                                <li><a href="#">Eco Cardiography</a></li>
+                                <li><a href="#">Free Medical Camps</a></li>
+                                <li><a href="#">Orthopedic Rehab. Aids</a></li>
                             </ul><!-- /.list-unstyled footer-widget__links -->
                         </div><!-- /.footer-widget -->
                     </div><!-- /.col-xl-2 -->
@@ -242,13 +243,14 @@
                         <div class="footer-widget footer-widget--links">
                             <h2 class="footer-widget__title">useful <span>links</span></h2><!-- /.footer-widget__title -->
                             <ul class="list-unstyled footer-widget__links">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="services.html">Our Services</a></li>
-                                <li><a href="team.html">Our Team</a></li>
-                                <li><a href="blog-grid-right.html">Latest Blog</a></li>
-                                <li><a href="#appointmentForm">Appointments</a></li>
-                                <li><a href="faq.html">Help & FAQS</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/services">Our Services</a></li>
+                                <li><a href="/speciality">Specialities</a></li>
+                                <li><a href="/teams">Our Team</a></li>
+                                {{-- <li><a href="blog-grid-right.html">Latest Blog</a></li> --}}
+                                <li><a href="/booking">Appointments</a></li>
+                                {{-- <li><a href="faq.html">Help & FAQS</a></li> --}}
+                                <li><a href="/contact">Contact Us</a></li>
                             </ul><!-- /.list-unstyled footer-widget__links -->
                         </div><!-- /.footer-widget -->
                     </div><!-- /.col-xl-2 -->
@@ -409,86 +411,6 @@
         </div>
         <!-- /.mobile-nav__content -->
     </div>
-
-    <!-- /.mobile-nav__wrapper -->
-    <div class="search-popup">
-        <div class="search-popup__overlay search-toggler"></div>
-        <!-- /.search-popup__overlay -->
-        <div class="search-popup__content">
-            <form role="search" method="get" class="search-popup__form" action="#">
-                <input type="text" id="search" placeholder="Search Here..." />
-                <button type="submit" aria-label="search submit" class="mediox-btn">
-                    <i class="icon-search"></i>
-                </button>
-            </form>
-        </div>
-        <!-- /.search-popup__content -->
-    </div>
-
-    <!-- /.search-popup -->
-    <aside class="sidebar-one">
-        <div class="sidebar-one__overlay sidebar-btn__toggler"></div><!-- /.siderbar-ovarlay -->
-        <div class="sidebar-one__content">
-            <span class="sidebar-one__close sidebar-btn__toggler"><i class="icon-close"></i></span>
-            <div class="sidebar-one__logo sidebar-one__item logo-retina">
-                <a href="index.html" aria-label="logo image"><img src="{{asset('images/logo-light.png')}}" width="164" alt="logo" />
-                </a>
-            </div><!-- /.sidebar-one__logo -->
-            <div class="sidebar-one__about sidebar-one__item">
-                <p class="sidebar-one__about__text">Here is main text quis nostrud exercitation ullamco laboris nisi here is itealic aliquip ex ea com</p>
-            </div><!-- /.sidebar-one__about -->
-            <div class="sidebar-one__info sidebar-one__item">
-                <h4 class="sidebar-one__title">Contact</h4>
-                <ul class="sidebar-one__info__list">
-                    <li>
-                        <span class="sidebar-one__info__icon sidebar-one__info__icon--location">
-                            <i class="icon-location"></i>
-                        </span>
-                        <address>85 Ketch Harbour Road Bensal
-                            PA 19020</address>
-                    </li>
-                    <li>
-                        <span class="sidebar-one__info__icon">
-                            <i class="icon-paper-plane"></i>
-                        </span>
-                        <a href="mailto:needhelp@company.com">needhelp@company.com</a>
-                    </li>
-                    <li>
-                        <span class="sidebar-one__info__icon">
-                            <i class="icon-telephone"></i>
-                        </span>
-                        <a href="tel:+9156980036420">+9156980036420</a>
-                    </li>
-                </ul><!-- /.sidebar-one__info__list -->
-            </div><!-- /.sidebar-one__info -->
-            <div class="social-links sidebar-one__item">
-                <a href="https://facebook.com">
-                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                    <span class="sr-only">Facebook</span>
-                </a>
-                <a href="https://twitter.com">
-                    <i class="fab fa-twitter" aria-hidden="true"></i>
-                    <span class="sr-only">Twitter</span>
-                </a>
-                <a href="https://instagram.com">
-                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                    <span class="sr-only">Instagram</span>
-                </a>
-                <a href="https://youtube.com">
-                    <i class="fab fa-youtube" aria-hidden="true"></i>
-                    <span class="sr-only">Youtube</span>
-                </a>
-            </div><!-- /sidebar-one__social -->
-            <div class="sidebar-one__newsletter sidebar-one__item">
-                <label class="sidebar-one__title" for="sidebar-email">Newsletter</label>
-                <form action="#" class="sidebar-one__newsletter__inner mc-form" data-url="MAILCHIMP_FORM_URL">
-                    <input type="email" name="EMAIL" id="sidebar-email" class="sidebar-one__newsletter__input" placeholder="Email Address">
-                    <button type="submit" class="sidebar-one__newsletter__btn"><span class="icon-email" aria-hidden="true"></span></button>
-                </form>
-                <div class="mc-form__response"></div><!-- /.mc-form__response -->
-            </div><!-- /.sidebar-one__form -->
-        </div><!-- /.sidebar__content -->
-    </aside><!-- /.sidebar-one -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
         <span class="scroll-to-top__text">back top</span>

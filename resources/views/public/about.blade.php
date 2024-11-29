@@ -164,7 +164,7 @@
                 <div class="team-two__carousel mediox-owl__carousel mediox-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
             "items": 1,
             "margin": 10,
-            "loop": false,
+            "loop": true,
             "smartSpeed": 700,
             "nav": false,
             "dots": true,
@@ -219,12 +219,13 @@
                             </div><!-- /.team-card-two__image -->
                             <div class="team-card-two__identity">
                                 <h3 class="team-card-two__name">
-                                    <a href="team-details.html">Anthony B. Castillo</a>
+                                    <a href="team-details.html">Dr. Dibar Choubey</a>
                                 </h3><!-- /.team-card-two__name -->
-                                <p class="team-card-two__designation">Cardiologists</p><!-- /.team-card-two__designation -->
+                                <p class="team-card-two__designation">Urologist</p><!-- /.team-card-two__designation -->
                             </div><!-- /.team-card-two__identity -->
                         </div><!-- /.team-card-two -->
                     </div><!-- /.item -->
+
                     <div class="item">
                         <div class="team-card-two wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
                             <div class="team-card-two__image">
@@ -252,12 +253,13 @@
                             </div><!-- /.team-card-two__image -->
                             <div class="team-card-two__identity">
                                 <h3 class="team-card-two__name">
-                                    <a href="team-details.html">david cooper</a>
+                                    <a href="team-details.html">Dr. Rituparna Baruah</a>
                                 </h3><!-- /.team-card-two__name -->
-                                <p class="team-card-two__designation">Audiologists</p><!-- /.team-card-two__designation -->
+                                <p class="team-card-two__designation">Cardiologist</p><!-- /.team-card-two__designation -->
                             </div><!-- /.team-card-two__identity -->
                         </div><!-- /.team-card-two -->
                     </div><!-- /.item -->
+                    
                     <div class="item">
                         <div class="team-card-two team-card-two--top-identity wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='200ms'>
                             <div class="team-card-two__image">
@@ -285,12 +287,13 @@
                             </div><!-- /.team-card-two__image -->
                             <div class="team-card-two__identity">
                                 <h3 class="team-card-two__name">
-                                    <a href="team-details.html">kevin martin</a>
+                                    <a href="team-details.html">Dr. Ankur Bala</a>
                                 </h3><!-- /.team-card-two__name -->
-                                <p class="team-card-two__designation">Dentist</p><!-- /.team-card-two__designation -->
+                                <p class="team-card-two__designation">Neurosurgeon</p><!-- /.team-card-two__designation -->
                             </div><!-- /.team-card-two__identity -->
                         </div><!-- /.team-card-two -->
                     </div><!-- /.item -->
+
                     <div class="item">
                         <div class="team-card-two wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='300ms'>
                             <div class="team-card-two__image">
@@ -318,9 +321,43 @@
                             </div><!-- /.team-card-two__image -->
                             <div class="team-card-two__identity">
                                 <h3 class="team-card-two__name">
-                                    <a href="team-details.html">Adlof Carone</a>
+                                    <a href="team-details.html">Dr. Mrinal Gogoi</a>
                                 </h3><!-- /.team-card-two__name -->
-                                <p class="team-card-two__designation">Neurologist</p><!-- /.team-card-two__designation -->
+                                <p class="team-card-two__designation">Gaestroenterologist</p><!-- /.team-card-two__designation -->
+                            </div><!-- /.team-card-two__identity -->
+                        </div><!-- /.team-card-two -->
+                    </div><!-- /.item -->
+
+                    <div class="item">
+                        <div class="team-card-two team-card-two--top-identity wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='200ms'>
+                            <div class="team-card-two__image">
+                                <div class="team-card-two__image__inner">
+                                    <img src="{{asset('images/team/team-2-5.jpg')}}" alt="kevin martin">
+                                    <div class="team-card-two__social social-links">
+                                        <a href="https://facebook.com">
+                                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                            <span class="sr-only">Facebook</span>
+                                        </a>
+                                        <a href="https://twitter.com">
+                                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                                            <span class="sr-only">Twitter</span>
+                                        </a>
+                                        <a href="https://instagram.com">
+                                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                                            <span class="sr-only">Instagram</span>
+                                        </a>
+                                        <a href="https://youtube.com">
+                                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                                            <span class="sr-only">Youtube</span>
+                                        </a>
+                                    </div><!-- /.team-card-two__social -->
+                                </div><!-- /.team-card-two__image__inner -->
+                            </div><!-- /.team-card-two__image -->
+                            <div class="team-card-two__identity">
+                                <h3 class="team-card-two__name">
+                                    <a href="team-details.html">Dr. Niraj Bhardwaj</a>
+                                </h3><!-- /.team-card-two__name -->
+                                <p class="team-card-two__designation">Paediatrics</p><!-- /.team-card-two__designation -->
                             </div><!-- /.team-card-two__identity -->
                         </div><!-- /.team-card-two -->
                     </div><!-- /.item -->
