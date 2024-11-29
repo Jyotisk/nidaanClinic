@@ -16,12 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PublicController::class, 'index'])->name('index');
 Route::get('/about', [PublicController::class, 'aboutUs'])->name('about');
 Route::get('/services', [PublicController::class, 'services'])->name('services');
-Route::get('/service-details', [PublicController::class, 'servicesDetails'])->name('service-details');
+Route::get('/service-details/{id}', [PublicController::class, 'servicesDetails'])->name('service-details');
 Route::get('/speciality', [PublicController::class, 'speciality'])->name('speciality');
 Route::get('/speciality-details', [PublicController::class, 'specialityDetails'])->name('speciality-details');
 Route::get('/contact', [PublicController::class, 'contact'])->name('contact');
 Route::get('/teams', [PublicController::class, 'teams'])->name('teams');
-Route::get('/team-details', [PublicController::class, 'teamDetails'])->name('team-details');
+Route::get('/team-details/{id}', [PublicController::class, 'teamDetails'])->name('team-details');
 Route::get('/gallery', [PublicController::class, 'gallery'])->name('gallery');
 Route::get('/booking', [PublicController::class, 'booking'])->name('booking');
 

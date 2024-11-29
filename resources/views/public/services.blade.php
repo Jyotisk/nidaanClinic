@@ -49,9 +49,9 @@
                         <div class="service-card-two">
                             <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
                             <div class="service-card-two__content">
-                                <img src="{{ env('IMAGE_PATH').Storage::url($service->service_image)}}" alt="Medicines" class="service-card-two__image">
-                                <h3 class="service-card-two__title"><a href="#">{{ $service->service_name }}</a></h3><!-- /.service-card-two__title -->
-                                <a href="#" class="service-card-two__link">
+                                <img src="{{ env('IMAGE_PATH').Storage::url($service->image)}}" alt="Medicines" class="service-card-two__image">
+                                <h3 class="service-card-two__title"><a href="{{url('/service-details')}}/{{$service->id}}">{{ $service->facility_name }}</a></h3><!-- /.service-card-two__title -->
+                                <a href="{{url('/service-details')}}/{{$service->id}}" class="service-card-two__link">
                                     <i class="icon-up-right-arrow"></i>
                                 </a><!-- /.service-card-two__link -->
                             </div><!-- /.service-card-two__content -->

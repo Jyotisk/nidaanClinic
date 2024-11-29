@@ -9,7 +9,10 @@ use App\Models\MenuItem;
 use App\Models\Testimonial;
 use App\Models\User\AvailableService;
 use App\Models\User\BookAppointment;
+use App\Models\User\Facility;
+use App\Models\User\FacilityDetail;
 use App\Models\User\Specialist;
+use App\Models\User\SpecialistDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Visitor;
@@ -31,6 +34,7 @@ class PublicController extends Controller
             DB::commit();
 
             $speciaLists = Specialist::join('departments', 'departments.id', 'specialists.department_id')
+            ->where('specialists.status',true)
                 ->select('department_name', 'specialists.doctor_name', 'specialists.id','descriptions')->get();
             $faqList=Faq::select('id','question','answer')->where('status',true)->get();
             $testimonials=Testimonial::select('name','profession','description')->where('status',true)->get();
@@ -97,13 +101,16 @@ class PublicController extends Controller
 
     public function services()
     {
-        $services=AvailableService::where('status',true)->select('service_name','description','service_image')->get();
+        $services=Facility::where('status',true)->select('id','facility_name','descriptions','image')->get();
         return view('public.services',compact('services'));
     }
 
-    public function servicesDetails()
+    public function servicesDetails($id)
     {
-        return view('public.service-details');
+        $serviceLists=Facility::where(['status'=>true])->select('id','facility_name','descriptions','image')->get();
+        $services=Facility::where(['status'=>true,'id'=>$id])->select('facility_name','descriptions','image')->first();
+        $serviceDetails=FacilityDetail::where('facility_id',$id)->select('facility_detail')->get();
+        return view('public.service-details',compact('services','serviceDetails','serviceLists'));
     }
 
     public function speciality()
@@ -126,9 +133,14 @@ class PublicController extends Controller
         return view('public.teams');
     }
 
-    public function teamDetails()
+    public function teamDetails($id)
     {
-        return view('public.team-details');
+        $speciaLists = Specialist::join('departments', 'departments.id', 'specialists.department_id')
+                ->select('department_name', 'specialists.doctor_name','specialists.doctor_image', 'specialists.id','descriptions','facebook_link','instagram_link','twitter_link','linked_in_link')
+                ->where('specialists.id',$id)->first();
+         $speciaListDetails=SpecialistDetail::where('specialist_id',$id)->select('header','specialist_detail')
+         ->get();       
+        return view('public.team-details',compact('speciaLists','speciaListDetails'));
     }
 
     public function booking()

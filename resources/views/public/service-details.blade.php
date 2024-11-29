@@ -6,14 +6,14 @@
                     <div class="page-header__bg" style="background-image: url('images/backgrounds/page-header-bg.jpg');"></div><!-- /.page-header__bg -->
                     <div class="container">
                         <div class="page-header__content">
-                            <h2 class="page-header__title">Medicines</h2>
+                            <h2 class="page-header__title">{{$services->facility_name}}</h2>
                             <ul class="mediox-breadcrumb list-unstyled">
                                 <li>
                                     <span class="mediox-breadcrumb__icon"><i class="icon-home"></i></span>
-                                    <a href="index.html">Home</a>
+                                    <a href="{{route('index')}}">Home</a>
                                 </li>
                                 <li><span>our services</span></li>
-                                <li><span>Medicines</span></li>
+                                <li><span>{{$services->facility_name}}</span></li>
                             </ul><!-- /.mediox-breadcrumb list-unstyled -->
                         </div><!-- /.page-header__content -->
                     </div><!-- /.container -->
@@ -28,14 +28,9 @@
                         <div class="service-sidebar">
                             <div class="service-sidebar__info service-sidebar__single">
                                 <ul class="list-unstyled service-sidebar__nav wow fadeInLeft" data-wow-duration="1500ms">
-                                    <li><a href="#">Medicines</a></li>
-                                    <li><a href="#">Superspecialist and Specialist Doctors</a></li>
-                                    <li><a href="#">Laboratory Tests</a></li>
-                                    <li><a href="#">ECG</a></li>
-                                    <li><a href="#">Holter</a></li>
-                                    <li><a href="#">Echocardiography</a></li>
-                                    <li><a href="#">Free Medical Camps</a></li>
-                                    <li><a href="#">Orthopedic Rehab. Aids</a></li>
+                                    @foreach($serviceLists AS $lists)
+                                    <li><a href="{{url('/service-details')}}/{{$lists->id}}">{{$lists->facility_name}}</a></li>
+                                    @endforeach
                                 </ul><!-- /.list-unstyled service-sidebar__nav -->
                             </div><!-- /.service-sidebar__info service-sidebar__single -->
                         </div><!-- /.sidebar -->
@@ -44,103 +39,31 @@
                         <div class="service-details__content">
                             <div class="service-details__inner">
                                 <div class="service-details__thumbnail wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                                    <img src="{{asset('images/services/service-d-1-1.jpg')}}" alt="immediate care">
+                                    <img src="{{ env('IMAGE_PATH').Storage::url($services->image)}}" alt="immediate care">
                                 </div><!-- /.service-details__thumbnail -->
                                 <div class="service-details__content__box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                                    <h3 class="service-details__title">immediate care</h3><!-- /.service-details__title -->
-                                    <p class="service-details__text">There are many
-                                        variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by
-                                        injected humour, or randomised words which don't look even slightly believable. If you are going to use a
-                                        passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-                                        All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this
-                                        the first true generator on the Internet. It uses a dictionary of over 200 Latin words,</p><!-- /.service-details__text -->
+                                    <h3 class="service-details__title">{{$services->facility_name}}</h3><!-- /.service-details__title -->
+                                    <p class="service-details__text">{{$services->descriptions}}</p><!-- /.service-details__text -->
                                 </div><!-- /.service-details__content__box -->
                             </div><!-- /.service-details__inner -->
-                            <div class="service-details__inner-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                                <h3 class="service-details__sub-title">Where can I get some?</h3><!-- /.service-details__sub-title -->
-                                <p class="service-details__text">Mistaken idea of
-                                    denouncing pleasure and praising pain was born and I will give you a complete account of the system, and
-                                    expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No
-                                    one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know
-                                    how to pursue pleasure rationally encounter consequences that are extremely painful.</p><!-- /.service-details__text -->
-                            </div><!-- /.service-details__inner-two -->
-                            <div class="service-details__info">
-                                <div class="row gutter-y-30">
-                                    <div class="col-xl-6 col-lg-12 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                                        <ul class="list-unstyled service-details__info__list">
-                                            <li>
-                                                <span class="service-details__list__icon"><i class="icon-check"></i></span>
-                                                Instant Business Growth
-                                            </li>
-                                            <li>
-                                                <span class="service-details__list__icon"><i class="icon-check"></i></span>
-                                                24/7 Quality Service
-                                            </li>
-                                            <li>
-                                                <span class="service-details__list__icon"><i class="icon-check"></i></span>
-                                                Easy Customer Service
-                                            </li>
-                                            <li>
-                                                <span class="service-details__list__icon"><i class="icon-check"></i></span>
-                                                Quality Cost Service
-                                            </li>
-                                        </ul><!-- /.list-unstyled team-details__info__list -->
-                                    </div><!-- /.col-xl-6 col-lg-12 col-md-6 -->
-                                    <div class="col-xl-6 col-lg-12 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                                        <img src="{{asset('images/services/service-d-list-1.jpg')}}" alt="service-d-list" class="service-details__info__image">
-                                    </div><!-- /.col-xl-6 col-lg-12 col-md-6 -->
-                                </div><!-- /.row gutter-y-30 -->
-                            </div><!-- /.service-details__info -->
-                            <p class="service-details__text-two wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">Continually
-                                myocardinate holistic mindshare with client-based web services. Assertively e-enable catalysts for change before
-                                tested markets. Phosfluorescently maintain wireless scenarios after intermandated applications. Conveniently
-                                predominate revolutionary quality vectors through future-proof manufactured products. Enthusiastically transform
-                                distinctive collaboration.</p><!-- /.service-details__text-two -->
                             <div class="service-details__faq">
-                                <h3 class="service-details__faq__title service-details__sub-title">Any questions? We're here to help</h3><!-- /.service-details__sub-title -->
+                                <h3 class="service-details__faq__title service-details__sub-title">More Details</h3><!-- /.service-details__sub-title -->
                                 <div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
-                                    <div class="accordion active wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                                    @foreach($serviceDetails AS $key=> $row)
+                                    <div class="accordion wow fadeInUp {{$key==0?'active':''}}" data-wow-duration="1500ms" data-wow-delay="00ms">
                                         <div class="accordion-title">
                                             <h4>
-                                                What is physiotherapy?
+                                                {{$key+1}}
                                                 <span class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
                                             </h4>
                                         </div><!-- /.accordion-title -->
                                         <div class="accordion-content">
                                             <div class="inner">
-                                                <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of
-                                                    the day, going forward, a new normal that has evolved from generation X is on the</p>
+                                                <p>{{$row->facility_detail}}</p>
                                             </div><!-- /.inner -->
                                         </div><!-- /.accordion-content -->
-                                    </div><!-- /.accordion-item -->
-                                    <div class="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="50ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                When might I need physiotherapy?
-                                                <span class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
-                                            </h4>
-                                        </div><!-- /.accordion-title -->
-                                        <div class="accordion-content">
-                                            <div class="inner">
-                                                <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of
-                                                    the day, going forward, a new normal that has evolved from generation X is on the</p>
-                                            </div><!-- /.inner -->
-                                        </div><!-- /.accordion-content -->
-                                    </div><!-- /.accordion-item -->
-                                    <div class="accordion wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                                        <div class="accordion-title">
-                                            <h4>
-                                                How does a physiotherapist assess my condition?
-                                                <span class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
-                                            </h4>
-                                        </div><!-- /.accordion-title -->
-                                        <div class="accordion-content">
-                                            <div class="inner">
-                                                <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of
-                                                    the day, going forward, a new normal that has evolved from generation X is on the</p>
-                                            </div><!-- /.inner -->
-                                        </div><!-- /.accordion-content -->
-                                    </div><!-- /.accordion-item -->
+                                    </div><!-- /.accordion-item --> 
+                                    @endforeach                                   
                                 </div><!-- /.faq-accordion -->
                             </div><!-- /.service-details__faq -->
                         </div><!-- /.service-details__content -->
