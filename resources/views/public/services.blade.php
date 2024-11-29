@@ -10,7 +10,7 @@
                             <ul class="mediox-breadcrumb list-unstyled">
                                 <li>
                                     <span class="mediox-breadcrumb__icon"><i class="icon-home"></i></span>
-                                    <a href="index.html">Home</a>
+                                    <a href="{{route('index')}}">Home</a>
                                 </li>
                                 <li><span>Our Services</span></li>
                             </ul><!-- /.mediox-breadcrumb list-unstyled -->
@@ -44,102 +44,20 @@
                     }
                 }
             }'>
+                    @foreach($services AS $service)
                     <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
                         <div class="service-card-two">
                             <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
                             <div class="service-card-two__content">
-                                <img src="{{asset('images/services/service-2-1.jpg')}}" alt="Medicines" class="service-card-two__image">
-                                <h3 class="service-card-two__title"><a href="#">Medicines</a></h3><!-- /.service-card-two__title -->
+                                <img src="{{ env('IMAGE_PATH').Storage::url($service->service_image)}}" alt="Medicines" class="service-card-two__image">
+                                <h3 class="service-card-two__title"><a href="#">{{ $service->service_name }}</a></h3><!-- /.service-card-two__title -->
                                 <a href="#" class="service-card-two__link">
                                     <i class="icon-up-right-arrow"></i>
                                 </a><!-- /.service-card-two__link -->
                             </div><!-- /.service-card-two__content -->
                         </div><!-- /.service-card-two -->
                     </div><!-- /.item -->
-                    <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                        <div class="service-card-two">
-                            <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
-                            <div class="service-card-two__content">
-                                <img src="{{asset('images/services/service-2-2.jpg')}}" alt="Superspecialist and Specialist Doctors" class="service-card-two__image">
-                                <h3 class="service-card-two__title"><a href="/speciality">Superspecialist and Specialist Doctors</a></h3><!-- /.service-card-two__title -->
-                                <a href="/speciality" class="service-card-two__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card-two__link -->
-                            </div><!-- /.service-card-two__content -->
-                        </div><!-- /.service-card-two -->
-                    </div><!-- /.item -->
-                    <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
-                        <div class="service-card-two">
-                            <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
-                            <div class="service-card-two__content">
-                                <img src="{{asset('images/services/service-2-3.jpg')}}" alt="Laboratory Tests" class="service-card-two__image">
-                                <h3 class="service-card-two__title"><a href="#">Laboratory Tests</a></h3><!-- /.service-card-two__title -->
-                                <a href="#" class="service-card-two__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card-two__link -->
-                            </div><!-- /.service-card-two__content -->
-                        </div><!-- /.service-card-two -->
-                    </div><!-- /.item -->
-                    <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                        <div class="service-card-two">
-                            <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
-                            <div class="service-card-two__content">
-                                <img src="{{asset('images/services/service-2-4.jpg')}}" alt="ECG" class="service-card-two__image">
-                                <h3 class="service-card-two__title"><a href="#">ECG</a></h3><!-- /.service-card-two__title -->
-                                <a href="#" class="service-card-two__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card-two__link -->
-                            </div><!-- /.service-card-two__content -->
-                        </div><!-- /.service-card-two -->
-                    </div><!-- /.item -->
-                    <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                        <div class="service-card-two">
-                            <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
-                            <div class="service-card-two__content">
-                                <img src="{{asset('images/services/service-2-5.jpg')}}" alt="Holter" class="service-card-two__image">
-                                <h3 class="service-card-two__title"><a href="">Holter</a></h3><!-- /.service-card-two__title -->
-                                <a href="#" class="service-card-two__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card-two__link -->
-                            </div><!-- /.service-card-two__content -->
-                        </div><!-- /.service-card-two -->
-                    </div><!-- /.item -->
-                    <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
-                        <div class="service-card-two">
-                            <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
-                            <div class="service-card-two__content">
-                                <img src="{{asset('images/services/service-2-6.jpg')}}" alt="cardiology" class="service-card-two__image">
-                                <h3 class="service-card-two__title"><a href="#">Eco Cardiography</a></h3><!-- /.service-card-two__title -->
-                                <a href="#" class="service-card-two__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card-two__link -->
-                            </div><!-- /.service-card-two__content -->
-                        </div><!-- /.service-card-two -->
-                    </div><!-- /.item -->
-                    <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
-                        <div class="service-card-two">
-                            <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
-                            <div class="service-card-two__content">
-                                <img src="{{asset('images/services/service-2-6.jpg')}}" alt="Free Medical Camps" class="service-card-two__image">
-                                <h3 class="service-card-two__title"><a href="#">Free Medical Camps</a></h3><!-- /.service-card-two__title -->
-                                <a href="#" class="service-card-two__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card-two__link -->
-                            </div><!-- /.service-card-two__content -->
-                        </div><!-- /.service-card-two -->
-                    </div><!-- /.item -->
-                    <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
-                        <div class="service-card-two">
-                            <div class="service-card-two__bg"></div><!-- /.service-card-two__bg -->
-                            <div class="service-card-two__content">
-                                <img src="{{asset('images/services/service-2-6.jpg')}}" alt="Orthopedic Rehab. Aids" class="service-card-two__image">
-                                <h3 class="service-card-two__title"><a href="#">Orthopedic Rehab. Aids</a></h3><!-- /.service-card-two__title -->
-                                <a href="#" class="service-card-two__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card-two__link -->
-                            </div><!-- /.service-card-two__content -->
-                        </div><!-- /.service-card-two -->
-                    </div><!-- /.item -->
+                    @endforeach
                 </div><!-- /.services-page__carousel -->
             </div><!-- /.container -->
         </section><!-- /.services-page services-page--three section-space -->

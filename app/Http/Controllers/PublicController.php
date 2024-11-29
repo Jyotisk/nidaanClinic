@@ -7,6 +7,7 @@ use App\Models\Faq;
 use App\Models\Gallary;
 use App\Models\MenuItem;
 use App\Models\Testimonial;
+use App\Models\User\AvailableService;
 use App\Models\User\BookAppointment;
 use App\Models\User\Specialist;
 use Illuminate\Http\Request;
@@ -96,7 +97,8 @@ class PublicController extends Controller
 
     public function services()
     {
-        return view('public.services');
+        $services=AvailableService::where('status',true)->select('service_name','description','service_image')->get();
+        return view('public.services',compact('services'));
     }
 
     public function servicesDetails()
