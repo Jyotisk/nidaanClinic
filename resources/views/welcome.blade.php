@@ -18,11 +18,12 @@
                                     <span class="main-slider-one__title__inner">
                                         Caring for
                                         <span class="main-slider-one__title__image">
-                                            <a href="https://www.youtube.com/watch?v=h9MbznbxlLc"
+                                            <!-- <a href="https://www.youtube.com/watch?v=h9MbznbxlLc"
                                                 class="main-slider-one__title__video video-btn video-popup">
                                                 <i class="icon-play"></i>
                                                 <i class="video-btn__ripple"></i>
-                                            </a><!-- /.video-btn -->
+                                            </a> -->
+                                            <!-- /.video-btn -->
                                             {{-- <img src="{{asset('images/main-slider/main-slider-video-1-1.jpg')}}" alt="video"> --}}
                                         </span>
                                         Health <br> Caring for You
@@ -51,9 +52,8 @@
                                     </span>
                                 </h2><!-- /.title -->
                                 <div class="main-slider-one__description">
-                                    <p class="main-slider-one__text">From annual physicals to lab work and vaccinations,
-                                        and all steps in between, Vivo Clinic patients can get all their needs cared for
-                                        in one convenient</p><!-- /.text -->
+                                    <p class="main-slider-one__text">Nidaan Medical Clinic is a patient-focused healthcare center dedicated to providing comprehensive medical services. 
+                                        Our experienced doctors and compassionate staff offer personalized care across a range of specialties. </p><!-- /.text -->
                                 </div><!-- /.description -->
                                 <div class="main-slider-one__button">
                                     <div class="main-slider-one__button__inner">
@@ -114,13 +114,14 @@
                                 </div><!-- /.main-slider-one__top -->
                                 <h2 class="main-slider-one__title">
                                     <span class="main-slider-one__title__inner w-100">
-                                        best Cardiology
+                                        Best Health
                                         <span class="main-slider-one__title__image">
-                                            <a href="https://www.youtube.com/watch?v=h9MbznbxlLc"
+                                            <!-- <a href="https://www.youtube.com/watch?v=h9MbznbxlLc"
                                                 class="main-slider-one__title__video video-btn video-popup">
                                                 <i class="icon-play"></i>
                                                 <i class="video-btn__ripple"></i>
-                                            </a><!-- /.video-btn -->
+                                            </a> -->
+                                            <!-- /.video-btn -->
                                             {{-- <img src="{{asset('images/main-slider/main-slider-video-1-2.jpg')}}" alt="video"> --}}
                                         </span>
                                         <br> care in town
@@ -149,9 +150,8 @@
                                     </span>
                                 </h2><!-- /.title -->
                                 <div class="main-slider-one__description">
-                                    <p class="main-slider-one__text">Nail it down come up with something buzzworthy
-                                        going forward c-suite. Hire the best. We need to socialize the comms with the
-                                        wider stakeholder</p><!-- /.text -->
+                                    <p class="main-slider-one__text">With state-of-the-art diagnostic facilities and a commitment to excellence, we aim to ensure the well-being of every patient. Convenient appointments, 
+                                        modern amenities, and a welcoming environment make Nidaan Medical Clinic a trusted choice for your healthcare needs.</p><!-- /.text -->
                                 </div><!-- /.description -->
                                 <div class="main-slider-one__button">
                                     <div class="main-slider-one__button__inner">
@@ -233,57 +233,53 @@
 
                                 <h6 class="sec-title__tagline">about us</h6><!-- /.sec-title__tagline -->
 
-                                </div><!-- /.sec-title__top -->
-                                <h3 class="sec-title__title">Best Healthcare for you <br> Since 2002.</h3><!-- /.sec-title__title -->
-                            </div><!-- /.sec-title -->
-                            <div class="about-one__text-box wow fadeInUp" data-wow-duration="1500ms">
-                                <p class="about-one__text">Lorem ipsum dolor sit amet consecteitur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit a sapien fringilla, mattis ligula consectietur, ultrices mauris. Maecenas vitae mattis tellus.</p>
-                            </div><!-- /.about-one__text-box -->
-                            <div class="about-one__inner wow fadeInUp" data-wow-duration="1500ms">
-                                <div class="about-one__inner__row row gutter-y-30">
-                                    <div class="col-6">
-                                        <div class="about-one__funfact">
-                                            <h3 class="about-one__funfact__number count-box">
-                                                <span class="count-text" data-stop="89" data-speed="1500"></span>
-                                                <span>%</span>
-                                            </h3>
-                                            <h4 class="about-one__funfact__title">Top Medical <br> Project</h4>
-                                        </div><!-- /.about-one__funfact -->
-                                    </div><!-- /.col-6 -->
-                                    <div class="col-6">
-                                        <div class="about-one__funfact">
-                                            <h3 class="about-one__funfact__number count-box">
-                                                <span class="count-text" data-stop="100" data-speed="1500"></span>
-                                                <span>%</span>
-                                            </h3>
-                                            <h4 class="about-one__funfact__title">Satisficed <br> Patient</h4>
-                                        </div><!-- /.about-one__funfact -->
-                                    </div><!-- /.col-6 -->
-                                </div><!-- /.about-one__inner__row row gutter-y-30 -->
-                            </div><!-- /.about-one__inner -->
-                            <div class="about-one__bottom">
-                                <div class="about-one__button wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                                    <a href="/about" class="mediox-btn">
-                                        <span>know more</span>
-                                        <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
-                                    </a><!-- /.mediox-btn -->
-                                </div><!-- /.about-one__button -->
-                                <div class="about-profile wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                                    <img src="{{asset('images/about/about-profile-1-1.jpg')}}" alt="profile" class="about-profile__image">
-                                    <div class="about-profile__info">
-                                        <h4 class="about-profile__name">Alexsia Jorgina</h4>
-                                        <p class="about-profile__designation">Co. Founder</p>
-                                    </div><!-- /.about-profile__info -->
-                                </div><!-- /.about-profile -->
-                            </div><!-- /.about-one__bottom -->
-                        </div><!-- /.about-one__content -->
-                    </div><!-- /.col-lg-6 -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-            {{-- <img src="{{asset('images/about/about-1-3.png')}}" alt="about" class="about-one__shape-1"> --}}
-            <img src="{{asset('images/shapes/about-shape-1-1.png')}}" alt="shape" class="about-one__shape-2">
-        </section><!-- /.about-one section-space -->
-        {{-- End of About Us Page --}}
+                            </div><!-- /.sec-title__top -->
+                            <h3 class="sec-title__title">Best Healthcare for you <br> Since 2002.</h3><!-- /.sec-title__title -->
+                        </div><!-- /.sec-title -->
+                        <div class="about-one__text-box wow fadeInUp" data-wow-duration="1500ms">
+                            <p class="about-one__text">Nidaan Medical Clinic is a multi-specialty healthcare facility committed to delivering high-quality,
+                                 holistic medical care. We cater to a diverse range of medical needs, offering services such as general medicine, specialist consultations, 
+                                 preventive care, and diagnostic services. Our team comprises experienced doctors,
+                                 skilled nurses, and supportive staff who prioritize patient comfort and care.</p>
+                        </div><!-- /.about-one__text-box -->
+                        <div class="about-one__inner wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="about-one__inner__row row gutter-y-30">
+                                <div class="col-6">
+                                    <div class="about-one__funfact">
+                                        <h3 class="about-one__funfact__number count-box">
+                                            <span class="count-text" data-stop="89" data-speed="1500"></span>
+                                            <span>%</span>
+                                        </h3>
+                                        <h4 class="about-one__funfact__title">Top Medical <br> Project</h4>
+                                    </div><!-- /.about-one__funfact -->
+                                </div><!-- /.col-6 -->
+                                <div class="col-6">
+                                    <div class="about-one__funfact">
+                                        <h3 class="about-one__funfact__number count-box">
+                                            <span class="count-text" data-stop="100" data-speed="1500"></span>
+                                            <span>%</span>
+                                        </h3>
+                                        <h4 class="about-one__funfact__title">Satisficed <br> Patient</h4>
+                                    </div><!-- /.about-one__funfact -->
+                                </div><!-- /.col-6 -->
+                            </div><!-- /.about-one__inner__row row gutter-y-30 -->
+                        </div><!-- /.about-one__inner -->
+                        <div class="about-one__bottom">
+                            <div class="about-one__button wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                                <a href="/about" class="mediox-btn">
+                                    <span>know more</span>
+                                    <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
+                                </a><!-- /.mediox-btn -->
+                            </div><!-- /.about-one__button -->
+                        </div><!-- /.about-one__bottom -->
+                    </div><!-- /.about-one__content -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+        {{-- <img src="{{asset('images/about/about-1-3.png')}}" alt="about" class="about-one__shape-1"> --}}
+        <img src="{{asset('images/shapes/about-shape-1-1.png')}}" alt="shape" class="about-one__shape-2">
+    </section><!-- /.about-one section-space -->
+    {{-- End of About Us Page --}}
 
     {{-- Services Section --}}
     <section class="services-one section-space-two">
@@ -725,14 +721,14 @@
                                 </div><!-- /.form-one__control -->
                                 <div class="form-one__control form-one__control--full">
                                     <textarea name="address" placeholder="Address*..." required></textarea>
-                                </div><!-- /.form-one__control -->                               
+                                </div><!-- /.form-one__control -->
                                 <div class="form-one__control form-one__control--full">
                                     <textarea name="message" placeholder="Message (If Any)"></textarea>
                                 </div><!-- /.form-one__control -->
                                 <div class="form-one__control form-one__control--full">
                                     <button type="submit" class="mediox-btn">
-                                    <span>book appointment</span>
-                                    <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
+                                        <span>book appointment</span>
+                                        <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                                     </button>
                                 </div><!-- /.form-one__control -->
                             </div><!-- /.form-one__group -->
@@ -861,28 +857,28 @@
                         }
                     }
                 }'>
-                        @foreach ($speciaLists as $specialists)
+                        @foreach ($speciaLists as $row)
                         <div class="item">
                             <div class="team-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                                <img src="{{ asset('images/team/team-1-1.jpg') }}" alt="Sarah Albert"
+                                <img src="{{ env('IMAGE_PATH').Storage::url($row->doctor_image)}}" alt="{{ $row->doctor_name }}"
                                     class="team-card__image">
                                 <div class="team-card__identity">
-                                    <h3 class="team-card__name"><a href="#">{{ $specialists->doctor_name }}</a></h3>
-                                    <p class="team-card__designation">{{ $specialists->department_name }}</p>
+                                    <h3 class="team-card__name"><a href="{{url('/team-details')}}/{{ $row->id}}">{{ $row->doctor_name }}</a></h3>
+                                    <p class="team-card__designation">{{ $row->department_name }}</p>
                                     <div class="social-links">
-                                        <a href="https://facebook.com">
+                                        <a href="{{ $row->facebook_link }}" target="_blank">
                                             <i class="fab fa-facebook-f" aria-hidden="true"></i>
                                             <span class="sr-only">Facebook</span>
                                         </a>
-                                        <a href="https://instagram.com">
+                                        <a href="{{ $row->instagram_link }}" target="_blank">
                                             <i class="fab fa-instagram" aria-hidden="true"></i>
                                             <span class="sr-only">Instagram</span>
                                         </a>
-                                        <a href="https://twitter.com">
+                                        <a href="{{ $row->twitter_link }}" target="_blank">
                                             <i class="fab fa-twitter" aria-hidden="true"></i>
                                             <span class="sr-only">Twitter</span>
                                         </a>
-                                        <a href="https://linkedin.com">
+                                        <a href="{{ $row->linked_in_link }}" target="_blank">
                                             <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                             <span class="sr-only">Linkedin</span>
                                         </a>
@@ -908,9 +904,8 @@
                             <h3 class="sec-title__title">meet our expert team</h3><!-- /.sec-title__title -->
                         </div><!-- /.sec-title -->
                         <div class="team-one__inner wow fadeInUp" data-wow-duration="1500ms">
-                            <h3 class="team-one__inner__title">Personalized Treatment Plans</h3>
-                            <p class="team-one__inner__text">Nail it down come up with something buzzworthy going
-                                forward c-suite. Hire the best. We need to socialize the comms with the wider.</p>
+                            <h3 class="team-one__inner__title">Nidaan Healthcare Clinic's</h3>
+                            <p class="team-one__inner__text">expert team comprises highly skilled and compassionate medical professionals dedicated to providing comprehensive, patient-centered care. The team includes experienced doctors, specialists, and support staff committed to offering personalized treatment plans, cutting-edge diagnostics, and holistic wellness solutions. Their collective expertise ensures that patients receive the highest standard of medical care in a friendly and supportive environment.</p>
                         </div><!-- /.team-one__inner -->
                         <div class="team-one__custome-navs"></div><!-- /.team-one__custome-navs -->
                     </div><!-- /.team-one__content -->
@@ -1025,7 +1020,7 @@
                         <div class="faq-one__accordion">
                             <div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
                                 @foreach($faqList AS $key=> $faq)
-                                <div class="accordion wow fadeInUp {{$key== 0 ?'active': "" }}" data-wow-duration="1500ms"
+                                <div class="accordion wow fadeInUp {{$key== 0 ?'active': '' }}" data-wow-duration="1500ms"
                                     data-wow-delay="00ms">
                                     <div class="accordion-title">
                                         <h4>
@@ -1098,43 +1093,43 @@
                             }
                         }
                         }'>
-                @foreach($testimonials AS $testimon)        
-                        <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                            <div class="testimonial-card">
-                                <div class="testimonial-card__image">
-                                    <img src="{{ asset('images/testimonials/testimonial-1-1.jpg') }}" alt="{{ $testimon->name }}">
-                                </div>
-                                <div class="testimonial-card__content">
-                                    <div class="testimonial-card__quote-icon">
-                                        <span class="icon-quote"></span>
-                                    </div><!-- /.testimonial-card__icon -->
-                                    <div class="testimonial-card__identity">
-                                        <h5 class="testimonial-card__name">{{ $testimon->name }}</h5>
-                                        <p class="testimonial-card__designation">{{ $testimon->profession }}</p>
-                                    </div><!-- /.testimonial-card__identity -->
-                                    <p class="testimonial-card__quote"><span>Nidaan</span> {{ $testimon->description }}</p>
-                                    <!-- /.testimonial-card__quote -->
-                                    <div class="mediox-ratings">
-                                        <span class="mediox-ratings__icon">
-                                            <i class="icon-star"></i>
-                                        </span><!-- /.mediox-ratings__icon -->
-                                        <span class="mediox-ratings__icon">
-                                            <i class="icon-star"></i>
-                                        </span><!-- /.mediox-ratings__icon -->
-                                        <span class="mediox-ratings__icon">
-                                            <i class="icon-star"></i>
-                                        </span><!-- /.mediox-ratings__icon -->
-                                        <span class="mediox-ratings__icon">
-                                            <i class="icon-star"></i>
-                                        </span><!-- /.mediox-ratings__icon -->
-                                        <span class="mediox-ratings__icon">
-                                            <i class="icon-star"></i>
-                                        </span><!-- /.mediox-ratings__icon -->
-                                    </div><!-- /.product-ratings -->
-                                </div><!-- /.testimonial-card__content -->
-                            </div><!-- /.testimonial-card -->
-                        </div><!-- /.owl-slide-item-->
-                    @endforeach
+                @foreach($testimonials AS $testimon)
+                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__image">
+                            <img src="{{ asset('images/testimonials/testimonial-1-1.jpg') }}" alt="{{ $testimon->name }}">
+                        </div>
+                        <div class="testimonial-card__content">
+                            <div class="testimonial-card__quote-icon">
+                                <span class="icon-quote"></span>
+                            </div><!-- /.testimonial-card__icon -->
+                            <div class="testimonial-card__identity">
+                                <h5 class="testimonial-card__name">{{ $testimon->name }}</h5>
+                                <p class="testimonial-card__designation">{{ $testimon->profession }}</p>
+                            </div><!-- /.testimonial-card__identity -->
+                            <p class="testimonial-card__quote"><span>Nidaan</span> {{ $testimon->description }}</p>
+                            <!-- /.testimonial-card__quote -->
+                            <div class="mediox-ratings">
+                                <span class="mediox-ratings__icon">
+                                    <i class="icon-star"></i>
+                                </span><!-- /.mediox-ratings__icon -->
+                                <span class="mediox-ratings__icon">
+                                    <i class="icon-star"></i>
+                                </span><!-- /.mediox-ratings__icon -->
+                                <span class="mediox-ratings__icon">
+                                    <i class="icon-star"></i>
+                                </span><!-- /.mediox-ratings__icon -->
+                                <span class="mediox-ratings__icon">
+                                    <i class="icon-star"></i>
+                                </span><!-- /.mediox-ratings__icon -->
+                                <span class="mediox-ratings__icon">
+                                    <i class="icon-star"></i>
+                                </span><!-- /.mediox-ratings__icon -->
+                            </div><!-- /.product-ratings -->
+                        </div><!-- /.testimonial-card__content -->
+                    </div><!-- /.testimonial-card -->
+                </div><!-- /.owl-slide-item-->
+                @endforeach
             </div><!-- /.thm-owl__slider -->
         </div><!-- /.container -->
     </section><!-- /.testimonials-one section-space-two -->
@@ -1144,8 +1139,8 @@
 <script>
     $(document).ready(function() {
         $('#appointmentForm').submit(function(e) {
-            e.preventDefault(); 
-            
+            e.preventDefault();
+
             var formData = $(this).serialize();
 
             $.ajax({

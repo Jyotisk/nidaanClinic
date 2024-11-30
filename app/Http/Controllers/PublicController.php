@@ -34,13 +34,14 @@ class PublicController extends Controller
             DB::commit();
 
             $speciaLists = Specialist::join('departments', 'departments.id', 'specialists.department_id')
-            ->where('specialists.status',true)
-                ->select('department_name', 'specialists.doctor_name', 'specialists.id','descriptions')->get();
-            $faqList=Faq::select('id','question','answer')->where('status',true)->get();
-            $testimonials=Testimonial::select('name','profession','description')->where('status',true)->get();
+                ->where('specialists.status', true)
+                ->select('specialists.id','department_name', 'specialists.doctor_name', 'specialists.doctor_image', 'specialists.id',  'facebook_link', 'instagram_link', 'twitter_link', 'linked_in_link')
+                ->inRandomOrder()->get();
+            $faqList = Faq::select('id', 'question', 'answer')->where('status', true)->inRandomOrder()->get();
+            $testimonials = Testimonial::select('name', 'profession', 'description')->where('status', true)->inRandomOrder()->get();
 
 
-            return view('welcome', compact('speciaLists','faqList','testimonials'));
+            return view('welcome', compact('speciaLists', 'faqList', 'testimonials'));
         } catch (Exception $e) {
             return $e;
             DB::rollBack();
@@ -66,7 +67,7 @@ class PublicController extends Controller
             return response()->json([
                 'response' => 'validationFails',
                 'error' => $validator->errors()
-            ],422);
+            ], 422);
         }
         DB::beginTransaction();
         try {
@@ -86,31 +87,39 @@ class PublicController extends Controller
             return response()->json([
                 'status' => 'success',
                 'message' => "Appointment Booked Successfully"
-            ],201);
+            ], 201);
         } catch (\Exception $e) {
             DB::rollBack();
-            return $e;
-            //throw $th;
+            return response()->json([
+                'status' => 'error',
+                'message' => "Something Went Wrong"
+            ], 201);
         }
     }
 
     public function aboutUs()
     {
-        return view('public.about');
+        $faqList = Faq::select('id', 'question', 'answer')->where('status', true)->inRandomOrder()->get();
+        $testimonials = Testimonial::select('name', 'profession', 'description')->where('status', true)->inRandomOrder()->get();
+        $speciaLists = Specialist::join('departments', 'departments.id', 'specialists.department_id')
+        ->where('specialists.status', true)
+        ->select('specialists.id','department_name', 'specialists.doctor_name', 'specialists.doctor_image', 'specialists.id',  'facebook_link', 'instagram_link', 'twitter_link', 'linked_in_link')
+        ->inRandomOrder()->get();
+        return view('public.about',compact('speciaLists','faqList','testimonials'));
     }
 
     public function services()
     {
-        $services=Facility::where('status',true)->select('id','facility_name','descriptions','image')->get();
-        return view('public.services',compact('services'));
+        $services = Facility::where('status', true)->select('id', 'facility_name', 'descriptions', 'image')->inRandomOrder()->get();
+        return view('public.services', compact('services'));
     }
 
     public function servicesDetails($id)
     {
-        $serviceLists=Facility::where(['status'=>true])->select('id','facility_name','descriptions','image')->get();
-        $services=Facility::where(['status'=>true,'id'=>$id])->select('facility_name','descriptions','image')->first();
-        $serviceDetails=FacilityDetail::where('facility_id',$id)->select('facility_detail')->get();
-        return view('public.service-details',compact('services','serviceDetails','serviceLists'));
+        $serviceLists = Facility::where(['status' => true])->select('id', 'facility_name', 'descriptions', 'image')->inRandomOrder()->get();
+        $services = Facility::where(['status' => true, 'id' => $id])->select('facility_name', 'descriptions', 'image')->first();
+        $serviceDetails = FacilityDetail::where('facility_id', $id)->select('facility_detail')->get();
+        return view('public.service-details', compact('services', 'serviceDetails', 'serviceLists'));
     }
 
     public function speciality()
@@ -130,30 +139,33 @@ class PublicController extends Controller
 
     public function teams()
     {
-        return view('public.teams');
+        $speciaLists = Specialist::join('departments', 'departments.id', 'specialists.department_id')
+        ->where('specialists.status', true)
+        ->select('specialists.id','specialists.descriptions','department_name', 'specialists.doctor_name', 'specialists.doctor_image', 'specialists.id',  'facebook_link', 'instagram_link', 'twitter_link', 'linked_in_link')
+        ->inRandomOrder()->get();
+        return view('public.teams',compact('speciaLists'));
     }
 
     public function teamDetails($id)
     {
         $speciaLists = Specialist::join('departments', 'departments.id', 'specialists.department_id')
-                ->select('department_name', 'specialists.doctor_name','specialists.doctor_image', 'specialists.id','descriptions','facebook_link','instagram_link','twitter_link','linked_in_link')
-                ->where('specialists.id',$id)->first();
-         $speciaListDetails=SpecialistDetail::where('specialist_id',$id)->select('header','specialist_detail')
-         ->get();       
-        return view('public.team-details',compact('speciaLists','speciaListDetails'));
+            ->select('department_name', 'specialists.doctor_name', 'specialists.doctor_image', 'specialists.id', 'descriptions', 'facebook_link', 'instagram_link', 'twitter_link', 'linked_in_link')
+            ->where('specialists.id', $id)->inRandomOrder()->first();
+        $speciaListDetails = SpecialistDetail::where('specialist_id', $id)->select('header', 'specialist_detail')
+            ->get();
+        return view('public.team-details', compact('speciaLists', 'speciaListDetails'));
     }
 
     public function booking()
     {
         $speciaLists = Specialist::join('departments', 'departments.id', 'specialists.department_id')
-        ->select('department_name', 'specialists.doctor_name', 'specialists.id', 'descriptions')->get();
+            ->select('department_name', 'specialists.doctor_name', 'specialists.id', 'descriptions')->inRandomOrder()->get();
         return view('public.booking', compact('speciaLists'));
     }
 
     public function gallery()
-    {   
-        $gallaryImage=Gallary::select('image')->where('status',true)->get();
-        return view('public.gallery',compact('gallaryImage'));
+    {
+        $gallaryImage = Gallary::select('image')->where('status', true)->inRandomOrder()->get();
+        return view('public.gallery', compact('gallaryImage'));
     }
-
 }

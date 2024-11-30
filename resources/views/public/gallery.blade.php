@@ -10,7 +10,7 @@
                             <ul class="mediox-breadcrumb list-unstyled">
                                 <li>
                                     <span class="mediox-breadcrumb__icon"><i class="icon-home"></i></span>
-                                    <a href="index.html">Home</a>
+                                    <a href="{{route('index')}}">Home</a>
                                 </li>
                                 <li><span>Gallery</span></li>
                             </ul><!-- /.mediox-breadcrumb list-unstyled -->

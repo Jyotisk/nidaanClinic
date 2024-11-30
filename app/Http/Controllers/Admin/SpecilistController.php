@@ -21,8 +21,8 @@ class SpecilistController extends Controller
         // $speciaLists = Specialist::all();
         // $allSpecilists = Specialist::with('GetSpecialistLists')->get();
         $departments = Department::get();
-        $allSpecilists = Specialist::join('departments','departments.id','=','specialists.department_id')->select('specialists.*','departments.department_name')->get();
-        return view('specialists.AddSpecialist', compact('allSpecilists','departments'));
+        $allSpecilists = Specialist::join('departments', 'departments.id', '=', 'specialists.department_id')->select('specialists.*', 'departments.department_name')->get();
+        return view('specialists.AddSpecialist', compact('allSpecilists', 'departments'));
     }
     public function store(Request $request)
     {
@@ -42,17 +42,7 @@ class SpecilistController extends Controller
                 'error' => $validator->errors()
             ]);
         }
-        // $details = [];
-        // foreach ($request->file('image') as $image) {
-        //     $path = $image->store('public/gallary');
-        //     $details[] = [
-        //         'menu_item_id' => $request->menu_item_id,
-        //         'image' => $path,
-        //         'date' => date('Y-m-d'),
-        //         'entry_by' => Auth::user()->id,
-        //         'status' => true
-        //     ];
-        // }
+
         DB::beginTransaction();
         try {
             $specialists = new Specialist();
@@ -71,20 +61,23 @@ class SpecilistController extends Controller
             }
             $specialists->save();
 
-            $specialistDetail = [];
-            foreach ($request->header as $key => $row) {
-                $specialistDetail[] = [
-                    'specialist_id' => $specialists->id,
-                    'header' => $row,
-                    'specialist_detail' => $request->specialist_detail[$key],
-                ];
-            }
-            $specialistDetail = collect($specialistDetail);
-            $chunks = $specialistDetail->chunk(500);
+            if (count($request->header) > 0) {
+                $specialistDetail = [];
+                foreach ($request->header as $key => $row) {
+                    $specialistDetail[] = [
+                        'specialist_id' => $specialists->id,
+                        'header' => $row,
+                        'specialist_detail' => $request->specialist_detail[$key],
+                    ];
+                }
+                $specialistDetail = collect($specialistDetail);
+                $chunks = $specialistDetail->chunk(500);
 
-            foreach ($chunks as $chunk) {
-                SpecialistDetail::insert($chunk->toArray());
+                foreach ($chunks as $chunk) {
+                    SpecialistDetail::insert($chunk->toArray());
+                }
             }
+
             DB::commit();
             return response()->json([
                 'response' => 'success',
@@ -115,6 +108,7 @@ class SpecilistController extends Controller
     }
     public function edit(Request $request)
     {
+        return $request;
         $validator = Validator::make(
             $request->all(),
             [
@@ -130,17 +124,7 @@ class SpecilistController extends Controller
                 'error' => $validator->errors()
             ]);
         }
-        // $details = [];
-        // foreach ($request->file('image') as $image) {
-        //     $path = $image->store('public/gallary');
-        //     $details[] = [
-        //         'menu_item_id' => $request->menu_item_id,
-        //         'image' => $path,
-        //         'date' => date('Y-m-d'),
-        //         'entry_by' => Auth::user()->id,
-        //         'status' => true
-        //     ];
-        // }
+
         DB::beginTransaction();
         try {
             $specialists = Specialist::findOrFail($request->specialist_id);
@@ -152,10 +136,11 @@ class SpecilistController extends Controller
             $specialists->linked_in_link = $request->linked_in_link;
             $specialists->status = true;
             $specialists->entry_by = Auth::user()->id;
-            // if ($request->file('doctor_image')) {
-            //     $path = $request->doctor_image->store('public/gallary');
-            //     $specialists->doctor_image = $path;
-            // }
+            if ($request->file('doctor_image')) {
+                Storage::delete($specialists->doctor_image);
+                $path = $request->doctor_image->store('public/specialist');
+                $specialists->doctor_image = $path;
+            }
             $specialists->save();
             SpecialistDetail::where('specialist_id', $request->specialist_id)->delete();
             $specialistDetail = [];
@@ -179,7 +164,7 @@ class SpecilistController extends Controller
             ]);
         } catch (\Throwable $e) {
             DB::rollBack();
-            // Storage::delete($path);
+            Storage::delete($path);
             $exception = new ExceptionHandler();
             $exception->controller_function = "SpecilistController.store";
             $exception->error = $e;
@@ -222,7 +207,7 @@ class SpecilistController extends Controller
         try {
             $specialists = new Department();
             $specialists->department_name = $request->department_name;
-        
+
             $specialists->status = true;
             $specialists->entry_by = Auth::user()->id;
             $specialists->save();
@@ -245,5 +230,4 @@ class SpecilistController extends Controller
             ]);
         }
     }
-
 }

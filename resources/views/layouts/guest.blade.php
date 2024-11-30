@@ -51,7 +51,7 @@
             <div class="container-fluid">
                 <div class="main-header__inner">
                     <div class="main-header__logo logo-retina">
-                        <a href="index.html">
+                        <a href="{{route('index')}}">
                             <img src="{{asset('images/logo-dark.png')}}" alt="Nidaan HTML" width="164">
                         </a>
                     </div><!-- /.main-header__logo -->
@@ -195,7 +195,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-7 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
                         <div class="footer-widget footer-widget--about">
                             <div class="footer-widget__logo logo-retina">
-                                <a href="index.html">
+                                <a href="{{route('index')}}">
                                     <img src="{{asset('images/logo-light.png')}}" alt="Nidaan HTML" width="164">
                                 </a>
                             </div><!-- /.footer-widget__logo -->
@@ -370,7 +370,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="icon-close"></i></span>
 
             <div class="logo-box logo-retina">
-                <a href="index.html" aria-label="logo image"><img src="{{asset('images/logo-light.png')}}" width="164" alt="" /></a>
+                <a href="{{route('index')}}" aria-label="logo image"><img src="{{asset('images/logo-light.png')}}" width="164" alt="" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>

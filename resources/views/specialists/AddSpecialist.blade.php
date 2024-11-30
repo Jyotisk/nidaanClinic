@@ -47,36 +47,37 @@
                                             </thead>
                                             <tbody>
                                                 @foreach ($allSpecilists as $index => $query)
-                                                    <tr>
-                                                        <th>{{ $index + 1 }}</th>
-                                                        <td>{{ $query->department_name }}</td>
-                                                        <td>
-                                                            {{ $query->doctor_name }}
+                                                <tr>
+                                                    <th>{{ $index + 1 }}</th>
+                                                    <td>{{ $query->department_name }}</td>
+                                                    <td>
+                                                        {{ $query->doctor_name }}
 
-                                                            {{-- {{$query->get_specialist_lists}}
+                                                        {{-- {{$query->get_specialist_lists}}
                                                         @foreach ($query['get_specialist_lists'] as $specialist)
                                                         <li>
                                                             <strong>{{ $specialist['header'] }}</strong>: {{ $specialist['specialist_detail'] }}
                                                         </li>
                                                         @endforeach --}}
-                                                        </td>
-                                                        <td>
-                                                            <img src="{{ Storage::url($query->doctor_image) }}"
-                                                                alt="Service Images" style="width: 10%" />
-                                                        </td>
-                                                        <td>{{ \Illuminate\Support\Str::limit($query->descriptions, $limit = 20, $end = '...') }}
-                                                        </td>
-                                                        <td><button class="btn btn-info btn-sm rounded-0 view"
-                                                                data-specialist_id="{{ $query->id }}"
-                                                                data-department_name="{{ $query->department_name }}"
-                                                                data-doctor_name="{{ $query->doctor_name }}"
-                                                                data-facebook_link="{{ $query->facebook_link }}"
-                                                                data-instagram_link="{{ $query->instagram_link }}"
-                                                                data-twitter_link="{{ $query->twitter_link }}"
-                                                                data-linked_in_link="{{ $query->linked_in_link }}"
-                                                                data-descriptions="{{ $query->descriptions }}">view</button>
-                                                        </td>
-                                                    </tr>
+                                                    </td>
+                                                    <td>
+                                                        <img src="{{ Storage::url($query->doctor_image) }}"
+                                                            alt="Service Images" style="width: 10%" />
+                                                    </td>
+                                                    <td>{{ \Illuminate\Support\Str::limit($query->descriptions, $limit = 20, $end = '...') }}
+                                                    </td>
+                                                    <td><button class="btn btn-info btn-sm rounded-0 view"
+                                                            data-specialist_id="{{ $query->id }}"
+                                                            data-doctor_image="{{ $query->doctor_image }}"
+                                                            data-department_name="{{ $query->department_name }}"
+                                                            data-doctor_name="{{ $query->doctor_name }}"
+                                                            data-facebook_link="{{ $query->facebook_link }}"
+                                                            data-instagram_link="{{ $query->instagram_link }}"
+                                                            data-twitter_link="{{ $query->twitter_link }}"
+                                                            data-linked_in_link="{{ $query->linked_in_link }}"
+                                                            data-descriptions="{{ $query->descriptions }}">view</button>
+                                                    </td>
+                                                </tr>
                                                 @endforeach
                                             </tbody>
 
@@ -110,7 +111,7 @@
                                     <select name="department_name" id="" class="form-control" require>
                                         <option value="">Select Department</option>
                                         @foreach ($departments as $dep)
-                                            <option value="{{ $dep->id }}">{{ $dep->department_name }}</option>
+                                        <option value="{{ $dep->id }}">{{ $dep->department_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -220,12 +221,25 @@
                                         name="linked_in_link">
                                 </div>
                                 <div class="col-md-12">
+                                    <label for="department name" class="form-label">Doctor Image</label>
+                                    <input type="file" id="modal_doctor_image" name="doctor_image" class="form-control"
+                                        accept="image/*">
+                                </div>
+                                <div class="col-md-12">
                                     <label for="department name" class="form-label">Description<span
                                             class="text-danger">*</span></label>
                                     <textarea name="descriptions" id="modal_descriptions" class="form-control"></textarea>
                                 </div>
+                                <div id="editDetails"></div>
+                                <div id="newEditinput">
+                                </div>
+                                <div class="col-md-12 text-left" style="display: none;" id="editMore">
+                                    <button id="rowEditAdder" type="button" class="btn btn-dark btn-sm rounded-0 mt-2">
+                                        <span class="bi bi-plus-square-dotted">
+                                        </span> ADD MORE DETAILS
+                                    </button>
+                                </div>
                             </div>
-                            <div class="row" id="editDetails"></div>
                             <button type="submit" class="btn btn-success btn-sm rounded-0 mt-4" id="editSubmitBtn"
                                 style="display: none;">Submit</button>
                         </form>
@@ -256,6 +270,22 @@
         });
 
         $("body").on("click", "#DeleteRoleRow", function() {
+            $(this).parents("#roleRow").remove();
+        });
+
+        $("#rowEditAdder").click(function() {
+            newRowAdd =
+                '<div class="row mt-2" id="roleRow">' +
+                '<label for="department name" class="form-label">Header<span class="text-danger">*</span></label>' +
+                '<div class="col-md-12"><input type="text" id="inputPassword5" name="header[]" class="form-control">' +
+                '<label for="department name" class="form-label">Details<span class="text-danger">*</span></label>' +
+                '<div class="col-md-12"><input type="text" id="inputPassword5" name="specialist_detail[]" class="form-control">' +
+                '<div class="col-md-4"><button class="btn btn-danger mt-4 btn-sm rounded-0" id="DeleteEditRow" type="button"><i class="bi bi-trash"></i> Delete</button>' +
+                '</div></div></div>';
+            $('#newEditinput').append(newRowAdd);
+        });
+
+        $("body").on("click", "#DeleteEditRow", function() {
             $(this).parents("#roleRow").remove();
         });
 
@@ -339,7 +369,7 @@
                 },
                 success: function(response) {
                     if (response.status == 'success') {
-
+                        $('#editDetails').empty();
                         var div = document.getElementById('editDetails');
 
                         response.specialistDetails.forEach(item => {
@@ -375,16 +405,14 @@
         $(document).on("click", "#ediBtn", function(e) {
             $('#editForm :input').attr('disabled', false);
             $("#editSubmitBtn").css("display", "block");
+            $("#editMore").css("display", "block");
         });
         $('#editForm').submit(function(e) {
-            e.preventDefault(); // Prevent form submission
+            e.preventDefault(); 
 
-            // Serialize form data
-            var formData = $(this).serialize();
-
-            // Send AJAX request
+            var formData = $(this).serialize();            
             $.ajax({
-                url: "{{ route('EditSpecialist') }}", // Replace with your route
+                url: "{{ route('EditSpecialist') }}", 
                 method: 'POST',
                 data: formData,
                 success: function(res) {

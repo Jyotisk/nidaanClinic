@@ -155,7 +155,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -194,6 +194,55 @@
                         </div>
                     </div>
                 </div>
+            </div> -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Appointments</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="basic-datatables" class="display table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-center">#</th>
+                                            <th scope="col" class="text-center">Name</th>
+                                            <th scope="col" class="text-center">Phone No</th>
+                                            <th scope="col" class="text-center">Appointment Date</th>
+                                            <th scope="col" class="text-center">Entry Date</th>
+                                            <th scope="col" class="text-center">Doctor</th>
+                                            <th scope="col" class="text-center">Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($bookAppointment AS $index=>$query)
+                                        <tr>
+                                            <td class="text-center">{{$index+1}}</td>
+                                            <td class="text-center">{{$query->patient_name}}</td>
+                                            <td class="text-center">{{$query->age}}</td>
+                                            <td class="text-center">{{$query->appointment_date}}</td>
+                                            <td class="text-center">{{$query->entry_date}}</td>
+                                            <td class="text-center">{{$query->doctor_name}}</td>
+                                            <!-- <td class="text-center">{{ \Illuminate\Support\Str::limit($query->message, $limit = 20, $end = '...') }}</td> -->
+                                            <td class="text-center"><button class="btn btn-info btn-sm rounded-0 view" 
+                                            data-patient_name="{{$query->patient_name}}" 
+                                            data-age="{{$query->age}}" 
+                                            data-phone_no="{{$query->phone_no}}" 
+                                            data-address="{{$query->address}}" 
+                                            data-appointment_date="{{$query->appointment_date}}" 
+                                            data-entry_date="{{$query->entry_date}}" 
+                                            data-doctor_name="{{$query->doctor_name}}" 
+                                            data-message="{{$query->message}}">view</button></td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -202,26 +251,38 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="serviceName">Customer Query Details</h5>
+                    <h5 class="modal-title" id="serviceName">Appointment Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row text-center">
+                        <div class="col-md-12 bg-info text-light">
+                            <label for="Registration No" class="form-label">Doctor Name</label>
+                            <p id="modal_doctor_name"></p>
+                        </div>
                         <div class="col-md-4">
                             <label for="Registration No" class="form-label">Name</label>
                             <p id="modal_name"></p>
                         </div>
                         <div class="col-md-4">
-                            <label for="Registration No" class="form-label">Email</label>
-                            <p id="modal_email"></p>
+                            <label for="Registration No" class="form-label">Age</label>
+                            <p id="modal_age"></p>
                         </div>
                         <div class="col-md-4">
                             <label for="Registration No" class="form-label">Phone No</label>
                             <p id="modal_phone"></p>
                         </div>
                         <div class="col-md-4">
-                            <label for="Registration No" class="form-label">Date</label>
+                            <label for="Registration No" class="form-label">Entry Date</label>
                             <p id="modal_date"></p>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Registration No" class="form-label">Appointment Date</label>
+                            <p id="modal_appointment_date"></p>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="Registration No" class="form-label"><Address></Address></label>
+                            <p id="modal_modal_address"></p>
                         </div>
                         <div class="col-md-12">
                             <label for="Registration No" class="form-label">Message</label>
@@ -241,17 +302,23 @@
         $("#basic-datatables").DataTable({});
         $(document).on('click', '.view', function(e) {
             e.preventDefault();
-            var name = $(this).data('name');
-            var email = $(this).data('email');
-            var phone = $(this).data('phone');
-            var date = $(this).data('date');
+            var name = $(this).data('patient_name');
+            var phone_no = $(this).data('phone_no');
+            var age = $(this).data('age');
+            var doctor_name = $(this).data('doctor_name');
+            var appointment_date = $(this).data('appointment_date');
+            var entry_date = $(this).data('entry_date');
+            var address = $(this).data('address');
             var message = $(this).data('message');
 
             $('#modal_name').text(name);
-            $('#modal_email').text(email);
-            $('#modal_phone').text(phone);
-            $('#modal_date').text(date);
+            $('#modal_age').text(age);
+            $('#modal_phone').text(phone_no);
+            $('#modal_date').text(entry_date);
+            $('#modal_appointment_date').text(appointment_date);
+            $('#modal_address').text(address);
             $('#modal_message').text(message);
+            $('#modal_doctor_name').text(doctor_name);
             $('#detailModal').modal('show')
         })
     });
