@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('facilities', function (Blueprint $table) {
             $table->id();
             $table->string('facility_name');
+            $table->unsignedBigInteger('department_id')->nullable();
             $table->text('descriptions')->nullable();
             $table->string('image')->nullable();
-            $table->string('type')->comment('service or facility');
+            $table->string('type')->comment('service or speciality');
             $table->unsignedBigInteger('entry_by');
             $table->boolean('status');
             $table->timestamps();

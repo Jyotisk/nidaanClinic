@@ -39,9 +39,19 @@ class PublicController extends Controller
                 ->inRandomOrder()->get();
             $faqList = Faq::select('id', 'question', 'answer')->where('status', true)->inRandomOrder()->get();
             $testimonials = Testimonial::select('name', 'profession', 'description')->where('status', true)->inRandomOrder()->get();
+            $services = Facility::where(['type' => 'service', 'status' => true])
+            ->inRandomOrder()
+            ->limit(3)
+            ->get();
+            $specialities=DB::select("SELECT facilities.id,facilities.facility_name,facilities.image,COALESCE(doctor_count,0) AS doctor_count,
+            departments.department_name
+            FROM facilities JOIN departments ON facilities.department_id=departments.id
+            LEFT JOIN (SELECT department_id,COUNT(id) AS doctor_count FROM specialists GROUP BY department_id) specialists
+            ON facilities.department_id=specialists.department_id
+            WHERE facilities.status=true AND type='speciality'
+            ORDER BY RAND()");
 
-
-            return view('welcome', compact('speciaLists', 'faqList', 'testimonials'));
+            return view('welcome', compact('speciaLists', 'faqList', 'testimonials','services','specialities'));
         } catch (Exception $e) {
             return $e;
             DB::rollBack();

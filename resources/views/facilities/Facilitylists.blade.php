@@ -39,6 +39,7 @@
                                                 <tr>
                                                     <th scope="col" class="text-center">#</th>
                                                     <th scope="col" class="text-center">Facility Name</th>
+                                                    <th scope="col" class="text-center">Type</th>
                                                     <th scope="col" class="text-center">Image</th>
                                                     <th scope="col" class="text-center">Descriptions</th>
                                                     <th scope="col" class="text-center">Action</th>
@@ -49,6 +50,7 @@
                                                 <tr>
                                                     <th>{{ $index + 1 }}</th>
                                                     <td>{{ $query->facility_name }}</td>
+                                                    <td>{{ $query->type }}</td>
                                                     <td>
                                                         <img src="{{ Storage::url($query->image) }}"
                                                             alt="Service Images" style="width: 10%" />
@@ -93,7 +95,16 @@
                                     <select name="type" id="type" class="form-control" required>
                                         <option value="">Select</option>
                                         <option value="service">Service</option>
-                                        <option value="facility">Facility</option>
+                                        <option value="speciality">Speciality</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="Registration No" class="form-label">Speciality</label>
+                                    <select name="department_id" id="department_id" class="form-control">
+                                        <option value="">Select</option>
+                                        @foreach($departments AS $dept)
+                                        <option value="{{$dept->id}}">{{$dept->department_name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-12">

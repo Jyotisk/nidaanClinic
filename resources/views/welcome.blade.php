@@ -110,7 +110,7 @@
                         <div class="col-xl-9">
                             <div class="main-slider-one__content">
                                 <div class="main-slider-one__top">
-                                    <p class="main-slider-one__sub-title">24/7 EMERGENCY SERVICE</p><!-- /.sub-title -->
+                                    <p class="main-slider-one__sub-title">NIDAAN HEALTHCARE CLINIC</p><!-- /.sub-title -->
                                 </div><!-- /.main-slider-one__top -->
                                 <h2 class="main-slider-one__title">
                                     <span class="main-slider-one__title__inner w-100">
@@ -300,260 +300,29 @@
             </div><!-- /.sec-title -->
             <div class="services-one__carousel mediox-owl__carousel mediox-owl__carousel--basic-nav owl-carousel owl-theme"
                 data-owl-options='{ "items": 1, "margin": 10, "loop": true, "smartSpeed": 700, "nav": false, "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"], "dots": true, "autoplay": true, "responsive": { "0": { "items": 1, "nav": true, "dots": false, "margin": 10 }, "768": { "items": 2, "margin": 30 }, "992": { "items": 3, "margin": 30 } } }'>
+                @foreach($specialities AS $specility)
                 <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
                     <div class="service-card">
                         <div class="service-card__image">
-                            <img src="{{ asset('images/services/service-1-1.jpg') }}" alt="immediate care">
+                            <img src="{{ env('IMAGE_PATH').Storage::url($specility->image)}}" alt="immediate care">
                         </div><!-- /.service-card__image -->
                         <span class="service-card__icon">
                             <i class="icon-medicine"></i>
                         </span><!-- /.service-card__icon -->
                         <div class="service-card__content">
-                            <p class="service-card__total-doctors">30+ doctors</p>
+                            <p class="service-card__total-doctors">{{ $specility->doctor_count}}+ doctors</p>
                             <!-- /.service-card__total-doctors -->
                             <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a href="service-d-immediate-care.html">immediate
-                                        care</a></h3><!-- /.service-card__title -->
-                                <a href="service-d-immediate-care.html" class="service-card__link">
+                                <h3 class="service-card__title"><a href="{{ url('/service-details') }}/{{$specility->id}}">
+                                        {{ $specility->department_name}}</a></h3><!-- /.service-card__title -->
+                                <a href="{{ url('/service-details') }}/{{$specility->id}}" class="service-card__link">
                                     <i class="icon-up-right-arrow"></i>
                                 </a><!-- /.service-card__link -->
                             </div><!-- /.service-card__content__inner -->
                         </div><!-- /.service-card__content -->
                     </div><!-- /.service-card -->
                 </div><!-- /.item -->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="{{ asset('images/services/service-1-2.jpg') }}" alt="Dental Care">
-                        </div><!-- /.service-card__image -->
-                        <span class="service-card__icon">
-                            <i class="icon-tooth"></i>
-                        </span><!-- /.service-card__icon -->
-                        <div class="service-card__content">
-                            <p class="service-card__total-doctors">10+ doctors</p>
-                            <!-- /.service-card__total-doctors -->
-                            <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a href="service-d-dental-care.html">Dental Care</a>
-                                </h3><!-- /.service-card__title -->
-                                <a href="service-d-dental-care.html" class="service-card__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card__link -->
-                            </div><!-- /.service-card__content__inner -->
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.item -->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="{{ asset('images/services/service-1-3.jpg') }}" alt="Neurology Care">
-                        </div><!-- /.service-card__image -->
-                        <span class="service-card__icon">
-                            <i class="icon-brain"></i>
-                        </span><!-- /.service-card__icon -->
-                        <div class="service-card__content">
-                            <p class="service-card__total-doctors">25+ doctors</p>
-                            <!-- /.service-card__total-doctors -->
-                            <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a href="service-d-neurology-care.html">Neurology
-                                        Care</a></h3><!-- /.service-card__title -->
-                                <a href="service-d-neurology-care.html" class="service-card__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card__link -->
-                            </div><!-- /.service-card__content__inner -->
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.item -->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="{{ asset('images/services/service-1-4.jpg') }}" alt="gynaecologists">
-                        </div><!-- /.service-card__image -->
-                        <span class="service-card__icon">
-                            <i class="icon-womb"></i>
-                        </span><!-- /.service-card__icon -->
-                        <div class="service-card__content">
-                            <p class="service-card__total-doctors">05+ doctors</p>
-                            <!-- /.service-card__total-doctors -->
-                            <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a
-                                        href="service-d-gynaecologists.html">gynaecologists</a></h3>
-                                <!-- /.service-card__title -->
-                                <a href="service-d-gynaecologists.html" class="service-card__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card__link -->
-                            </div><!-- /.service-card__content__inner -->
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.item -->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="{{ asset('images/services/service-1-5.jpg') }}" alt="orthopaedics">
-                        </div><!-- /.service-card__image -->
-                        <span class="service-card__icon">
-                            <i class="icon-bone"></i>
-                        </span><!-- /.service-card__icon -->
-                        <div class="service-card__content">
-                            <p class="service-card__total-doctors">15+ doctors</p>
-                            <!-- /.service-card__total-doctors -->
-                            <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a href="service-d-orthopaedics.html">orthopaedics</a>
-                                </h3><!-- /.service-card__title -->
-                                <a href="service-d-orthopaedics.html" class="service-card__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card__link -->
-                            </div><!-- /.service-card__content__inner -->
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.item -->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="{{ asset('images/services/service-1-6.jpg') }}" alt="cardiology">
-                        </div><!-- /.service-card__image -->
-                        <span class="service-card__icon">
-                            <i class="icon-cardiology"></i>
-                        </span><!-- /.service-card__icon -->
-                        <div class="service-card__content">
-                            <p class="service-card__total-doctors">20+ doctors</p>
-                            <!-- /.service-card__total-doctors -->
-                            <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a href="service-d-cardiology.html">cardiology</a>
-                                </h3><!-- /.service-card__title -->
-                                <a href="service-d-cardiology.html" class="service-card__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card__link -->
-                            </div><!-- /.service-card__content__inner -->
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.item -->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="{{ asset('images/services/service-1-1.jpg') }}" alt="immediate care">
-                        </div><!-- /.service-card__image -->
-                        <span class="service-card__icon">
-                            <i class="icon-medicine"></i>
-                        </span><!-- /.service-card__icon -->
-                        <div class="service-card__content">
-                            <p class="service-card__total-doctors">30+ doctors</p>
-                            <!-- /.service-card__total-doctors -->
-                            <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a href="service-d-immediate-care.html">immediate
-                                        care</a></h3><!-- /.service-card__title -->
-                                <a href="service-d-immediate-care.html" class="service-card__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card__link -->
-                            </div><!-- /.service-card__content__inner -->
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.item -->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="{{ asset('images/services/service-1-2.jpg') }}" alt="Dental Care">
-                        </div><!-- /.service-card__image -->
-                        <span class="service-card__icon">
-                            <i class="icon-tooth"></i>
-                        </span><!-- /.service-card__icon -->
-                        <div class="service-card__content">
-                            <p class="service-card__total-doctors">10+ doctors</p>
-                            <!-- /.service-card__total-doctors -->
-                            <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a href="service-d-dental-care.html">Dental Care</a>
-                                </h3><!-- /.service-card__title -->
-                                <a href="service-d-dental-care.html" class="service-card__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card__link -->
-                            </div><!-- /.service-card__content__inner -->
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.item -->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="{{ asset('images/services/service-1-3.jpg') }}" alt="Neurology Care">
-                        </div><!-- /.service-card__image -->
-                        <span class="service-card__icon">
-                            <i class="icon-brain"></i>
-                        </span><!-- /.service-card__icon -->
-                        <div class="service-card__content">
-                            <p class="service-card__total-doctors">25+ doctors</p>
-                            <!-- /.service-card__total-doctors -->
-                            <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a href="service-d-neurology-care.html">Neurology
-                                        Care</a></h3><!-- /.service-card__title -->
-                                <a href="service-d-neurology-care.html" class="service-card__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card__link -->
-                            </div><!-- /.service-card__content__inner -->
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.item -->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="{{ asset('images/services/service-1-4.jpg') }}" alt="gynaecologists">
-                        </div><!-- /.service-card__image -->
-                        <span class="service-card__icon">
-                            <i class="icon-womb"></i>
-                        </span><!-- /.service-card__icon -->
-                        <div class="service-card__content">
-                            <p class="service-card__total-doctors">05+ doctors</p>
-                            <!-- /.service-card__total-doctors -->
-                            <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a
-                                        href="service-d-gynaecologists.html">gynaecologists</a></h3>
-                                <!-- /.service-card__title -->
-                                <a href="service-d-gynaecologists.html" class="service-card__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card__link -->
-                            </div><!-- /.service-card__content__inner -->
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.item -->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="{{ asset('images/services/service-1-5.jpg') }}" alt="orthopaedics">
-                        </div><!-- /.service-card__image -->
-                        <span class="service-card__icon">
-                            <i class="icon-bone"></i>
-                        </span><!-- /.service-card__icon -->
-                        <div class="service-card__content">
-                            <p class="service-card__total-doctors">15+ doctors</p>
-                            <!-- /.service-card__total-doctors -->
-                            <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a href="service-d-orthopaedics.html">orthopaedics</a>
-                                </h3><!-- /.service-card__title -->
-                                <a href="service-d-orthopaedics.html" class="service-card__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card__link -->
-                            </div><!-- /.service-card__content__inner -->
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.item -->
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="{{ asset('images/services/service-1-6.jpg') }}" alt="cardiology">
-                        </div><!-- /.service-card__image -->
-                        <span class="service-card__icon">
-                            <i class="icon-cardiology"></i>
-                        </span><!-- /.service-card__icon -->
-                        <div class="service-card__content">
-                            <p class="service-card__total-doctors">20+ doctors</p>
-                            <!-- /.service-card__total-doctors -->
-                            <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a href="service-d-cardiology.html">cardiology</a>
-                                </h3><!-- /.service-card__title -->
-                                <a href="service-d-cardiology.html" class="service-card__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card__link -->
-                            </div><!-- /.service-card__content__inner -->
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.item -->
+               @endforeach
             </div><!-- /.services-one__carousel -->
         </div><!-- /.container -->
     </section><!-- /.services-one section-space-two -->
@@ -630,37 +399,17 @@
                             <!-- /.sec-title__title -->
                         </div><!-- /.sec-title -->
                         <div class="why-choose-one__inner">
-                            <div class="why-choose-one__item wow fadeInUp" data-wow-duration="1500ms">
-                                <span class="why-choose-one__item__icon">
-                                    <i class="icon-doctor-1"></i>
-                                </span><!-- /.why-choose-one__item__icon -->
-                                <div class="why-choose-one__item__content">
-                                    <h4 class="why-choose-one__item__title">Medicines</h4>
-                                    <p class="why-choose-one__item__text">Our team of dedicated healthcare
-                                        professionals combines years of experience with a genuine commitment to
-                                        providing.</p>
-                                </div><!-- /.why-choose-one__item__content -->
-                            </div><!-- /.why-choose-one__item -->
-                            <div class="why-choose-one__item wow fadeInUp" data-wow-duration="1500ms">
-                                <span class="why-choose-one__item__icon">
-                                    <i class="icon-patient"></i>
-                                </span><!-- /.why-choose-one__item__icon -->
-                                <div class="why-choose-one__item__content">
-                                    <h4 class="why-choose-one__item__title">Superspecialist & Specilist Doctors</h4>
-                                    <p class="why-choose-one__item__text">Staff engagement this is our north star
-                                        design a loss a day will keep you focus. Paddle on both sides commitment.</p>
-                                </div><!-- /.why-choose-one__item__content -->
-                            </div><!-- /.why-choose-one__item -->
+                            @foreach($services AS $service)
                             <div class="why-choose-one__item wow fadeInUp" data-wow-duration="1500ms">
                                 <span class="why-choose-one__item__icon">
                                     <i class="icon-medical"></i>
                                 </span><!-- /.why-choose-one__item__icon -->
                                 <div class="why-choose-one__item__content">
-                                    <h4 class="why-choose-one__item__title">Laboratory Tests</h4>
-                                    <p class="why-choose-one__item__text">Going forward no need to talk to users, just
-                                        base it on the space calculator, so high performance keywords.</p>
+                                    <h4 class="why-choose-one__item__title">{{$service->facility_name}}</h4>
+                                    <p class="why-choose-one__item__text">{{ \Illuminate\Support\Str::limit($service->descriptions, $limit = 100, $end = '...') }}</p>
                                 </div><!-- /.why-choose-one__item__content -->
                             </div><!-- /.why-choose-one__item -->
+                            @endforeach
                         </div><!-- /.why-choose-one__inner -->
                         <div class="why-choose-one__shape why-choose-one__shape--3"></div>
                         <!-- /.why-choose-one__shape -->

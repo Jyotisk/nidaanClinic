@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Department;
 use App\Models\ExceptionHandler;
 use App\Models\User\Facility;
 use App\Models\User\FacilityDetail;
@@ -18,9 +19,10 @@ class FacilityController extends Controller
     public function index()
     {
         $facilityLists = Facility::all();
+        $departments=Department::all();
         // $allSpecilists = Specialist::with('GetSpecialistLists')->get();
         // return view('specialists.AddSpecialist', compact('allSpecilists'));
-        return view('facilities.Facilitylists', compact('facilityLists'));
+        return view('facilities.Facilitylists', compact('facilityLists','departments'));
     }
     public function store(Request $request)
     {
@@ -30,7 +32,7 @@ class FacilityController extends Controller
                 'facility_name' => 'required',
                 'type' => 'required',
                 'descriptions' => 'required',
-                'image' => 'image|mimes:jpeg,png,jpg,gif,webp|max:5500', // Adjust the validation rules as needed
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5500', // Adjust the validation rules as needed
             ],
         );
         if ($validator->fails()) {
@@ -56,6 +58,7 @@ class FacilityController extends Controller
             $facility = new Facility();
             $facility->type = $request->type;
             $facility->facility_name = $request->facility_name;
+            $facility->department_id = $request->department_id;
             $facility->descriptions = $request->descriptions;
             $facility->status = true;
             $facility->entry_by = Auth::user()->id;
