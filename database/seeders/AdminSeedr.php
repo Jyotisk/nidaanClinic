@@ -19,5 +19,11 @@ class AdminSeedr extends Seeder
             'email_verified_at' => now(),
             'password' => '$2y$10$mztLjwu.HqY7BbZs2OoQQeteR5lmOIbu2nIU9egf.RfoScH2L06km',
         ])->assignRole('Super Admin');
+        User::create([
+            'name' => 'Admin',
+            'email' => "admin@gmail.com",
+            'email_verified_at' => now(),
+            'password' => '$2y$10$mztLjwu.HqY7BbZs2OoQQeteR5lmOIbu2nIU9egf.RfoScH2L06km',
+        ])->assignRole('Admin');
     }
 }

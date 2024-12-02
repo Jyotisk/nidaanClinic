@@ -10,8 +10,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicons/favicon-32x32.png')}}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicons/favicon-16x16.png')}}" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="Nidaan is a versatile medical and healthcare HTML Template. You can make a good professional looking websites with our attractive design which is best for medical clinic, healthcare, hospital, dermatology clinic, cosmetology company, skin care, plastic surgery, beauty clinic, cosmetic clinic, laser surgery, spa, wellness hospital and all other medical and health care related websites and businesses." />
-
+    <meta name="description" content="Nidaan Healthcare Clinic" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,60 +75,26 @@
                                 <li class="dropdown">
                                     <a href="/services">Services</a>
                                     <ul>
+                                        @foreach($menuItems AS $items)
+                                        @if($items->type=='service')
                                         <li>
-                                            <a href="#">Medicines</a>
+                                            <a href="{{url('/service-details')}}/{{$items->id}}">{{$items->facility_name}}</a>
                                         </li>
-                                        <li>
-                                            <a href="#">Superspecialist and Specialist Doctors</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Laboratory Tests</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">ECG</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Holter</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Ecocardiography</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Free Medicial Camps</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Orthopedic Rehab. Aids</a>
-                                        </li>
+                                        @endif
+                                        @endforeach
                                     </ul>
                                 </li>
 
                                 <li class="dropdown">
                                     <a href="/speciality">Specialities</a>
                                     <ul>
+                                        @foreach($menuItems AS $items)
+                                        @if($items->type=='speciality')
                                         <li>
-                                            <a href="#">Cardiology</a>
+                                            <a href="{{url('/service-details')}}/{{$items->id}}">{{$items->facility_name}}</a>
                                         </li>
-                                        <li>
-                                            <a href="#">Nephrology</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Gaestroenterology</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Paediatrics</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Psychiatrics</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Neuro-Surgery</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Urology</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Obstetrician and Gynaecology</a>
-                                        </li>
+                                        @endif
+                                        @endforeach
                                     </ul>
                                 </li>
 
@@ -153,16 +119,6 @@
                             <span></span>
                         </div><!-- /.mobile-nav__toggler -->
 
-                        {{-- <a href="#" class="search-toggler main-header__search">
-                            <i class="icon-search" aria-hidden="true"></i>
-                            <span class="sr-only">Search</span>
-                        </a><!-- /.search-toggler --> --}}
-
-                        {{-- <a href="cart.html" class="main-header__cart">
-                            <i class="icon-cart" aria-hidden="true"></i>
-                            <span class="sr-only">Shopping Cart</span>
-                        </a><!-- /.search-toggler --> --}}
-
                         <div class="main-header__call">
                             <span class="main-header__call__icon">
                                 <i class="icon-telephone"></i>
@@ -170,7 +126,7 @@
                             <div class="main-header__call__content">
                                 <p class="main-header__call__title">call emergency</p><!-- /.call__title -->
                                 <h4 class="main-header__call__number">
-                                    <a href="tel:+208-555-0112">+91-8876696750</a>
+                                    <a href="tel:+916002095307">+91 6002095307</a>
                                 </h4><!-- /.main-header__call__number -->
                             </div><!-- /.main-header__call__content -->
                         </div><!-- /.main-header__call -->
@@ -205,7 +161,7 @@
                                 <span class="footer-widget__btn__icon"><i class="icon-up-right-arrow"></i></span>
                             </a><!-- /.footer-widget__btn -->
                             <div class="social-links">
-                                <a href="https://facebook.com">
+                                <a href="https://www.facebook.com/profile.php?id=61557296146800" target="_blank">
                                     <i class="fab fa-facebook-f" aria-hidden="true"></i>
                                     <span class="sr-only">Facebook</span>
                                 </a>
@@ -226,16 +182,15 @@
                     </div><!-- /.col-xl-4 -->
                     <div class="col-xl-2 col-lg-3 col-md-5 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
                         <div class="footer-widget footer-widget--links">
-                            <h2 class="footer-widget__title">our <span>Services</span></h2><!-- /.footer-widget__title -->
+                            <h2 class="footer-widget__title">our <span>Specialities</span></h2><!-- /.footer-widget__title -->
                             <ul class="list-unstyled footer-widget__links">
-                                <li><a href="#">Medicines</a></li>
-                                <li><a href="#">Superspecialist and Specialist Doctors</a></li>
-                                <li><a href="#">Labratory Test</a></li>
-                                <li><a href="#">ECG</a></li>
-                                <li><a href="#">Holter</a></li>
-                                <li><a href="#">Eco Cardiography</a></li>
-                                <li><a href="#">Free Medical Camps</a></li>
-                                <li><a href="#">Orthopedic Rehab. Aids</a></li>
+                                @foreach($menuItems AS $items)
+                                @if($items->type=='service')
+                                <li>
+                                    <a href="{{url('/service-details')}}/{{$items->id}}">{{$items->facility_name}}</a>
+                                </li>
+                                @endif
+                                @endforeach
                             </ul><!-- /.list-unstyled footer-widget__links -->
                         </div><!-- /.footer-widget -->
                     </div><!-- /.col-xl-2 -->
@@ -247,68 +202,25 @@
                                 <li><a href="/services">Our Services</a></li>
                                 <li><a href="/speciality">Specialities</a></li>
                                 <li><a href="/teams">Our Team</a></li>
-                                {{-- <li><a href="blog-grid-right.html">Latest Blog</a></li> --}}
                                 <li><a href="/booking">Appointments</a></li>
-                                {{-- <li><a href="faq.html">Help & FAQS</a></li> --}}
                                 <li><a href="/contact">Contact Us</a></li>
                             </ul><!-- /.list-unstyled footer-widget__links -->
                         </div><!-- /.footer-widget -->
                     </div><!-- /.col-xl-2 -->
-                    <div class="col-xl-4 col-lg-6 col-md-7 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
-                        <div class="footer-widget footer-widget--blog">
-                            <h2 class="footer-widget__title">recent <span>news</span></h2><!-- /.footer-widget__title -->
-                            <ul class="footer-widget__posts list-unstyled">
-                                <li class="footer-widget__posts__item">
-                                    {{-- <div class="footer-widget__posts__image">
-                                        <img src="{{asset('images/blog/footer-rp-1-1.jpg')}}" alt="Recent posts">
-                                    </div><!-- /.footer-widget__posts__image --> --}}
-                                    <div class="footer-widget__posts__content">
-                                        <div class="footer-widget__posts__meta">
-                                            <a href="#">
-                                                <span class="footer-widget__posts__meta__icon">
-                                                    <i class="icon-user"></i>
-                                                </span><!-- /.footer-widget__posts__meta__icon -->
-                                                By Admin
-                                            </a>
-                                            <a href="#">
-                                                <span class="footer-widget__posts__meta__icon">
-                                                    <i class="icon-comments"></i>
-                                                </span><!-- /.footer-widget__posts__meta__icon -->
-                                                2 comments
-                                            </a>
-                                        </div><!-- /.footer-widget__posts__meta -->
-                                        <h4 class="footer-widget__posts__title">
-                                            <a href="blog-details-right.html">Collaboratively pontificate bleedi edge resources</a>
-                                        </h4><!-- /.footer-widget__posts__title -->
-                                    </div><!-- /.footer-widget__posts__content -->
+                    <div class="col-xl-4 col-lg-6 col-md-7 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                        <div class="footer-widget footer-widget--links">
+                            <h2 class="footer-widget__title">our <span>Services</span></h2><!-- /.footer-widget__title -->
+                            <ul class="list-unstyled footer-widget__links">
+                                @foreach($menuItems AS $items)
+                                @if($items->type=='speciality')
+                                <li>
+                                    <a href="{{url('/service-details')}}/{{$items->id}}">{{$items->facility_name}}</a>
                                 </li>
-                                <li class="footer-widget__posts__item">
-                                    {{-- <div class="footer-widget__posts__image">
-                                        <img src="{{asset('images/blog/footer-rp-1-2.jpg')}}" alt="Recent posts">
-                                    </div><!-- /.footer-widget__posts__image --> --}}
-                                    <div class="footer-widget__posts__content">
-                                        <div class="footer-widget__posts__meta">
-                                            <a href="#">
-                                                <span class="footer-widget__posts__meta__icon">
-                                                    <i class="icon-user"></i>
-                                                </span><!-- /.footer-widget__posts__meta__icon -->
-                                                By Admin
-                                            </a>
-                                            <a href="#">
-                                                <span class="footer-widget__posts__meta__icon">
-                                                    <i class="icon-comments"></i>
-                                                </span><!-- /.footer-widget__posts__meta__icon -->
-                                                2 comments
-                                            </a>
-                                        </div><!-- /.footer-widget__posts__meta -->
-                                        <h4 class="footer-widget__posts__title">
-                                            <a href="blog-details-right.html">Quick sync the horse is out of the barn, yet this vendor</a>
-                                        </h4><!-- /.footer-widget__posts__title -->
-                                    </div><!-- /.footer-widget__posts__content -->
-                                </li>
-                            </ul><!-- /.footer-widget__posts list-unstyled -->
+                                @endif
+                                @endforeach
+                            </ul><!-- /.list-unstyled footer-widget__links -->
                         </div><!-- /.footer-widget -->
-                    </div><!-- /.col-xl-4 -->
+                    </div><!-- /.col-xl-2 -->
                 </div><!-- /.row -->
                 <div class="main-footer__bottom">
                     <div class="main-footer__info">
@@ -322,7 +234,9 @@
                                     <div class="main-footer__contact__content">
                                         <p class="main-footer__contact__title">office address</p>
                                         <h4 class="main-footer__contact__text">
-                                            <a href="https://www.google.com/maps">4648 Rocky Road Philadelphia PA, 1920</a>
+                                            <a href="https://www.google.com/maps">ANU BHABAN COMPLEX, GANAKPATTY GOHAIN GAON</a>
+                                            <span>NEAR PHUKAN NAGAR WATER SUPPLY</span>
+                                            <span>SIVASAGAR, 785640</span>
                                         </h4>
                                     </div><!-- /.main-footer__contact__content -->
                                 </div><!-- /.main-footer__contact -->
@@ -335,7 +249,7 @@
                                     <div class="main-footer__contact__content">
                                         <p class="main-footer__contact__title">send email</p>
                                         <h4 class="main-footer__contact__text">
-                                            <a href="mailto:info@mediox.com">info@mediox.com</a>
+                                            <a href="mailto:nidaanmedicalstore@gmail.com">nidaanmedicalstore@gmail.com</a>
                                         </h4>
                                     </div><!-- /.main-footer__contact__content -->
                                 </div><!-- /.main-footer__contact -->
@@ -348,7 +262,7 @@
                                     <div class="main-footer__contact__content">
                                         <p class="main-footer__contact__title">call emergency</p>
                                         <h4 class="main-footer__contact__text">
-                                            <a href="tel:+208-555-0112">+208-555-0112</a>
+                                            <a href="tel:+916002095307">+916002095307</a>
                                         </h4>
                                     </div><!-- /.main-footer__contact__content -->
                                 </div><!-- /.main-footer__contact -->
@@ -356,7 +270,7 @@
                         </div><!-- /.row main-footer__info__row -->
                     </div><!-- /.main-footer__info -->
                     <p class="main-footer__copyright">
-                        &copy; Copyright <span class="dynamic-year"></span> by Nidaan | Developed by <a href="#">Cybernet Solutions</a>.
+                        &copy; Copyright <span class="dynamic-year"></span> by Nidaan | Developed by <a href="https://cybernetssolutions.com/" target="_blank">Cybernet Solutions</a>.
                     </p>
                 </div><!-- /.main-footer__bottom -->
             </div><!-- /.container -->
@@ -381,17 +295,17 @@
                     <span class="mobile-nav__contact__icon">
                         <i class="fa fa-envelope"></i>
                     </span>
-                    <a href="mailto:needhelp@mediox.com">needhelp@mediox.com</a>
+                    <a href="mailto:nidaanmedicalstore@gmail.com">nidaanmedicalstore@gmail.com</a>
                 </li>
                 <li>
                     <span class="mobile-nav__contact__icon">
                         <i class="fa fa-phone-alt"></i>
                     </span>
-                    <a href="tel:+9156980036420">+91 5698 0036 420</a>
+                    <a href="tel:+918638184447">+91 8638184447</a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__social social-links">
-                <a href="https://facebook.com">
+                <a href="https://www.facebook.com/profile.php?id=61557296146800" target="_blank">
                     <i class="fab fa-facebook-f" aria-hidden="true"></i>
                     <span class="sr-only">Facebook</span>
                 </a>

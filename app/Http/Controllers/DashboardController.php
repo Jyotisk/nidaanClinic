@@ -5,13 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\CustomerQuery;
 use App\Models\User\BookAppointment;
 use App\Models\Visitor;
-use Carbon\Carbon;
-use Exception;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
-
-use function Laravel\Prompts\error;
 
 class DashboardController extends Controller
 {

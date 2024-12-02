@@ -25,10 +25,11 @@ Route::get('/team-details/{id}', [PublicController::class, 'teamDetails'])->name
 Route::get('/gallery', [PublicController::class, 'gallery'])->name('gallery');
 Route::get('/booking', [PublicController::class, 'booking'])->name('booking');
 
-Route::post('book-appointment', [PublicController::class, 'BookAppointment'])->name('BookAppointment');
+Route::post('/book-appointment', [PublicController::class, 'BookAppointment'])->name('BookAppointment');
+Route::post('/customerQuery', [PublicController::class, 'customerQuery'])->name('customerQuery');
 
-Route::get('dashboard', [DashboardController::class, 'Index'])->name('dashboard');
 Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () {
+Route::get('/', [DashboardController::class, 'Index'])->name('dashboard');
     //role & permission
     Route::group(['middleware' => ['role:Super Admin']], function () {
 

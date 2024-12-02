@@ -7,7 +7,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-md-3">
+                <div class="col-sm-6 col-md-4">
                     <div class="card card-stats card-round">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">
+                <div class="col-sm-6 col-md-4">
                     <div class="card card-stats card-round">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -45,18 +45,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">
+                <div class="col-sm-6 col-md-4">
                     <div class="card card-stats card-round">
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-icon">
                                     <div class="icon-big text-center icon-success bubble-shadow-small">
-                                        <i class="fas fa-luggage-cart"></i>
+                                        <i class="fas fa-user-check"></i>
                                     </div>
                                 </div>
                                 <div class="col col-stats ms-3 ms-sm-0">
                                     <div class="numbers">
-                                        <p class="card-category">Sales</p>
+                                        <p class="card-category">Todays Visitors</p>
                                         <h4 class="card-title">{{ $todaysVisitor }}</h4>
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">
+                {{-- <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -82,10 +82,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="card card-round">
                         <div class="card-header">
                             <div class="card-head-row">
@@ -114,48 +114,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card card-primary card-round">
-                        <div class="card-header">
-                            <div class="card-head-row">
-                                <div class="card-title">Daily Sales</div>
-                                <div class="card-tools">
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm btn-label-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Export
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-category">March 25 - April 02</div>
-                        </div>
-                        <div class="card-body pb-0">
-                            <div class="mb-4 mt-2">
-                                <h1>$4,578.58</h1>
-                            </div>
-                            <div class="pull-in">
-                                <canvas id="dailySalesChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card card-round">
-                        <div class="card-body pb-0">
-                            <div class="h1 fw-bold float-end text-primary">+5%</div>
-                            <h2 class="mb-2">17</h2>
-                            <p class="text-muted">Users online</p>
-                            <div class="pull-in sparkline-fix">
-                                <div id="lineChart"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- <div class="row">
+            <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -163,7 +123,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table id="basic-datatables" class="display table table-striped table-hover">
+                                <table id="query-datatables" class="display table table-striped table-hover">
                                     <thead>
                                         <tr>
                                             <th scope="col" class="text-center">#</th>
@@ -178,13 +138,13 @@
                                     <tbody>
                                         @foreach($customer_query AS $index=>$query)
                                         <tr>
-                                            <th>{{$index+1}}</th>
-                                            <td>{{$query->name}}</td>
-                                            <td>{{$query->email}}</td>
-                                            <td>{{$query->phone_no}}</td>
-                                            <td>{{$query->date}}</td>
-                                            <td>{{ \Illuminate\Support\Str::limit($query->message, $limit = 20, $end = '...') }}</td>
-                                            <td><button class="btn btn-info btn-sm rounded-0 view" data-name="{{$query->name}}" data-email="{{$query->email}}" data-phone="{{$query->phone_no}}" data-date="{{$query->date}}" data-message="{{$query->message}}">view</button></td>
+                                            <td class="text-center">{{$index+1}}</td>
+                                            <td class="text-center">{{$query->name}}</td>
+                                            <td class="text-center">{{$query->email}}</td>
+                                            <td class="text-center">{{$query->phone_no}}</td>
+                                            <td class="text-center">{{$query->date}}</td>
+                                            <td class="text-center">{{ \Illuminate\Support\Str::limit($query->message, $limit = 20, $end = '...') }}</td>
+                                            <td class="text-center"><button class="btn btn-info btn-sm rounded-0 view-query" data-name="{{$query->name}}" data-email="{{$query->email}}" data-phone="{{$query->phone_no}}" data-date="{{$query->date}}" data-message="{{$query->message}}">view</button></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -194,7 +154,7 @@
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div> 
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -296,8 +256,64 @@
             </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="queryDetailModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="serviceName">Customer Query Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <label for="Registration No" class="form-label">Name</label>
+                            <p id="modal_cutomer_name"></p>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Registration No" class="form-label">Email</label>
+                            <p id="modal_customer_email"></p>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Registration No" class="form-label">Phone No</label>
+                            <p id="modal_customer_phone"></p>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="Registration No" class="form-label">Entry Date</label>
+                            <p id="modal_customer_date"></p>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="Registration No" class="form-label">Message</label>
+                            <p id="modal_customer_message"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </x-app-layout>
 <script>
+    $(document).ready(function() {
+        $("#query-datatables").DataTable({});
+        $(document).on('click', '.view-query', function(e) {
+            e.preventDefault();
+            var name = $(this).data('name');
+            var phone_no = $(this).data('phone_no');
+            var email = $(this).data('email');
+            var entry_date = $(this).data('date');
+            var message = $(this).data('message');
+
+            $('#modal_cutomer_name').text(name);
+            $('#modal_customer_email').text(email);
+            $('#modal_customer_phone').text(phone_no);
+            $('#modal_customer_date').text(entry_date);
+            $('#modal_customer_message').text(message);
+            $('#queryDetailModal').modal('show')
+        })
+    });
     $(document).ready(function() {
         $("#basic-datatables").DataTable({});
         $(document).on('click', '.view', function(e) {

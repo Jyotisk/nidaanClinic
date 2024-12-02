@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CustomerQuery;
 use App\Models\Department;
 use App\Models\Faq;
 use App\Models\Gallary;
@@ -56,6 +57,49 @@ class PublicController extends Controller
             return $e;
             DB::rollBack();
             return "Something Went Wrong";
+        }
+    }
+    public function customerQuery(Request $request)
+    {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'name' => 'required',
+                'email' => 'required',
+                'phone_number' => 'required|numeric|digits:10',
+                'message' => 'required',
+            ],
+
+        );
+        if ($validator->fails()) {
+
+            return response()->json([
+                'response' => 'validationFails',
+                'error' => $validator->errors()
+            ], 422);
+        }
+        DB::beginTransaction();
+        try {
+            //code...
+            $query = new CustomerQuery();
+            $query->name = $request->name;
+            $query->email = $request->email;
+            $query->phone_no = $request->phone_number;
+            $query->message = $request->message;
+            $query->date = date('Y-m-d');
+            $query->status = true;
+            $query->save();
+            DB::commit();
+            return response()->json([
+                'status' => 'success',
+                'message' => "Query Registered Successfully."
+            ], 201);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json([
+                'status' => 'error',
+                'message' => "Something Went Wrong"
+            ], 201);
         }
     }
     public function BookAppointment(Request $request)
@@ -120,7 +164,7 @@ class PublicController extends Controller
 
     public function services()
     {
-        $services = Facility::where('status', true)->select('id', 'facility_name', 'descriptions', 'image')->inRandomOrder()->get();
+        $services = Facility::where(['status'=>true,'type'=>'service'])->select('id', 'facility_name', 'descriptions', 'image')->inRandomOrder()->get();
         return view('public.services', compact('services'));
     }
 
@@ -134,7 +178,14 @@ class PublicController extends Controller
 
     public function speciality()
     {
-        return view('public.speciality');
+        $specialities=DB::select("SELECT facilities.id,facilities.facility_name,facilities.image,COALESCE(doctor_count,0) AS doctor_count,
+        departments.department_name
+        FROM facilities JOIN departments ON facilities.department_id=departments.id
+        LEFT JOIN (SELECT department_id,COUNT(id) AS doctor_count FROM specialists GROUP BY department_id) specialists
+        ON facilities.department_id=specialists.department_id
+        WHERE facilities.status=true AND type='speciality'
+        ORDER BY RAND()");
+        return view('public.speciality',compact('specialities'));
     }
 
     public function specialityDetails()

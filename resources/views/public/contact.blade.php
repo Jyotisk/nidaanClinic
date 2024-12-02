@@ -26,19 +26,20 @@
                     <div class="row gutter-y-40 align-items-center">
                         <div class="col-xl-7 col-lg-6 order-1 order-lg-0 wow fadeInUp" data-wow-duration="1500ms">
                             <div class="contact-page__form">
-                                <form action="#" class="contact-form-validated form-one">
+                                <form class="contact-form-validated form-one" method="post" id="queryForm" data-wow-duration="1500ms">
+                                    @csrf
                                     <div class="form-one__group">
                                         <div class="form-one__control form-one__control--full">
-                                            <input type="text" name="name" placeholder="Full Name">
+                                            <input type="text" name="name" placeholder="Full Name" required>
                                         </div><!-- /.form-one__control -->
                                         <div class="form-one__control form-one__control--full">
-                                            <input type="email" name="email" placeholder="Email Address">
+                                            <input type="email" name="email" placeholder="Email Address" required>
                                         </div><!-- /.form-one__control -->
                                         <div class="form-one__control form-one__control--full">
-                                            <input type="tel" name="number" placeholder="Phone Number">
+                                            <input type="tel" name="phone_number" placeholder="Phone Number" Maxlength="10" required>
                                         </div><!-- /.form-one__control -->
                                         <div class="form-one__control form-one__control--full">
-                                            <textarea name="message" placeholder="Write Message . . ."></textarea>
+                                            <textarea name="message" placeholder="Write Message . . ." required></textarea>
                                         </div><!-- /.form-one__control -->
                                         <div class="form-one__control form-one__control--full">
                                             <button type="submit" class="mediox-btn">
@@ -73,7 +74,7 @@
                                         <div class="contact-page__info__content">
                                             <h4 class="contact-page__info__title">call now</h4>
                                             <!-- /.contact-page__info__title -->
-                                            <a href="tel:+9156980036420" class="contact-page__info__link">+91 5698 0036 420</a>
+                                            <a href="tel:+91918638184447" class="contact-page__info__link">+91 918638184447</a>
                                             <!-- /.contact-page__info__link -->
                                         </div><!-- /.contact-page__info__content -->
                                     </div><!-- /.contact-page__info__item -->
@@ -84,7 +85,7 @@
                                         <div class="contact-page__info__content">
                                             <h4 class="contact-page__info__title">email</h4>
                                             <!-- /.contact-page__info__title -->
-                                            <a href="mailto:needhelp@company.com" class="contact-page__info__link">needhelp@company.com</a>
+                                            <a href="mailto:nidaanmedicalstore@gmail.com" class="contact-page__info__link">nidaanmedicalstore@gmail.com</a>
                                             <!-- /.contact-page__info__link -->
                                         </div><!-- /.contact-page__info__content -->
                                     </div><!-- /.contact-page__info__item -->
@@ -95,7 +96,10 @@
                                         <div class="contact-page__info__content">
                                             <h4 class="contact-page__info__title">address</h4>
                                             <!-- /.contact-page__info__title -->
-                                            <a href="https://www.google.com/maps" class="contact-page__info__link">26 Manor St, Braintree UK</a><!-- /.contact-page__info__link -->
+                                            <a href="https://www.google.com/maps" class="contact-page__info__link">ANU BHABAN COMPLEX, GANAKPATTY GOHAIN GAON
+                                                <span>NEAR PHUKAN NAGAR WATER SUPPLY</span>
+                                                <span>SIVASAGAR, 785640</span>
+                                            </a><!-- /.contact-page__info__link -->
                                         </div><!-- /.contact-page__info__content -->
                                     </div><!-- /.contact-page__info__item -->
                                 </div><!-- /.contact-page__info__inner -->
@@ -117,3 +121,36 @@
         </section><!-- /.contact-map -->
     </div>
 </x-guest-layout>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $(document).ready(function() {
+        $('#queryForm').submit(function(e) {
+            e.preventDefault(); 
+            
+            var formData = $(this).serialize();
+
+            $.ajax({
+                url: "{{ route('customerQuery') }}",
+                method: 'POST',
+                data: formData,
+                success: function(response) {
+                    if (response.status == 'success') {
+                        $('#queryForm :input').attr('disabled', 'disabled');
+                        Swal.fire({
+                            title: "Thank You!",
+                            text: response.message,
+                            icon: "success"
+                        });
+                    }
+                },
+                error: function(xhr, status, error) {
+                    Swal.fire({
+                        title: "Validation Fail!",
+                        text: "Please Enter Correct Data",
+                        icon: "error"
+                    });
+                }
+            });
+        });
+    });
+</script>

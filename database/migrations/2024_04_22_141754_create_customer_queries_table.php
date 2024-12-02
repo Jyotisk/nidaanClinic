@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('phone_no',20);
-            $table->text('subject');
+            $table->string('phone_no',10);
             $table->text('message');
             $table->date('date');
             $table->boolean('status')->comment('1 for new 2 for mark as read');

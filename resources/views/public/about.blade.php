@@ -219,7 +219,8 @@
         </section><!-- /.team-two section-space-two -->
     
         <section class="faq-one">
-            <div class="faq-one__bg" style="background-image: url('images/shapes/faq-bg-1-1.png');"></div><!-- /.faq-one__bg -->
+            <div class="faq-one__bg" style="background-image: url('images/shapes/faq-bg-1-1.png');"></div>
+            <!-- /.faq-one__bg -->
             <div class="container section-space-two">
                 <div class="row gutter-y-50">
                     <div class="col-xl-6 col-lg-9">
@@ -227,42 +228,45 @@
                             <div class="sec-title @@extraClassName wow fadeInUp" data-wow-duration="1500ms">
                                 <div class="sec-title__top">
     
-                                    <img src="{{asset('images/shapes/sec-title-s-1-1.png')}}" alt="FAQ’S" class="sec-title__img">
+                                    <img src="{{ asset('images/shapes/sec-title-s-1-1.png') }}" alt="FAQ’S"
+                                        class="sec-title__img">
     
     
                                     <h6 class="sec-title__tagline">FAQ’S</h6><!-- /.sec-title__tagline -->
     
                                 </div><!-- /.sec-title__top -->
-                                <h3 class="sec-title__title">Frequently Asked Have <br> Any Question?</h3><!-- /.sec-title__title -->
+                                <h3 class="sec-title__title">Frequently Asked Have <br> Any Question?</h3>
+                                <!-- /.sec-title__title -->
                             </div><!-- /.sec-title -->
-                            @foreach($faqList AS $key=> $faq)
                             <div class="faq-one__accordion">
                                 <div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
-                                    <div class="accordion wow fadeInUp {{$key== 0 ?'active': '' }}" data-wow-duration="1500ms" data-wow-delay="00ms">
+                                    @foreach($faqList AS $key=> $faq)
+                                    <div class="accordion wow fadeInUp {{$key== 0 ?'active': '' }}" data-wow-duration="1500ms"
+                                        data-wow-delay="00ms">
                                         <div class="accordion-title">
                                             <h4>
-                                            {{ $faq->question }}
+                                                {{ $faq->question }}
                                                 <span class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
                                             </h4>
                                         </div><!-- /.accordion-title -->
                                         <div class="accordion-content">
                                             <div class="inner">
-                                            <p>{{ $faq->answer }} </p>
+                                                <p>{{ $faq->answer }} </p>
                                             </div><!-- /.inner -->
                                         </div><!-- /.accordion-content -->
                                     </div><!-- /.accordion-item -->
+                                    @endforeach
                                 </div><!-- /.faq-accordion -->
                             </div><!-- /.faq-one__accordion -->
-                            @endforeach
                         </div><!-- /.faq-one__content -->
                     </div><!-- /.col-xl-6 col-lg-9 -->
                     <div class="col-xl-6 wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="00ms">
                         <div class="faq-one__image">
-                            {{-- <img src="{{asset('images/resources/faq-1-1.png')}}" alt="faq" class="faq-one__image__one"> --}}
+                            <img src="{{ asset('images/resources/faq-1-1.png') }}" alt="faq"
+                                class="faq-one__image__one">
                             {{-- <img src="{{asset('images/resources/faq-1-2.png')}}" alt="faq" class="faq-one__image__two"> --}}
-                            <img src="{{asset('images/about/about-1-1.jpg')}}" alt="faq" class="faq-one__image__two">
-                            <img src="{{asset('images/main-slider/main-slider-1-1.jpg')}}" alt="faq" class="faq-one__image__two">
-                            <img src="{{asset('images/shapes/faq-shape-1-1.png')}}" alt="shape" class="faq-one__image__shape-1">
+                            <img src="{{ asset('images/shapes/faq-shape-1-1.png') }}" alt="shape"
+                                class="faq-one__image__shape-1">
                         </div><!-- /.faq-one__image -->
                     </div><!-- /.col-xl-6 -->
                 </div><!-- /.row gutter-y-50 -->
