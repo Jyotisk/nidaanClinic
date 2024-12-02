@@ -65,7 +65,7 @@
                             <ul class="main-menu__list">
 
                                 <li>
-                                    <a href="/">Home</a>
+                                    <a href="{{ route('about') }}">Home</a>
                                 </li>
 
                                 <li>
@@ -99,7 +99,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="/gallery">Gallery</a>
+                                    <a href="{{ route('gallery') }}">Gallery</a>
                                 </li>
 
                                 <li>
