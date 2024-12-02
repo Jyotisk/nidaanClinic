@@ -69,11 +69,11 @@
                                 </li>
 
                                 <li>
-                                    <a href="/about">About</a>
+                                    <a href="{{ route('about')}}">About</a>
                                 </li>
 
                                 <li class="dropdown">
-                                    <a href="/services">Services</a>
+                                    <a href="{{ route('services') }}">Services</a>
                                     <ul>
                                         @foreach($menuItems AS $items)
                                         @if($items->type=='service')
@@ -86,7 +86,7 @@
                                 </li>
 
                                 <li class="dropdown">
-                                    <a href="/speciality">Specialities</a>
+                                    <a href="{{ ('speciality') }}">Specialities</a>
                                     <ul>
                                         @foreach($menuItems AS $items)
                                         @if($items->type=='speciality')
@@ -103,11 +103,11 @@
                                 </li>
 
                                 <li>
-                                    <a href="/teams">Teams</a>
+                                    <a href="{{ route('teams') }}">Teams</a>
                                 </li>
 
                                 <li>
-                                    <a href="/contact">Contact</a>
+                                    <a href="{{ route('contact') }}">Contact</a>
                                 </li>
                             </ul>
                         </nav>
@@ -130,7 +130,7 @@
                                 </h4><!-- /.main-header__call__number -->
                             </div><!-- /.main-header__call__content -->
                         </div><!-- /.main-header__call -->
-                        <a href="/booking" class="mediox-btn main-header__btn">
+                        <a href="{{ route('booking') }}" class="mediox-btn main-header__btn">
                             <span>make an appointment</span>
                             <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                         </a><!-- /.mediox-btn -->
@@ -198,12 +198,12 @@
                         <div class="footer-widget footer-widget--links">
                             <h2 class="footer-widget__title">useful <span>links</span></h2><!-- /.footer-widget__title -->
                             <ul class="list-unstyled footer-widget__links">
-                                <li><a href="/about">About Us</a></li>
-                                <li><a href="/services">Our Services</a></li>
-                                <li><a href="/speciality">Specialities</a></li>
-                                <li><a href="/teams">Our Team</a></li>
-                                <li><a href="/booking">Appointments</a></li>
-                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="{{ route('about')}}">About Us</a></li>
+                                <li><a href="{{ route('services') }}">Our Services</a></li>
+                                <li><a href="{{ route('speciality') }}">Specialities</a></li>
+                                <li><a href="{{ route('teams') }}">Our Team</a></li>
+                                <li><a href="{{ route('booking') }}">Appointments</a></li>
+                                <li><a href="{{ route('contact') }}">Contact Us</a></li>
                             </ul><!-- /.list-unstyled footer-widget__links -->
                         </div><!-- /.footer-widget -->
                     </div><!-- /.col-xl-2 -->
