@@ -155,7 +155,8 @@
                                     <img src="{{asset('images/logo-light.png')}}" alt="Nidaan HTML" width="164">
                                 </a>
                             </div><!-- /.footer-widget__logo -->
-                            <p class="footer-widget__about-text">Morem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elita Florai Psum Dolor Sit Amet, Consecteture.Borem Ipsum Dolor</p><!-- /.footer-widget__about-text -->
+                            <p class="footer-widget__about-text">Nidaan Medical Clinic is a patient-focused healthcare center dedicated to providing comprehensive medical services. 
+                                Our experienced doctors and compassionate staff offer personalized care across a range of specialties. </p><!-- /.footer-widget__about-text -->
                             <a href="#appointmentSection" class="footer-widget__btn">
                                 <span>get consultant</span>
                                 <span class="footer-widget__btn__icon"><i class="icon-up-right-arrow"></i></span>
