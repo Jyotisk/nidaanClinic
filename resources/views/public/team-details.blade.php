@@ -25,7 +25,7 @@
             <div class="container">
                 <div class="team-details__inner">
                     <div class="team-details__image wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                        <img src="{{ env('IMAGE_PATH').Storage::url($speciaLists->doctor_image)}}" alt="Sarah Albert">
+                        <img class="w-100" src="{{ env('IMAGE_PATH').Storage::url($speciaLists->doctor_image)}}" alt="Sarah Albert">
                         <div class="social-links">
                             @if($speciaLists->facebook_link)
                             <a href="{{$speciaLists->facebook_link}}">

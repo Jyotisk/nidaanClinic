@@ -23,22 +23,26 @@
         <section class="gallery-page section-space">
             <div class="container">
                 <div class="row gutter-y-30 fitRow-layout">
-                    @foreach($gallaryImage AS $image)
-                    <div class="col-md-6 col-lg-4">
-                        <div class="gallery-page__card">
-                            <img src="{{ env('IMAGE_PATH').Storage::url($image->image)}}" alt="gallery">
-                            <div class="gallery-page__card__hover">
-                                <a href="{{ env('IMAGE_PATH').Storage::url($image->image)}}" class="img-popup">
-                                    <span class="gallery-page__card__icon"></span>
-                                </a>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
-                                <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
-                            </div><!-- /.gallery-page__card__hover -->
-                        </div><!-- /.gallery-page__card -->
+                    <div class="col-12">
+                        <div class="masonry">
+                            @foreach($gallaryImage AS $image)
+                                <div class="brick">
+                                    <div class="gallery-page__card">
+                                        <img src="{{ env('IMAGE_PATH').Storage::url($image->image)}}" alt="gallery">
+                                        <div class="gallery-page__card__hover">
+                                            <a href="{{ env('IMAGE_PATH').Storage::url($image->image)}}" class="img-popup">
+                                                <span class="gallery-page__card__icon"></span>
+                                            </a>
+                                            <span class="gallery-page__card__hover__box gallery-page__card__hover__box--1"></span>
+                                            <span class="gallery-page__card__hover__box gallery-page__card__hover__box--2"></span>
+                                            <span class="gallery-page__card__hover__box gallery-page__card__hover__box--3"></span>
+                                            <span class="gallery-page__card__hover__box gallery-page__card__hover__box--4"></span>
+                                        </div><!-- /.gallery-page__card__hover -->
+                                    </div><!-- /.gallery-page__card -->
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
-                    @endforeach
                 </div><!-- /.row -->
             </div><!-- /.container -->
         </section><!-- /.gallery-page section-space -->

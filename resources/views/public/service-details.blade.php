@@ -39,7 +39,7 @@
                         <div class="service-details__content">
                             <div class="service-details__inner">
                                 <div class="service-details__thumbnail wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                                    <img src="{{ env('IMAGE_PATH').Storage::url($services->image)}}" alt="immediate care">
+                                    <img src="{{ env('IMAGE_PATH').Storage::url($services->image)}}" alt="immediate care" style="height: 60vh; object-fit:cover;">
                                 </div><!-- /.service-details__thumbnail -->
                                 <div class="service-details__content__box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
                                     <h3 class="service-details__title">{{$services->facility_name}}</h3><!-- /.service-details__title -->

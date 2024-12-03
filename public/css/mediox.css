@@ -16078,11 +16078,13 @@ li:hover .sidebar__comments__icon {
 }
 .main-footer__info__col-1 {
   flex: 0 0 auto;
-  width: 44.895%;
+  /* width: 44.895%; */
+  width: 36.895%;
 }
 @media (max-width: 1199px) {
   .main-footer__info__col-1 {
-    width: 33.333%;
+    /* width: 33.333%; */
+    width: 36.895%;
   }
 }
 @media (max-width: 767px) {
@@ -16092,7 +16094,8 @@ li:hover .sidebar__comments__icon {
 }
 .main-footer__info__col-2 {
   flex: 0 0 auto;
-  width: 28.3%;
+  /* width: 28.3%; */
+  width: 34.3%;
 }
 @media (max-width: 1199px) {
   .main-footer__info__col-2 {

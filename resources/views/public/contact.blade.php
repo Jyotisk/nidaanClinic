@@ -114,7 +114,7 @@
         <section class="contact-map">
             <div class="container-fluid">
                 <div class="google-map google-map__contact">
-                    <iframe title="template google map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd" class="map__contact" allowfullscreen></iframe>
+                    <iframe title="nidaan clinic google map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.117078561266!2d94.64425070052664!3d26.977725610017323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374737007d39f5d9%3A0xa511784d900ca5bb!2sNidaan%20Medical%20Store!5e0!3m2!1sen!2sin!4v1733244316230!5m2!1sen!2sin" class="map__contact" allowfullscreen allowfullscreen></iframe>
                 </div>
                 <!-- /.google-map -->
             </div><!-- /.container-fluid -->

@@ -35,6 +35,7 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{asset('css/mediox.css')}}" />
     <link rel="stylesheet" href="{{asset('css/login.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/masonary.css')}}" />
 </head>
 
 <body class="custom-cursor">
@@ -66,7 +67,7 @@
                             <ul class="main-menu__list">
 
                                 <li>
-                                    <a href="{{ route('about') }}">Home</a>
+                                    <a href="{{ route('index') }}">Home</a>
                                 </li>
 
                                 <li>
