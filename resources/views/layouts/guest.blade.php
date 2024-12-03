@@ -34,6 +34,7 @@
 
     <!-- template styles -->
     <link rel="stylesheet" href="{{asset('css/mediox.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/login.css')}}" />
 </head>
 
 <body class="custom-cursor">
@@ -183,7 +184,7 @@
                     </div><!-- /.col-xl-4 -->
                     <div class="col-xl-2 col-lg-3 col-md-5 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
                         <div class="footer-widget footer-widget--links">
-                            <h2 class="footer-widget__title">our <span>Specialities</span></h2><!-- /.footer-widget__title -->
+                            <h2 class="footer-widget__title">our <span>Services</span></h2><!-- /.footer-widget__title -->
                             <ul class="list-unstyled footer-widget__links">
                                 @foreach($menuItems AS $items)
                                 @if($items->type=='service')
@@ -210,7 +211,7 @@
                     </div><!-- /.col-xl-2 -->
                     <div class="col-xl-4 col-lg-6 col-md-7 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
                         <div class="footer-widget footer-widget--links">
-                            <h2 class="footer-widget__title">our <span>Services</span></h2><!-- /.footer-widget__title -->
+                            <h2 class="footer-widget__title">our <span>Specialities</span></h2><!-- /.footer-widget__title -->
                             <ul class="list-unstyled footer-widget__links">
                                 @foreach($menuItems AS $items)
                                 @if($items->type=='speciality')
