@@ -159,7 +159,7 @@
                             </div><!-- /.footer-widget__logo -->
                             <p class="footer-widget__about-text">Nidaan Medical Clinic is a patient-focused healthcare center dedicated to providing comprehensive medical services. 
                                 Our experienced doctors and compassionate staff offer personalized care across a range of specialties. </p><!-- /.footer-widget__about-text -->
-                            <a href="#appointmentSection" class="footer-widget__btn">
+                            <a href="{{ route('booking') }}" class="footer-widget__btn">
                                 <span>get consultant</span>
                                 <span class="footer-widget__btn__icon"><i class="icon-up-right-arrow"></i></span>
                             </a><!-- /.footer-widget__btn -->
