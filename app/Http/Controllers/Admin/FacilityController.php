@@ -90,7 +90,6 @@ class FacilityController extends Controller
         } catch (\Throwable $e) {
             DB::rollBack();
             Storage::delete($path);
-            return $e;
             $exception = new ExceptionHandler();
             $exception->controller_function = "FacilityController.store";
             $exception->error = $e;
@@ -157,7 +156,6 @@ class FacilityController extends Controller
             ]);
         } catch (\Throwable $e) {
             DB::rollBack();
-            return $e;
             $exception = new ExceptionHandler();
             $exception->controller_function = "FacilityController.edit";
             $exception->error = $e;

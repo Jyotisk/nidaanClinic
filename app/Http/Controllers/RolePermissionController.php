@@ -46,7 +46,6 @@ class RolePermissionController extends Controller
                     'message' => 'Role Added Successfully',
                 ]);
             } catch (Exception $e) {
-                return $e;
                 DB::rollBack();
                 $exception = new ExceptionHandler();
                 $exception->controller_function = "RolePermissionController.addRole";

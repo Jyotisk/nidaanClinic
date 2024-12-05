@@ -170,7 +170,6 @@ class SpecilistController extends Controller
             $exception->date = date('Y-m-d');
             $exception->user_id = Auth::user()->id;
             $exception->save();
-            return $e;
             return response()->json([
                 'response' => 'error',
                 'message' => 'Something went wrong',

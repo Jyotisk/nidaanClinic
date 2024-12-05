@@ -54,7 +54,6 @@ class PublicController extends Controller
 
             return view('welcome', compact('speciaLists', 'faqList', 'testimonials','services','specialities'));
         } catch (Exception $e) {
-            return $e;
             DB::rollBack();
             return "Something Went Wrong";
         }

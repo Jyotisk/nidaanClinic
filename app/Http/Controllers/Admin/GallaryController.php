@@ -62,7 +62,6 @@ class GallaryController extends Controller
                 Storage::delete($data['image']);
             }
             DB::rollBack();
-            return $e;
             $exception = new ExceptionHandler();
             $exception->controller_function = "GallaryController.create";
             $exception->error = $e;
