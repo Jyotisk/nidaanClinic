@@ -2,6 +2,17 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WBK5TDHN0R"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WBK5TDHN0R');
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nidaan || Medical & Healthcare Clinic</title>
@@ -10,7 +21,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('images/favicons/favicon-32x32.png')}}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicons/favicon-16x16.png')}}" />
     <link rel="manifest" href="{{asset('images/favicons/site.webmanifest')}}" />
-    <meta name="description" content="Nidaan Healthcare Clinic" />
+    <meta name="title" content="Nidaan || Medical & Healthcare Clinic" />
+    <meta name="description" content="Discover premium medical services at Nidaan Health Care. Offering expert consultations, diagnostics, and personalized treatments for all your health needs. Your wellness, our priority!" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +48,20 @@
     <link rel="stylesheet" href="{{asset('css/mediox.css')}}" />
     <link rel="stylesheet" href="{{asset('css/login.css')}}" />
     <link rel="stylesheet" href="{{asset('css/masonary.css')}}" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nidaanhealthcare.com" />
+    <meta property="og:title" content="Nidaan || Medical & Healthcare Clinic" />
+    <meta property="og:description" content="Discover premium medical services at Nidaan Health Care. Offering expert consultations, diagnostics, and personalized treatments for all your health needs. Your wellness, our priority!" />
+    <meta property="og:image" content="https://nidaanhealthcare.com/images/why-choose/why-choose-1-1.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://nidaanhealthcare.com" />
+    <meta property="twitter:title" content="Nidaan || Medical & Healthcare Clinic" />
+    <meta property="twitter:description" content="Discover premium medical services at Nidaan Health Care. Offering expert consultations, diagnostics, and personalized treatments for all your health needs. Your wellness, our priority!" />
+    <meta property="twitter:image" content="https://nidaanhealthcare.com/images/why-choose/why-choose-1-1.jpg" />
 </head>
 
 <body class="custom-cursor">
