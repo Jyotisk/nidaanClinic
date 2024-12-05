@@ -108,7 +108,6 @@ class SpecilistController extends Controller
     }
     public function edit(Request $request)
     {
-        return $request;
         $validator = Validator::make(
             $request->all(),
             [

@@ -67,8 +67,12 @@
                             @foreach ($speciaListDetails as $item)
                             <li>
                                 <div class="team-details__contact__content">
-                                    <h3 class="team-details__contact__title">{{$item->header}}</h3>
+                                    @if($item->header)
+                                    <h3 class="team-details__contact__title">{{ $item->header }}</h3>
+                                    @endif
+                                    @if($item->specialist_detail)
                                     <p>{{$item->specialist_detail}}</p>
+                                    @endif
                                 </div>
                             </li><!-- /.item -->
                             @endforeach
