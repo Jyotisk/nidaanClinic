@@ -61,21 +61,19 @@ class SpecilistController extends Controller
             }
             $specialists->save();
 
-            if (count($request->header) > 0) {
-                $specialistDetail = [];
-                foreach ($request->header as $key => $row) {
-                    $specialistDetail[] = [
-                        'specialist_id' => $specialists->id,
-                        'header' => $row,
-                        'specialist_detail' => $request->specialist_detail[$key],
-                    ];
-                }
-                $specialistDetail = collect($specialistDetail);
-                $chunks = $specialistDetail->chunk(500);
+            $specialistDetail = [];
+            foreach (($request->header ?? $request->specialist_detail ?? []) as $key => $row) {
+                $specialistDetail[] = [
+                    'specialist_id' => $specialists->id,
+                    'header' => $row,
+                    'specialist_detail' => $request->specialist_detail[$key],
+                ];
+            }
+            $specialistDetail = collect($specialistDetail);
+            $chunks = $specialistDetail->chunk(500);
 
-                foreach ($chunks as $chunk) {
-                    SpecialistDetail::insert($chunk->toArray());
-                }
+            foreach ($chunks as $chunk) {
+                SpecialistDetail::insert($chunk->toArray());
             }
 
             DB::commit();
@@ -143,7 +141,7 @@ class SpecilistController extends Controller
             $specialists->save();
             SpecialistDetail::where('specialist_id', $request->specialist_id)->delete();
             $specialistDetail = [];
-            foreach ($request->header as $key => $row) {
+            foreach (($request->header ?? $request->specialist_detail ?? []) as $key => $row) {
                 $specialistDetail[] = [
                     'specialist_id' => $specialists->id,
                     'header' => $row,
@@ -156,6 +154,7 @@ class SpecilistController extends Controller
             foreach ($chunks as $chunk) {
                 SpecialistDetail::insert($chunk->toArray());
             }
+
             DB::commit();
             return response()->json([
                 'response' => 'success',

@@ -314,7 +314,10 @@ var myDailySalesChart = new Chart(dailySalesChart, {
 		"August",
 		"September"],
 		datasets:[ {
-			label: "Sales Analytics", fill: !0, backgroundColor: "rgba(255,255,255,0.2)", borderColor: "#fff", borderCapStyle: "butt", borderDash: [], borderDashOffset: 0, pointBorderColor: "#fff", pointBackgroundColor: "#fff", pointBorderWidth: 1, pointHoverRadius: 5, pointHoverBackgroundColor: "#fff", pointHoverBorderColor: "#fff", pointHoverBorderWidth: 1, pointRadius: 1, pointHitRadius: 5, data: [65, 59, 80, 81, 56, 55, 40, 35, 30]
+			label: "Sales Analytics", fill: !0, backgroundColor: "rgba(255,255,255,0.2)", borderColor: "#fff", borderCapStyle: "butt", borderDash: [],
+			 borderDashOffset: 0, pointBorderColor: "#fff", pointBackgroundColor: "#fff", pointBorderWidth: 1, pointHoverRadius: 5, 
+			 pointHoverBackgroundColor: "#fff", pointHoverBorderColor: "#fff", pointHoverBorderWidth: 1, pointRadius: 1, pointHitRadius: 5,
+			  data: [65, 59, 80, 81, 56, 55, 40, 35, 30]
 		}]
 	},
 	options : {
@@ -346,7 +349,7 @@ var myDailySalesChart = new Chart(dailySalesChart, {
 	}
 });
 
-$("#activeUsersChart").sparkline([112,109,120,107,110,85,87,90,102,109,120,99,110,85,87,94], {
+$("#activeUsersChart").sparkline([100,109,120,107,110,85,87,90,102,109,120,99,110,85,87,94], {
 	type: 'bar',
 	height: '100',
 	barWidth: 9,

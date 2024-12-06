@@ -52,13 +52,6 @@
                                                     <td>{{ $query->department_name }}</td>
                                                     <td>
                                                         {{ $query->doctor_name }}
-
-                                                        {{-- {{$query->get_specialist_lists}}
-                                                        @foreach ($query['get_specialist_lists'] as $specialist)
-                                                        <li>
-                                                            <strong>{{ $specialist['header'] }}</strong>: {{ $specialist['specialist_detail'] }}
-                                                        </li>
-                                                        @endforeach --}}
                                                     </td>
                                                     <td>
                                                         <img src="{{ Storage::url($query->doctor_image) }}"
@@ -186,7 +179,7 @@
                     <div class="modal-body">
                         <button type="button" class="btn btn-info btn-sm rounded-0 text-end"
                             id="ediBtn">Edit</button>
-                        <form action="" id="editForm">
+                        <form id="editForm" enctype="multipart/form-data">
                             @csrf
                             <div class="row text-center">
                                 <div class="col-md-4">
@@ -222,13 +215,14 @@
                                 </div>
                                 <div class="col-md-12">
                                     <label for="department name" class="form-label">Doctor Image</label>
-                                    <input type="file" id="modal_doctor_image" name="doctor_image" class="form-control"
-                                        accept="image/*">
+                                <input type="file" id="doctor_image_1" name="doctor_image" class="form-control"
+                                    accept="image/*">
+                                <span id="doctor_image_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-12">
                                     <label for="department name" class="form-label">Description<span
                                             class="text-danger">*</span></label>
-                                    <textarea name="descriptions" id="modal_descriptions" class="form-control"></textarea>
+                                    <textarea name="descriptions" id="modal_descriptions" class="form-control" cols="20"></textarea>
                                 </div>
                                 <div id="editDetails"></div>
                                 <div id="newEditinput">
@@ -272,7 +266,6 @@
         $("body").on("click", "#DeleteRoleRow", function() {
             $(this).parents("#roleRow").remove();
         });
-
         $("#rowEditAdder").click(function() {
             newRowAdd =
                 '<div class="row mt-2" id="roleRow">' +
@@ -284,11 +277,9 @@
                 '</div></div></div>';
             $('#newEditinput').append(newRowAdd);
         });
-
         $("body").on("click", "#DeleteEditRow", function() {
             $(this).parents("#roleRow").remove();
         });
-
         $(document).on("submit", "#SpecialistsForm", function(e) {
             e.preventDefault();
             var formData = new FormData($(this)[0]);
@@ -339,7 +330,6 @@
 
             });
         });
-
         $("#basic-datatables").DataTable({});
         $(document).on('click', '.view', function(e) {
             e.preventDefault();
@@ -409,45 +399,49 @@
         });
         $('#editForm').submit(function(e) {
             e.preventDefault(); 
-
-            var formData = $(this).serialize();            
+            var formData = new FormData($(this)[0]);
             $.ajax({
-                url: "{{ route('EditSpecialist') }}", 
-                method: 'POST',
+                type: "POST",
+                url: "{{ route('EditSpecialist') }}",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 data: formData,
-                success: function(res) {
-                    if (res.response == 'success') {
-                        Swal.fire({
-                                title: "Success",
-                                text: res.message,
-                                icon: "success",
-                                buttons: true,
-                                dangerMode: true,
-                            })
-                            .then((willStore) => {
-                                if (willStore) {
-                                    location.reload();
-                                }
-                            });
-                    }
-                    if (res.response == 'error') {
-                        Swal.fire({
-                            title: "Failed",
-                            text: "Something Went Wrong",
-                            icon: "error",
-                            buttons: false,
+                cache: false,
+                processData: false,
+                contentType: false
+            }).done(function(data) {
+                if (data.response == 'success') {
+                    Swal.fire({
+                            title: "Success",
+                            text: data.message,
+                            icon: "success",
+                            buttons: true,
                             dangerMode: true,
                         })
-                    }
-                },
-                error: function(xhr, status, error) {
-                    // console.error(xhr.responseText);
-                    Swal.fire({
-                        title: "Validation Fail!",
-                        text: "Please Enter Correct Data",
-                        icon: "error"
-                    });
+                        .then((willStore) => {
+                            if (willStore) {
+                                location.reload();
+                            }
+                        });
                 }
+                if (data.response == "validationFails") {
+                    var message = []
+                    $.each(data.error, function(index, value) {
+                        $('#' + index + '_error').html(value)                        
+                    })
+                    $("#validation_message").html(message)
+                }
+                if (data.response == 'error') {
+                    Swal.fire({
+                        title: "Failed",
+                        text: "Something Went Wrong",
+                        icon: "error",
+                        buttons: false,
+                        dangerMode: true,
+                    })
+                }
+
             });
         });
     });
