@@ -47,22 +47,27 @@
                                             </thead>
                                             <tbody>
                                                 @foreach ($facilityLists as $index => $query)
-                                                <tr>
-                                                    <th>{{ $index + 1 }}</th>
-                                                    <td>{{ $query->facility_name }}</td>
-                                                    <td>{{ $query->type }}</td>
-                                                    <td>
-                                                        <img src="{{ Storage::url($query->image) }}"
-                                                            alt="Service Images" style="width: 10%" />
-                                                    </td>
-                                                    <td>{{ \Illuminate\Support\Str::limit($query->descriptions, $limit = 20, $end = '...') }}
-                                                    </td>
-                                                    <td><button class="btn btn-info btn-sm rounded-0 view"
-                                                            data-facility_id="{{ $query->id }}"
-                                                            data-facility_name="{{ $query->facility_name }}"
-                                                            data-descriptions="{{ $query->descriptions }}">View</button>
-                                                    </td>
-                                                </tr>
+                                                    <tr>
+                                                        <th>{{ $index + 1 }}</th>
+                                                        <td>{{ $query->facility_name }}</td>
+                                                        <td>{{ $query->type }}</td>
+                                                        <td>
+                                                            <img src="{{ Storage::url($query->image) }}"
+                                                                alt="Service Images" style="width: 10%" />
+                                                        </td>
+                                                        <td>{{ \Illuminate\Support\Str::limit($query->descriptions, $limit = 20, $end = '...') }}
+                                                        </td>
+                                                        <td><button class="btn btn-info btn-sm rounded-0 view"
+                                                                data-facility_id="{{ $query->id }}"
+                                                                data-facility_name="{{ $query->facility_name }}"
+                                                                data-descriptions="{{ $query->descriptions }}">View</button>
+                                                            <a href="{{ $query->id }}"
+                                                                data-status="{{ $query->status }}"
+                                                                class="btn-sm rounded-0 change-status {{ $query->status == true ? 'btn btn-success' : 'btn btn-danger' }}">
+                                                                {{ $query->status == true ? 'true' : 'false' }}
+                                                            </a>
+                                                        </td>
+                                                    </tr>
                                                 @endforeach
                                             </tbody>
 
@@ -87,6 +92,8 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                        <span class="text-danger mb-4">To get a better view of the website's resolution of the image, it
+                            should be 370*398 px.</span>
                         <form id="FacilityForm" enctype="multipart/form-data">
                             @csrf
                             <div class="row g-2">
@@ -97,31 +104,36 @@
                                         <option value="service">Service</option>
                                         <option value="speciality">Speciality</option>
                                     </select>
+                                    <span id="type_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-12">
                                     <label for="Registration No" class="form-label">Speciality</label>
                                     <select name="department_id" id="department_id" class="form-control">
                                         <option value="">Select</option>
-                                        @foreach($departments AS $dept)
-                                        <option value="{{$dept->id}}">{{$dept->department_name}}</option>
+                                        @foreach ($departments as $dept)
+                                            <option value="{{ $dept->id }}">{{ $dept->department_name }}</option>
                                         @endforeach
                                     </select>
+                                    <span id="department_id_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-12">
                                     <label for="facility name" class="form-label">Facility/Service Name <span
                                             class="text-danger">*</span></label>
                                     <input type="text" id="facility_name" name="facility_name" class="form-control">
+                                    <span id="facility_name_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-12">
                                     <label for="department name" class="form-label">Description<span
                                             class="text-danger">*</span></label>
                                     <textarea name="descriptions" id="" class="form-control"></textarea>
+                                    <span id="descriptions_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-12">
                                     <label for="department name" class="form-label">Image<span
                                             class="text-danger">*</span></label>
                                     <input type="file" id="image" name="image" class="form-control"
                                         accept="image/*">
+                                    <span id="image_error" class="text-danger"></span>
                                 </div>
                                 <div id="newinput">
                                 </div>
@@ -157,6 +169,9 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                        <span class="text-danger mb-4">To get a better view of the website's resolution of the image,
+                            it
+                            should be 370*398 px.</span>
                         <button type="button" class="btn btn-info btn-sm rounded-0" id="ediBtn">Edit</button>
                         <form action="" id="editForm" method="post">
                             @csrf
@@ -164,17 +179,37 @@
                                 <div class="col-md-12">
                                     <label for="facility name" class="form-label">Facility/Service Name <span
                                             class="text-danger">*</span></label>
-                                    <input type="text" id="modal_facility_name" name="facility_name" class="form-control" disabled>
+                                    <input type="text" id="modal_facility_name" name="facility_name"
+                                        class="form-control" disabled>
+                                    <span id="facility_name_edit_error" class="text-danger"></span>
                                     <input type="hidden" id="facility_id" name="facility_id" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="department name" class="form-label">Image<span
+                                            class="text-danger">*</span></label>
+                                    <input type="file" id="image" name="image" class="form-control"
+                                        accept="image/*">
+                                    <span id="image_edit_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-12">
                                     <label for="department name" class="form-label">Description<span
                                             class="text-danger">*</span></label>
                                     <textarea name="descriptions" id="modal_descriptions" class="form-control" disabled></textarea>
+                                    <span id="descriptions_edit_error" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="row" id="editDetails"></div>
-                            <button type="submit" class="btn btn-success btn-sm rounded-0 mt-4" id="editSubmitBtn" style="display: none;">Submit</button>
+                            <div id="newEditinput">
+                            </div>
+                            <div class="col-md-12 text-left" style="display: none;" id="editMore">
+                                <button id="rowEditAdder" type="button"
+                                    class="btn btn-dark btn-sm rounded-0 mt-2">
+                                    <span class="bi bi-plus-square-dotted">
+                                    </span> ADD MORE DETAILS
+                                </button>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-sm rounded-0 mt-4" id="editSubmitBtn"
+                                style="display: none;">Submit</button>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -199,13 +234,36 @@
                 '</div></div></div>';
             $('#newinput').append(newRowAdd);
         });
-
         $("body").on("click", "#DeleteRoleRow", function() {
+            $(this).parents("#roleRow").remove();
+        });
+
+        $("#rowEditAdder").click(function() {
+            newRowAdd =
+                '<div class="row mt-2" id="roleRow">' +
+                '<label for="department name" class="form-label">Facility Detail<span class="text-danger">*</span></label>' +
+                '<div class="col-md-12"><input type="text" id="inputPassword5" name="facility_detail[]" class="form-control">' +
+                '<div class="col-md-4"><button class="btn btn-danger mt-4 btn-sm rounded-0" id="DeleteEditRow" type="button"><i class="bi bi-trash"></i> Delete</button>' +
+                '</div></div></div>';
+            $('#newEditinput').append(newRowAdd);
+        });
+        $("body").on("click", "#DeleteEditRow", function() {
             $(this).parents("#roleRow").remove();
         });
 
         $(document).on("submit", "#FacilityForm", function(e) {
             e.preventDefault();
+            Swal.fire({
+                title: "Loading ...",
+                html: "Uploading In progress",
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            });
             var formData = new FormData($(this)[0]);
             $.ajax({
                 type: "POST",
@@ -230,17 +288,23 @@
                         })
                         .then((willStore) => {
                             if (willStore) {
-                                location.reload();
+                                location.reload(true);
                             }
                         });
                 }
                 if (data.response == "validationFails") {
+                    Swal.fire({
+                        title: "Failed",
+                        text: "Validation error",
+                        icon: "error",
+                        buttons: false,
+                        dangerMode: true,
+                    })
                     var message = []
                     $.each(data.error, function(index, value) {
                         $('#' + index + '_error').html(value)
 
                     })
-                    $("#validation_message").html(message)
                 }
                 if (data.response == 'error') {
                     Swal.fire({
@@ -254,7 +318,6 @@
 
             });
         });
-
         $("#basic-datatables").DataTable({});
         $(document).on('click', '.view', function(e) {
             e.preventDefault();
@@ -280,7 +343,8 @@
 
                             var tempDiv = "<div class='col-md-12 mt-2'>" +
                                 "<label for='Registration No' class='form-label'>Details</label>" +
-                                "<input type='text' class='form-control' name='facility_detail[]' value='" + item.facility_detail + "' disabled>" +
+                                "<input type='text' class='form-control' name='facility_detail[]' value='" +
+                                item.facility_detail + "' disabled>" +
                                 "  </div>"
                             // div.append(tempDiv)
                             $('#editDetails').append(tempDiv);
@@ -304,52 +368,134 @@
         $(document).on("click", "#ediBtn", function(e) {
             $('#editForm :input').attr('disabled', false);
             $("#editSubmitBtn").css("display", "block");
+            $("#editMore").css("display", "block");
+
         });
         $('#editForm').submit(function(e) {
-            e.preventDefault(); // Prevent form submission
-
-            // Serialize form data
-            var formData = $(this).serialize();
-
-            // Send AJAX request
-            $.ajax({
-                url: "{{ route('EditFacility') }}", // Replace with your route
-                method: 'POST',
-                data: formData,
-                success: function(res) {
-                    if (res.response == 'success') {
-                        Swal.fire({
-                                title: "Success",
-                                text: res.message,
-                                icon: "success",
-                                buttons: true,
-                                dangerMode: true,
-                            })
-                            .then((willStore) => {
-                                if (willStore) {
-                                    location.reload();
-                                }
-                            });
-                    }
-                    if (res.response == 'error') {
-                        Swal.fire({
-                            title: "Failed",
-                            text: "Something Went Wrong",
-                            icon: "error",
-                            buttons: false,
-                            dangerMode: true,
-                        })
-                    }
+            e.preventDefault();
+            Swal.fire({
+                title: "Loading ...",
+                html: "Uploading In progress",
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading();
                 },
-                error: function(xhr, status, error) {
-                    // console.error(xhr.responseText);
-                    Swal.fire({
-                        title: "Validation Fail!",
-                        text: "Please Enter Correct Data",
-                        icon: "error"
-                    });
+                willClose: () => {
+                    clearInterval(timerInterval);
                 }
             });
+            var formData = new FormData($(this)[0]);
+            $.ajax({
+                type: "POST",
+                url: "{{ route('EditFacility') }}",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false
+            }).done(function(data) {
+                if (data.response == 'success') {
+                    Swal.fire({
+                            title: "Success",
+                            text: data.message,
+                            icon: "success",
+                            buttons: true,
+                            dangerMode: true,
+                        })
+                        .then((willStore) => {
+                            if (willStore) {
+                                location.reload(true);
+
+                            }
+                        });
+                }
+                if (data.response == "validationFails") {
+                    Swal.fire({
+                        title: "Failed",
+                        text: "Validation error",
+                        icon: "error",
+                        buttons: false,
+                        dangerMode: true,
+                    })
+                    var message = []
+                    $.each(data.error, function(index, value) {
+                        $('#' + index + '_edit_error').html(value)
+                    })
+                }
+                if (data.response == 'error') {
+                    Swal.fire({
+                        title: "Failed",
+                        text: "Something Went Wrong",
+                        icon: "error",
+                        buttons: false,
+                        dangerMode: true,
+                    })
+                }
+
+            });
         });
+        $(document).on('click', '.change-status', function(e) {
+            e.preventDefault();
+            var id = $(this).attr('href')
+            var status = $(this).data('status');
+            Swal.fire({
+                title: `Do you sure want ${status==true?'close':'open'} facility status ?`,
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Yes",
+                denyButtonText: `No`
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    var jsonData = JSON.stringify({
+                        'id': id,
+                        'type': 'facility',
+                        'status': status,
+                    });
+                    $.ajax({
+                        type: "POST",
+                        url: "{{ route('changeStatus') }}",
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        data: jsonData,
+                        cache: false,
+                        processData: false,
+                        contentType: 'application/json',
+                        // dataType: "json",
+                        // encode: true,
+                    }).done(function(data) {
+                        if (data.response == 'success') {
+                            Swal.fire({
+                                    title: "Success",
+                                    text: data.message,
+                                    icon: "success",
+                                    buttons: true,
+                                    dangerMode: true,
+                                })
+                                .then((willStore) => {
+                                    if (willStore) {
+                                        location.reload(true);
+                                    }
+                                });
+                        }
+                        if (data.response == 'error') {
+                            Swal.fire({
+                                title: "Failed",
+                                text: "Something Went Wrong",
+                                icon: "error",
+                                buttons: false,
+                                dangerMode: true,
+                            })
+                        }
+
+                    });
+                } else if (result.isDenied) {
+                    Swal.fire("Changes are not saved", "", "info");
+                }
+            });
+        })
     });
 </script>

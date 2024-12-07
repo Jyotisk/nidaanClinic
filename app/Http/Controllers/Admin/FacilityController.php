@@ -19,10 +19,10 @@ class FacilityController extends Controller
     public function index()
     {
         $facilityLists = Facility::all();
-        $departments=Department::all();
+        $departments = Department::all();
         // $allSpecilists = Specialist::with('GetSpecialistLists')->get();
         // return view('specialists.AddSpecialist', compact('allSpecilists'));
-        return view('facilities.Facilitylists', compact('facilityLists','departments'));
+        return view('facilities.Facilitylists', compact('facilityLists', 'departments'));
     }
     public function store(Request $request)
     {
@@ -69,12 +69,13 @@ class FacilityController extends Controller
             $facility->save();
 
             $facilityDetail = [];
-            foreach ($request->facility_detail as $row) {
-
-                $facilityDetail[] = [
-                    'facility_id' => $facility->id,
-                    'facility_detail' => $row,
-                ];
+            foreach (($request->facility_detail ?? []) as $row) {
+                if ($row) {
+                    $facilityDetail[] = [
+                        'facility_id' => $facility->id,
+                        'facility_detail' => $row,
+                    ];
+                }
             }
             $specialistDetail = collect($facilityDetail);
             $chunks = $specialistDetail->chunk(500);
@@ -117,6 +118,7 @@ class FacilityController extends Controller
             [
                 'facility_name' => 'required',
                 'descriptions' => 'required',
+                'image' => 'image|mimes:jpeg,png,jpg,gif,webp|max:5500', // Adjust the validation rules as needed
             ],
         );
         if ($validator->fails()) {
@@ -132,19 +134,28 @@ class FacilityController extends Controller
             $facility->facility_name = $request->facility_name;
             $facility->descriptions = $request->descriptions;
             $facility->entry_by = Auth::user()->id;
+
+            if ($request->file('image')) {
+                Storage::delete($facility->image);
+                $path = $request->image->store('public/facility');
+                $facility->image = $path;
+            }
+
             $facility->save();
 
             FacilityDetail::where('facility_id', $request->facility_id)->delete();
             $facilityDetail = [];
-            foreach ($request->facility_detail as $row) {
-
-                $facilityDetail[] = [
-                    'facility_id' => $facility->id,
-                    'facility_detail' => $row,
-                ];
+            foreach (($request->facility_detail ?? []) as $row) {
+                if ($row) {
+                    $facilityDetail[] = [
+                        'facility_id' => $facility->id,
+                        'facility_detail' => $row,
+                    ];
+                }
             }
-            $specialistDetail = collect($facilityDetail);
-            $chunks = $specialistDetail->chunk(500);
+
+            $facilityDetails = collect($facilityDetail);
+            $chunks = $facilityDetails->chunk(500);
 
             foreach ($chunks as $chunk) {
                 FacilityDetail::insert($chunk->toArray());

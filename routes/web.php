@@ -56,41 +56,49 @@ Route::get('/', [DashboardController::class, 'Index'])->name('dashboard');
         Route::get('getMeuSubItmDetail', [MenuItemController::class, 'getMeuSubItmDetail'])->name('getMeuSubItmDetail');
         Route::post('EditMenuItem', [MenuItemController::class, 'EditMenuItem'])->name('EditMenuItem');
         Route::get('mentu-list', [MenuItemController::class, 'getDropdownData'])->name('getDropdownData');
+
     });
 
     //specialists
     Route::get('department-lists', [SpecilistController::class, 'indexDepartment'])->name('indexDepartment');
     Route::post('department-lists', [SpecilistController::class, 'storeDepartment'])->name('storeDepartment');
     //specialists
+
     Route::get('specialist-lists', [SpecilistController::class, 'index'])->name('SpecialistLists');
     Route::get('specialist-details', [SpecilistController::class, 'SpecialistDetails'])->name('SpecialistDetails');
     Route::post('specialist-lists', [SpecilistController::class, 'store'])->name('SubmitSpecialist');
     Route::post('edit-specialist-lists', [SpecilistController::class, 'edit'])->name('EditSpecialist');
-
 
     //Facilities
     Route::get('facility-lists', [FacilityController::class, 'index'])->name('FacilityLists');
     Route::post('facility-lists', [FacilityController::class, 'store'])->name('SubmitFacility');
     Route::get('facility-details', [FacilityController::class, 'FacilityDetails'])->name('FacilityDetails');
     Route::post('edit-facility-lists', [FacilityController::class, 'edit'])->name('EditFacility');
+    //Facilities
 
     //Gallary 
     Route::get('add-gallary', [GallaryController::class, 'index'])->name('getGallary');
     Route::post('add-gallary', [GallaryController::class, 'store'])->name('createGallary');
     Route::get('gallary-lists', [GallaryController::class, 'show'])->name('galleryLists');
     Route::post('delete-gallary', [GallaryController::class, 'destroy'])->name('destroyGallery');
+    //Gallary 
 
     //testimonial  
     Route::get('add-testimonials', [TestimonialController::class, 'GetTestimonials'])->name('GetTestimonials');
     Route::post('add-testimonials', [TestimonialController::class, 'AddTestimonials'])->name('AddTestimonials');
     Route::get('testimonial-lists', [TestimonialController::class, 'TestimonialList'])->name('TestimonialList');
     Route::post('close-testimonial-list', [TestimonialController::class, 'closeTestimonialList'])->name('closeTestimonialList');
+    //testimonial  
 
     //faq  
     Route::get('add-faq', [FaqController::class, 'GetFaq'])->name('GetFaq');
     Route::post('add-faq', [FaqController::class, 'AddFaq'])->name('AddFaq');
     Route::get('faq-lists', [FaqController::class, 'FaqList'])->name('FaqList');
     Route::post('close-faq-list', [FaqController::class, 'closeFaq'])->name('closeFaq');
+    //faq  
+
+    //change status of the doctors, specialists, speciality...
+    Route::post('change-status', [DashboardController::class, 'changeStatus'])->name('changeStatus');
 
     Route::get('reset-password', [ResetPasswordController::class, 'create'])
         ->name('passwordReset');

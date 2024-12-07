@@ -74,7 +74,7 @@
                                         <div class="contact-page__info__content">
                                             <h4 class="contact-page__info__title">call now</h4>
                                             <!-- /.contact-page__info__title -->
-                                            <a href="tel:+91918638184447" class="contact-page__info__link">+91 918638184447</a>
+                                            <a href="tel:+91918638184447" class="contact-page__info__link">+91 8638184447</a>
                                             <!-- /.contact-page__info__link -->
                                         </div><!-- /.contact-page__info__content -->
                                     </div><!-- /.contact-page__info__item -->

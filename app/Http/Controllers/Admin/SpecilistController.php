@@ -29,10 +29,11 @@ class SpecilistController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
+                'department_id' => 'required|numeric',
                 'department_name' => 'required',
                 'doctor_name' => 'required',
                 'descriptions' => 'required',
-                'doctor_image' => 'image|mimes:jpeg,png,jpg,gif,webp|max:5500', // Adjust the validation rules as needed
+                'doctor_image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:5500', // Adjust the validation rules as needed
             ],
         );
         if ($validator->fails()) {
