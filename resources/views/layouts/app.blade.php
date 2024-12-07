@@ -314,11 +314,20 @@
                           <div class="u-text">
                             <h4>{{Auth::user()->name}}</h4>
                             <p class="text-muted">{{Auth::user()->email}}</p>
-                            {{-- <a
-                              href="#"
+                             <a
+                              href="{{route('passwordReset')}}"
                               class="btn btn-xs btn-secondary btn-sm"
-                              >View Profile</a
-                            > --}}
+                              >Change Password</a
+                            > 
+                            {{-- <a href="{{route('passwordReset')}}" class="btn btn-xs btn-secondary btn-sm">
+                              <i class="ti ti-list-check fs-6"></i>
+                              <p class="mb-0 fs-3">Change Password</p>
+                            </a> --}}
+                            <!-- <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                              <i class="ti ti-list-check fs-6"></i>
+                              <p class="mb-0 fs-3">My Task</p>
+                            </a> -->
+                            
                           </div>
                         </div>
                       </li>
