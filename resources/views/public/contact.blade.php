@@ -3,7 +3,7 @@
         <section class="page-header">
             <div class="container-fluid">
                 <div class="page-header__inner">
-                    <div class="page-header__bg" style="background-image: url('images/backgrounds/page-header-bg.jpg');"></div><!-- /.page-header__bg -->
+                    <div class="page-header__bg" style="background-image: url({{ asset('images/backgrounds/page-header-bg.jpg' )}});"></div><!-- /.page-header__bg -->
                     <div class="container">
                         <div class="page-header__content">
                             <h2 class="page-header__title">Contact Us</h2>

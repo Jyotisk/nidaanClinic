@@ -70,11 +70,11 @@
     <div class="custom-cursor__cursor-two"></div>
 
     <div class="preloader">
-        <div class="preloader__image" style="background-image: url('images/loader.png');"></div>
+        <div class="preloader__image" style="background-image: url({{asset('images/loader.png')}});"></div>
     </div>
     <!-- /.preloader -->
 
-    <div class="page-wrapper">
+    <div class="page-headerwrapper">
         <header class="main-header main-header--two sticky-header sticky-header--normal">
             <div class="container-fluid">
                 <div class="main-header__inner">
@@ -158,10 +158,17 @@
                                 </h4><!-- /.main-header__call__number -->
                             </div><!-- /.main-header__call__content -->
                         </div><!-- /.main-header__call -->
+                        @if( Route::is('team-details') )
                         <a href="{{ route('booking') }}" class="mediox-btn main-header__btn">
                             <span>make an appointment</span>
                             <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
                         </a><!-- /.mediox-btn -->
+                        @else
+                        <a href="{{ route('booking') }}" class="mediox-btn main-header__btn">
+                            <span>make an appointment</span>
+                            <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
+                        </a><!-- /.mediox-btn -->
+                        @endif
                     </div><!-- /.main-header__right -->
                 </div><!-- /.main-header__inner -->
             </div><!-- /.container-fluid -->
@@ -172,7 +179,7 @@
         </main>
 
         <footer class="main-footer section-space-top">
-            <div class="main-footer__bg" style="background-image: url('images/shapes/footer-bg.png');"></div>
+            <div class="main-footer__bg" style="background-image: url({{ asset('images/shapes/footer-bg.png') }});"></div>
             <!-- /.main-footer__bg -->
             <div class="container">
                 <div class="row gutter-y-40">

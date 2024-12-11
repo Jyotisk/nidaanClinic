@@ -52,8 +52,10 @@
                                     </span>
                                 </h2><!-- /.title -->
                                 <div class="main-slider-one__description">
-                                    <p class="main-slider-one__text">Nidaan Medical Clinic is a patient-focused healthcare center dedicated to providing comprehensive medical services. 
-                                        Our experienced doctors and compassionate staff offer personalized care across a range of specialties. </p><!-- /.text -->
+                                    <p class="main-slider-one__text">Nidaan Medical Clinic is a patient-focused
+                                        healthcare center dedicated to providing comprehensive medical services.
+                                        Our experienced doctors and compassionate staff offer personalized care across a
+                                        range of specialties. </p><!-- /.text -->
                                 </div><!-- /.description -->
                                 <div class="main-slider-one__button">
                                     <div class="main-slider-one__button__inner">
@@ -110,7 +112,8 @@
                         <div class="col-xl-9">
                             <div class="main-slider-one__content">
                                 <div class="main-slider-one__top">
-                                    <p class="main-slider-one__sub-title">NIDAAN HEALTHCARE CLINIC</p><!-- /.sub-title -->
+                                    <p class="main-slider-one__sub-title">NIDAAN HEALTHCARE CLINIC</p>
+                                    <!-- /.sub-title -->
                                 </div><!-- /.main-slider-one__top -->
                                 <h2 class="main-slider-one__title">
                                     <span class="main-slider-one__title__inner w-100">
@@ -150,8 +153,11 @@
                                     </span>
                                 </h2><!-- /.title -->
                                 <div class="main-slider-one__description">
-                                    <p class="main-slider-one__text">With state-of-the-art diagnostic facilities and a commitment to excellence, we aim to ensure the well-being of every patient. Convenient appointments, 
-                                        modern amenities, and a welcoming environment make Nidaan Medical Clinic a trusted choice for your healthcare needs.</p><!-- /.text -->
+                                    <p class="main-slider-one__text">With state-of-the-art diagnostic facilities and a
+                                        commitment to excellence, we aim to ensure the well-being of every patient.
+                                        Convenient appointments,
+                                        modern amenities, and a welcoming environment make Nidaan Medical Clinic a
+                                        trusted choice for your healthcare needs.</p><!-- /.text -->
                                 </div><!-- /.description -->
                                 <div class="main-slider-one__button">
                                     <div class="main-slider-one__button__inner">
@@ -234,13 +240,16 @@
                                 <h6 class="sec-title__tagline">about us</h6><!-- /.sec-title__tagline -->
 
                             </div><!-- /.sec-title__top -->
-                            <h3 class="sec-title__title">Best Healthcare for you <br> Since 2002.</h3><!-- /.sec-title__title -->
+                            <h3 class="sec-title__title">Best Healthcare for you <br> Since 2002.</h3>
+                            <!-- /.sec-title__title -->
                         </div><!-- /.sec-title -->
                         <div class="about-one__text-box wow fadeInUp" data-wow-duration="1500ms">
-                            <p class="about-one__text">Nidaan Medical Clinic is a multi-specialty healthcare facility committed to delivering high-quality,
-                                 holistic medical care. We cater to a diverse range of medical needs, offering services such as general medicine, specialist consultations, 
-                                 preventive care, and diagnostic services. Our team comprises experienced doctors,
-                                 skilled nurses, and supportive staff who prioritize patient comfort and care.</p>
+                            <p class="about-one__text">Nidaan Medical Clinic is a multi-specialty healthcare facility
+                                committed to delivering high-quality,
+                                holistic medical care. We cater to a diverse range of medical needs, offering services
+                                such as general medicine, specialist consultations,
+                                preventive care, and diagnostic services. Our team comprises experienced doctors,
+                                skilled nurses, and supportive staff who prioritize patient comfort and care.</p>
                         </div><!-- /.about-one__text-box -->
                         <div class="about-one__inner wow fadeInUp" data-wow-duration="1500ms">
                             <div class="about-one__inner__row row gutter-y-30">
@@ -265,7 +274,8 @@
                             </div><!-- /.about-one__inner__row row gutter-y-30 -->
                         </div><!-- /.about-one__inner -->
                         <div class="about-one__bottom">
-                            <div class="about-one__button wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                            <div class="about-one__button wow fadeInUp" data-wow-duration="1500ms"
+                                data-wow-delay="00ms">
                                 <a href="/about" class="mediox-btn">
                                     <span>know more</span>
                                     <span class="mediox-btn__icon"><i class="icon-up-right-arrow"></i></span>
@@ -277,7 +287,7 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
         {{-- <img src="{{asset('images/about/about-1-3.png')}}" alt="about" class="about-one__shape-1"> --}}
-        <img src="{{asset('images/shapes/about-shape-1-1.png')}}" alt="shape" class="about-one__shape-2">
+        <img src="{{ asset('images/shapes/about-shape-1-1.png') }}" alt="shape" class="about-one__shape-2">
     </section><!-- /.about-one section-space -->
     {{-- End of About Us Page --}}
 
@@ -300,29 +310,32 @@
             </div><!-- /.sec-title -->
             <div class="services-one__carousel mediox-owl__carousel mediox-owl__carousel--basic-nav owl-carousel owl-theme"
                 data-owl-options='{ "items": 1, "margin": 10, "loop": true, "smartSpeed": 700, "nav": false, "navText": ["<span class=\"icon-arrow-left\"></span>","<span class=\"icon-arrow-right\"></span>"], "dots": true, "autoplay": true, "responsive": { "0": { "items": 1, "nav": true, "dots": false, "margin": 10 }, "768": { "items": 2, "margin": 30 }, "992": { "items": 3, "margin": 30 } } }'>
-                @foreach($specialities AS $specility)
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                    <div class="service-card">
-                        <div class="service-card__image">
-                            <img src="{{ env('IMAGE_PATH').Storage::url($specility->image)}}" alt="immediate care">
-                        </div><!-- /.service-card__image -->
-                        <span class="service-card__icon">
-                            <i class="icon-medicine"></i>
-                        </span><!-- /.service-card__icon -->
-                        <div class="service-card__content">
-                            <p class="service-card__total-doctors">{{ $specility->doctor_count}}+ doctors</p>
-                            <!-- /.service-card__total-doctors -->
-                            <div class="service-card__content__inner">
-                                <h3 class="service-card__title"><a href="{{ url('/service-details') }}/{{$specility->id}}">
-                                        {{ $specility->department_name}}</a></h3><!-- /.service-card__title -->
-                                <a href="{{ url('/service-details') }}/{{$specility->id}}" class="service-card__link">
-                                    <i class="icon-up-right-arrow"></i>
-                                </a><!-- /.service-card__link -->
-                            </div><!-- /.service-card__content__inner -->
-                        </div><!-- /.service-card__content -->
-                    </div><!-- /.service-card -->
-                </div><!-- /.item -->
-               @endforeach
+                @foreach ($specialities as $specility)
+                    <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                        <div class="service-card">
+                            <div class="service-card__image">
+                                <img src="{{ env('IMAGE_PATH') . Storage::url($specility->image) }}"
+                                    alt="immediate care">
+                            </div><!-- /.service-card__image -->
+                            <span class="service-card__icon">
+                                <i class="icon-medicine"></i>
+                            </span><!-- /.service-card__icon -->
+                            <div class="service-card__content">
+                                <p class="service-card__total-doctors">{{ $specility->doctor_count }}+ doctors</p>
+                                <!-- /.service-card__total-doctors -->
+                                <div class="service-card__content__inner">
+                                    <h3 class="service-card__title"><a
+                                            href="{{ url('/service-details') }}/{{ $specility->id }}">
+                                            {{ $specility->department_name }}</a></h3><!-- /.service-card__title -->
+                                    <a href="{{ url('/service-details') }}/{{ $specility->id }}"
+                                        class="service-card__link">
+                                        <i class="icon-up-right-arrow"></i>
+                                    </a><!-- /.service-card__link -->
+                                </div><!-- /.service-card__content__inner -->
+                            </div><!-- /.service-card__content -->
+                        </div><!-- /.service-card -->
+                    </div><!-- /.item -->
+                @endforeach
             </div><!-- /.services-one__carousel -->
         </div><!-- /.container -->
     </section><!-- /.services-one section-space-two -->
@@ -399,16 +412,18 @@
                             <!-- /.sec-title__title -->
                         </div><!-- /.sec-title -->
                         <div class="why-choose-one__inner">
-                            @foreach($services AS $service)
-                            <div class="why-choose-one__item wow fadeInUp" data-wow-duration="1500ms">
-                                <span class="why-choose-one__item__icon">
-                                    <i class="icon-medical"></i>
-                                </span><!-- /.why-choose-one__item__icon -->
-                                <div class="why-choose-one__item__content">
-                                    <h4 class="why-choose-one__item__title">{{$service->facility_name}}</h4>
-                                    <p class="why-choose-one__item__text">{{ \Illuminate\Support\Str::limit($service->descriptions, $limit = 100, $end = '...') }}</p>
-                                </div><!-- /.why-choose-one__item__content -->
-                            </div><!-- /.why-choose-one__item -->
+                            @foreach ($services as $service)
+                                <div class="why-choose-one__item wow fadeInUp" data-wow-duration="1500ms">
+                                    <span class="why-choose-one__item__icon">
+                                        <i class="icon-medical"></i>
+                                    </span><!-- /.why-choose-one__item__icon -->
+                                    <div class="why-choose-one__item__content">
+                                        <h4 class="why-choose-one__item__title">{{ $service->facility_name }}</h4>
+                                        <p class="why-choose-one__item__text">
+                                            {{ \Illuminate\Support\Str::limit($service->descriptions, $limit = 100, $end = '...') }}
+                                        </p>
+                                    </div><!-- /.why-choose-one__item__content -->
+                                </div><!-- /.why-choose-one__item -->
                             @endforeach
                         </div><!-- /.why-choose-one__inner -->
                         <div class="why-choose-one__shape why-choose-one__shape--3"></div>
@@ -446,30 +461,38 @@
                             <div class="form-one__group">
                                 <div class="form-one__control">
                                     <input type="text" name="patient_name" placeholder="Full Name*" required>
+                                    <span class="text-danger" id="patient_name_error"></span>
                                 </div><!-- /.form-one__control -->
                                 <div class="form-one__control">
                                     <input type="text" name="age" placeholder="Age*" required>
+                                    <span class="text-danger" id="age_error"></span>
                                 </div><!-- /.form-one__control -->
                                 <div class="form-one__control">
-                                    <input type="tel" name="phone_no" placeholder="Phone Number*" Maxlength="10" required>
+                                    <input type="tel" name="phone_no" placeholder="Phone Number*" Maxlength="10"
+                                        required>
+                                    <span class="text-danger" id="phone_no_error"></span>
                                 </div><!-- /.form-one__control -->
                                 <div class="form-one__control">
-                                    <select class="selectpicker" aria-label="Name a Doctor" name="specialist_id" required>
-                                        <option selected>Name a Doctor*</option>
-                                        @foreach($speciaLists AS $row)
-                                        <option value="{{$row->id}}">{{ $row->doctor_name }}</option>
+                                    <select class="selectpicker" aria-label="Name a Doctor" name="specialist_id"
+                                        required>
+                                        <option value="" selected>Name a Doctor*</option>
+                                        @foreach ($speciaLists as $row)
+                                            <option value="{{ $row->id }}">{{ $row->doctor_name }}</option>
                                         @endforeach
                                     </select>
+                                    <span class="text-danger" id="specialist_id_error"></span>
                                 </div><!-- /.form-one__control -->
                                 <div class="form-one__control appointment-one__form__date" required>
                                     <input type="text" name="appointment_date" placeholder="Appointment Date*"
-                                        id="datepicker" class="mediox-datepicker">
+                                        id="datepicker" class="mediox-datepicker" required>
                                     <span class="appointment-one__form__date__arrow">
                                         <i class="icon-caret-down"></i>
                                     </span><!-- /.appointment-one__form__date__arrow -->
+                                    <span class="text-danger" id="appointment_date_error"></span>
                                 </div><!-- /.form-one__control -->
                                 <div class="form-one__control form-one__control--full">
                                     <textarea name="address" placeholder="Address*..." required></textarea>
+                                    <span class="text-danger" id="address_error"></span>
                                 </div><!-- /.form-one__control -->
                                 <div class="form-one__control form-one__control--full">
                                     <textarea name="message" placeholder="Message (If Any)"></textarea>
@@ -607,34 +630,37 @@
                     }
                 }'>
                         @foreach ($speciaLists as $row)
-                        <div class="item">
-                            <div class="team-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
-                                <img src="{{ env('IMAGE_PATH').Storage::url($row->doctor_image)}}" alt="{{ $row->doctor_name }}"
-                                    class="team-card__image">
-                                <div class="team-card__identity">
-                                    <h3 class="team-card__name"><a href="{{url('/team-details')}}/{{ $row->id}}">{{ $row->doctor_name }}</a></h3>
-                                    <p class="team-card__designation">{{ $row->department_name }}</p>
-                                    <div class="social-links">
-                                        <a href="{{ $row->facebook_link }}" target="_blank">
-                                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                            <span class="sr-only">Facebook</span>
-                                        </a>
-                                        <a href="{{ $row->instagram_link }}" target="_blank">
-                                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                                            <span class="sr-only">Instagram</span>
-                                        </a>
-                                        <a href="{{ $row->twitter_link }}" target="_blank">
-                                            <i class="fab fa-twitter" aria-hidden="true"></i>
-                                            <span class="sr-only">Twitter</span>
-                                        </a>
-                                        <a href="{{ $row->linked_in_link }}" target="_blank">
-                                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                            <span class="sr-only">Linkedin</span>
-                                        </a>
-                                    </div><!-- /.social-links -->
-                                </div><!-- /.team-card__identity -->
-                            </div><!-- /.team-card -->
-                        </div><!-- /.item -->
+                            <div class="item">
+                                <div class="team-card wow fadeInUp" data-wow-duration='1500ms'
+                                    data-wow-delay='000ms'>
+                                    <img src="{{ env('IMAGE_PATH') . Storage::url($row->doctor_image) }}"
+                                        alt="{{ $row->doctor_name }}" class="team-card__image">
+                                    <div class="team-card__identity">
+                                        <h3 class="team-card__name"><a
+                                                href="{{ url('/team-details') }}/{{ $row->id }}">{{ $row->doctor_name }}</a>
+                                        </h3>
+                                        <p class="team-card__designation">{{ $row->department_name }}</p>
+                                        <div class="social-links">
+                                            <a href="{{ $row->facebook_link }}" target="_blank">
+                                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                                <span class="sr-only">Facebook</span>
+                                            </a>
+                                            <a href="{{ $row->instagram_link }}" target="_blank">
+                                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                                                <span class="sr-only">Instagram</span>
+                                            </a>
+                                            <a href="{{ $row->twitter_link }}" target="_blank">
+                                                <i class="fab fa-twitter" aria-hidden="true"></i>
+                                                <span class="sr-only">Twitter</span>
+                                            </a>
+                                            <a href="{{ $row->linked_in_link }}" target="_blank">
+                                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                                                <span class="sr-only">Linkedin</span>
+                                            </a>
+                                        </div><!-- /.social-links -->
+                                    </div><!-- /.team-card__identity -->
+                                </div><!-- /.team-card -->
+                            </div><!-- /.item -->
                         @endforeach
                     </div><!-- /.team-one__carousel -->
                 </div><!-- /.col-lg-6 -->
@@ -654,7 +680,12 @@
                         </div><!-- /.sec-title -->
                         <div class="team-one__inner wow fadeInUp" data-wow-duration="1500ms">
                             <h3 class="team-one__inner__title">Nidaan Healthcare Clinic's</h3>
-                            <p class="team-one__inner__text">expert team comprises highly skilled and compassionate medical professionals dedicated to providing comprehensive, patient-centered care. The team includes experienced doctors, specialists, and support staff committed to offering personalized treatment plans, cutting-edge diagnostics, and holistic wellness solutions. Their collective expertise ensures that patients receive the highest standard of medical care in a friendly and supportive environment.</p>
+                            <p class="team-one__inner__text">expert team comprises highly skilled and compassionate
+                                medical professionals dedicated to providing comprehensive, patient-centered care. The
+                                team includes experienced doctors, specialists, and support staff committed to offering
+                                personalized treatment plans, cutting-edge diagnostics, and holistic wellness solutions.
+                                Their collective expertise ensures that patients receive the highest standard of medical
+                                care in a friendly and supportive environment.</p>
                         </div><!-- /.team-one__inner -->
                         <div class="team-one__custome-navs"></div><!-- /.team-one__custome-navs -->
                     </div><!-- /.team-one__content -->
@@ -768,21 +799,22 @@
                         </div><!-- /.sec-title -->
                         <div class="faq-one__accordion">
                             <div class="faq-accordion mediox-accordion" data-grp-name="mediox-accordion">
-                                @foreach($faqList AS $key=> $faq)
-                                <div class="accordion wow fadeInUp {{$key== 0 ?'active': '' }}" data-wow-duration="1500ms"
-                                    data-wow-delay="00ms">
-                                    <div class="accordion-title">
-                                        <h4>
-                                            {{ $faq->question }}
-                                            <span class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
-                                        </h4>
-                                    </div><!-- /.accordion-title -->
-                                    <div class="accordion-content">
-                                        <div class="inner">
-                                            <p>{{ $faq->answer }} </p>
-                                        </div><!-- /.inner -->
-                                    </div><!-- /.accordion-content -->
-                                </div><!-- /.accordion-item -->
+                                @foreach ($faqList as $key => $faq)
+                                    <div class="accordion wow fadeInUp {{ $key == 0 ? 'active' : '' }}"
+                                        data-wow-duration="1500ms" data-wow-delay="00ms">
+                                        <div class="accordion-title">
+                                            <h4>
+                                                {{ $faq->question }}
+                                                <span
+                                                    class="accordion-title__icon"></span><!-- /.accordion-title__icon -->
+                                            </h4>
+                                        </div><!-- /.accordion-title -->
+                                        <div class="accordion-content">
+                                            <div class="inner">
+                                                <p>{{ $faq->answer }} </p>
+                                            </div><!-- /.inner -->
+                                        </div><!-- /.accordion-content -->
+                                    </div><!-- /.accordion-item -->
                                 @endforeach
                             </div><!-- /.faq-accordion -->
                         </div><!-- /.faq-one__accordion -->
@@ -842,42 +874,44 @@
                             }
                         }
                         }'>
-                @foreach($testimonials AS $testimon)
-                <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
-                    <div class="testimonial-card">
-                        <div class="testimonial-card__image">
-                            <img src="{{ asset('images/testimonials/testimonial-1-1.jpg') }}" alt="{{ $testimon->name }}">
-                        </div>
-                        <div class="testimonial-card__content">
-                            <div class="testimonial-card__quote-icon">
-                                <span class="icon-quote"></span>
-                            </div><!-- /.testimonial-card__icon -->
-                            <div class="testimonial-card__identity">
-                                <h5 class="testimonial-card__name">{{ $testimon->name }}</h5>
-                                <p class="testimonial-card__designation">{{ $testimon->profession }}</p>
-                            </div><!-- /.testimonial-card__identity -->
-                            <p class="testimonial-card__quote"><span>Nidaan</span> {{ $testimon->description }}</p>
-                            <!-- /.testimonial-card__quote -->
-                            <div class="mediox-ratings">
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                                <span class="mediox-ratings__icon">
-                                    <i class="icon-star"></i>
-                                </span><!-- /.mediox-ratings__icon -->
-                            </div><!-- /.product-ratings -->
-                        </div><!-- /.testimonial-card__content -->
-                    </div><!-- /.testimonial-card -->
-                </div><!-- /.owl-slide-item-->
+                @foreach ($testimonials as $testimon)
+                    <div class="item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__image">
+                                <img src="{{ asset('images/testimonials/testimonial-1-1.jpg') }}"
+                                    alt="{{ $testimon->name }}">
+                            </div>
+                            <div class="testimonial-card__content">
+                                <div class="testimonial-card__quote-icon">
+                                    <span class="icon-quote"></span>
+                                </div><!-- /.testimonial-card__icon -->
+                                <div class="testimonial-card__identity">
+                                    <h5 class="testimonial-card__name">{{ $testimon->name }}</h5>
+                                    <p class="testimonial-card__designation">{{ $testimon->profession }}</p>
+                                </div><!-- /.testimonial-card__identity -->
+                                <p class="testimonial-card__quote"><span>Nidaan</span> {{ $testimon->description }}
+                                </p>
+                                <!-- /.testimonial-card__quote -->
+                                <div class="mediox-ratings">
+                                    <span class="mediox-ratings__icon">
+                                        <i class="icon-star"></i>
+                                    </span><!-- /.mediox-ratings__icon -->
+                                    <span class="mediox-ratings__icon">
+                                        <i class="icon-star"></i>
+                                    </span><!-- /.mediox-ratings__icon -->
+                                    <span class="mediox-ratings__icon">
+                                        <i class="icon-star"></i>
+                                    </span><!-- /.mediox-ratings__icon -->
+                                    <span class="mediox-ratings__icon">
+                                        <i class="icon-star"></i>
+                                    </span><!-- /.mediox-ratings__icon -->
+                                    <span class="mediox-ratings__icon">
+                                        <i class="icon-star"></i>
+                                    </span><!-- /.mediox-ratings__icon -->
+                                </div><!-- /.product-ratings -->
+                            </div><!-- /.testimonial-card__content -->
+                        </div><!-- /.testimonial-card -->
+                    </div><!-- /.owl-slide-item-->
                 @endforeach
             </div><!-- /.thm-owl__slider -->
         </div><!-- /.container -->
@@ -898,12 +932,26 @@
                 data: formData,
                 success: function(response) {
                     if (response.status == 'success') {
-                        $('#appointmentForm :input').attr('disabled', 'disabled');
+                        $('#appointmentForm :input').val('');
+                        $('#phone_no_error').html('');
                         Swal.fire({
                             title: "Thank You!",
                             text: response.message,
                             icon: "success"
                         });
+                    }
+                    if (response.response == "validationFails") {
+                        Swal.fire({
+                            title: "Failed",
+                            text: "Validation error",
+                            icon: "error",
+                            buttons: false,
+                            dangerMode: true,
+                        })
+                        var message = []
+                        $.each(response.error, function(index, value) {
+                            $('#' + index + '_error').html(value)
+                        })
                     }
                 },
                 error: function(xhr, status, error) {

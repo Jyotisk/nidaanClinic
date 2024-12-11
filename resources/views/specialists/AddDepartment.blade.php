@@ -38,13 +38,13 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col" class="text-center">#</th>
-                                                    <th scope="col" class="text-center">Department Name</th>
+                                                    <th scope="col">Department Name</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($departments as $index => $query)
                                                 <tr>
-                                                    <th>{{ $index + 1 }}</th>
+                                                    <th  class="text-center">{{ $index + 1 }}</th>
                                                     <td>{{ $query->department_name }}</td>
                                                 </tr>
                                                 @endforeach

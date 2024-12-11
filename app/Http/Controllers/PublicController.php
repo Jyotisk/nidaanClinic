@@ -111,7 +111,7 @@ class PublicController extends Controller
                 'phone_no' => 'required|numeric|digits:10',
                 'address' => 'required',
                 'specialist_id' => 'required|numeric|exists:specialists,id',
-                'appointment_date' => 'required',
+                'appointment_date' => 'required|date',
             ],
 
         );
@@ -120,7 +120,8 @@ class PublicController extends Controller
             return response()->json([
                 'response' => 'validationFails',
                 'error' => $validator->errors()
-            ], 422);
+            // ], 422);
+            ]);
         }
         DB::beginTransaction();
         try {
@@ -213,7 +214,7 @@ class PublicController extends Controller
             ->where('specialists.id', $id)->inRandomOrder()->first();
         $speciaListDetails = SpecialistDetail::where('specialist_id', $id)->select('header', 'specialist_detail')
             ->get();
-        return view('public.team-details', compact('speciaLists', 'speciaListDetails'));
+        return view('public.team-details', compact('speciaLists', 'speciaListDetails','id'));
     }
 
     public function booking()

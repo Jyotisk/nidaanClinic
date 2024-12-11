@@ -143,13 +143,13 @@
                 </div>
               </li>
               @endrole
-              <li class="nav-item">
+              <li class="nav-item {{ (Route::is('indexDepartment') || Route::is('SpecialistLists')) ? 'active' : '' }}">
                 <a data-bs-toggle="collapse" href="#sidebarLayouts">
                   <i class="fas fa-th-list"></i>
                   <p>Doctor</p>
                   <span class="caret"></span>
                 </a>
-                <div class="collapse" id="sidebarLayouts">
+                <div class="collapse {{ (Route::is('indexDepartment') || Route::is('SpecialistLists')) ? 'show' : '' }}" id="sidebarLayouts">
                   <ul class="nav nav-collapse">
                     <li>
                       <a href="{{route('indexDepartment')}}">
@@ -164,13 +164,13 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class="nav-item {{ Route::is('FacilityLists')  ? 'active' : '' }}">
                 <a data-bs-toggle="collapse" href="#forms">
                   <i class="fas fa-pen-square"></i>
                   <p>Facility/Service</p>
                   <span class="caret"></span>
                 </a>
-                <div class="collapse" id="forms">
+                <div class="collapse {{ Route::is('FacilityLists')  ? 'show' : '' }}" id="forms">
                   <ul class="nav nav-collapse">
                     <li>
                       <a href="{{route('FacilityLists')}}">
@@ -180,13 +180,13 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class="nav-item {{ (Route::is('getGallary') || Route::is('galleryLists')) ? 'active' : '' }}">
                 <a data-bs-toggle="collapse" href="#tables">
                   <i class="fas fa-table"></i>
                   <p>Gallary</p>
                   <span class="caret"></span>
                 </a>
-                <div class="collapse" id="tables">
+                <div class="collapse {{ (Route::is('getGallary') || Route::is('galleryLists')) ? 'show' : '' }}" id="tables">
                   <ul class="nav nav-collapse">
                     <li>
                       <a href="{{route('getGallary')}}">
@@ -201,13 +201,13 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class="nav-item {{ (Route::is('GetTestimonials') || Route::is('TestimonialList')) ? 'active' : '' }}">
                 <a data-bs-toggle="collapse" href="#maps">
                   <i class="fas fa-map-marker-alt"></i>
                   <p>Testimonial</p>
                   <span class="caret"></span>
                 </a>
-                <div class="collapse" id="maps">
+                <div class="collapse {{ (Route::is('GetTestimonials') || Route::is('TestimonialList')) ? 'show' : '' }}" id="maps">
                   <ul class="nav nav-collapse">
                     <li>
                       <a href="{{route('GetTestimonials')}}">
@@ -222,13 +222,13 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class="nav-item {{ (Route::is('GetFaq') || Route::is('FaqList')) ? 'active' : '' }}">
                 <a data-bs-toggle="collapse" href="#charts">
                   <i class="far fa-chart-bar"></i>
                   <p>FAQ</p>
                   <span class="caret"></span>
                 </a>
-                <div class="collapse" id="charts">
+                <div class="collapse {{ (Route::is('GetFaq') || Route::is('FaqList')) ? 'show' : '' }}" id="charts">
                   <ul class="nav nav-collapse">
                     <li>
                       <a href="{{route('GetFaq')}}">
