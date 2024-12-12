@@ -3,7 +3,7 @@
         <div class="page-inner">
             <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
                 <div>
-                    <h3 class="fw-bold mb-3">{{Auth::user()->name}} Dashboard</h3>
+                    <h3 class="fw-bold mb-3">{{ Auth::user()->name }} Dashboard</h3>
                 </div>
             </div>
             <div class="row">
@@ -128,6 +128,7 @@
                                         <tr>
                                             <th scope="col" class="text-center">#</th>
                                             <th scope="col" class="text-center">Name</th>
+                                            <th scope="col" class="text-center">Status</th>
                                             <th scope="col" class="text-center">Email</th>
                                             <th scope="col" class="text-center">Phone No</th>
                                             <th scope="col" class="text-center">Date</th>
@@ -136,16 +137,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($customer_query AS $index=>$query)
-                                        <tr>
-                                            <td class="text-center">{{$index+1}}</td>
-                                            <td class="text-center">{{$query->name}}</td>
-                                            <td class="text-center">{{$query->email}}</td>
-                                            <td class="text-center">{{$query->phone_no}}</td>
-                                            <td class="text-center">{{$query->date}}</td>
-                                            <td class="text-center">{{ \Illuminate\Support\Str::limit($query->message, $limit = 20, $end = '...') }}</td>
-                                            <td class="text-center"><button class="btn btn-info btn-sm rounded-0 view-query" data-name="{{$query->name}}" data-email="{{$query->email}}" data-phone="{{$query->phone_no}}" data-date="{{$query->date}}" data-message="{{$query->message}}">view</button></td>
-                                        </tr>
+                                        @foreach ($customer_query as $index => $query)
+                                            <tr>
+                                                <td class="text-center">{{ $index + 1 }}</td>
+                                                <td class="text-center">{{ $query->name }}</td>
+                                                <td
+                                                    class="text-center {{ $query->status == true ? 'text-danger' : 'text-success' }}">
+                                                    {{ $query->status == true ? 'new' : 'read' }}</td>
+                                                <td class="text-center">{{ $query->email }}</td>
+                                                <td class="text-center">{{ $query->phone_no }}</td>
+                                                <td class="text-center">{{ $query->date }}</td>
+                                                <td class="text-center">
+                                                    {{ \Illuminate\Support\Str::limit($query->message, $limit = 20, $end = '...') }}
+                                                </td>
+                                                <td class="text-center"><button
+                                                        class="btn btn-info btn-sm rounded-0 view-query"
+                                                        data-id="{{ $query->id }}" data-name="{{ $query->name }}"
+                                                        data-email="{{ $query->email }}"
+                                                        data-phone="{{ $query->phone_no }}"
+                                                        data-date="{{ $query->date }}"
+                                                        data-message="{{ $query->message }}">view</button></td>
+                                            </tr>
                                         @endforeach
                                     </tbody>
 
@@ -154,7 +166,7 @@
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -168,6 +180,7 @@
                                         <tr>
                                             <th scope="col" class="text-center">#</th>
                                             <th scope="col" class="text-center">Name</th>
+                                            <th scope="col" class="text-center">Status</th>
                                             <th scope="col" class="text-center">Phone No</th>
                                             <th scope="col" class="text-center">Appointment Date</th>
                                             <th scope="col" class="text-center">Entry Date</th>
@@ -176,25 +189,30 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($bookAppointment AS $index=>$query)
-                                        <tr>
-                                            <td class="text-center">{{$index+1}}</td>
-                                            <td class="text-center">{{$query->patient_name}}</td>
-                                            <td class="text-center">{{$query->age}}</td>
-                                            <td class="text-center">{{$query->appointment_date}}</td>
-                                            <td class="text-center">{{$query->entry_date}}</td>
-                                            <td class="text-center">{{$query->doctor_name}}</td>
-                                            <!-- <td class="text-center">{{ \Illuminate\Support\Str::limit($query->message, $limit = 20, $end = '...') }}</td> -->
-                                            <td class="text-center"><button class="btn btn-info btn-sm rounded-0 view" 
-                                            data-patient_name="{{$query->patient_name}}" 
-                                            data-age="{{$query->age}}" 
-                                            data-phone_no="{{$query->phone_no}}" 
-                                            data-address="{{$query->address}}" 
-                                            data-appointment_date="{{$query->appointment_date}}" 
-                                            data-entry_date="{{$query->entry_date}}" 
-                                            data-doctor_name="{{$query->doctor_name}}" 
-                                            data-message="{{$query->message}}">view</button></td>
-                                        </tr>
+                                        @foreach ($bookAppointment as $index => $query)
+                                            <tr>
+                                                <td class="text-center">{{ $index + 1 }}</td>
+                                                <td class="text-center">{{ $query->patient_name }}</td>
+                                                <td
+                                                    class="text-center {{ $query->status == 'new' ? 'text-danger' : 'text-success' }}">
+                                                    {{ $query->status }}</td>
+                                                <td class="text-center">{{ $query->age }}</td>
+                                                <td class="text-center">{{ $query->appointment_date }}</td>
+                                                <td class="text-center">{{ $query->entry_date }}</td>
+                                                <td class="text-center">{{ $query->doctor_name }}</td>
+                                                <!-- <td class="text-center">{{ \Illuminate\Support\Str::limit($query->message, $limit = 20, $end = '...') }}</td> -->
+                                                <td class="text-center"><button
+                                                        class="btn btn-info btn-sm rounded-0 view"
+                                                        data-id="{{ $query->id }}"
+                                                        data-patient_name="{{ $query->patient_name }}"
+                                                        data-age="{{ $query->age }}"
+                                                        data-phone_no="{{ $query->phone_no }}"
+                                                        data-address="{{ $query->address }}"
+                                                        data-appointment_date="{{ $query->appointment_date }}"
+                                                        data-entry_date="{{ $query->entry_date }}"
+                                                        data-doctor_name="{{ $query->doctor_name }}"
+                                                        data-message="{{ $query->message }}">view</button></td>
+                                            </tr>
                                         @endforeach
                                     </tbody>
 
@@ -207,7 +225,8 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="detailModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="detailModal" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
@@ -241,7 +260,9 @@
                             <p id="modal_appointment_date"></p>
                         </div>
                         <div class="col-md-12">
-                            <label for="Registration No" class="form-label"><Address></Address></label>
+                            <label for="Registration No" class="form-label">
+                                <Address></Address>
+                            </label>
                             <p id="modal_modal_address"></p>
                         </div>
                         <div class="col-md-12">
@@ -251,13 +272,15 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary btn-sm rounded-0"
+                        data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="queryDetailModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="queryDetailModal" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
@@ -289,7 +312,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary btn-sm rounded-0"
+                        data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -312,11 +336,31 @@
             $('#modal_customer_date').text(entry_date);
             $('#modal_customer_message').text(message);
             $('#queryDetailModal').modal('show')
+            var id = $(this).data('id');
+            var jsonData = JSON.stringify({
+                'id': id,
+                'type': 'query',
+            });
+            $.ajax({
+                type: "POST",
+                url: "{{ route('changeCustomerStatus') }}",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: jsonData,
+                cache: false,
+                processData: false,
+                contentType: 'application/json',
+                // dataType: "json",
+                // encode: true,
+            }).done(function(data) {
+                if (data.response == 'success') {
+
+                }
+            });
         })
-    });
-    $(document).ready(function() {
         $("#basic-datatables").DataTable({});
-        $(document).on('click', '.view', function(e) {
+        $(document).on("click", ".view", function(e) {
             e.preventDefault();
             var name = $(this).data('patient_name');
             var phone_no = $(this).data('phone_no');
@@ -336,6 +380,29 @@
             $('#modal_message').text(message);
             $('#modal_doctor_name').text(doctor_name);
             $('#detailModal').modal('show')
-        })
+            var id = $(this).data('id');
+            var jsonData = JSON.stringify({
+                'id': id,
+                'type': 'appointment',
+            });
+            $.ajax({
+                type: "POST",
+                url: "{{ route('changeCustomerStatus') }}",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: jsonData,
+                cache: false,
+                processData: false,
+                contentType: 'application/json',
+                // dataType: "json",
+                // encode: true,
+            }).done(function(data) {
+                if (data.response == 'success') {
+
+                }
+            });
+
+        });
     });
 </script>
