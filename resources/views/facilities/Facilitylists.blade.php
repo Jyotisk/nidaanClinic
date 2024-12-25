@@ -52,7 +52,7 @@
                                                         <td>{{ $query->facility_name }}</td>
                                                         <td>{{ $query->type }}</td>
                                                         <td>
-                                                            <img src="{{ Storage::url($query->image) }}"
+                                                            <img src="{{ env('IMAGE_PATH') . Storage::url($query->image) }}"
                                                                 alt="Service Images" style="width: 10%" />
                                                         </td>
                                                         <td>{{ \Illuminate\Support\Str::limit($query->descriptions, $limit = 20, $end = '...') }}

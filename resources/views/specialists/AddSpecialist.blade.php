@@ -54,7 +54,7 @@
                                                             {{ $query->doctor_name }}
                                                         </td>
                                                         <td>
-                                                            <img src="{{ Storage::url($query->doctor_image) }}"
+                                                            <img src="{{ env('IMAGE_PATH') . Storage::url($query->doctor_image) }}"
                                                                 alt="Service Images" style="width: 10%" />
                                                         </td>
                                                         <td>{{ \Illuminate\Support\Str::limit($query->descriptions, $limit = 20, $end = '...') }}

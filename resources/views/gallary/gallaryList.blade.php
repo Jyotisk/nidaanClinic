@@ -81,7 +81,7 @@
                     @foreach ($gallaryImage as $image)
                         <div class="col-md-3">
                             <div class="image-area">
-                                <img src="{{ Storage::url($image->image) }}" alt="Preview">
+                                <img src="{{ env('IMAGE_PATH') . Storage::url($image->image) }}" alt="Preview">
                                 <a class="remove-image select-{{ $image->id }}" href="{{ $image->id }}"
                                     style="display: inline;">&#215;</a>
                             </div>
