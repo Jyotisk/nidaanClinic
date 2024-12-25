@@ -284,7 +284,7 @@
                         <h6 class="sec-title__tagline">our testimonials</h6><!-- /.sec-title__tagline -->
     
                     </div><!-- /.sec-title__top -->
-                    <h3 class="sec-title__title">peoples talk about <br> mediox</h3><!-- /.sec-title__title -->
+                    <h3 class="sec-title__title">peoples talk about <br> Nidaan</h3><!-- /.sec-title__title -->
                 </div><!-- /.sec-title -->
                 <div class="testimonials-two__carousel mediox-owl__carousel mediox-owl__carousel--basic-nav owl-carousel owl-theme" data-owl-options='{
                     "items": 1,
