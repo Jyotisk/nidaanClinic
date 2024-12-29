@@ -67,7 +67,7 @@
                             @foreach ($speciaListDetails as $item)
                             <li>
                                 <div class="team-details__contact__content">
-                                    @if($item->header)
+                                    @if($item->header != 'null')
                                     <h3 class="team-details__contact__title">{{ $item->header }}</h3>
                                     @endif
                                     @if($item->specialist_detail)
