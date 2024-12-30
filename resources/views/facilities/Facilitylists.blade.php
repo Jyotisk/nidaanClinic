@@ -98,7 +98,7 @@
                             @csrf
                             <div class="row g-2">
                                 <div class="col-md-12">
-                                    <label for="Registration No" class="form-label">Category</label>
+                                    <label for="Registration No" class="form-label">Category<span class="text-danger">*</span></label>
                                     <select name="type" id="type" class="form-control" required>
                                         <option value="">Select</option>
                                         <option value="service">Service</option>
@@ -107,7 +107,7 @@
                                     <span id="type_error" class="text-danger"></span>
                                 </div>
                                 <div class="col-md-12">
-                                    <label for="Registration No" class="form-label">Speciality</label>
+                                    <label for="Registration No" class="form-label">Speciality (If Category Is Speciality)</label>
                                     <select name="department_id" id="department_id" class="form-control">
                                         <option value="">Select</option>
                                         @foreach ($departments as $dept)
