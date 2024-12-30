@@ -272,7 +272,7 @@
         $("#rowRoleAdder").click(function() {
             newRowAdd =
                 '<div class="row mt-2" id="roleRow">' +
-                '<label for="department name" class="form-label">Header<span class="text-danger">*</span></label>' +
+                '<label for="department name" class="form-label">Header</label>' +
                 '<div class="col-md-12"><input type="text" id="inputPassword5" name="header[]" class="form-control">' +
                 '<label for="department name" class="form-label">Details<span class="text-danger">*</span></label>' +
                 '<div class="col-md-12"><input type="text" id="inputPassword5" name="specialist_detail[]" class="form-control">' +
@@ -287,7 +287,7 @@
         $("#rowEditAdder").click(function() {
             newRowAdd =
                 '<div class="row mt-2" id="roleRow">' +
-                '<label for="department name" class="form-label">Header<span class="text-danger">*</span></label>' +
+                '<label for="department name" class="form-label">Header</label>' +
                 '<div class="col-md-12"><input type="text" id="inputPassword5" name="header[]" class="form-control">' +
                 '<label for="department name" class="form-label">Details<span class="text-danger">*</span></label>' +
                 '<div class="col-md-12"><input type="text" id="inputPassword5" name="specialist_detail[]" class="form-control">' +
